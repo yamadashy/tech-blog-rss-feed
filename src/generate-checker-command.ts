@@ -42,10 +42,9 @@ import * as fs from 'fs/promises';
   await fs.writeFile(
     'storage/check.html',
     `
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     <table>${tableRowHtml}</table>
-    <style>
-        tr:hover { background: #eee; }
-    </style>
   `,
   );
 })();
