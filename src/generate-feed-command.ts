@@ -22,7 +22,7 @@ const feedGenerator = new FeedGenerator();
   // フィード作成
   const feed = feedGenerator.generateFeed(allFeedItems, MAX_FEED_DESCRIPTION_LENGTH, MAX_FEED_CONTENT_LENGTH);
 
-  // 出力
+  // ファイル出力
   await fs.mkdir(OUTPUT_FEED_DIR_PATH, {
     recursive: true,
   });

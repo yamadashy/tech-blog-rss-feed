@@ -10,6 +10,8 @@ export class FeedCrawler {
   }
 
   fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number) {
+    FeedCrawler.validateFeedInfoList(feedInfoList);
+
     const feedInfoListLength = feedInfoList.length;
     let fetchProcessCounter = 1;
 
@@ -28,9 +30,27 @@ export class FeedCrawler {
   }
 
   /**
+   * フィード情報のチェック
+   */
+  private static validateFeedInfoList(feedInfoList: FeedInfo[]) {
+    const allLabel = feedInfoList.map((feedInfo) => feedInfo.label);
+    const allUrls = feedInfoList.map((feedInfo) => feedInfo.url);
+
+    // label の重複チェック
+    if (allLabel.length > new Set(allLabel).size) {
+      throw new Error('フィードのラベルが重複しています');
+    }
+
+    // url の重複チェック
+    if (allUrls.length > new Set(allUrls).size) {
+      throw new Error('フィードのURLが重複しています');
+    }
+  }
+
+  /**
    * 取得したフィードの調整
    */
-  public postProcessFeeds(feeds: RssParser.Output<RssParser.Item>[], filterArticleDate: Date) {
+  postProcessFeeds(feeds: RssParser.Output<RssParser.Item>[], filterArticleDate: Date) {
     const filterIsoDate = filterArticleDate.toISOString();
 
     for (const feed of feeds) {
@@ -38,7 +58,6 @@ export class FeedCrawler {
 
       // 公開日時でフィルタ
       feedItems = feedItems.filter((feedItem) => {
-        // TODO: pubDate でフィルタすべきでは
         return feedItem.isoDate > filterIsoDate;
       });
 
