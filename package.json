@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "generate-feed": "ts-node src/generate-feed-command.ts",
+    "generate-checker": "ts-node src/generate-checker-command.ts",
     "lint": "eslint ./src --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
     "lint:fix": "yarn lint --fix",
     "preinstall": "typesync || :"
