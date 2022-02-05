@@ -34,7 +34,7 @@ jobs:
         run: yarn install
 
       - name: Generate feed
-        run: yarn run generate-feed
+        run: yarn build
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

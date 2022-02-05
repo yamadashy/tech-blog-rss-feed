@@ -1,8 +1,6 @@
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/site/images/*")
-
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath && outputPath.endsWith(".html") ) {
       return htmlmin.minify(content, {
@@ -19,6 +17,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    templateFormats: ['njk', 'png', 'ico'],
     dir: {
       input: "src/site",
       output: "public"
