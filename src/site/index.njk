@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name='description' content='企業のテックブログのRSSフィードをまとめたフィードを配信しています。記事を読んでその企業の技術・カルチャーを知れたり、質の高い技術情報を得られることを目的としています。'>
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icon.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feeds/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="feeds/rss.xml"/>
+    <link rel="alternate" type="application/json" href="feeds/feed.json"/>
+
+    <style>
+        {% include "reset.css" %}
+        {% include "index.css" %}
+    </style>
+
+    <title>企業テックブログRSSフィード</title>
+</head>
+<body>
+    <div class='wrapper'>
+
+    </div>
+    <div>
+        <p>
+            企業のテックブログのRSSフィードをまとめたフィードを配信しています。<br>
+            記事を読んでその企業の技術・カルチャーを知れたり、質の高い技術情報を得られることを目的としています。
+        </p>
+    </div>
+    <div>
+        <a href="./feeds/atom.xml">Atom</a>
+        <a href="./feeds/rss.xml">RSS</a>
+        <a href="./feeds/feed.json">Json</a>
+    </div>
+    <script>
+        {% include "index.js" %}
+    </script>
+</body>
+</html>

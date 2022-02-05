@@ -1,4 +1,4 @@
-import { FEED_INFO_LIST, FeedInfo } from './resources/feed-info-list';
+import { FEED_INFO_LIST, FeedInfo } from '../resources/feed-info-list';
 import * as RssParser from 'rss-parser';
 import { PromisePool } from '@supercharge/promise-pool';
 import * as fs from 'fs/promises';

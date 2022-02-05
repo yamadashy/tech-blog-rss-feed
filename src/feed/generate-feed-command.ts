@@ -1,4 +1,4 @@
-import { FEED_INFO_LIST } from './resources/feed-info-list';
+import { FEED_INFO_LIST } from '../resources/feed-info-list';
 import { FeedCrawler } from './utils/feed-crawler';
 import { FeedGenerator } from './utils/feed-generator';
 import * as fs from 'fs/promises';
@@ -6,7 +6,7 @@ import * as path from 'path';
 
 const FEED_FETCH_CONCURRENCY = 10;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
-const OUTPUT_FEED_DIR_PATH = path.join(__dirname, '../public/feeds');
+const OUTPUT_FEED_DIR_PATH = path.join(__dirname, '../../public/feeds');
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
 const MAX_FEED_CONTENT_LENGTH = 500;
 

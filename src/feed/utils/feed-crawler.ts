@@ -1,6 +1,6 @@
 import * as RssParser from 'rss-parser';
 import { PromisePool } from '@supercharge/promise-pool';
-import { FeedInfo } from '../resources/feed-info-list';
+import { FeedInfo } from '../../resources/feed-info-list';
 
 export class FeedCrawler {
   private rssParser;
