@@ -262,3 +262,5 @@ $RECYCLE.BIN/
 # Custom
 # ==================================================
 .idea
+public/feeds
+storage
