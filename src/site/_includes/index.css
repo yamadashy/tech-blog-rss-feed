@@ -1,0 +1,130 @@
+:root {
+    --base-background: #fff;
+    --base-color: #333;
+    --base-color-lighter: #777;
+    --base-color-muted: #999;
+    --orange-background: #fff3e0;
+    --orange-background-lighter: #fffeeb;
+    --orange-background-dark: #ff9800;
+    --orange-background-dark-active: #fb8c00;
+
+    --base-font:
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica Neue,
+        Yu Gothic,
+        YuGothic,
+        Verdana,
+        Meiryo,
+        M+ 1p,
+        sans-serif;
+}
+
+/*
+ * 上書き
+ */
+.ui-section-header__layout .header-title {
+    display: inline-block;
+    line-height: 22px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: var(--base-color);
+}
+
+.ui-section-header__layout img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.ui-section-content {
+    padding-top: 2.5em;
+    padding-bottom: 3.5rem;
+}
+
+.ui-section-header {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.ui-component-form {
+    border-radius: 0;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.ui-component-form .ui-component-button {
+    border-radius: 0;
+    background: var(--orange-background-dark);
+    border-color: var(--orange-background-dark);
+}
+
+.ui-component-form .ui-component-button.active {
+    background: var(--orange-background-dark-active);
+    border-color: var(--orange-background-dark-active);
+}
+
+/*
+ * 共通
+ */
+.section-header {
+    text-align: left;
+}
+
+.ui-component-form img {
+    width: 32px;
+    height: 32px;
+}
+.ui-component-form .form-icon {
+    margin-left: 0.2em;
+}
+
+/*
+ * トップ
+ */
+.top-section {
+    /*background: var(--orange-background);*/
+}
+
+/*
+ * フィード
+ */
+.feed-item-list-section {
+    background: var(--orange-background-lighter);
+}
+
+.feed-item-container {
+    text-align: left;
+    margin-top: 2em;
+}
+
+.feed-item-container .feed-item {
+    color: var(--base-color);
+}
+
+.feed-item-container .feed-item a:hover {
+    text-decoration: underline;
+}
+
+.feed-item-container .feed-item a:visited {
+    color: var(--base-color-lighter);
+}
+
+.feed-item-container .feed-item .feed-item-tag {
+    color: var(--base-color-muted);
+    font-size: 0.8em;
+    margin-right: 0.2em;
+}
+
+.feed-item-container .feed-item .feed-item-date {
+    color: var(--base-color-muted);
+    font-size: 0.8em;
+}
+
+/*
+ * フッター
+ */
+footer {
+    /*background: var(--orange-background-lighter);*/
+}
