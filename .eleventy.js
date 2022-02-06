@@ -1,8 +1,10 @@
-const htmlmin = require("html-minifier");
+const htmlmin = require("html-minifier-terser");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath && outputPath.endsWith(".html") ) {
+  eleventyConfig.addPassthroughCopy("src/site/images");
+  eleventyConfig.addPassthroughCopy("src/site/feeds");
+  eleventyConfig.addTransform("minify html", function(content, outputPath) {
+    if(outputPath && outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -17,7 +19,8 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    templateFormats: ['njk', 'png', 'ico'],
+    htmlTemplateEngine: 'njk',
+
     dir: {
       input: "src/site",
       output: "public"

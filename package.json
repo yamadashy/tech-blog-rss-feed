@@ -1,10 +1,10 @@
 {
   "name": "tech-blog-rss-feed",
-  "description": "企業のテックブログのRSSフィードをまとめたフィードを配信",
+  "description": "企業のテックブログの更新をまとめたRSSフィードを配信",
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "build": "yarn site:build && yarn feed:generate",
+    "build": "yarn feed:generate && yarn site:build",
     "feed:generate": "ts-node src/feed/generate-feed-command.ts",
     "feed:generate-checker": "ts-node src/feed/generate-checker-command.ts",
     "site:build": "eleventy",
@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "@supercharge/promise-pool": "^2.1.0",
+    "dayjs": "^1.10.7",
     "feed": "^4.2.2",
     "loglevel": "^1.8.0",
     "rss-parser": "^3.12.0"
@@ -41,7 +42,7 @@
     "@11ty/eleventy": "^1.0.0",
     "@types/eslint": "^8.4.1",
     "@types/eslint-plugin-prettier": "^3.1.0",
-    "@types/html-minifier": "^4.0.2",
+    "@types/html-minifier-terser": "^6.1.0",
     "@types/http-server": "^0.12.1",
     "@types/node": "^17.0.13",
     "@types/prettier": "^2.4.3",
@@ -52,7 +53,7 @@
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "html-minifier": "^4.0.0",
+    "html-minifier-terser": "^7.0.0-alpha.1",
     "http-server": "^14.1.0",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",

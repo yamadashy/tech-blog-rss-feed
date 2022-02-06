@@ -5,7 +5,7 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
-    webextensions: true
+    webextensions: true,
   },
   extends: [
     'eslint:recommended',
@@ -13,21 +13,13 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/warnings',
     'plugin:import/errors',
-    'prettier'
-  ],
-  plugins: [
-    '@typescript-eslint',
     'prettier',
-    'import',
   ],
+  plugins: ['@typescript-eslint', 'prettier', 'import'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    'sourceType': 'module',
-    'project': './tsconfig.json'
+    sourceType: 'module',
   },
-  ignorePatterns: [
-    '**/*.js',
-  ],
   rules: {
     'prettier/prettier': 'warn',
 
@@ -35,4 +27,11 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
   },
-}
+  overrides: [
+    // TypeScript系ファイルへのルールを設定
+    {
+      files: ['**/*.js'],
+      extends: ['eslint:recommended'],
+    },
+  ],
+};
