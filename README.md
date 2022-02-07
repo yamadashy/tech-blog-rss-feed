@@ -1,8 +1,9 @@
-# 企業テックブログRSS
+# <img src="src/site/images/icon-transparent.png" height=26> 企業テックブログRSS
 企業のテックブログの更新をまとめたRSSフィードを配信しています。  
 記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。
 
 https://yamadashy.github.io/tech-blog-rss-feed/
+
 
 独自のフィードを作って公開したい場合は自由にフォークしてください。
 
@@ -18,7 +19,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 逆に、以下はテックブログと判断して追加しています。
 
-- Zenn の企業系アカウント
+- [Zenn](https://zenn.dev/) の企業系アカウント
 
 ## サイトの追加方法
 [src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。  
