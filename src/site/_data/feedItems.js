@@ -3,6 +3,7 @@ const fs = require('fs/promises');
 const dayjs = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
 require('dayjs/locale/ja');
+
 dayjs.extend(relativeTime);
 dayjs.locale('ja');
 
@@ -18,7 +19,8 @@ module.exports = async () => {
 
   // データ調整
   for (const feedItem of feedItems) {
-    feedItem.diffDateForhuman = dayjs().to(feedItem.date_published);
+    feedItem.diffDateForHuman = dayjs().to(feedItem.date_published);
+    feedItem.pubDateForHuman = dayjs(feedItem.date_published).format('YYYY-MM-DD HH:mm:ss');
   }
 
   return feedItems;

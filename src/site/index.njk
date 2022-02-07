@@ -22,12 +22,13 @@
     <title>企業テックブログRSS</title>
 </head>
 <body>
+
     <header role="banner" class="ui-section-header">
         <div class="ui-layout-container">
             <div class="ui-section-header__layout ui-layout-flex">
                 <a href="{{ siteUrl }}" role="link" aria-label="#">
                     <img src='images/icon.png' alt='サイトロゴ' />
-                    <span class='header-title'>企業テックブログRSS</span>
+                    <span class='ui-section-header__title'>企業テックブログRSS</span>
                 </a>
                 <a href="{{ gitHubUrls.repository }}" role="link" aria-label="#">
                     <img src='images/github-mark.png' alt='GitHubロゴ'>
@@ -45,36 +46,44 @@
                     </p>
                     <div class="ui-component-cta ui-layout-flex">
                         <form class="ui-component-form ui-layout-grid">
-                            <img class='form-icon' src='images/slack-mark.png' alt='Slackのロゴ'>
-                            <input type='text' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ feedUrls.atom }}'>
+                            <label class='ui-component-form__label' for='feed-url-slack'>
+                                <img src='images/slack-mark.png' alt='Slackのロゴ'>
+                            </label>
+                            <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ feedUrls.atom }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                         <p class="ui-text-note"><small>Slackに貼り付けると更新を受け取ることができます</small></p>
                         <form class="ui-component-form ui-layout-grid">
-                            <h4 class='form-icon'>Atom URL</h4>
-                            <input type='text' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.atom }}'>
+                            <label class='ui-component-form__label' for='feed-url-atom'>
+                                <span>Atom URL</span>
+                            </label>
+                            <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.atom }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                         <form class="ui-component-form ui-layout-grid">
-                            <h4 class='form-icon'>RSS URL</h4>
-                            <input type='text' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.rss }}'>
+                            <label class='ui-component-form__label' for='feed-url-rss'>
+                                <span>RSS URL</span>
+                            </label>
+                            <input type='text' id='feed-url-rss' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.rss }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="ui-section-content feed-item-list-section">
+        <section class="ui-section-content ui-section-feed">
             <div class="ui-layout-container">
-                <h2 class='section-header'>直近1週間の更新</h2>
-                <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 feed-item-container">
+                <h2 class='ui-typography-heading'>直近1週間の更新</h2>
+                <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed">
                     {% for feedItem in feedItems %}
-                        <div class='feed-item'>
-                            <h5><a href='{{ feedItem.url }}' rel='nofollow'>{{ feedItem.title }}</a></h5>
+                        <div class='ui-feed-item'>
+                            <h5 class='ui-feed-item__title'>
+                                <a href='{{ feedItem.url }}' rel='nofollow'>{{ feedItem.title }}</a>
+                            </h5>
                             {% for feedItemTag in feedItem.tags %}
-                                <span class='feed-item-tag'>{{ feedItemTag }}</span>
+                                <span class='ui-feed-item__tag'>{{ feedItemTag }}</span>
                             {% endfor %}
-                            <p class='feed-item-date'>{{ feedItem.diffDateForhuman }}</p>
+                            <p class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</p>
                         </div>
                     {% endfor %}
                 </div>
@@ -96,5 +105,6 @@
     <script>
         {% include "index.js" %}
     </script>
+
 </body>
 </html>
