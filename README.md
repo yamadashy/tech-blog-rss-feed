@@ -6,7 +6,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 独自のフィードを作って公開したい場合は自由にフォークしてください。
 
-# サイト追加の方針
+## サイト追加の方針
 企業のテックブログ（技術ブログ、エンジニアブログ）であれば、基本的には追加します。  
 ただし、以下に該当するものは検討します。
 
@@ -20,12 +20,12 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 - Zenn の企業系アカウント
 
-# サイトの追加方法
+## サイトの追加方法
 [src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。  
 
 プルリクを送っていただけると大変助かります。
 
-## プルリクでの送り方
+### プルリクでの送り方
 1. このリポジトリをフォーク
 2. ブランチ作成  
    `git checkout -b new-blog-feed-xxx`
@@ -37,12 +37,12 @@ https://yamadashy.github.io/tech-blog-rss-feed/
    `git push origin new-blog-feed-xxx`
 6. プルリクを作成
 
-# 仕組み
+## 仕組み
 GitHub Actions で定期的に更新されており、サイトの生成は [Eleventy](https://www.11ty.dev/) を使用しています。
 
 更新は多少遅延ありますが以下のタイミングで行います。
 - 平日8時~22時の2時間おき
 - 休日8時~20時の4時間おき
 
-# ライセンス
+## ライセンス
 MIT
