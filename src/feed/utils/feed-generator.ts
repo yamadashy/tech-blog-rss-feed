@@ -1,5 +1,5 @@
 import * as RssParser from 'rss-parser';
-import { Feed, FeedOptions, Item } from 'feed';
+import { Feed, FeedOptions } from 'feed';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
