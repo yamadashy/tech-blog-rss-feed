@@ -188,7 +188,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
-  ['データファーム', 'https://zenn.dev/datafarm/feed'],
   ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
   ['トドケール', 'https://zenn.dev/todoker/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
