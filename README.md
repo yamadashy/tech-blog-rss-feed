@@ -19,7 +19,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 逆に、以下はテックブログと判断して追加しています。
 
-- [Zenn](https://zenn.dev/) の企業系アカウント
+- [Zenn](https://zenn.dev/) や [note](https://note.com/) の企業系テックブログ
 
 ## サイトの追加方法
 [src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。  
