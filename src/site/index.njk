@@ -87,10 +87,11 @@
                             <h5 class='ui-feed-item__title'>
                                 <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
                             </h5>
-                            {% for feedItemTag in feedItem.tags %}
-                                <span class='ui-feed-item__tag'>{{ feedItemTag }}</span>
-                            {% endfor %}
-                            <p class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</p>
+                            <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
+                            <p class='ui-feed-item__summary'>
+                                <a href='{{ feedItem.url }}'>{{ feedItem.summary }}</a>
+                            </p>
+                            <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                         </div>
                     {% endfor %}
                 </div>
