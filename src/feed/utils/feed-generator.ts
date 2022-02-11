@@ -1,13 +1,13 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
-import { FeedItemOgpImageMap } from './feed-crawler';
+import { FeedItemOgsResultMap } from './feed-crawler';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
 export class FeedGenerator {
   generateFeed(
     feedItems: RssParser.Item[],
-    feedItemOgpImageMap: FeedItemOgpImageMap,
+    feedItemOgsResultMap: FeedItemOgsResultMap,
     maxFeedDescriptionLength: number,
     maxFeedContentLength: number,
   ) {
@@ -35,6 +35,9 @@ export class FeedGenerator {
       const feedItemId = feedItem.guid || feedItem.link;
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
 
+      const ogsResult = feedItemOgsResultMap.get(feedItem.link);
+      const ogImage = ogsResult?.ogImage;
+
       outputFeed.addItem({
         id: feedItemId,
         guid: feedItemId,
@@ -54,7 +57,13 @@ export class FeedGenerator {
               },
             ]
           : null,
-        image: feedItemOgpImageMap.get(feedItem.link),
+        image:
+          ogImage && ogImage.url
+            ? {
+                type: ogImage.type,
+                url: ogImage.url,
+              }
+            : null,
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
       });

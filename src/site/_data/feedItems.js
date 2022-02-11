@@ -30,7 +30,9 @@ module.exports = async () => {
       const splittedTitle = title.split('|');
       feedItem.title = splittedTitle.slice(0, -1).join('|') || '';
       feedItem.blogTitle = splittedTitle.slice(-1)[0] || '';
-      feedItem.image = feedItem.image || 'images/icon512-transparent.png';
+      feedItem.image = feedItem.image || {
+        url: 'images/icon512-transparent.png',
+      };
     }
   }
 

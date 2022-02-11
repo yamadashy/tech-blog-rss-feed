@@ -19,12 +19,12 @@ const feedGenerator = new FeedGenerator();
   const feeds = await feedCrawler.fetchFeedsAsync(FEED_INFO_LIST, FEED_FETCH_CONCURRENCY);
   const processedFeeds = await feedCrawler.postProcessFeeds(feeds, FILTER_ARTICLE_DATE);
   const allFeedItems = feedCrawler.mergeAndSortResults(processedFeeds);
-  const allFeedItemOgpImageMap = await feedCrawler.fetchFeedItemOgpImageMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
+  const allFeedItemOgsResultMap = await feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
 
   // フィード作成
   const feed = feedGenerator.generateFeed(
     allFeedItems,
-    allFeedItemOgpImageMap,
+    allFeedItemOgsResultMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
   );

@@ -4,8 +4,21 @@ import { FeedInfo } from '../../resources/feed-info-list';
 import * as dayjs from 'dayjs';
 const ogs = require('open-graph-scraper');
 
-type OgsResponse = { result: { favicon: string; ogImage: { url: string; type: string; title: string } } };
-export type FeedItemOgpImageMap = Map<string, string>;
+export type OgsResult = {
+  ogTitle: string;
+  ogType: string;
+  ogUrl: string;
+  ogDescription: string;
+  favicon: string;
+  requestUrl: string;
+  ogImage: {
+    url: string;
+    width: string;
+    height: string;
+    type: string;
+  };
+};
+export type FeedItemOgsResultMap = Map<string, OgsResult>;
 export type Feed = RssParser.Output<RssParser.Item>;
 
 export class FeedCrawler {
@@ -118,8 +131,8 @@ export class FeedCrawler {
     return allFeedItems;
   }
 
-  async fetchFeedItemOgpImageMap(feedItems: RssParser.Item[], concurrency: number): Promise<FeedItemOgpImageMap> {
-    const feedItemOgpImageMap: FeedItemOgpImageMap = new Map();
+  async fetchFeedItemOgsResultMap(feedItems: RssParser.Item[], concurrency: number): Promise<FeedItemOgsResultMap> {
+    const feedItemOgsResultMap: FeedItemOgsResultMap = new Map();
     const feedItemsLength = feedItems.length;
     let fetchProcessCounter = 1;
 
@@ -130,14 +143,15 @@ export class FeedCrawler {
         console.error(error);
       })
       .process(async (feedItem) => {
-        const ogsResponse: OgsResponse = await ogs({
+        const ogsResponse: { result: OgsResult } = await ogs({
           url: feedItem.link,
           timeout: 10 * 1000,
         });
-        feedItemOgpImageMap.set(feedItem.link, ogsResponse.result.ogImage.url);
+        feedItemOgsResultMap.set(feedItem.link, ogsResponse.result);
+        // console.log(ogsResponse.result.ogImage.type);
         console.log('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
-    return feedItemOgpImageMap;
+    return feedItemOgsResultMap;
   }
 }

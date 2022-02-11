@@ -87,7 +87,7 @@
                     {% for feedItem in feedItems %}
                         <div class='ui-feed-item'>
                             <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
-                                <img src='{{ feedItem.image }}' loading="lazy" alt='{{ feedItem.title }}'>
+                                <img src='{{ feedItem.image.url }}' loading="lazy" alt='記事のアイキャッチ画像'>
                             </a>
                             <h5 class='ui-feed-item__title'>
                                 <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
