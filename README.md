@@ -38,12 +38,29 @@ https://yamadashy.github.io/tech-blog-rss-feed/
    `git push origin new-blog-feed-xxx`
 6. プルリクを作成
 
-## 仕組み
+## 開発
+
+### 仕組み
 GitHub Actions で定期的に更新されており、サイトの生成は [Eleventy](https://www.11ty.dev/) を使用しています。
 
 更新は多少遅延ありますが以下のタイミングで行います。
 - 平日8時~22時の2時間おき
 - 休日8時~20時の4時間おき
+
+### フォークして使う場合の注意点
+以下を書き換えると独自のサイトが動くと思います。
+
+- `src/site/_data/constants.js` の URL など
+- `yamadashy` と検索してヒットした内容
+
+### 開発用コマンド
+```bash
+$ # フィードを取得して作成
+$ yarn feed:generate
+
+$ # localhost:8080 で確認
+$ yarn site:serve
+```
 
 ## ライセンス
 MIT

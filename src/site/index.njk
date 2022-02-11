@@ -3,16 +3,16 @@
 <head>
     <meta charSet="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name='description' content='企業のテックブログの更新をまとめたRSSフィードを配信しています。記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。'>
-    <meta name="author" content="yamadashy">
+    <meta name='description' content='{{ constants.siteDescription }}'>
+    <meta name="author" content="{{ constants.author }}">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:url" content="{{ siteUrl }}"/>
-    <meta property="og:title" content="企業テックブログRSS"/>
-    <meta property="og:image" content="{{ siteUrl }}images/ogp.png"/>
-    <meta property="og:description" content="企業のテックブログの更新をまとめたRSSフィードを配信しています。記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。"/>
+    <meta property="og:url" content="{{ constants.siteUrl }}"/>
+    <meta property="og:title" content="{{ constants.siteTitle }}"/>
+    <meta property="og:image" content="{{ constants.siteUrl }}images/ogp.png"/>
+    <meta property="og:description" content="{{ constants.siteDescription }}"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="企業テックブログRSS"/>
+    <meta property="og:site_name" content="{{ constants.siteTitle }}"/>
 
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/icon.png">
@@ -26,18 +26,18 @@
         {% include "index.css" %}
     </style>
 
-    <title>企業テックブログRSS</title>
+    <title>{{ constants.siteTitle }}</title>
 </head>
 <body>
 
     <header role="banner" class="ui-section-header">
         <div class="ui-layout-container">
             <div class="ui-section-header__layout ui-layout-flex">
-                <a href="{{ siteUrl }}" role="link" aria-label="#">
+                <a href="{{ constants.siteUrl }}" role="link" aria-label="#">
                     <img src='images/icon.png' alt='サイトロゴ' />
-                    <span class='ui-section-header__title'>企業テックブログRSS</span>
+                    <span class='ui-section-header__title'>{{ constants.siteTitle }}</span>
                 </a>
-                <a href="{{ gitHubUrls.repository }}" role="link" aria-label="#">
+                <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#">
                     <img src='images/github-mark.png' alt='GitHubロゴ'>
                 </a>
             </div>
@@ -56,7 +56,7 @@
                             <label class='ui-component-form__label' for='feed-url-slack'>
                                 <img src='images/slack-mark.png' alt='Slackのロゴ'>
                             </label>
-                            <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ feedUrls.atom }}'>
+                            <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.atom }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                         <p class="ui-text-note"><small>Slackに貼り付けると更新を受け取ることができます</small></p>
@@ -64,14 +64,14 @@
                             <label class='ui-component-form__label' for='feed-url-atom'>
                                 <span>Atom URL</span>
                             </label>
-                            <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.atom }}'>
+                            <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.atom }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                         <form class="ui-component-form ui-layout-grid">
                             <label class='ui-component-form__label' for='feed-url-rss'>
                                 <span>RSS URL</span>
                             </label>
-                            <input type='text' id='feed-url-rss' class="ui-component-input ui-component-input-medium" readonly value='{{ feedUrls.rss }}'>
+                            <input type='text' id='feed-url-rss' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.rss }}'>
                             <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                         </form>
                     </div>
@@ -103,9 +103,9 @@
         <div class="ui-layout-container">
             <div class="ui-section-footer__layout ui-layout-flex">
                 <p class="ui-section-footer--copyright ui-text-note">
-                    <a class="ui-text-note" href='{{ gitHubUrls.user }}'><small>@yamadashy</small></a>
+                    <a class="ui-text-note" href='{{ constants.gitHubUserUrl }}'><small>@{{ constants.author }}</small></a>
                 </p>
-                <a href="{{ gitHubUrls.repository }}" role="link" aria-label="#" class="ui-text-note"><small>GitHub</small></a>
+                <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#" class="ui-text-note"><small>GitHub</small></a>
             </div>
         </div>
     </footer>
