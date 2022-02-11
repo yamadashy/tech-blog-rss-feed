@@ -13,4 +13,6 @@ module.exports = {
     rss: `${siteUrl}feeds/rss.xml`,
     json: `${siteUrl}feeds/feed.json`,
   },
+  // Google Search Console 用
+  googleSiteVerification: 'GPLvXv8kYtLMW912ZS54DKFEZL6ruOrjOFLdHVTo37o',
 };
