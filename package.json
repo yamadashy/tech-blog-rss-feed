@@ -35,6 +35,7 @@
     "@supercharge/promise-pool": "^2.1.0",
     "dayjs": "^1.10.7",
     "feed": "^4.2.2",
+    "open-graph-scraper": "^4.11.0",
     "rss-parser": "^3.12.0"
   },
   "devDependencies": {

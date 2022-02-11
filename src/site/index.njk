@@ -86,6 +86,9 @@
                 <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed">
                     {% for feedItem in feedItems %}
                         <div class='ui-feed-item'>
+                            <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
+                                <img src='{{ feedItem.image }}' alt='{{ feedItem.title }}'>
+                            </a>
                             <h5 class='ui-feed-item__title'>
                                 <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
                             </h5>

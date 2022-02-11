@@ -26,6 +26,8 @@ module.exports = {
     // plugin import
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
+
+    '@typescript-eslint/no-var-requires': 'off',
   },
   overrides: [
     // TypeScript系ファイルへのルールを設定

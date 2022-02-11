@@ -1,10 +1,16 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
+import { FeedItemOgpImageMap } from './feed-crawler';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
 export class FeedGenerator {
-  generateFeed(feedItems: RssParser.Item[], maxFeedDescriptionLength: number, maxFeedContentLength: number) {
+  generateFeed(
+    feedItems: RssParser.Item[],
+    feedItemOgpImageMap: FeedItemOgpImageMap,
+    maxFeedDescriptionLength: number,
+    maxFeedContentLength: number,
+  ) {
     const outputFeed = new Feed({
       title: '企業テックブログRSS',
       description: '企業のテックブログの更新をまとめたRSSフィード',
@@ -48,6 +54,7 @@ export class FeedGenerator {
               },
             ]
           : null,
+        image: feedItemOgpImageMap.get(feedItem.link),
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
       });

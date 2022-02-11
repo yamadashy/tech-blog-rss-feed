@@ -4,7 +4,8 @@ import { FeedGenerator } from './utils/feed-generator';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
-const FEED_FETCH_CONCURRENCY = 10;
+const FEED_FETCH_CONCURRENCY = 20;
+const FEED_OGP_FETCH_CONCURRENCY = 20;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
 const OUTPUT_FEED_DIR_PATH = path.join(__dirname, '../site/feeds');
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
@@ -15,12 +16,18 @@ const feedGenerator = new FeedGenerator();
 
 (async () => {
   // データ取得
-  const fetchResult = await feedCrawler.fetchFeedsAsync(FEED_INFO_LIST, FEED_FETCH_CONCURRENCY);
-  const feeds = await feedCrawler.postProcessFeeds(fetchResult.results, FILTER_ARTICLE_DATE);
-  const allFeedItems = feedCrawler.mergeAndSortResults(feeds);
+  const feeds = await feedCrawler.fetchFeedsAsync(FEED_INFO_LIST, FEED_FETCH_CONCURRENCY);
+  const processedFeeds = await feedCrawler.postProcessFeeds(feeds, FILTER_ARTICLE_DATE);
+  const allFeedItems = feedCrawler.mergeAndSortResults(processedFeeds);
+  const allFeedItemOgpImageMap = await feedCrawler.fetchFeedItemOgpImageMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
 
   // フィード作成
-  const feed = feedGenerator.generateFeed(allFeedItems, MAX_FEED_DESCRIPTION_LENGTH, MAX_FEED_CONTENT_LENGTH);
+  const feed = feedGenerator.generateFeed(
+    allFeedItems,
+    allFeedItemOgpImageMap,
+    MAX_FEED_DESCRIPTION_LENGTH,
+    MAX_FEED_CONTENT_LENGTH,
+  );
 
   // ファイル出力
   await fs.mkdir(OUTPUT_FEED_DIR_PATH, {
