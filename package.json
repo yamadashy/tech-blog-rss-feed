@@ -9,8 +9,9 @@
     "feed:generate-checker": "ts-node src/feed/generate-checker-command.ts",
     "site:build": "eleventy",
     "site:serve": "eleventy --serve",
-    "lint": "eslint ./src --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
+    "lint": "eslint ./src ./tests --max-warnings 0 --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
     "lint:fix": "yarn lint --fix",
+    "test": "jest",
     "preinstall": "typesync || :"
   },
   "repository": {
@@ -44,7 +45,8 @@
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/html-minifier-terser": "^6.1.0",
     "@types/http-server": "^0.12.1",
-    "@types/node": "^17.0.13",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.17",
     "@types/prettier": "^2.4.3",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
@@ -55,7 +57,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "html-minifier-terser": "^7.0.0-alpha.1",
     "http-server": "^14.1.0",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "typesync": "^0.8.0"
