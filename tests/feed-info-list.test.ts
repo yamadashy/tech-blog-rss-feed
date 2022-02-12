@@ -11,7 +11,7 @@ test('FEED_INFO_LIST の設定が正しい', () => {
 
 test(
   'フィードがすべて取得可能',
-  async () => {
+  () => {
     const rssParser = new RssParser();
     const fetchErrors: Error[] = [];
 
@@ -29,5 +29,5 @@ test(
         expect(fetchErrors).toHaveLength(0);
       });
   },
-  5 * 60 * 1000,
+  60 * 1000,
 );
