@@ -1,12 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - feature/test
-  # TODO: 検証終わったら有効化
-#  pull_request:
-#    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
