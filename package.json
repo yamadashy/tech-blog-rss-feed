@@ -9,7 +9,7 @@
     "feed:generate-checker": "ts-node src/feed/generate-checker-command.ts",
     "site:build": "eleventy",
     "site:serve": "eleventy --serve",
-    "lint": "eslint ./src ./tests --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
+    "lint": "eslint ./src ./tests --max-warnings 0 --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
     "lint:fix": "yarn lint --fix",
     "test": "jest",
     "preinstall": "typesync || :"
