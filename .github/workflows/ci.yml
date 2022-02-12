@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
-        with:
-          ref: main
 
       - name: Setup node
         uses: actions/setup-node@v2
