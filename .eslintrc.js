@@ -3,9 +3,8 @@
 module.exports = {
   root: true,
   env: {
-    browser: true,
-    es2020: true,
-    webextensions: true,
+    es2021: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
