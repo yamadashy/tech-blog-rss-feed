@@ -151,6 +151,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ぐるなび', 'https://developers.gnavi.co.jp/feed'],
   ['さくら', 'https://knowledge.sakura.ad.jp/rss/'],
   ['はてな', 'https://developer.hatenastaff.com/feed'],
+  ['みてね', 'https://team-blog.mitene.us/feed'],
   ['アイキューブドシステムズ', 'https://tech.i3-systems.com/feed'],
   ['アイスタイル', 'https://techblog.istyle.co.jp/feed'],
   ['アイレット', 'https://cloudpack.media/tech/feed'],
