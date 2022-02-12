@@ -54,7 +54,7 @@ export class FeedCrawler {
   /**
    * フィード情報のチェック
    */
-  private static validateFeedInfoList(feedInfoList: FeedInfo[]) {
+  public static validateFeedInfoList(feedInfoList: FeedInfo[]) {
     const allLabels = feedInfoList.map((feedInfo) => feedInfo.label);
     const allUrls = feedInfoList.map((feedInfo) => feedInfo.url);
 
