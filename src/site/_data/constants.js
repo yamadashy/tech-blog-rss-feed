@@ -13,6 +13,8 @@ module.exports = {
     rss: `${siteUrl}feeds/rss.xml`,
     json: `${siteUrl}feeds/feed.json`,
   },
-  // Google Search Console 用
+  // Google Search Console
   googleSiteVerification: 'GPLvXv8kYtLMW912ZS54DKFEZL6ruOrjOFLdHVTo37o',
+  // Google Analytics
+  globalSiteTagKey: 'G-CNNNTL0NB3',
 };
