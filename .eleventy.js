@@ -25,7 +25,7 @@ const imageShortcode = async function (src, alt, sizes) {
     metadata = await Image(src, {
       widths: [300, 600],
       formats: ['jpeg'],
-      outputDir: 'src/site/images/feed-thumbnails',
+      outputDir: 'public/images/feed-thumbnails',
       urlPath: 'images/feed-thumbnails/'
     });
   } catch (e) {
