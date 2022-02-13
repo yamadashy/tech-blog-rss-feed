@@ -14,7 +14,9 @@
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="{{ constants.siteTitle }}"/>
 
-    <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
+    {% if constants.googleSiteVerification %}
+        <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
+    {% endif %}
 
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-icon.png">
@@ -28,15 +30,17 @@
         {% include "index.css" %}
     </style>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ constants.globalSiteTagKey }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    {% if constants.globalSiteTagKey %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ constants.globalSiteTagKey }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', '{{ constants.globalSiteTagKey }}');
-    </script>
+            gtag('config', '{{ constants.globalSiteTagKey }}');
+        </script>
+    {% endif %}
 
     <title>{{ constants.siteTitle }}</title>
 </head>
