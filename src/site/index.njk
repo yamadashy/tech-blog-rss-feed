@@ -102,9 +102,9 @@
                         <div class='ui-feed-item'>
                             <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
                                 {% if feedItem.image %}
-                                    <img src='{{ feedItem.image.url }}' loading="lazy" alt='記事のアイキャッチ画像'>
+                                    {% image feedItem.image.url, '記事のアイキャッチ画像', '(min-width: 48rem) 50vw, 100vw' %}
                                 {% else %}
-                                    <img src='images/icon512-transparent.png' loading="lazy" alt='記事のアイキャッチ画像'>
+                                    <img src='images/icon512-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
                                 {% endif %}
                             </a>
                             <h5 class='ui-feed-item__title'>
