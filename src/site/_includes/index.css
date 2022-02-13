@@ -111,27 +111,33 @@
     margin-top: 2em;
 }
 .ui-feed-item {
+    display: grid;
     color: var(--base-color);
+    grid-template-columns: 130px 1fr;
+    align-content: start;
+    grid-gap: 0 0.5em;
 }
 .ui-feed-item .ui-feed-item__ogp-image {
-    display: none;
-}
-/** TODO: 小さい端末では左側に表示するように。一旦非表示 */
-@media screen and (min-width: 48rem) {
-    .ui-feed-item .ui-feed-item__ogp-image {
-        display: block;
-    }
+
 }
 .ui-feed-item .ui-feed-item__ogp-image img {
-    /* TODO: aspect-ratio の対応ブラウザが増えたら使う */
     width: 100%;
-    height: 10.5em;
+    height: auto;
+    max-height: 8.0em;
+    /* TODO: aspect-ratio の対応ブラウザが増えたら使う */
     /*aspect-ratio: 1200 / 630;*/
     object-fit: contain;
 }
 .ui-feed-item .ui-feed-item__title  {
-    margin-top: 0.5em;
     font-size: 0.9em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+}
+.ui-feed-item .ui-feed-item__content {
+    left: 0 !important;
 }
 .ui-feed-item .ui-feed-item__title a:hover {
     text-decoration: underline;
@@ -160,6 +166,24 @@
     color: var(--base-color-muted);
     font-size: 0.7em;
 }
+
+@media screen and (min-width: 48rem) {
+    .ui-feed-item {
+        display: block;
+    }
+    .ui-feed-item .ui-feed-item__ogp-image {
+        display: block;
+    }
+    .ui-feed-item .ui-feed-item__ogp-image img {
+        height: 10.5em;
+        max-height: 10.5em;
+    }
+    .ui-feed-item .ui-feed-item__title  {
+        margin-top: 0.5em;
+    }
+}
+
+
 
 /*
  * フッター

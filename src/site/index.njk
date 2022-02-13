@@ -107,14 +107,16 @@
                                     <img src='images/icon512-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
                                 {% endif %}
                             </a>
-                            <h5 class='ui-feed-item__title'>
-                                <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
-                            </h5>
-                            <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
-                            <p class='ui-feed-item__summary'>
-                                <a href='{{ feedItem.url }}'>{{ feedItem.summary }}</a>
-                            </p>
-                            <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
+                            <div class='ui-feed-item__content'>
+                                <h5 class='ui-feed-item__title'>
+                                    <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
+                                </h5>
+                                <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
+                                <p class='ui-feed-item__summary'>
+                                    <a href='{{ feedItem.url }}'>{{ feedItem.summary }}</a>
+                                </p>
+                                <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
