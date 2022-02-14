@@ -274,6 +274,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['レンティオ', 'https://zenn.dev/rentio/feed'],
   ['ロコガイド', 'https://techblog.locoguide.co.jp/feed'],
   ['ワンダープラネット', 'https://developers.wonderpla.net/feed'],
+  ['朝日新聞社', 'https://note.com/asahi_ictrad/rss'],
   ['富士通クラウドテクノロジーズ', 'https://tech.fjct.fujitsu.com/feed'],
   ['富士通研究所', 'https://blog.fltech.dev/feed'],
   ['弁護士ドットコム', 'https://creators.bengo4.com/feed'],
