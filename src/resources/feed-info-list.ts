@@ -43,6 +43,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Cerevo', 'https://tech-blog.cerevo.com/feed'],
   ['Chatwork', 'https://creators-note.chatwork.com/feed'],
   ['Classi', 'https://tech.classi.jp/feed'],
+  ['Colorful Palette', 'https://media.colorfulpalette.co.jp/m/m753f507dae79/rss'],
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
   ['DMM', 'https://inside.dmm.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
