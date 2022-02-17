@@ -79,6 +79,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['HRBrain', 'https://times.hrbrain.co.jp/feed'],
   ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
   ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
+  ['HireRoo', 'https://tech.hireroo.io/feed'],
   ['IDCフロンティア', 'https://blog.idcf.jp/feed'],
   ['IIJ', 'https://eng-blog.iij.ad.jp/feed'],
   ['JMDC', 'https://techblog.jmdc.co.jp/feed'],
