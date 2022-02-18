@@ -2,6 +2,7 @@ import * as RssParser from 'rss-parser';
 import { PromisePool } from '@supercharge/promise-pool';
 import { FeedInfo } from '../../resources/feed-info-list';
 import * as dayjs from 'dayjs';
+import axios from 'axios';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -19,6 +20,7 @@ export type OgsResult = {
   };
 };
 export type FeedItemOgsResultMap = Map<string, OgsResult>;
+export type FeedItemHatenaCountMap = Map<string, number>;
 export type Feed = RssParser.Output<RssParser.Item>;
 
 export class FeedCrawler {
@@ -139,7 +141,7 @@ export class FeedCrawler {
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .handleError(async (error, feedItem) => {
-        console.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        console.error('[fetch-feed-item-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
         console.error(error);
       })
       .process(async (feedItem) => {
@@ -149,9 +151,43 @@ export class FeedCrawler {
         });
         feedItemOgsResultMap.set(feedItem.link, ogsResponse.result);
         // console.log(ogsResponse.result.ogImage.type);
-        console.log('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        console.log('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
     return feedItemOgsResultMap;
+  }
+
+  async fetchHatenaCountMap(feedItems: RssParser.Item[]): Promise<FeedItemHatenaCountMap> {
+    const feedItemHatenaCountMap: Map<string, number> = new Map();
+    const feedItemUrlsChunks: string[][] = [];
+    let feedItemCounter = 0;
+    // let chunkIndex = 0;
+
+    for (const feedItem of feedItems) {
+      // API的に50個まで
+      const chunkIndex = Math.floor(feedItemCounter / 50);
+
+      if (!feedItemUrlsChunks[chunkIndex]) {
+        feedItemUrlsChunks[chunkIndex] = [];
+      }
+
+      feedItemUrlsChunks[chunkIndex].push(feedItem.link);
+
+      feedItemCounter++;
+    }
+
+    for (const feedItemUrls of feedItemUrlsChunks) {
+      const params = feedItemUrls.map((url) => `url=${url}`).join('&');
+      const response = await axios.get(`https://bookmark.hatenaapis.com/count/entries?${params}`);
+      const hatenaCountMap: { [key: string]: number } = response.data;
+
+      for (const feedItemUrl in response.data) {
+        feedItemHatenaCountMap.set(feedItemUrl, hatenaCountMap[feedItemUrl]);
+      }
+    }
+
+    console.log('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
+
+    return feedItemHatenaCountMap;
   }
 }

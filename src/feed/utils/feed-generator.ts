@@ -1,6 +1,6 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
-import { FeedItemOgsResultMap } from './feed-crawler';
+import { FeedItemHatenaCountMap, FeedItemOgsResultMap } from './feed-crawler';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
@@ -8,6 +8,7 @@ export class FeedGenerator {
   generateFeed(
     feedItems: RssParser.Item[],
     feedItemOgsResultMap: FeedItemOgsResultMap,
+    allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     maxFeedDescriptionLength: number,
     maxFeedContentLength: number,
   ) {
@@ -66,6 +67,12 @@ export class FeedGenerator {
             : null,
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
+        extensions: [
+          {
+            name: 'hatenaCount',
+            objects: allFeedItemHatenaCountMap.get(feedItem.link),
+          },
+        ],
       });
     }
 
