@@ -65,6 +65,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
   ['GA TECHNOLOGIES', 'https://tech.ga-tech.co.jp/feed'],
   ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
+  ['GMOグローバルサイン・ホールディングス', 'https://tech.gmogshd.com/feed'],
   ['GMOペパボ', 'https://tech.pepabo.com/feed.xml'],
   ['GMOメディア', 'https://blog.gmo.media/feed/atom/'],
   ['GREE', 'https://labs.gree.jp/blog/feed/'],
