@@ -13,6 +13,8 @@
     --orange-background-dark: #ff9800;
     --orange-background-dark-active: #fb8c00;
 
+    --hatena-color: #01a5df;
+
     --base-font:
         -apple-system,
         BlinkMacSystemFont,
@@ -128,6 +130,9 @@
     /*aspect-ratio: 1200 / 630;*/
     object-fit: contain;
 }
+.ui-feed-item .ui-feed-item__content {
+    left: 0 !important;
+}
 .ui-feed-item .ui-feed-item__title  {
     font-size: 0.9em;
     -webkit-line-clamp: 3;
@@ -136,14 +141,26 @@
     overflow: hidden;
     word-break: break-all;
 }
-.ui-feed-item .ui-feed-item__content {
-    left: 0 !important;
-}
 .ui-feed-item .ui-feed-item__title a:hover {
     text-decoration: underline;
 }
 .ui-feed-item .ui-feed-item__title a:visited {
     color: var(--base-color-lighter);
+}
+.ui-feed-item .ui-feed-item__hatena-count {
+    margin: 0.1em 0;
+    font-size: 0.7em;
+}
+.ui-feed-item .ui-feed-item__hatena-count img {
+    display: inline;
+    width: 1.25em;
+    height: 1.25em;
+    vertical-align: middle;
+}
+.ui-feed-item .ui-feed-item__hatena-count span {
+    color: var(--hatena-color);
+    font-weight: bold;
+    vertical-align: middle;
 }
 .ui-feed-item .ui-feed-item__blog-title {
     margin: 0.3em 0;

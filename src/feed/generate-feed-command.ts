@@ -20,11 +20,13 @@ const feedGenerator = new FeedGenerator();
   const processedFeeds = await feedCrawler.postProcessFeeds(feeds, FILTER_ARTICLE_DATE);
   const allFeedItems = feedCrawler.mergeAndSortResults(processedFeeds);
   const allFeedItemOgsResultMap = await feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
+  const allFeedItemHatenaCountMap = await feedCrawler.fetchHatenaCountMap(allFeedItems);
 
   // フィード作成
   const feed = feedGenerator.generateFeed(
     allFeedItems,
     allFeedItemOgsResultMap,
+    allFeedItemHatenaCountMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
   );

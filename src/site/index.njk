@@ -111,6 +111,12 @@
                                 <h5 class='ui-feed-item__title'>
                                     <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
                                 </h5>
+                                {% if feedItem.hatenaCount > 0 %}
+                                    <div class='ui-feed-item__hatena-count'>
+                                        <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン'>
+                                        <span>{{ feedItem.hatenaCount }}</span>
+                                    </div>
+                                {% endif %}
                                 <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
                                 <p class='ui-feed-item__summary'>
                                     <a href='{{ feedItem.url }}'>{{ feedItem.summary }}</a>
