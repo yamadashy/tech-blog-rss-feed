@@ -25,9 +25,9 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 ## サイトの追加方法
 [src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。  
 
-プルリクを送っていただけると大変助かります。
-
 ### プルリクでの送り方
+もしプルリクを送っていただける場合は以下のように作成できます。
+
 1. このリポジトリをフォーク
 2. ブランチ作成  
    `git checkout -b new-blog-feed-xxx`
