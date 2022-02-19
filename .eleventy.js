@@ -11,7 +11,7 @@ const minifyHtmlTransform = function (content, outputPath) {
       collapseWhitespace: true,
       minifyCSS: true,
       minifyJS: true,
-      maxLineLength: 200
+      maxLineLength: 1000
     });
   }
 
