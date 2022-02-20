@@ -47,7 +47,10 @@ jobs:
             ${{ runner.os }}-feed-images-
 
       - name: Generate feed
-        run: yarn build
+        run: yarn feed:generate
+
+      - name: Generate site
+        run: yarn site:build
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
