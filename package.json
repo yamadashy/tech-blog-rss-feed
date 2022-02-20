@@ -6,7 +6,6 @@
   "scripts": {
     "build": "yarn feed:generate && yarn site:build",
     "feed:generate": "ts-node src/feed/generate-feed-command.ts",
-    "feed:generate-checker": "ts-node src/feed/generate-checker-command.ts",
     "site:build": "eleventy",
     "site:serve": "eleventy --serve",
     "lint": "eslint ./src ./tests --max-warnings 0 --ext .ts --cache --format 'node_modules/eslint-formatter-friendly'",
