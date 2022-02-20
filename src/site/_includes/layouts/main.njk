@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name='description' content='{{ constants.siteDescription }}'>
+    <meta name="author" content="{{ constants.author }}">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:url" content="{{ constants.siteUrl }}" />
+    <meta property="og:title" content="{{ constants.siteTitle }}" />
+    <meta property="og:image" content="{{ constants.siteUrl }}images/ogp.png" />
+    <meta property="og:description" content="{{ constants.siteDescription }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ constants.siteTitle }}" />
+
+    {% if constants.googleSiteVerification %}
+        <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
+    {% endif %}
+
+    <link rel="shortcut icon" href="{{ page.url | relativeUrl }}images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ page.url | relativeUrl }}images/apple-icon.png">
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.url | relativeUrl }}feeds/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="{{ page.url | relativeUrl }}feeds/rss.xml" />
+    <link rel="alternate" type="application/json" href="{{ page.url | relativeUrl }}feeds/feed.json" />
+
+    <style>
+        {% include "styles/reset.css" %}
+        {% include "styles/base.css" %}
+        {% include "styles/main.css" %}
+    </style>
+
+    {% if constants.globalSiteTagKey %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ constants.globalSiteTagKey }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', '{{ constants.globalSiteTagKey }}');
+        </script>
+    {% endif %}
+
+    <title>{{ pageTitle }}</title>
+</head>
+<body>
+
+    <header role="banner" class="ui-section-header">
+        <div class="ui-layout-container">
+            <div class="ui-section-header__layout ui-layout-flex">
+                <a href="{{ constants.siteUrl }}" role="link" aria-label="#">
+                    <img src="{{ page.url | relativeUrl }}images/icon.png" alt='サイトロゴ' />
+                    <span class='ui-section-header__title'>{{ constants.siteTitle }}</span>
+                </a>
+                <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#">
+                    <img src='{{ page.url | relativeUrl }}images/github-mark.png' alt='GitHubロゴ'>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        {{ content | safe }}
+    </main>
+
+    <footer role="contentinfo" class="ui-section-footer">
+        <div class="ui-layout-container">
+            <div class="ui-section-footer__layout ui-layout-flex">
+                <p class="ui-section-footer--copyright ui-text-note">
+                    <a class="ui-text-note" href='{{ constants.gitHubUserUrl }}'><small>@{{ constants.author }}</small></a>
+                </p>
+                <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#" class="ui-text-note"><small>GitHub</small></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -3,6 +3,8 @@ import { PromisePool } from '@supercharge/promise-pool';
 import { FeedInfo } from '../../resources/feed-info-list';
 import * as dayjs from 'dayjs';
 import axios from 'axios';
+import { URL } from 'url';
+import * as v8 from 'v8';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -19,9 +21,9 @@ export type OgsResult = {
     type: string;
   };
 };
-export type FeedItemOgsResultMap = Map<string, OgsResult>;
+export type OgsResultMap = Map<string, OgsResult>;
 export type FeedItemHatenaCountMap = Map<string, number>;
-export type Feed = RssParser.Output<RssParser.Item>;
+export type RssParserFeed = RssParser.Output<RssParser.Item>;
 
 export class FeedCrawler {
   private rssParser;
@@ -30,13 +32,16 @@ export class FeedCrawler {
     this.rssParser = new RssParser();
   }
 
-  async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<Feed[]> {
+  /**
+   * フィード取得 + 取得後の調整
+   */
+  async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<RssParserFeed[]> {
     FeedCrawler.validateFeedInfoList(feedInfoList);
 
     const feedInfoListLength = feedInfoList.length;
     let fetchProcessCounter = 1;
 
-    const feeds: Feed[] = [];
+    const feeds: RssParserFeed[] = [];
 
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
@@ -46,8 +51,9 @@ export class FeedCrawler {
       })
       .process(async (feedInfo) => {
         const feed = await this.rssParser.parseURL(feedInfo.url);
+        const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
+        feeds.push(postProcessedFeed);
         console.log('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
-        feeds.push(feed);
       });
 
     return feeds;
@@ -83,45 +89,45 @@ export class FeedCrawler {
   /**
    * 取得したフィードの調整
    */
-  postProcessFeeds(feeds: Feed[], filterArticleDate: Date) {
-    const filterIsoDate = filterArticleDate.toISOString();
-
-    for (const feed of feeds) {
-      let feedItems = feed.items;
-
-      // 公開日時でフィルタ
-      feedItems = feedItems.filter((feedItem) => {
-        return feedItem.isoDate > filterIsoDate;
-      });
-
-      // ブログごとの調整
-      switch (feed.link) {
+  private static postProcessFeed(feedInfo: FeedInfo, feed: RssParserFeed): RssParserFeed {
+    // ブログごとの調整
+    switch (feedInfo.label) {
+      case 'メルカリ':
         // 9時間ずれているので調整
-        case 'https://engineering.mercari.com/blog/feed.xml':
-          for (const feedItem of feedItems) {
-            feedItem.isoDate = dayjs(feedItem.isoDate).subtract(9, 'h').toISOString();
-            feedItem.pubDate = dayjs(feedItem.pubDate).subtract(9, 'h').toISOString();
-          }
-          break;
-      }
-
-      // 全ブログの調整
-      for (const feedItem of feedItems) {
-        // 「記事タイトル | ブログ名」の形にする
-        feedItem.title = `${feedItem.title} | ${feed.title}`;
-      }
-
-      feed.items = feedItems;
+        for (const feedItem of feed.items) {
+          feedItem.isoDate = dayjs(feedItem.isoDate).subtract(9, 'h').toISOString();
+          feedItem.pubDate = dayjs(feedItem.pubDate).subtract(9, 'h').toISOString();
+        }
+        feed.link = 'https://engineering.mercari.com/blog/';
+        break;
+      case 'Tokyo Otaku Mode':
+        feed.link = 'https://blog.otakumode.com/';
+        break;
     }
 
-    return feeds;
+    // 全ブログの調整
+    for (const feedItem of feed.items) {
+      // 「記事タイトル | ブログ名」の形にする
+      feedItem.title = `${feedItem.title} | ${feed.title}`;
+    }
+
+    return feed;
   }
 
-  mergeAndSortResults(feeds: Feed[]) {
+  aggregateFeeds(feeds: RssParserFeed[], filterArticleDate: Date) {
     let allFeedItems: RssParser.Item[] = [];
+    const copiedFeeds: RssParserFeed[] = FeedCrawler.deepCopy(feeds);
+    const filterIsoDate = filterArticleDate.toISOString();
+
+    // 公開日時でフィルタ
+    for (const feed of copiedFeeds) {
+      feed.items = feed.items.filter((feedItem) => {
+        return feedItem.isoDate > filterIsoDate;
+      });
+    }
 
     // マージ
-    for (const feed of feeds) {
+    for (const feed of copiedFeeds) {
       allFeedItems = allFeedItems.concat(feed.items);
     }
 
@@ -133,8 +139,8 @@ export class FeedCrawler {
     return allFeedItems;
   }
 
-  async fetchFeedItemOgsResultMap(feedItems: RssParser.Item[], concurrency: number): Promise<FeedItemOgsResultMap> {
-    const feedItemOgsResultMap: FeedItemOgsResultMap = new Map();
+  async fetchFeedItemOgsResultMap(feedItems: RssParser.Item[], concurrency: number): Promise<OgsResultMap> {
+    const feedItemOgsResultMap: OgsResultMap = new Map();
     const feedItemsLength = feedItems.length;
     let fetchProcessCounter = 1;
 
@@ -142,19 +148,50 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .handleError(async (error, feedItem) => {
         console.error('[fetch-feed-item-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
-        console.error(error);
       })
       .process(async (feedItem) => {
-        const ogsResponse: { result: OgsResult } = await ogs({
-          url: feedItem.link,
-          timeout: 10 * 1000,
-        });
-        feedItemOgsResultMap.set(feedItem.link, ogsResponse.result);
-        // console.log(ogsResponse.result.ogImage.type);
+        const ogsResult = await FeedCrawler.fetchOgsResult(feedItem.link);
+        feedItemOgsResultMap.set(feedItem.link, ogsResult);
         console.log('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
     return feedItemOgsResultMap;
+  }
+
+  async fetchFeedOgsResultMap(feeds: RssParserFeed[], concurrency: number): Promise<OgsResultMap> {
+    const feedOgsResultMap: OgsResultMap = new Map();
+    const feedsLength = feeds.length;
+    let fetchProcessCounter = 1;
+
+    await PromisePool.for(feeds)
+      .withConcurrency(concurrency)
+      .handleError(async (error, feed) => {
+        console.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+      })
+      .process(async (feed) => {
+        const ogsResult = await FeedCrawler.fetchOgsResult(feed.link);
+        feedOgsResultMap.set(feed.link, ogsResult);
+        console.log('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+      });
+
+    return feedOgsResultMap;
+  }
+
+  private static async fetchOgsResult(url: string): Promise<OgsResult> {
+    const ogsResponse: { result: OgsResult } = await ogs({
+      url: url,
+      timeout: 10 * 1000,
+    });
+
+    const ogsResult = ogsResponse.result;
+    const ogImageUrl = ogsResult?.ogImage?.url;
+
+    // http から始まってなければ調整
+    if (ogImageUrl && !ogImageUrl.startsWith('http')) {
+      ogsResult.ogImage.url = new URL(ogImageUrl, url).href;
+    }
+
+    return ogsResponse.result;
   }
 
   async fetchHatenaCountMap(feedItems: RssParser.Item[]): Promise<FeedItemHatenaCountMap> {
@@ -189,5 +226,10 @@ export class FeedCrawler {
     console.log('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
+  }
+
+  private static deepCopy(data: object) {
+    // TODO: Node.js 17 以上にしたら structuredClone 使う
+    return v8.deserialize(v8.serialize(data));
   }
 }

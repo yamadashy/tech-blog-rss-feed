@@ -1,9 +1,10 @@
 const htmlmin = require('html-minifier-terser');
 const Image = require('@11ty/eleventy-img');
+const path = require('path');
 
-Image.concurrency = 20;
+Image.concurrency = 50;
 
-const minifyHtmlTransform = function (content, outputPath) {
+const minifyHtmlTransform = (content, outputPath) => {
   if(outputPath && outputPath.endsWith('.html')) {
     return htmlmin.minify(content,  {
       useShortDoctype: true,
@@ -18,7 +19,7 @@ const minifyHtmlTransform = function (content, outputPath) {
   return content;
 }
 
-const imageShortcode = async function (src, alt, sizes) {
+const imageShortcode = async (src, alt, sizes, pathPrefix = '') => {
   let metadata = null;
 
   try {
@@ -26,7 +27,7 @@ const imageShortcode = async function (src, alt, sizes) {
       widths: [300, 600],
       formats: ['jpeg'],
       outputDir: 'public/images/feed-thumbnails',
-      urlPath: 'images/feed-thumbnails/'
+      urlPath: `${pathPrefix}images/feed-thumbnails/`
     });
   } catch (e) {
     // エラーが起きたらそのまま使う
@@ -41,6 +42,11 @@ const imageShortcode = async function (src, alt, sizes) {
   });
 }
 
+const relativeUrlFilter = (url) => {
+  const relativeUrl = path.relative(url, '/');
+  return relativeUrl === '' ? '' : relativeUrl + '/';
+}
+
 module.exports = function (eleventyConfig) {
   // static assets
   eleventyConfig.addPassthroughCopy('src/site/images');
@@ -51,6 +57,9 @@ module.exports = function (eleventyConfig) {
 
   // minify
   eleventyConfig.addTransform('minify html', minifyHtmlTransform);
+
+  // relative path
+  eleventyConfig.addFilter("relativeUrl", relativeUrlFilter);
 
   return {
     htmlTemplateEngine: 'njk',

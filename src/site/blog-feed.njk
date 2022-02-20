@@ -1,0 +1,35 @@
+---
+layout: layouts/main.njk
+eleventyComputed:
+    pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
+pagination:
+    data: blogFeeds
+    size: 1
+    alias: blogFeed
+    addAllPagesToCollections: true
+permalink: "blogs/{{ blogFeed.hash }}/"
+---
+
+{% include 'layouts/partials/nav.njk' %}
+
+<section class="ui-section-content ui-section-feed">
+    <div class="ui-layout-container">
+        <h2 class='ui-typography-heading'>{{ blogFeed.title }} のフィード</h2>
+        <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
+            {% for feedItem in blogFeed.items %}
+                <div class='ui-feed-item'>
+                    <div class='ui-feed-item__content'>
+                        <h5 class='ui-feed-item__title'>
+                            <a href='{{ feedItem.link }}'>{{ feedItem.title }}</a>
+                        </h5>
+                        <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
+                        <p class='ui-feed-item__summary'>
+                            <a href='{{ feedItem.link }}'>{{ feedItem.summary }}</a>
+                        </p>
+                        <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
