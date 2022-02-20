@@ -1,0 +1,39 @@
+---
+layout: layouts/main.njk
+eleventyComputed:
+    pageTitle: "ブログ一覧｜{{ constants.siteTitle }}"
+---
+
+{% include 'layouts/partials/nav.njk' %}
+
+<section class="ui-section-content ui-section-blog">
+    <div class="ui-layout-container">
+        <h2 class='ui-typography-heading'>ブログ一覧<small>（更新順）</small></h2>
+        <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-blog">
+            {% for blogFeed in blogFeeds %}
+                <div class='ui-blog'>
+                    <a class='ui-blog__ogp-image' href='./{{ blogFeed.hash }}/'>
+                        {% if blogFeed.ogImageUrl %}
+                            {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '(min-width: 48rem) 50vw, 100vw', '../' %}
+                        {% else %}
+                            <img src='{{ page.url | relativeUrl }}images/icon512-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
+                        {% endif %}
+                    </a>
+                    <div class='ui-blog__content'>
+                        <h5 class='ui-blog__title'>
+                            <a href='./{{ blogFeed.hash }}/'>{{ blogFeed.title }}</a>
+                        </h5>
+                        <p class='ui-blog__description'>
+                            <a href='./{{ blogFeed.hash }}/'>{{ blogFeed.ogDescription }}</a>
+                        </p>
+                        {% if blogFeed.lastUpdated %}
+                            <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>
+                        {% else %}
+                            <div class='ui-blog__date' title='更新日時なし'>-</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

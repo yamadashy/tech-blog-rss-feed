@@ -71,6 +71,14 @@
     text-align: left;
 }
 
+.ui-typography-heading small {
+    color: var(--base-color-muted);
+}
+
+img {
+    color: var(--base-color-muted);
+}
+
 /**
  * ヘッダー
  */
@@ -98,6 +106,31 @@
 .ui-component-form__label span {
     font-weight: bold;
 }
+
+/**
+ * ナビゲーション
+ */
+.ui-nav {
+
+}
+
+.ui-section-nav__layout {
+    justify-content: start;
+}
+
+.ui-section-nav__link {
+    font-weight: bold;
+    margin-right: 1.5em;
+    padding: 0.5em 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    color: var(--base-color-muted);
+}
+
+.ui-section-nav__link-active {
+    color: var(--base-color);
+    border-bottom-color: var(--base-color);
+}
+
 
 /*
  * フィード
@@ -182,6 +215,7 @@
 .ui-feed-item .ui-feed-item__date {
     color: var(--base-color-muted);
     font-size: 0.7em;
+    left: 0 !important;
 }
 
 @media screen and (min-width: 48rem) {
@@ -200,7 +234,86 @@
     }
 }
 
+/*
+ * ブログ一覧
+ * TODO: css分ける？
+ */
+.ui-section-blog {
+    background: var(--yellow-background-lighter);
+}
+.ui-container-blog {
+    text-align: left;
+    margin-top: 2em;
+}
+.ui-blog {
+    display: grid;
+    color: var(--base-color);
+    grid-template-columns: 130px 1fr;
+    align-content: start;
+    grid-gap: 0 0.5em;
+}
+.ui-blog .ui-blog__ogp-image {
 
+}
+.ui-blog .ui-blog__ogp-image img {
+    width: 100%;
+    height: auto;
+    max-height: 8.0em;
+    /* TODO: aspect-ratio の対応ブラウザが増えたら使う */
+    /*aspect-ratio: 1200 / 630;*/
+    object-fit: contain;
+}
+.ui-blog .ui-blog__content {
+    left: 0 !important;
+}
+.ui-blog .ui-blog__title  {
+    word-break: break-all;
+    left: 0 !important;
+}
+.ui-blog .ui-blog__title a:hover {
+    text-decoration: underline;
+}
+.ui-blog .ui-blog__description {
+    font-size: 0.75em;
+    margin: 0.3em 0;
+    word-break: break-all;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.ui-blog .ui-blog__description a {
+    color: var(--base-color-muted);
+}
+.ui-blog .ui-blog__date {
+    color: var(--base-color-muted);
+    font-size: 0.7em;
+    left: 0 !important;
+}
+
+@media screen and (min-width: 48rem) {
+    .ui-blog {
+        display: block;
+    }
+    .ui-blog .ui-blog__ogp-image {
+        display: block;
+    }
+    .ui-blog .ui-blog__ogp-image img {
+        height: 10.5em;
+        max-height: 10.5em;
+    }
+    .ui-blog .ui-blog__title  {
+        margin-top: 0.5em;
+    }
+}
+
+/**
+ * ブログごとのフィード
+ */
+.ui-container-feed--no-image .ui-feed-item {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
 /*
  * フッター

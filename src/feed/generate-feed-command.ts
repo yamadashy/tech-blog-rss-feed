@@ -1,29 +1,33 @@
 import { FEED_INFO_LIST } from '../resources/feed-info-list';
 import { FeedCrawler } from './utils/feed-crawler';
 import { FeedGenerator } from './utils/feed-generator';
-import * as fs from 'fs/promises';
 import * as path from 'path';
+import { FeedStorer } from './utils/feed-storer';
 
 const FEED_FETCH_CONCURRENCY = 50;
 const FEED_OGP_FETCH_CONCURRENCY = 50;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
-const OUTPUT_FEED_DIR_PATH = path.join(__dirname, '../site/feeds');
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
 const MAX_FEED_CONTENT_LENGTH = 500;
+const STORE_FEEDS_DIR_PATH = path.join(__dirname, '../site/feeds');
+const STORE_BLOG_FEEDS_DIR_PATH = path.join(__dirname, '../site/blog-feeds');
 
 const feedCrawler = new FeedCrawler();
 const feedGenerator = new FeedGenerator();
+const feedStorer = new FeedStorer();
 
 (async () => {
-  // データ取得
+  // フィード取得、後処理
   const feeds = await feedCrawler.fetchFeedsAsync(FEED_INFO_LIST, FEED_FETCH_CONCURRENCY);
-  const processedFeeds = await feedCrawler.postProcessFeeds(feeds, FILTER_ARTICLE_DATE);
-  const allFeedItems = feedCrawler.mergeAndSortResults(processedFeeds);
+  const allFeedItems = feedCrawler.aggregateFeeds(feeds, FILTER_ARTICLE_DATE);
+
+  // フィード関連データ取得
   const allFeedItemOgsResultMap = await feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
   const allFeedItemHatenaCountMap = await feedCrawler.fetchHatenaCountMap(allFeedItems);
+  const feedOgsResultMap = await feedCrawler.fetchFeedOgsResultMap(feeds, FEED_OGP_FETCH_CONCURRENCY);
 
-  // フィード作成
-  const feed = feedGenerator.generateFeed(
+  // まとめフィード作成
+  const aggregatedFeed = feedGenerator.generateFeed(
     allFeedItems,
     allFeedItemOgsResultMap,
     allFeedItemHatenaCountMap,
@@ -32,10 +36,6 @@ const feedGenerator = new FeedGenerator();
   );
 
   // ファイル出力
-  await fs.mkdir(OUTPUT_FEED_DIR_PATH, {
-    recursive: true,
-  });
-  await fs.writeFile(path.join(OUTPUT_FEED_DIR_PATH, 'atom.xml'), feed.atom1(), 'utf-8');
-  await fs.writeFile(path.join(OUTPUT_FEED_DIR_PATH, 'rss.xml'), feed.rss2(), 'utf-8');
-  await fs.writeFile(path.join(OUTPUT_FEED_DIR_PATH, 'feed.json'), feed.json1(), 'utf-8');
+  await feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH);
+  await feedStorer.storeBlogFeeds(feeds, feedOgsResultMap, STORE_BLOG_FEEDS_DIR_PATH);
 })();
