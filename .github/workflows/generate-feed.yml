@@ -42,7 +42,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .cache
-          key: ${{ runner.os }}-feed-image-${{ steps.get-date.outputs.date }}
+          key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
+          restore-keys: |
+            ${{ runner.os }}-feed-images-
 
       - name: Generate feed
         run: yarn build
