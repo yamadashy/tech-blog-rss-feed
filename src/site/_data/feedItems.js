@@ -1,11 +1,13 @@
 const path = require('path');
 const fs = require('fs/promises');
 const dayjs = require('dayjs');
-const relativeTime = require('dayjs/plugin/relativeTime');
 require('dayjs/locale/ja');
 
-dayjs.extend(relativeTime);
+dayjs.extend(require('dayjs/plugin/relativeTime'));
+dayjs.extend(require('dayjs/plugin/timezone'));
+dayjs.extend(require('dayjs/plugin/utc'));
 dayjs.locale('ja');
+dayjs.tz.setDefault('Asia/Tokyo');
 
 module.exports = async () => {
   const feedData = JSON.parse(await fs.readFile(path.join(__dirname, '../feeds/feed.json')));
@@ -20,7 +22,7 @@ module.exports = async () => {
   // データ調整
   for (const feedItem of feedItems) {
     feedItem.diffDateForHuman = dayjs().to(feedItem.date_published);
-    feedItem.pubDateForHuman = dayjs(feedItem.date_published).format('YYYY-MM-DD HH:mm:ss');
+    feedItem.pubDateForHuman = dayjs(feedItem.date_published).tz().format('YYYY-MM-DD HH:mm:ss');
 
     const title = feedItem.title || '';
 

@@ -1,12 +1,14 @@
 const path = require('path');
 const fs = require('fs/promises');
 const dayjs = require('dayjs');
-const relativeTime = require('dayjs/plugin/relativeTime');
-require('dayjs/locale/ja');
 const { PromisePool } = require('@supercharge/promise-pool');
+require('dayjs/locale/ja');
 
-dayjs.extend(relativeTime);
+dayjs.extend(require('dayjs/plugin/relativeTime'));
+dayjs.extend(require('dayjs/plugin/timezone'));
+dayjs.extend(require('dayjs/plugin/utc'));
 dayjs.locale('ja');
+dayjs.tz.setDefault('Asia/Tokyo');
 
 module.exports = async () => {
   const dirPath = path.join(__dirname, '../blog-feeds');
@@ -32,7 +34,7 @@ module.exports = async () => {
     if (lastUpdated) {
       blogFeed.lastUpdated = lastUpdated;
       blogFeed.diffLastUpdatedDateForHuman = dayjs().to(blogFeed.lastUpdated);
-      blogFeed.lastUpdatedForHuman = dayjs(blogFeed.lastUpdated).format('YYYY-MM-DD HH:mm:ss');
+      blogFeed.lastUpdatedForHuman = dayjs(blogFeed.lastUpdated).tz().format('YYYY-MM-DD HH:mm:ss');
     }
 
     // データ調整
