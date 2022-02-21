@@ -6,7 +6,7 @@ import { textToMd5Hash, textTruncate } from './common-util';
 import * as RssParser from 'rss-parser';
 const Cache = require('@11ty/eleventy-cache-assets');
 
-Cache.concurrency = 30;
+Cache.concurrency = 50;
 
 type CustomRssParserFeed = {
   title: string;
@@ -66,7 +66,7 @@ export class FeedStorer {
     feeds: RssParserFeed[],
     blogOgsResultMap: OgsResultMap,
   ): Promise<void> {
-    const ogImageUrls = [];
+    let ogImageUrls: string[] = [];
 
     for (const feedItem of allFeedItems) {
       ogImageUrls.push(allFeedItemOgsResultMap.get(feedItem.link)?.ogImage?.url);
@@ -76,19 +76,18 @@ export class FeedStorer {
       ogImageUrls.push(blogOgsResultMap.get(feed.link)?.ogImage?.url);
     }
 
-    const fetchImagePromises = [];
+    // フィルタ
+    ogImageUrls = ogImageUrls.filter(Boolean);
 
-    for (const ogImageUrl of ogImageUrls) {
-      fetchImagePromises.push(
-        Cache(ogImageUrl, {
-          duration: '1d',
-          type: 'buffer',
-        }).catch((e: Error) => {
-          console.error('[cache-image] error', e);
-        }),
-      );
-    }
-
+    // 画像取得
+    const fetchImagePromises = ogImageUrls.map((ogImageUrl) => {
+      return Cache(ogImageUrl, {
+        duration: '1d',
+        type: 'buffer',
+      }).catch(() => {
+        console.error('[cache-image] error', ogImageUrl);
+      });
+    });
     await Promise.all(fetchImagePromises);
   }
 }

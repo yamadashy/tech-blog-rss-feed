@@ -37,8 +37,10 @@ const feedStorer = new FeedStorer();
     MAX_FEED_CONTENT_LENGTH,
   );
 
-  // ファイル出力
-  await feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH);
-  await feedStorer.storeBlogFeeds(feeds, feedOgsResultMap, STORE_BLOG_FEEDS_DIR_PATH);
-  await feedStorer.cacheImages(allFeedItems, allFeedItemOgsResultMap, feeds, feedOgsResultMap);
+  // ファイル出力、画像キャッシュ
+  await Promise.all([
+    feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),
+    feedStorer.storeBlogFeeds(feeds, feedOgsResultMap, STORE_BLOG_FEEDS_DIR_PATH),
+    feedStorer.cacheImages(allFeedItems, allFeedItemOgsResultMap, feeds, feedOgsResultMap),
+  ]);
 })();
