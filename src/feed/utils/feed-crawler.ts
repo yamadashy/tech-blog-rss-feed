@@ -5,6 +5,7 @@ import * as dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
 import * as v8 from 'v8';
+import * as retry from 'async-retry';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -50,7 +51,14 @@ export class FeedCrawler {
         console.error(error);
       })
       .process(async (feedInfo) => {
-        const feed = await this.rssParser.parseURL(feedInfo.url);
+        const feed = await retry(
+          async () => {
+            return this.rssParser.parseURL(feedInfo.url);
+          },
+          {
+            retries: 3,
+          },
+        );
         const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
         feeds.push(postProcessedFeed);
         console.log('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
