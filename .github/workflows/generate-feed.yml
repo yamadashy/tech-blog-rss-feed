@@ -43,8 +43,6 @@ jobs:
         with:
           path: .cache
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
-          restore-keys: |
-            ${{ runner.os }}-feed-images-
 
       - name: Generate feed
         run: yarn feed:generate
