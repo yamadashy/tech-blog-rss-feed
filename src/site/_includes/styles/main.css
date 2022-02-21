@@ -63,6 +63,11 @@
     background: var(--orange-background-dark-active);
     border-color: var(--orange-background-dark-active);
 }
+@media screen and (min-width: 48rem) {
+    .ui-layout-grid-3 div:last-of-type {
+        left: 0;
+    }
+}
 
 /*
  * 共通
@@ -144,6 +149,7 @@ img {
 .ui-container-feed {
     text-align: left;
     margin-top: 2em;
+    justify-items: left;
 }
 .ui-feed-item {
     display: grid;
@@ -164,7 +170,6 @@ img {
     object-fit: contain;
 }
 .ui-feed-item .ui-feed-item__content {
-    left: 0 !important;
 }
 .ui-feed-item .ui-feed-item__title  {
     font-size: 0.9em;
@@ -198,7 +203,6 @@ img {
 .ui-feed-item .ui-feed-item__blog-title {
     margin: 0.3em 0;
     font-size: 0.75em;
-    left: 0 !important;
 }
 .ui-feed-item .ui-feed-item__summary {
     font-size: 0.75em;
@@ -215,7 +219,6 @@ img {
 .ui-feed-item .ui-feed-item__date {
     color: var(--base-color-muted);
     font-size: 0.7em;
-    left: 0 !important;
 }
 
 @media screen and (min-width: 48rem) {
@@ -264,11 +267,9 @@ img {
     object-fit: contain;
 }
 .ui-blog .ui-blog__content {
-    left: 0 !important;
 }
 .ui-blog .ui-blog__title  {
     word-break: break-all;
-    left: 0 !important;
 }
 .ui-blog .ui-blog__title a:hover {
     text-decoration: underline;
@@ -288,7 +289,6 @@ img {
 .ui-blog .ui-blog__date {
     color: var(--base-color-muted);
     font-size: 0.7em;
-    left: 0 !important;
 }
 
 @media screen and (min-width: 48rem) {
