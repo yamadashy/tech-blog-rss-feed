@@ -6,6 +6,7 @@ import axios from 'axios';
 import { URL } from 'url';
 import * as v8 from 'v8';
 import * as retry from 'async-retry';
+import { objectDeepCopy } from './common-util';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -124,7 +125,7 @@ export class FeedCrawler {
 
   aggregateFeeds(feeds: RssParserFeed[], filterArticleDate: Date) {
     let allFeedItems: RssParser.Item[] = [];
-    const copiedFeeds: RssParserFeed[] = FeedCrawler.deepCopy(feeds);
+    const copiedFeeds: RssParserFeed[] = objectDeepCopy(feeds);
     const filterIsoDate = filterArticleDate.toISOString();
 
     // 公開日時でフィルタ
@@ -234,10 +235,5 @@ export class FeedCrawler {
     console.log('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
-  }
-
-  private static deepCopy(data: object) {
-    // TODO: Node.js 17 以上にしたら structuredClone 使う
-    return v8.deserialize(v8.serialize(data));
   }
 }

@@ -1,6 +1,7 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
+import { textTruncate } from './common-util';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
@@ -43,8 +44,8 @@ export class FeedGenerator {
         id: feedItemId,
         guid: feedItemId,
         title: feedItem.title,
-        description: this.truncateText(feedItemContent, maxFeedDescriptionLength, '...'),
-        content: this.truncateText(feedItemContent, maxFeedContentLength, '...'),
+        description: textTruncate(feedItemContent, maxFeedDescriptionLength, '...'),
+        content: textTruncate(feedItemContent, maxFeedContentLength, '...'),
         link: feedItem.link,
         category: (feedItem.categories || []).map((category) => {
           return {
@@ -77,9 +78,5 @@ export class FeedGenerator {
     }
 
     return outputFeed;
-  }
-
-  truncateText(text: string, maxLength: number, postFix: string): string {
-    return text.length > maxLength ? text.substring(0, maxLength) + postFix : text;
   }
 }
