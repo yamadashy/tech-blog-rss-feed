@@ -3,6 +3,10 @@ import * as path from 'path';
 import { Feed } from 'feed';
 import { OgsResultMap, RssParserFeed } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
+import * as RssParser from 'rss-parser';
+const Cache = require('@11ty/eleventy-cache-assets');
+
+Cache.concurrency = 30;
 
 type CustomRssParserFeed = {
   title: string;
@@ -54,5 +58,37 @@ export class FeedStorer {
     }
 
     await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(customFeeds, null, 2), 'utf-8');
+  }
+
+  async cacheImages(
+    allFeedItems: RssParser.Item[],
+    allFeedItemOgsResultMap: OgsResultMap,
+    feeds: RssParserFeed[],
+    blogOgsResultMap: OgsResultMap,
+  ): Promise<void> {
+    const ogImageUrls = [];
+
+    for (const feedItem of allFeedItems) {
+      ogImageUrls.push(allFeedItemOgsResultMap.get(feedItem.link)?.ogImage?.url);
+    }
+
+    for (const feed of feeds) {
+      ogImageUrls.push(blogOgsResultMap.get(feed.link)?.ogImage?.url);
+    }
+
+    const fetchImagePromises = [];
+
+    for (const ogImageUrl of ogImageUrls) {
+      fetchImagePromises.push(
+        Cache(ogImageUrl, {
+          duration: '1d',
+          type: 'buffer',
+        }).catch((e: Error) => {
+          console.error('[cache-image] error', e);
+        }),
+      );
+    }
+
+    await Promise.all(fetchImagePromises);
   }
 }

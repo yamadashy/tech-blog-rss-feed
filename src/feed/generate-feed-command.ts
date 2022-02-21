@@ -40,4 +40,5 @@ const feedStorer = new FeedStorer();
   // ファイル出力
   await feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH);
   await feedStorer.storeBlogFeeds(feeds, feedOgsResultMap, STORE_BLOG_FEEDS_DIR_PATH);
+  await feedStorer.cacheImages(allFeedItems, allFeedItemOgsResultMap, feeds, feedOgsResultMap);
 })();
