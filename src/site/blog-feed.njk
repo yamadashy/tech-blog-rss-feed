@@ -7,7 +7,7 @@ pagination:
     size: 1
     alias: blogFeed
     addAllPagesToCollections: true
-permalink: "blogs/{{ blogFeed.hash }}/"
+permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
 ---
 
 {% include 'layouts/partials/nav.njk' %}

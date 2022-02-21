@@ -12,7 +12,7 @@ eleventyComputed:
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-blog">
             {% for blogFeed in blogFeeds %}
                 <div class='ui-blog'>
-                    <a class='ui-blog__ogp-image' href='./{{ blogFeed.hash }}/'>
+                    <a class='ui-blog__ogp-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                         {% if blogFeed.ogImageUrl %}
                             {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '(min-width: 48rem) 50vw, 100vw', '../' %}
                         {% else %}
@@ -21,10 +21,10 @@ eleventyComputed:
                     </a>
                     <div class='ui-blog__content'>
                         <h5 class='ui-blog__title'>
-                            <a href='./{{ blogFeed.hash }}/'>{{ blogFeed.title }}</a>
+                            <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
                         </h5>
                         <p class='ui-blog__description'>
-                            <a href='./{{ blogFeed.hash }}/'>{{ blogFeed.ogDescription }}</a>
+                            <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription }}</a>
                         </p>
                         {% if blogFeed.lastUpdated %}
                             <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>

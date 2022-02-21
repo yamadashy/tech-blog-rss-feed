@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs/promises');
 const dayjs = require('dayjs');
-const { PromisePool } = require('@supercharge/promise-pool');
 require('dayjs/locale/ja');
 
 dayjs.extend(require('dayjs/plugin/relativeTime'));
@@ -11,22 +10,7 @@ dayjs.locale('ja');
 dayjs.tz.setDefault('Asia/Tokyo');
 
 module.exports = async () => {
-  const dirPath = path.join(__dirname, '../blog-feeds');
-  const fileNames = await fs.readdir(dirPath);
-
-  let blogFeeds = [];
-
-  // データ取得
-  await PromisePool.for(fileNames)
-    .withConcurrency(100)
-    .handleError(async (error, fileName) => {
-      console.error('[load-blog-feed] error', fileName);
-      console.error(error);
-    })
-    .process(async (fileName) => {
-      const blogFeed = JSON.parse(await fs.readFile(path.join(__dirname, '../blog-feeds', fileName)));
-      blogFeeds.push(blogFeed);
-    });
+  let blogFeeds = JSON.parse(await fs.readFile(path.join(__dirname, '../blog-feeds/blog-feeds.json')));
 
   for (const blogFeed of blogFeeds) {
     let lastUpdated = blogFeed.items[0]?.isoDate;
