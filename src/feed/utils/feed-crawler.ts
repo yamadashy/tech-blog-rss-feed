@@ -207,7 +207,6 @@ export class FeedCrawler {
     const feedItemHatenaCountMap: Map<string, number> = new Map();
     const feedItemUrlsChunks: string[][] = [];
     let feedItemCounter = 0;
-    // let chunkIndex = 0;
 
     for (const feedItem of feedItems) {
       // API的に50個まで

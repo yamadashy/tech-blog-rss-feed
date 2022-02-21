@@ -22,9 +22,11 @@ const feedStorer = new FeedStorer();
   const allFeedItems = feedCrawler.aggregateFeeds(feeds, FILTER_ARTICLE_DATE);
 
   // フィード関連データ取得
-  const allFeedItemOgsResultMap = await feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY);
-  const allFeedItemHatenaCountMap = await feedCrawler.fetchHatenaCountMap(allFeedItems);
-  const feedOgsResultMap = await feedCrawler.fetchFeedOgsResultMap(feeds, FEED_OGP_FETCH_CONCURRENCY);
+  const [allFeedItemOgsResultMap, allFeedItemHatenaCountMap, feedOgsResultMap] = await Promise.all([
+    feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY),
+    feedCrawler.fetchHatenaCountMap(allFeedItems),
+    feedCrawler.fetchFeedOgsResultMap(feeds, FEED_OGP_FETCH_CONCURRENCY),
+  ]);
 
   // まとめフィード作成
   const aggregatedFeed = feedGenerator.generateFeed(
