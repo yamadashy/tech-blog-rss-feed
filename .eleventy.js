@@ -44,7 +44,7 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
 
 const relativeUrlFilter = (url) => {
   const relativeUrl = path.relative(url, '/');
-  return relativeUrl === '' ? '' : relativeUrl + '/';
+  return relativeUrl === '' ? './' : `${relativeUrl}/`;
 }
 
 module.exports = function (eleventyConfig) {
