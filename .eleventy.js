@@ -7,6 +7,7 @@ Image.concurrency = 50;
 const minifyHtmlTransform = (content, outputPath) => {
   if(outputPath && outputPath.endsWith('.html')) {
     return htmlmin.minify(content,  {
+      // オプション参考: https://github.com/terser/html-minifier-terser#options-quick-reference
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
@@ -28,6 +29,9 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
       formats: ["webp", "jpeg"],
       outputDir: 'public/images/feed-thumbnails',
       urlPath: `${pathPrefix}images/feed-thumbnails/`,
+      cacheOptions: {
+        duration: '3d',
+      },
     });
   } catch (e) {
     // エラーが起きたらそのまま使う

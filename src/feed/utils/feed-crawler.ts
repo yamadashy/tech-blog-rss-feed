@@ -4,7 +4,6 @@ import { FeedInfo } from '../../resources/feed-info-list';
 import * as dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
-import * as v8 from 'v8';
 import * as retry from 'async-retry';
 import { objectDeepCopy } from './common-util';
 const ogs = require('open-graph-scraper');

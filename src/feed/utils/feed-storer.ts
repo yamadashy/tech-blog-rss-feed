@@ -82,7 +82,7 @@ export class FeedStorer {
     // 画像取得
     const fetchImagePromises = ogImageUrls.map((ogImageUrl) => {
       return Cache(ogImageUrl, {
-        duration: '1d',
+        duration: '3d',
         type: 'buffer',
       }).catch(() => {
         console.error('[cache-image] error', ogImageUrl);
