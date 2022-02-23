@@ -19,15 +19,15 @@ const minifyHtmlTransform = (content, outputPath) => {
   return content;
 }
 
-const imageShortcode = async (src, alt, sizes, pathPrefix = '') => {
+const imageShortcode = async (src, alt, pathPrefix = '') => {
   let metadata = null;
 
   try {
     metadata = await Image(src, {
-      widths: [300, 600],
-      formats: ['jpeg'],
+      widths: [256, 512],
+      formats: ["webp", "jpeg"],
       outputDir: 'public/images/feed-thumbnails',
-      urlPath: `${pathPrefix}images/feed-thumbnails/`
+      urlPath: `${pathPrefix}images/feed-thumbnails/`,
     });
   } catch (e) {
     // エラーが起きたらそのまま使う
@@ -36,7 +36,7 @@ const imageShortcode = async (src, alt, sizes, pathPrefix = '') => {
 
   return Image.generateHTML(metadata, {
     alt,
-    sizes,
+    sizes: '100vw',
     loading: 'lazy',
     decoding: 'async',
   });

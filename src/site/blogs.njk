@@ -14,7 +14,7 @@ eleventyComputed:
                 <div class='ui-blog'>
                     <a class='ui-blog__ogp-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                         {% if blogFeed.ogImageUrl %}
-                            {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '(min-width: 48rem) 50vw, 100vw', '../' %}
+                            {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '../' %}
                         {% else %}
                             <img src='{{ page.url | relativeUrl }}images/icon512-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
                         {% endif %}
