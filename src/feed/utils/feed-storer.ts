@@ -84,8 +84,14 @@ export class FeedStorer {
       return Cache(ogImageUrl, {
         duration: '3d',
         type: 'buffer',
-      }).catch(() => {
+        fetchOptions: {
+          headers: {
+            'user-agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)',
+          },
+        },
+      }).catch((e: Error) => {
         console.error('[cache-image] error', ogImageUrl);
+        console.error(e);
       });
     });
     await Promise.all(fetchImagePromises);
