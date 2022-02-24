@@ -20,12 +20,14 @@ eleventyComputed:
                         {% endif %}
                     </a>
                     <div class='ui-blog__content'>
-                        <h5 class='ui-blog__title'>
+                        <h4 class='ui-blog__title'>
                             <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
-                        </h5>
-                        <p class='ui-blog__description'>
-                            <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</a>
-                        </p>
+                        </h4>
+                        {% if blogFeed.ogDescription %}
+                            <p class='ui-blog__description'>
+                                <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</a>
+                            </p>
+                        {% endif %}
                         {% if blogFeed.lastUpdated %}
                             <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>
                         {% else %}
