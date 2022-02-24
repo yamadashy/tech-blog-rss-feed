@@ -136,6 +136,19 @@ img {
     border-bottom-color: var(--base-color);
 }
 
+/**
+ * フィードのヘッダー
+ */
+.ui-section-content__feed-date-heading {
+    text-align: left;
+    font-size: 1.2em;
+    color: var(--base-color-lighter);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.4em 0.3em;
+    /*border-left: 0.2em solid var(--base-color-muted);*/
+    border-bottom: 1px solid var(--base-color-lighter);
+}
 
 /*
  * フィード
@@ -148,7 +161,8 @@ img {
 }
 .ui-container-feed {
     text-align: left;
-    margin-top: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
     justify-items: left;
 }
 .ui-feed-item {

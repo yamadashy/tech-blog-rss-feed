@@ -35,5 +35,17 @@ module.exports = async () => {
     }
   }
 
-  return feedItems;
+  const feedItemsChunks = {};
+
+  for (const feedItem of feedItems) {
+    const dateString = dayjs(feedItem.date_published).tz().format('M/D (dd)');
+
+    if (!feedItemsChunks[dateString]) {
+      feedItemsChunks[dateString] = [];
+    }
+
+    feedItemsChunks[dateString].push(feedItem);
+  }
+
+  return feedItemsChunks;
 };
