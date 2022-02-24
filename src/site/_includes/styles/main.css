@@ -178,10 +178,11 @@ img {
 .ui-feed-item .ui-feed-item__ogp-image img {
     width: 100%;
     height: auto;
-    max-height: 8.0em;
+    max-height: 7.0em;
     /* TODO: aspect-ratio の対応ブラウザが増えたら使う */
     /*aspect-ratio: 1200 / 630;*/
     object-fit: contain;
+    object-position: center top;
 }
 .ui-feed-item .ui-feed-item__content {
 }
@@ -275,10 +276,11 @@ img {
 .ui-blog .ui-blog__ogp-image img {
     width: 100%;
     height: auto;
-    max-height: 8.0em;
+    max-height: 7.0em;
     /* TODO: aspect-ratio の対応ブラウザが増えたら使う */
     /*aspect-ratio: 1200 / 630;*/
     object-fit: contain;
+    object-position: center top;
 }
 .ui-blog .ui-blog__content {
 }
@@ -313,6 +315,7 @@ img {
         display: block;
     }
     .ui-blog .ui-blog__ogp-image img {
+        width: auto;
         height: 10.5em;
         max-height: 10.5em;
     }
