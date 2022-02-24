@@ -24,7 +24,7 @@ eleventyComputed:
                             <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
                         </h5>
                         <p class='ui-blog__description'>
-                            <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription }}</a>
+                            <a href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</a>
                         </p>
                         {% if blogFeed.lastUpdated %}
                             <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>

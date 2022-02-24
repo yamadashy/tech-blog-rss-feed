@@ -65,7 +65,7 @@ eleventyComputed:
                         {% endif %}
                         <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
                         <p class='ui-feed-item__summary'>
-                            <a href='{{ feedItem.url }}'>{{ feedItem.summary }}</a>
+                            <a href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                         </p>
                         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                     </div>

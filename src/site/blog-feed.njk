@@ -24,7 +24,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
                         </h5>
                         <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
                         <p class='ui-feed-item__summary'>
-                            <a href='{{ feedItem.link }}'>{{ feedItem.summary }}</a>
+                            <a href='{{ feedItem.link }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                         </p>
                         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                     </div>
