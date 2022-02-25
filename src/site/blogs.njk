@@ -16,7 +16,7 @@ eleventyComputed:
                         {% if blogFeed.ogImageUrl %}
                             {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '../' %}
                         {% else %}
-                            <img src='{{ page.url | relativeUrl }}images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
+                            <img src='{{ page.url | relativeUrl }}images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
                         {% endif %}
                     </a>
                     <div class='ui-blog__content'>

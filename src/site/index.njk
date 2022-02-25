@@ -13,7 +13,7 @@ eleventyComputed:
             <div class="ui-component-cta ui-layout-flex">
                 <form class="ui-component-form ui-layout-grid">
                     <label class='ui-component-form__label' for='feed-url-slack'>
-                        <img src='images/slack-mark.png' alt='Slackのロゴ' loading="lazy" decoding='async'>
+                        <img src='images/slack-mark.png' alt='Slackのロゴ' loading="lazy" decoding='async' width='96' height='96'>
                     </label>
                     <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.atom }}'>
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
@@ -52,7 +52,7 @@ eleventyComputed:
                             {% if feedItem.image %}
                                 {% image feedItem.image.url, '記事のアイキャッチ画像' %}
                             {% else %}
-                                <img src='images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像'>
+                                <img src='images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
                             {% endif %}
                         </a>
                         <div class='ui-feed-item__content'>
@@ -61,14 +61,16 @@ eleventyComputed:
                             </h4>
                             {% if feedItem.hatenaCount > 0 %}
                                 <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
-                                    <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async'>
+                                    <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async' width='96' height='96'>
                                     <span>{{ feedItem.hatenaCount }}</span>
                                 </div>
                             {% endif %}
                             <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
-                            <p class='ui-feed-item__summary'>
-                                <a href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
-                            </p>
+                            {% if feedItem.summary %}
+                                <p class='ui-feed-item__summary'>
+                                    <a href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
+                                </p>
+                            {% endif %}
                             <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                         </div>
                     </div>

@@ -47,7 +47,7 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
   } catch (e) {
     // エラーが起きたら代替画像にする
     console.log('[image-short-code] error', src);
-    return `<img src='${pathPrefix}images/icon256-transparent.png' alt='${alt}' loading='lazy' decoding='async'>`
+    return `<img src='${pathPrefix}images/icon256-transparent.png' alt='${alt}' loading='lazy' decoding='async' width='256' height='256'>`
   }
 
   return Image.generateHTML(metadata, {
