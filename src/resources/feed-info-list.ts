@@ -128,7 +128,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['OpenWork', 'https://techblog.openwork.co.jp/feed'],
   ['PHONE APPLI', 'https://phoneappli.net/recruit/blog/atom.xml'],
   ['PLAID', 'https://tech.plaid.co.jp/rss/'],
-  ['PLAN-B', 'https://service.plan-b.co.jp/feed'],
   ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
   ['Pentagon', 'https://blog.pentagon.tokyo/feed/'],
   ['Playground', 'https://tech.playground.style/feed/'],
@@ -280,7 +279,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['タイミー', 'https://tech.timee.co.jp/feed'],
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
-  ['テックファーム', 'https://www.techfirm.co.jp/feed'],
+  ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
   ['デザインワン・ジャパン', 'https://tech.designone.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
   ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
@@ -347,7 +346,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ラクーン', 'https://techblog.raccoon.ne.jp/feed'],
   ['ラック', 'https://devblog.lac.co.jp/feed'],
   ['ランサーズ', 'https://engineer.blog.lancers.jp/feed/'],
-  ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/'],
+  ['リクルートコミュニケーションズ', 'https://blog.recruit.co.jp/rco/feed.xml'],
+  ['リクルートテクノロジーズ', 'https://blog.recruit.co.jp/rtc/feed/'],
+  ['リクルートマーケティングパートナーズ', 'https://tech.recruit-mp.co.jp/feed/'],
+  ['リクルートライフスタイル', 'https://engineer.recruit-lifestyle.co.jp/techblog/feed.xml'],
   ['リサーチ・アンド・イノベーション', 'https://rni-dev.hatenablog.com/feed'],
   ['リゾーム', 'https://tech.rhizome-e.com/feed'],
   ['リンカーズ', 'https://linkers.hatenablog.com/feed'],
@@ -380,14 +382,26 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['食べログ', 'https://note.com/tabelog_frontend/rss'],
 ]);
 
-// 候補
-// パースエラー修正
-// ['Qiita', 'https://zine.qiita.com/'],
-// 日本語以外が交じるのを解消できたら入れたい
-// ['クラスメソッド', 'https://dev.classmethod.jp/feed'],
-// 403 Forbidden
-// ['Cygames', 'https://tech.cygames.co.jp/feed/'],
-// フィードなし。スクレイピング？
-// https://lab.mo-t.com/blog
-// https://tech-blog.sweeep.ai/
-// https://minedia-engineer-hub-minedia.vercel.app/
+/**
+ * その他候補
+ *
+ * パースエラー修正
+ * ['Qiita', 'https://zine.qiita.com/'],
+ *
+ * 日本語以外が交じるのを解消できたら入れたい
+ * ['クラスメソッド', 'https://dev.classmethod.jp/feed'],
+ *
+ * 403 Forbidden
+ * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
+ *
+ * 404
+ * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
+ *
+ * pubDate なし
+ * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
+ *
+ * フィードなし。スクレイピング？
+ * https://lab.mo-t.com/blog
+ * https://tech-blog.sweeep.ai/
+ * https://minedia-engineer-hub-minedia.vercel.app/
+ */
