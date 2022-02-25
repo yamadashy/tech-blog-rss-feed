@@ -37,6 +37,12 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
           },
         },
       },
+      sharpWebpOptions: {
+        quality: 50,
+      },
+      sharpJpegOptions: {
+        quality: 70,
+      }
     });
   } catch (e) {
     // エラーが起きたら代替画像にする
