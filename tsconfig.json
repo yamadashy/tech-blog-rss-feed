@@ -8,7 +8,8 @@
       "esnext"
     ],
     "types": [
-      "node"
+      "node",
+      "jest"
     ],
     "allowJs": false,
     "noImplicitAny": true,

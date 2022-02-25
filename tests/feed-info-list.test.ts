@@ -2,6 +2,7 @@ import { FEED_INFO_LIST } from '../src/resources/feed-info-list';
 import * as RssParser from 'rss-parser';
 import { FeedCrawler } from '../src/feed/utils/feed-crawler';
 import { PromisePool } from '@supercharge/promise-pool';
+import * as retry from 'async-retry';
 
 test('FEED_INFO_LIST の設定が正しい', () => {
   expect(() => {
@@ -22,7 +23,14 @@ test(
         pool.stop();
       })
       .process(async (feedInfo) => {
-        const feed = await rssParser.parseURL(feedInfo.url);
+        const feed = await retry(
+          async () => {
+            return rssParser.parseURL(feedInfo.url);
+          },
+          {
+            retries: 3,
+          },
+        );
         expect(feed.items.length).toBeGreaterThanOrEqual(0);
       })
       .then(() => {
