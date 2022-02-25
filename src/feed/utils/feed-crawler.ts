@@ -6,6 +6,7 @@ import axios from 'axios';
 import { URL } from 'url';
 import * as retry from 'async-retry';
 import { objectDeepCopy } from './common-util';
+import { logger } from './logger';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -47,8 +48,8 @@ export class FeedCrawler {
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
       .handleError(async (error, feedInfo) => {
-        console.error('[fetch-feed] error', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
-        console.error(error);
+        logger.error('[fetch-feed] error', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
+        logger.error(error);
       })
       .process(async (feedInfo) => {
         const feed = await retry(
@@ -61,7 +62,7 @@ export class FeedCrawler {
         );
         const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
         feeds.push(postProcessedFeed);
-        console.log('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
+        logger.info('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
       });
 
     return feeds;
@@ -155,12 +156,12 @@ export class FeedCrawler {
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .handleError(async (error, feedItem) => {
-        console.error('[fetch-feed-item-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        logger.error('[fetch-feed-item-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       })
       .process(async (feedItem) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feedItem.link);
         feedItemOgsResultMap.set(feedItem.link, ogsResult);
-        console.log('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        logger.info('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
     return feedItemOgsResultMap;
@@ -174,12 +175,12 @@ export class FeedCrawler {
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
       .handleError(async (error, feed) => {
-        console.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+        logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       })
       .process(async (feed) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feed.link);
         feedOgsResultMap.set(feed.link, ogsResult);
-        console.log('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+        logger.info('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
 
     return feedOgsResultMap;
@@ -230,7 +231,7 @@ export class FeedCrawler {
       }
     }
 
-    console.log('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
+    logger.info('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
   }

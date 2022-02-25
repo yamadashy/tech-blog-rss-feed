@@ -2,6 +2,7 @@ import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
 import { textTruncate } from './common-util';
+import { logger } from './logger';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
@@ -32,7 +33,7 @@ export class FeedGenerator {
     } as FeedOptions);
 
     for (const feedItem of feedItems) {
-      console.log('[feed-item]', feedItem.isoDate, feedItem.title);
+      logger.info('[feed-item]', feedItem.isoDate, feedItem.title);
 
       const feedItemId = feedItem.guid || feedItem.link;
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');

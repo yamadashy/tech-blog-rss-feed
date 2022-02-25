@@ -4,6 +4,7 @@ import { Feed } from 'feed';
 import { OgsResultMap, RssParserFeed } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 import * as RssParser from 'rss-parser';
+import { logger } from './logger';
 const Cache = require('@11ty/eleventy-cache-assets');
 
 Cache.concurrency = 50;
@@ -90,8 +91,8 @@ export class FeedStorer {
           },
         },
       }).catch((e: Error) => {
-        console.error('[cache-image] error', ogImageUrl);
-        console.error(e);
+        logger.error('[cache-image] error', ogImageUrl);
+        logger.error(e);
       });
     });
     await Promise.all(fetchImagePromises);
