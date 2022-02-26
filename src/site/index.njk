@@ -56,9 +56,7 @@ eleventyComputed:
                             {% endif %}
                         </a>
                         <div class='ui-feed-item__content'>
-                            <h4 class='ui-feed-item__title'>
-                                <a href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
-                            </h4>
+                            <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem.title }}</a>
                             {% if feedItem.hatenaCount > 0 %}
                                 <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
                                     <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async' width='96' height='96'>
@@ -67,9 +65,7 @@ eleventyComputed:
                             {% endif %}
                             <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
                             {% if feedItem.summary %}
-                                <p class='ui-feed-item__summary'>
-                                    <a href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
-                                </p>
+                                <a class='ui-feed-item__summary' href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                             {% endif %}
                             <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                         </div>

@@ -19,14 +19,10 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
             {% for feedItem in blogFeed.items %}
                 <div class='ui-feed-item'>
                     <div class='ui-feed-item__content'>
-                        <h4 class='ui-feed-item__title'>
-                            <a href='{{ feedItem.link }}'>{{ feedItem.title }}</a>
-                        </h4>
+                        <a class='ui-feed-item__title' href='{{ feedItem.link }}'>{{ feedItem.title }}</a>
                         <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
                         {% if feedItem.summary %}
-                            <p class='ui-feed-item__summary'>
-                                <a href='{{ feedItem.link }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
-                            </p>
+                            <a class='ui-feed-item__summary' href='{{ feedItem.link }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                         {% endif %}
                         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                     </div>
