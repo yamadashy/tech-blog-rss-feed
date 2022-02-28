@@ -19,7 +19,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 逆に、以下はテックブログと判断して追加しています。
 
-- [Zenn](https://zenn.dev/) や [note](https://note.com/) などの企業系テックブログ
+- [Zenn](https://zenn.dev/), [note](https://note.com/), [Medium](https://medium.com/) などの企業系テックブログ
 - 企業系ブログのテクノロジーカテゴリ
 
 ## サイトの追加方法
@@ -45,8 +45,8 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 GitHub Actions で定期的に更新されており、サイトの生成は [Eleventy](https://www.11ty.dev/) を使用しています。
 
 更新は多少遅延ありますが以下のタイミングで行います。
-- 平日 8時-14時の1時間おき、16時-24時の2時間おき
-- 休日 8時-24時の4時間おき
+- 平日 8時-24時の1時間おき
+- 休日 8時-24時の2時間おき
 
 ### フォークして使う場合の注意点
 以下を書き換えると独自のサイトが動くと思います。
