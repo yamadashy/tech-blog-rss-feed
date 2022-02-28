@@ -279,6 +279,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
   ['スマートキャンプ', 'https://tech.smartcamp.co.jp/feed'],
   ['スマートスタイル', 'https://blog.s-style.co.jp/feed/'],
+  ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
   ['セキュアスカイ･テクノロジー', 'https://techblog.securesky-tech.com/feed'],
   ['ゼネット', 'https://media.zenet-web.co.jp/feed'],
   ['タイマーズ', 'https://techblog.timers-inc.com/feed'],
@@ -339,6 +340,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['メディアドゥ', 'https://techdo.mediado.jp/feed'],
   ['メドピア', 'https://tech.medpeer.co.jp/feed'],
   ['メドレー', 'https://developer.medley.jp/feed'],
+  ['TURING', 'https://zenn.dev/turing/feed'],
   ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml/'],
   ['メンテモ', 'https://engineering.mentemo.com/feed'],
   ['モノグサ', 'https://tech.monoxer.com/feed'],
@@ -413,4 +415,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://lab.mo-t.com/blog
  * https://tech-blog.sweeep.ai/
  * https://minedia-engineer-hub-minedia.vercel.app/
+ * https://segaxd.co.jp/news/?category=blog
+ * https://tech.smartshopping.co.jp/
  */
