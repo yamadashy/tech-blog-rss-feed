@@ -1,7 +1,7 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
-import { textTruncate } from './common-util';
+import { textTruncate, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 
 const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
@@ -65,7 +65,7 @@ export class FeedGenerator {
           ogImage && ogImage.url
             ? {
                 type: ogImage.type,
-                url: ogImage.url,
+                url: urlRemoveQueryParams(ogImage.url),
               }
             : null,
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,

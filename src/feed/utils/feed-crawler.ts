@@ -197,7 +197,7 @@ export class FeedCrawler {
 
     // http から始まってなければ調整
     if (ogImageUrl && !ogImageUrl.startsWith('http')) {
-      ogsResult.ogImage.url = new URL(ogImageUrl, url).href;
+      ogsResult.ogImage.url = new URL(ogImageUrl, url).toString();
     }
 
     return ogsResponse.result;

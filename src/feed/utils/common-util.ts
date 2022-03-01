@@ -14,3 +14,7 @@ export const textToMd5Hash = (text: string): string => {
 export const textTruncate = (text: string, maxLength: number, postFix: string): string => {
   return text.length > maxLength ? text.substring(0, maxLength) + postFix : text;
 };
+
+export const urlRemoveQueryParams = (url: string) => {
+  return url.split('?')[0];
+};
