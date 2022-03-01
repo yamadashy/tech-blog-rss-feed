@@ -37,6 +37,12 @@ const feedStorer = new FeedStorer();
     MAX_FEED_CONTENT_LENGTH,
   );
 
+  // まとめフィードのバリデーション。エラーならすぐに終了する
+  const isValid = await feedGenerator.validateAggregatedFeed(aggregatedFeed);
+  if (!isValid) {
+    process.exit(1);
+  }
+
   // ファイル出力、画像キャッシュ
   await Promise.all([
     feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),

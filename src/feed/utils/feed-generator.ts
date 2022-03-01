@@ -81,4 +81,26 @@ export class FeedGenerator {
 
     return outputFeed;
   }
+
+  /**
+   * rss-parser で変換してみてエラーが出ないか確認
+   */
+  public async validateAggregatedFeed(outputFeed: Feed): Promise<boolean> {
+    const rssParser = new RssParser();
+    const feedAtom = outputFeed.atom1();
+    const feedRss = outputFeed.rss2();
+
+    let isValid = true;
+
+    await rssParser.parseString(feedAtom).catch((error) => {
+      isValid = false;
+      logger.error('[feed-generator] validate feed atom error', error);
+    });
+    await rssParser.parseString(feedRss).catch((error) => {
+      isValid = false;
+      logger.error('[feed-generator] validate feed rss error', error);
+    });
+
+    return isValid;
+  }
 }
