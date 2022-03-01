@@ -53,13 +53,14 @@ export class FeedGenerator {
             name: category,
           };
         }),
-        author: feedItem.creator
-          ? [
-              {
-                name: feedItem.creator,
-              },
-            ]
-          : null,
+        author:
+          feedItem.creator && typeof feedItem.creator === 'string'
+            ? [
+                {
+                  name: feedItem.creator,
+                },
+              ]
+            : null,
         image:
           ogImage && ogImage.url
             ? {
