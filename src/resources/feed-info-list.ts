@@ -27,7 +27,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Adways', 'https://blog.engineer.adways.net/feed'],
   ['Aiming', 'https://developer.aiming-inc.com/feed'],
   ['AppBrew', 'https://tech.appbrew.io/feed'],
-  ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
   ['BASE', 'https://devblog.thebase.in/feed'],
   ['BFT名古屋', 'https://bftnagoya.hateblo.jp/feed'],
   ['BIGLOBE', 'https://style.biglobe.co.jp/feed/category/TechBlog'],
@@ -49,6 +48,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Classi', 'https://tech.classi.jp/feed'],
   ['Colorful Palette', 'https://media.colorfulpalette.co.jp/m/m753f507dae79/rss'],
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
+  ['CyberZ', 'https://note.com/cyberz_cto/rss'],
   ['DMM', 'https://inside.dmm.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
@@ -163,6 +163,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Sysdig', 'https://www.scsk.jp/sp/sysdig/rss.xml'],
   ['TANP', encodeURI('https://www.tanp-blog.com/feed/category/エンジニアブログ')],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
+  ['TURING', 'https://zenn.dev/turing/feed'],
   ['TVISION INSIGHTS', 'https://tech.tvisioninsights.co.jp/feed'],
   ['TeamSpirit', 'https://teamspirit.hatenablog.com/feed'],
   ['TechRacho', 'https://techracho.bpsinc.jp/feed'],
@@ -277,10 +278,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['スタディスト', 'https://studist.tech/feed'],
   ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
   ['スターフェスティバル', 'https://zenn.dev/stafes/feed'],
-  ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
   ['スマートキャンプ', 'https://tech.smartcamp.co.jp/feed'],
   ['スマートスタイル', 'https://blog.s-style.co.jp/feed/'],
-  ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
   ['セキュアスカイ･テクノロジー', 'https://techblog.securesky-tech.com/feed'],
   ['ゼネット', 'https://media.zenet-web.co.jp/feed'],
   ['タイマーズ', 'https://techblog.timers-inc.com/feed'],
@@ -341,7 +340,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['メディアドゥ', 'https://techdo.mediado.jp/feed'],
   ['メドピア', 'https://tech.medpeer.co.jp/feed'],
   ['メドレー', 'https://developer.medley.jp/feed'],
-  ['TURING', 'https://zenn.dev/turing/feed'],
   ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml/'],
   ['メンテモ', 'https://engineering.mentemo.com/feed'],
   ['モノグサ', 'https://tech.monoxer.com/feed'],
@@ -350,6 +348,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['モルフォ', 'https://techblog.morphoinc.com/feed'],
   ['ユカシカド', 'https://note.com/tech_yukashikado/rss'],
   ['ユニファ', 'https://tech.unifa-e.com/feed'],
+  ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
   ['ライトハウス', 'https://developers.lighthouse-frontier.tech/feed'],
   ['ラクス', 'https://tech-blog.rakus.co.jp/feed'],
   ['ラクスル', 'https://tech.raksul.com/feed'],
@@ -408,6 +407,12 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
+ *
+ * 406
+ * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
+ *
+ * Error: unable to verify the first certificate
+ * ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
  *
  * pubDate なし
  * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
