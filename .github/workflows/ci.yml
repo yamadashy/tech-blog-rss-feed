@@ -3,6 +3,10 @@ name: CI
 on:
   pull_request:
     branches: [ main ]
+  schedule:
+    # NOTE: UTCなので9時間引く
+    # 毎日22時に実行
+    - cron: 0 13 * * *
   workflow_dispatch:
 
 jobs:
