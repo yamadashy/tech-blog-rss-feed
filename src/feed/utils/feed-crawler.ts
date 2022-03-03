@@ -103,11 +103,12 @@ export class FeedCrawler {
     switch (feedInfo.label) {
       case 'メルカリ':
         // 9時間ずれているので調整
-        for (const feedItem of feed.items) {
-          feedItem.isoDate = dayjs(feedItem.isoDate).subtract(9, 'h').toISOString();
-          feedItem.pubDate = dayjs(feedItem.pubDate).subtract(9, 'h').toISOString();
-        }
+        FeedCrawler.subtractFeedItemsDateHour(feed, 9);
         feed.link = 'https://engineering.mercari.com/blog/';
+        break;
+      case 'KAIZEN PLATFORM':
+        // 9時間ずれているので調整
+        FeedCrawler.subtractFeedItemsDateHour(feed, 9);
         break;
       case 'Tokyo Otaku Mode':
         feed.link = 'https://blog.otakumode.com/';
@@ -234,5 +235,12 @@ export class FeedCrawler {
     logger.info('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
+  }
+
+  private static subtractFeedItemsDateHour(feed: RssParserFeed, subHours: number) {
+    for (const feedItem of feed.items) {
+      feedItem.isoDate = dayjs(feedItem.isoDate).subtract(subHours, 'h').toISOString();
+      feedItem.pubDate = dayjs(feedItem.pubDate).subtract(subHours, 'h').toISOString();
+    }
   }
 }
