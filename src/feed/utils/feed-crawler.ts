@@ -48,7 +48,12 @@ export class FeedCrawler {
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
       .handleError(async (error, feedInfo) => {
-        logger.error('[fetch-feed] error', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
+        logger.error(
+          '[fetch-feed] error',
+          `${fetchProcessCounter++}/${feedInfoListLength}`,
+          feedInfo.label,
+          feedInfo.url,
+        );
         logger.error(error);
       })
       .process(async (feedInfo) => {
@@ -128,16 +133,25 @@ export class FeedCrawler {
     let allFeedItems: RssParser.Item[] = [];
     const copiedFeeds: RssParserFeed[] = objectDeepCopy(feeds);
     const filterIsoDate = filterArticleDate.toISOString();
+    const currentIsoDate = new Date().toISOString();
 
-    // 公開日時でフィルタ
     for (const feed of copiedFeeds) {
+      // 公開日時でフィルタ
       feed.items = feed.items.filter((feedItem) => {
-        return feedItem.isoDate > filterIsoDate;
+        return feedItem.isoDate >= filterIsoDate;
       });
-    }
 
-    // マージ
-    for (const feed of copiedFeeds) {
+      // 現在時刻より未来のものはフィルタ。UTC表記で日本時間設定しているブログがあるので。
+      feed.items = feed.items.filter((feedItem) => {
+        if (feedItem.isoDate > currentIsoDate) {
+          logger.warn('[aggregate-feed] 記事の公開日時が未来になっています。', feedItem.title, feedItem.link);
+          return false;
+        }
+
+        return true;
+      });
+
+      // マージ
       allFeedItems = allFeedItems.concat(feed.items);
     }
 
@@ -157,7 +171,13 @@ export class FeedCrawler {
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .handleError(async (error, feedItem) => {
-        logger.error('[fetch-feed-item-ogp] error', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        logger.error(
+          '[fetch-feed-item-ogp] error',
+          `${fetchProcessCounter++}/${feedItemsLength}`,
+          feedItem.title,
+          feedItem.link,
+        );
+        logger.error(error);
       })
       .process(async (feedItem) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feedItem.link);
@@ -176,7 +196,8 @@ export class FeedCrawler {
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
       .handleError(async (error, feed) => {
-        logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+        logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
+        logger.error(error);
       })
       .process(async (feed) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feed.link);
