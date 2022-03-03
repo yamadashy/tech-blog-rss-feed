@@ -2,6 +2,7 @@
 layout: layouts/main.njk
 eleventyComputed:
     pageTitle: "ブログ一覧｜{{ constants.siteTitle }}"
+    lastUpdated: "{{ lastModifiedBlogsDate }}"
 ---
 
 {% include 'layouts/partials/nav.njk' %}

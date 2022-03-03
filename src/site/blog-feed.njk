@@ -2,6 +2,7 @@
 layout: layouts/main.njk
 eleventyComputed:
     pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
+    lastUpdated: "{{ blogFeed.lastUpdatedIso }}"
 pagination:
     data: blogFeeds
     size: 1

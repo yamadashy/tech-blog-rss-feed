@@ -19,6 +19,7 @@ module.exports = async () => {
       blogFeed.lastUpdated = lastUpdated;
       blogFeed.diffLastUpdatedDateForHuman = dayjs().to(blogFeed.lastUpdated);
       blogFeed.lastUpdatedForHuman = dayjs(blogFeed.lastUpdated).tz().format('YYYY-MM-DD HH:mm:ss');
+      blogFeed.lastUpdatedIso = new Date(blogFeed.lastUpdated).toISOString();
     }
 
     // データ調整
