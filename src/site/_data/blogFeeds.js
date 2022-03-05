@@ -12,6 +12,7 @@ dayjs.tz.setDefault('Asia/Tokyo');
 module.exports = async () => {
   let blogFeeds = JSON.parse(await fs.readFile(path.join(__dirname, '../blog-feeds/blog-feeds.json')));
 
+  // データ調整
   for (const blogFeed of blogFeeds) {
     let lastUpdated = blogFeed.items[0]?.isoDate;
 
@@ -22,8 +23,6 @@ module.exports = async () => {
       blogFeed.lastUpdatedIso = new Date(blogFeed.lastUpdated).toISOString();
     }
 
-    // データ調整
-    // TODO: このあたりのjsonを保存したときにやりたい
     for (const feedItem of blogFeed.items) {
       feedItem.diffDateForHuman = dayjs().to(feedItem.isoDate);
       feedItem.pubDateForHuman = dayjs(feedItem.isoDate).format('YYYY-MM-DD HH:mm:ss');

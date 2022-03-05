@@ -72,9 +72,14 @@ export class FeedGenerator {
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         extensions: [
-          { name: 'hatenaCount', objects: allFeedItemHatenaCountMap.get(feedItem.link) },
-          { name: 'originalTitle', objects: feedItem.title },
-          { name: 'blogTitle', objects: feedItem.blogTitle },
+          {
+            name: '_custom',
+            objects: {
+              hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
+              originalTitle: feedItem.title || '',
+              blogTitle: feedItem.blogTitle || '',
+            },
+          },
         ],
       });
     }

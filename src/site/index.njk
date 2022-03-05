@@ -57,14 +57,14 @@ eleventyComputed:
                             {% endif %}
                         </a>
                         <div class='ui-feed-item__content'>
-                            <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem.originalTitle }}</a>
-                            {% if feedItem.hatenaCount > 0 %}
+                            <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem._custom.originalTitle }}</a>
+                            {% if feedItem._custom.hatenaCount > 0 %}
                                 <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
                                     <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async' width='96' height='96'>
-                                    <span>{{ feedItem.hatenaCount }}</span>
+                                    <span>{{ feedItem._custom.hatenaCount }}</span>
                                 </div>
                             {% endif %}
-                            <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
+                            <div class='ui-feed-item__blog-title'>{{ feedItem._custom.blogTitle }}</div>
                             {% if feedItem.summary %}
                                 <a class='ui-feed-item__summary' href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                             {% endif %}

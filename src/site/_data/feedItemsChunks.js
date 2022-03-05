@@ -20,7 +20,6 @@ module.exports = async () => {
   });
 
   // データ調整
-  // TODO: このあたりのjsonを保存したときにやりたい
   for (const feedItem of feedItems) {
     feedItem.diffDateForHuman = dayjs().to(feedItem.date_published);
     feedItem.pubDateForHuman = dayjs(feedItem.date_published).tz().format('YYYY-MM-DD HH:mm:ss');
