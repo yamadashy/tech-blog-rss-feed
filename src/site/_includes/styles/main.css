@@ -284,10 +284,21 @@ img {
 .ui-blog .ui-blog__content {
 }
 .ui-blog .ui-blog__title  {
+    display: block;
     font-weight: bold;
     word-break: break-all;
 }
 .ui-blog .ui-blog__title:hover {
+    text-decoration: underline;
+}
+.ui-blog .ui-blog__link {
+    display: block;
+    font-size: 0.7em;
+    word-break: break-all;
+    overflow: hidden;
+    margin: 0.2em 0;
+}
+.ui-blog .ui-blog__link:hover {
     text-decoration: underline;
 }
 .ui-blog .ui-blog__description {

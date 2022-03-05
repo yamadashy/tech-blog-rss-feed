@@ -11,6 +11,7 @@ Cache.concurrency = 50;
 
 type CustomRssParserFeed = {
   title: string;
+  link: string;
   linkMd5Hash: string;
   ogImageUrl: string;
   ogDescription: string;
@@ -39,6 +40,7 @@ export class FeedStorer {
     for (const feed of feeds) {
       const customFeed: CustomRssParserFeed = {
         title: feed.title,
+        link: feed.link,
         linkMd5Hash: textToMd5Hash(feed.link),
         ogImageUrl: blogOgsResultMap.get(feed.link)?.ogImage?.url,
         ogDescription: blogOgsResultMap.get(feed.link)?.ogDescription,

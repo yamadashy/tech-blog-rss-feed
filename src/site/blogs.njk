@@ -22,8 +22,9 @@ eleventyComputed:
                     </a>
                     <div class='ui-blog__content'>
                         <a class='ui-blog__title' href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
+                        <a class='ui-blog__link' href='{{ blogFeed.link }}'>{{ blogFeed.link }}</a>
                         {% if blogFeed.ogDescription %}
-                            <a class='ui-blog__description' href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</a>
+                            <div class='ui-blog__description'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</div>
                         {% endif %}
                         {% if blogFeed.lastUpdated %}
                             <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>
