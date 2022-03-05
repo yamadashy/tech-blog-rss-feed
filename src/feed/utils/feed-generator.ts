@@ -1,6 +1,6 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
-import { FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
+import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
 import { textTruncate, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 
@@ -8,7 +8,7 @@ const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
 
 export class FeedGenerator {
   generateFeed(
-    feedItems: RssParser.Item[],
+    feedItems: CustomRssParserItem[],
     feedItemOgsResultMap: OgsResultMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     maxFeedDescriptionLength: number,
@@ -44,7 +44,8 @@ export class FeedGenerator {
       outputFeed.addItem({
         id: feedItemId,
         guid: feedItemId,
-        title: feedItem.title,
+        // 「記事タイトル | ブログ名」の形にする。タイトルだけでどの企業かわかるように
+        title: `${feedItem.title} | ${feedItem.blogTitle}`,
         description: textTruncate(feedItemContent, maxFeedDescriptionLength, '...'),
         content: textTruncate(feedItemContent, maxFeedContentLength, '...'),
         link: feedItem.link,
@@ -71,10 +72,9 @@ export class FeedGenerator {
         published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
         extensions: [
-          {
-            name: 'hatenaCount',
-            objects: allFeedItemHatenaCountMap.get(feedItem.link),
-          },
+          { name: 'hatenaCount', objects: allFeedItemHatenaCountMap.get(feedItem.link) },
+          { name: 'originalTitle', objects: feedItem.title },
+          { name: 'blogTitle', objects: feedItem.blogTitle },
         ],
       });
     }

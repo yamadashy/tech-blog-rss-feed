@@ -1,15 +1,14 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Feed } from 'feed';
-import { OgsResultMap, RssParserFeed } from './feed-crawler';
+import { OgsResultMap, CustomRssParserFeed, CustomRssParserItem } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
-import * as RssParser from 'rss-parser';
 import { logger } from './logger';
 const Cache = require('@11ty/eleventy-cache-assets');
 
 Cache.concurrency = 50;
 
-type CustomRssParserFeed = {
+type BlogFeed = {
   title: string;
   link: string;
   linkMd5Hash: string;
@@ -31,14 +30,18 @@ export class FeedStorer {
     await fs.writeFile(path.join(storeDirPath, 'feed.json'), aggregatedFeed.json1(), 'utf-8');
   }
 
-  async storeBlogFeeds(feeds: RssParserFeed[], blogOgsResultMap: OgsResultMap, storeDirPath: string): Promise<void> {
+  async storeBlogFeeds(
+    feeds: CustomRssParserFeed[],
+    blogOgsResultMap: OgsResultMap,
+    storeDirPath: string,
+  ): Promise<void> {
     await fs.rmdir(storeDirPath, { recursive: true });
     await fs.mkdir(storeDirPath, { recursive: true });
 
-    const customFeeds: RssParserFeed[] = [];
+    const blogFeeds: BlogFeed[] = [];
 
     for (const feed of feeds) {
-      const customFeed: CustomRssParserFeed = {
+      const customFeed: BlogFeed = {
         title: feed.title,
         link: feed.link,
         linkMd5Hash: textToMd5Hash(feed.link),
@@ -57,16 +60,16 @@ export class FeedStorer {
         });
       }
 
-      customFeeds.push(customFeed);
+      blogFeeds.push(customFeed);
     }
 
-    await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(customFeeds, null, 2), 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(blogFeeds, null, 2), 'utf-8');
   }
 
   async cacheImages(
-    allFeedItems: RssParser.Item[],
+    allFeedItems: CustomRssParserItem[],
     allFeedItemOgsResultMap: OgsResultMap,
-    feeds: RssParserFeed[],
+    feeds: CustomRssParserFeed[],
     blogOgsResultMap: OgsResultMap,
   ): Promise<void> {
     let ogImageUrls: string[] = [];

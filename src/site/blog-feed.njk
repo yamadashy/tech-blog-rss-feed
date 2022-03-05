@@ -21,7 +21,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
                 <div class='ui-feed-item'>
                     <div class='ui-feed-item__content'>
                         <a class='ui-feed-item__title' href='{{ feedItem.link }}'>{{ feedItem.title }}</a>
-                        <div class='ui-feed-item__blog-title'>{{ feedItem.blogTitle }}</div>
+                        <div class='ui-feed-item__blog-title'>{{ blogFeed.title }}</div>
                         {% if feedItem.summary %}
                             <a class='ui-feed-item__summary' href='{{ feedItem.link }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
                         {% endif %}

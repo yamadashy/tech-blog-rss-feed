@@ -25,7 +25,11 @@ export type OgsResult = {
 };
 export type OgsResultMap = Map<string, OgsResult>;
 export type FeedItemHatenaCountMap = Map<string, number>;
-export type RssParserFeed = RssParser.Output<RssParser.Item>;
+export type CustomRssParserItem = RssParser.Item & {
+  blogTitle: string;
+  blogLink: string;
+};
+export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem>;
 
 export class FeedCrawler {
   private rssParser;
@@ -37,13 +41,13 @@ export class FeedCrawler {
   /**
    * フィード取得 + 取得後の調整
    */
-  async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<RssParserFeed[]> {
+  async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<CustomRssParserFeed[]> {
     FeedCrawler.validateFeedInfoList(feedInfoList);
 
     const feedInfoListLength = feedInfoList.length;
     let fetchProcessCounter = 1;
 
-    const feeds: RssParserFeed[] = [];
+    const feeds: CustomRssParserFeed[] = [];
 
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
@@ -59,7 +63,7 @@ export class FeedCrawler {
       .process(async (feedInfo) => {
         const feed = await retry(
           async () => {
-            return this.rssParser.parseURL(feedInfo.url);
+            return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
           },
           {
             retries: 3,
@@ -103,7 +107,7 @@ export class FeedCrawler {
   /**
    * 取得したフィードの調整
    */
-  private static postProcessFeed(feedInfo: FeedInfo, feed: RssParserFeed): RssParserFeed {
+  private static postProcessFeed(feedInfo: FeedInfo, feed: CustomRssParserFeed): CustomRssParserFeed {
     // ブログごとの調整
     switch (feedInfo.label) {
       case 'メルカリ':
@@ -122,16 +126,16 @@ export class FeedCrawler {
 
     // 全ブログの調整
     for (const feedItem of feed.items) {
-      // 「記事タイトル | ブログ名」の形にする
-      feedItem.title = `${feedItem.title} | ${feed.title}`;
+      feedItem.blogTitle = feed.title;
+      feedItem.blogLink = feed.link;
     }
 
     return feed;
   }
 
-  aggregateFeeds(feeds: RssParserFeed[], filterArticleDate: Date) {
-    let allFeedItems: RssParser.Item[] = [];
-    const copiedFeeds: RssParserFeed[] = objectDeepCopy(feeds);
+  aggregateFeeds(feeds: CustomRssParserFeed[], filterArticleDate: Date) {
+    let allFeedItems: CustomRssParserItem[] = [];
+    const copiedFeeds: CustomRssParserFeed[] = objectDeepCopy(feeds);
     const filterIsoDate = filterArticleDate.toISOString();
     const currentIsoDate = new Date().toISOString();
 
@@ -163,7 +167,7 @@ export class FeedCrawler {
     return allFeedItems;
   }
 
-  async fetchFeedItemOgsResultMap(feedItems: RssParser.Item[], concurrency: number): Promise<OgsResultMap> {
+  async fetchFeedItemOgsResultMap(feedItems: CustomRssParserItem[], concurrency: number): Promise<OgsResultMap> {
     const feedItemOgsResultMap: OgsResultMap = new Map();
     const feedItemsLength = feedItems.length;
     let fetchProcessCounter = 1;
@@ -188,7 +192,7 @@ export class FeedCrawler {
     return feedItemOgsResultMap;
   }
 
-  async fetchFeedOgsResultMap(feeds: RssParserFeed[], concurrency: number): Promise<OgsResultMap> {
+  async fetchFeedOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
     const feedOgsResultMap: OgsResultMap = new Map();
     const feedsLength = feeds.length;
     let fetchProcessCounter = 1;
@@ -225,7 +229,7 @@ export class FeedCrawler {
     return ogsResponse.result;
   }
 
-  async fetchHatenaCountMap(feedItems: RssParser.Item[]): Promise<FeedItemHatenaCountMap> {
+  async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
     const feedItemHatenaCountMap: Map<string, number> = new Map();
     const feedItemUrlsChunks: string[][] = [];
     let feedItemCounter = 0;
@@ -258,7 +262,7 @@ export class FeedCrawler {
     return feedItemHatenaCountMap;
   }
 
-  private static subtractFeedItemsDateHour(feed: RssParserFeed, subHours: number) {
+  private static subtractFeedItemsDateHour(feed: CustomRssParserFeed, subHours: number) {
     for (const feedItem of feed.items) {
       feedItem.isoDate = dayjs(feedItem.isoDate).subtract(subHours, 'h').toISOString();
       feedItem.pubDate = dayjs(feedItem.pubDate).subtract(subHours, 'h').toISOString();

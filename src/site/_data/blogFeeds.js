@@ -27,16 +27,6 @@ module.exports = async () => {
     for (const feedItem of blogFeed.items) {
       feedItem.diffDateForHuman = dayjs().to(feedItem.isoDate);
       feedItem.pubDateForHuman = dayjs(feedItem.isoDate).format('YYYY-MM-DD HH:mm:ss');
-
-      const title = feedItem.title || '';
-
-      // 区切り文字が1つ以上なら記事タイトルとブログタイトルに分割する。独自に `|` で区切っているので
-      // TODO: feed.json 作る段階で分けて入れておく
-      if ((title.match(/\|/g) || []).length >= 1) {
-        const splittedTitle = title.split('|');
-        feedItem.title = splittedTitle.slice(0, -1).join('|') || '';
-        feedItem.blogTitle = splittedTitle.slice(-1)[0] || '';
-      }
     }
   }
 
