@@ -13,7 +13,6 @@ test('FEED_INFO_LIST の設定が正しい', () => {
 });
 
 // フィード取得テスト
-// TODO: test.concurrent.each が使えたらそれを使いたい
 FEED_INFO_LIST.map((feedInfo: FeedInfo) => {
   test.concurrent(
     `フィードが取得可能 - ${feedInfo.label} / ${feedInfo.url}`,

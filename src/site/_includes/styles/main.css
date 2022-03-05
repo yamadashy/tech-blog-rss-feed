@@ -253,7 +253,6 @@ img {
 
 /*
  * ブログ一覧
- * TODO: css分ける？
  */
 .ui-section-blog {
     background: var(--yellow-background-lighter);
