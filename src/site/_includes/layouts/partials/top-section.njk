@@ -1,4 +1,4 @@
-<section class="ui-section-content top-section">
+<section class="ui-section-content ui-top-section">
     <div class="ui-layout-container">
         <div class="ui-layout-column-6 ui-layout-column-center">
             <p class="ui-text-intro">
@@ -27,6 +27,14 @@
                     <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.atom }}'>
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                 </form>
+                <div class='ui-top-section__subscribe'>
+                    <a href='https://feedly.com/i/subscription/feed/{{ constants.feedUrls.rss }}' target="_blank" rel="noopener">
+                        <img id='feedlyFollow' src='{{ page.url | relativeUrl }}images/subscribe-feedly.png' alt='follow us in feedly' width='152' height='56'>
+                    </a>
+                    <a href="https://www.inoreader.com?add_feed={{ constants.feedUrls.rss }}" target="_blank" rel="noopener">
+                        <img src="{{ page.url | relativeUrl }}images/subscribe-inoreader.png" alt="follow us in inoreader" width='260' height='72'>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
