@@ -1,6 +1,7 @@
 const htmlmin = require('html-minifier-terser');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
+const ts = require('typescript');
 
 Image.concurrency = 50;
 
@@ -63,6 +64,19 @@ const relativeUrlFilter = (url) => {
   return relativeUrl === '' ? './' : `${relativeUrl}/`;
 }
 
+const supportTypeScriptTemplate = (eleventyConfig) => {
+  eleventyConfig.addTemplateFormats('ts');
+  eleventyConfig.addExtension('ts', {
+    outputFileExtension: 'js',
+    compile: async (inputContent) => {
+      return async () => {
+        const result = ts.transpileModule(inputContent, { compilerOptions: { module: ts.ModuleKind.CommonJS }});
+        return result.outputText;
+      }
+    }
+  });
+}
+
 module.exports = function (eleventyConfig) {
   // static assets
   eleventyConfig.addPassthroughCopy('src/site/images');
@@ -76,6 +90,12 @@ module.exports = function (eleventyConfig) {
 
   // relative path
   eleventyConfig.addFilter("relativeUrl", relativeUrlFilter);
+
+  // TypeScript
+  supportTypeScriptTemplate(eleventyConfig);
+
+  // TODO: _data も TypeScript 対応したい
+  // @see https://github.com/11ty/eleventy/discussions/1835
 
   return {
     htmlTemplateEngine: 'njk',
