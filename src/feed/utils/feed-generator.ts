@@ -3,8 +3,7 @@ import { Feed, FeedOptions } from 'feed';
 import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
 import { textTruncate, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
-
-const SITE_URL = 'https://yamadashy.github.io/tech-blog-rss-feed';
+import * as constants from '../../common/constants';
 
 export class FeedGenerator {
   generateFeed(
@@ -15,20 +14,16 @@ export class FeedGenerator {
     maxFeedContentLength: number,
   ): Feed {
     const outputFeed = new Feed({
-      title: '企業テックブログRSS',
-      description: '企業のテックブログの更新をまとめたRSSフィード',
-      language: 'ja',
-      id: `${SITE_URL}/`,
-      link: `${SITE_URL}/`,
-      feedLinks: {
-        rss: `${SITE_URL}/feed/rss.xml`,
-        atom: `${SITE_URL}/feed/atom.xml`,
-        json: `${SITE_URL}/feed/feed.json`,
-      },
-      image: `${SITE_URL}/images/icon.png`,
-      favicon: `${SITE_URL}/images/favicon.ico`,
-      copyright: 'yamadashy/tech-blog-rss-feed',
-      generator: 'yamadashy/tech-blog-rss-feed',
+      title: constants.feedTitle,
+      description: constants.feedDescription,
+      language: constants.feedLanguage,
+      id: `${constants.siteUrlStem}/`,
+      link: `${constants.siteUrlStem}/`,
+      feedLinks: constants.feedUrls,
+      image: `${constants.siteUrlStem}/images/icon.png`,
+      favicon: `${constants.siteUrlStem}/images/favicon.ico`,
+      copyright: constants.feedCopyright,
+      generator: constants.feedGenerator,
       updated: new Date(),
     } as FeedOptions);
 

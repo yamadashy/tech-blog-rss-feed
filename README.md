@@ -48,11 +48,10 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 - 平日 8時-24時の1時間おき
 - 休日 8時-24時の2時間おき
 
-### フォークして使う場合の注意点
+### フォークして使う場合
 以下を書き換えると独自のサイトが動くと思います。
 
-- `src/site/_data/constants.js` の URL など
-- `yamadashy` と検索してヒットした内容
+- `src/common/constants.js` の URL など
 
 ### 開発用コマンド
 ```bash

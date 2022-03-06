@@ -11,7 +11,7 @@
       "node",
       "jest"
     ],
-    "allowJs": false,
+    "allowJs": true,
     "noImplicitAny": true,
     "removeComments": true,
     "skipLibCheck": true,
