@@ -1,0 +1,23 @@
+<div class='ui-feed-item'>
+    <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
+        {% if feedItem.image %}
+            {% image feedItem.image.url, '記事のアイキャッチ画像', '../' %}
+        {% else %}
+            <img src='{{ page.url | relativeUrl }}images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
+        {% endif %}
+    </a>
+    <div class='ui-feed-item__content'>
+        <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem._custom.originalTitle }}</a>
+        {% if feedItem._custom.hatenaCount > 0 %}
+            <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
+                <img src='{{ page.url | relativeUrl }}images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async' width='96' height='96'>
+                <span>{{ feedItem._custom.hatenaCount }}</span>
+            </div>
+        {% endif %}
+        <div class='ui-feed-item__blog-title'>{{ feedItem._custom.blogTitle }}</div>
+        {% if feedItem.summary %}
+            <a class='ui-feed-item__summary' href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
+        {% endif %}
+        <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
+    </div>
+</div>

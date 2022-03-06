@@ -131,7 +131,32 @@ img {
     color: var(--base-color-muted);
 }
 
-.ui-section-nav__link-active {
+.ui-section-nav__link--active {
+    color: var(--base-color);
+    border-bottom-color: var(--base-color);
+}
+
+/**
+ * フィードの新着/人気トグル
+ */
+.ui-feed-toggle-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.ui-feed-toggle-nav .ui-feed-toggle-nav__heading {
+    margin-bottom: 0;
+    margin-right: 0.3em;
+}
+
+.ui-feed-toggle-nav .ui-feed-toggle-nav__link {
+    margin-left: 0.5em;
+    padding: 0 0.3em;
+    color: var(--base-color-lighter);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.ui-feed-toggle-nav .ui-feed-toggle-nav__link--active {
     color: var(--base-color);
     border-bottom-color: var(--base-color);
 }
@@ -164,6 +189,9 @@ img {
     margin-top: 1em;
     margin-bottom: 2em;
     justify-items: left;
+}
+.ui-container-feed.ui-container-feed--hot {
+    margin-top: 2em;
 }
 .ui-feed-item {
     display: grid;

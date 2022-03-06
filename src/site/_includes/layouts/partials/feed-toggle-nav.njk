@@ -1,0 +1,5 @@
+<div class='ui-feed-toggle-nav'>
+    <h2 class='ui-feed-toggle-nav__heading ui-typography-heading'>直近1週間の更新</h2>
+    <a class='ui-feed-toggle-nav__link {% if ['/'].includes(page.url) %}ui-feed-toggle-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}'>新着</a>
+    <a class='ui-feed-toggle-nav__link {% if ['/hot/'].includes(page.url) %}ui-feed-toggle-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}hot/'>人気</a>
+</div>

@@ -5,73 +5,20 @@ eleventyComputed:
     lastUpdated: "{{ lastModifiedBlogsDate }}"
 ---
 
-<section class="ui-section-content top-section">
-    <div class="ui-layout-container">
-        <div class="ui-layout-column-6 ui-layout-column-center">
-            <p class="ui-text-intro">
-                企業のテックブログの更新をまとめた<br>RSSフィードを配信しています<br>
-            </p>
-            <div class="ui-component-cta ui-layout-flex">
-                <form class="ui-component-form ui-layout-grid">
-                    <label class='ui-component-form__label' for='feed-url-slack'>
-                        <img src='images/slack-mark.png' alt='Slackのロゴ' loading="lazy" decoding='async' width='96' height='96'>
-                    </label>
-                    <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.atom }}'>
-                    <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
-                </form>
-                <p class="ui-text-note"><small>Slackに貼り付けると更新を受け取ることができます</small></p>
-                <form class="ui-component-form ui-layout-grid">
-                    <label class='ui-component-form__label' for='feed-url-rss'>
-                        <span>RSS URL</span>
-                    </label>
-                    <input type='text' id='feed-url-rss' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.rss }}'>
-                    <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
-                </form>
-                <form class="ui-component-form ui-layout-grid">
-                    <label class='ui-component-form__label' for='feed-url-atom'>
-                        <span>Atom URL</span>
-                    </label>
-                    <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.atom }}'>
-                    <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'layouts/partials/top-section.njk' %}
 
 {% include 'layouts/partials/nav.njk' %}
 
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
-        <h2 class='ui-typography-heading'>直近1週間の更新</h2>
+        {% include 'layouts/partials/feed-toggle-nav.njk' %}
+
         {% for dateString, feedItems in feedItemsChunks %}
             <h3 class='ui-section-content__feed-date-heading'>{{ dateString }}</h3>
             <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed">
-                {% for feedItem in feedItems %}
-                    <div class='ui-feed-item'>
-                        <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
-                            {% if feedItem.image %}
-                                {% image feedItem.image.url, '記事のアイキャッチ画像' %}
-                            {% else %}
-                                <img src='images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
-                            {% endif %}
-                        </a>
-                        <div class='ui-feed-item__content'>
-                            <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem._custom.originalTitle }}</a>
-                            {% if feedItem._custom.hatenaCount > 0 %}
-                                <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
-                                    <img src='images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" decoding='async' width='96' height='96'>
-                                    <span>{{ feedItem._custom.hatenaCount }}</span>
-                                </div>
-                            {% endif %}
-                            <div class='ui-feed-item__blog-title'>{{ feedItem._custom.blogTitle }}</div>
-                            {% if feedItem.summary %}
-                                <a class='ui-feed-item__summary' href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
-                            {% endif %}
-                            <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
-                        </div>
-                    </div>
-                {% endfor %}
+                {% asyncEach feedItem in feedItems %}
+                    {% include 'layouts/partials/feed-item.njk' %}
+                {% endeach %}
             </div>
         {% endfor %}
     </div>
