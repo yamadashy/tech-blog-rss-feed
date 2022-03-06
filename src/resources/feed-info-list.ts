@@ -138,7 +138,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['PHONE APPLI', 'https://phoneappli.net/recruit/blog/atom.xml'],
   ['PLAID', 'https://tech.plaid.co.jp/rss/'],
   ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
-  ['Pentagon', 'https://blog.pentagon.tokyo/feed/'],
+  ['Pentagon', 'https://blog.pentagon.tokyo/category/engineer/feed/'],
   ['Playground', 'https://tech.playground.style/feed/'],
   ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'],
   ['Progate', 'https://tech.prog-8.com/feed'],
