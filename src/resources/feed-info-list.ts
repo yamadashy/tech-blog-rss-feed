@@ -136,7 +136,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Open Reach Tech', 'https://zenn.dev/openreachtech/feed'],
   ['OpenWork', 'https://techblog.openwork.co.jp/feed'],
   ['PHONE APPLI', 'https://phoneappli.net/recruit/blog/atom.xml'],
-  ['PLAID', 'https://tech.plaid.co.jp/rss/'],
+  ['PLAID', 'https://tech.plaid.co.jp/rss.xml'],
   ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
   ['Pentagon', 'https://blog.pentagon.tokyo/category/engineer/feed/'],
   ['Playground', 'https://tech.playground.style/feed/'],
