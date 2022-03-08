@@ -96,9 +96,9 @@ export class FeedStorer {
             'user-agent': constants.requestUserAgent,
           },
         },
-      }).catch((e: Error) => {
+      }).catch((error: Error) => {
         logger.error('[cache-image] error', ogImageUrl);
-        logger.error(e);
+        logger.trace(error);
       });
     });
     await Promise.all(fetchImagePromises);

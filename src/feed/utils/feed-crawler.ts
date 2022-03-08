@@ -59,7 +59,7 @@ export class FeedCrawler {
           feedInfo.label,
           feedInfo.url,
         );
-        logger.error(error);
+        logger.trace(error);
       })
       .process(async (feedInfo) => {
         const feed = await retry(
@@ -188,7 +188,7 @@ export class FeedCrawler {
           feedItem.title,
           feedItem.link,
         );
-        logger.error(error);
+        logger.trace(error);
       })
       .process(async (feedItem) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feedItem.link);
@@ -208,7 +208,7 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .handleError(async (error, feed) => {
         logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
-        logger.error(error);
+        logger.trace(error);
       })
       .process(async (feed) => {
         const ogsResult = await FeedCrawler.fetchOgsResult(feed.link);
