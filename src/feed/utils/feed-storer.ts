@@ -4,6 +4,7 @@ import { Feed } from 'feed';
 import { OgsResultMap, CustomRssParserFeed, CustomRssParserItem } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 import { logger } from './logger';
+import * as constants from '../../common/constants';
 const Cache = require('@11ty/eleventy-cache-assets');
 
 Cache.concurrency = 50;
@@ -92,7 +93,7 @@ export class FeedStorer {
         type: 'buffer',
         fetchOptions: {
           headers: {
-            'user-agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)',
+            'user-agent': constants.requestUserAgent,
           },
         },
       }).catch((e: Error) => {

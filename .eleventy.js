@@ -2,6 +2,7 @@ const htmlmin = require('html-minifier-terser');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const ts = require('typescript');
+const constants = require('src/common/constants');
 
 Image.concurrency = 50;
 
@@ -34,7 +35,7 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
         duration: '3d',
         fetchOptions: {
           headers: {
-            'user-agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)',
+            'user-agent': constants.requestUserAgent,
           },
         },
       },
