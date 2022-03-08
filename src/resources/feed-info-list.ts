@@ -251,7 +251,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['イエソド', 'https://zenn.dev/yesodco/feed'],
   ['イノベーター・ジャパン', 'https://tech.innovator.jp.net/feed'],
   ['インテリジェントテクノロジー', 'https://iti.hatenablog.jp/feed'],
-  ['インフィニットループ', 'https://www.infiniteloop.co.jp/blog/feed/'],
+  ['インフィニットループ', 'https://www.infiniteloop.co.jp/blog/feed/atom/'],
   ['ウィルゲート', 'https://tech.willgate.co.jp/feed'],
   ['ウェイブ', 'https://tech.wwwave.jp/feed'],
   ['ウエディングパーク', 'https://engineers.weddingpark.co.jp/feed'],
