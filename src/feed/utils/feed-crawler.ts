@@ -7,6 +7,7 @@ import { URL } from 'url';
 import * as retry from 'async-retry';
 import { objectDeepCopy } from './common-util';
 import { logger } from './logger';
+import * as constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
@@ -63,7 +64,7 @@ export class FeedCrawler {
       .process(async (feedInfo) => {
         const feed = await retry(
           async () => {
-            return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
+            return (await this.rssParser.parseURL(feedInfo.url)) as CustomRssParserFeed;
           },
           {
             retries: 3,
@@ -121,6 +122,12 @@ export class FeedCrawler {
         break;
       case 'Tokyo Otaku Mode':
         feed.link = 'https://blog.otakumode.com/';
+        break;
+      case 'フューチャー':
+        feed.link = 'https://future-architect.github.io/';
+        break;
+      case 'さくら':
+        feed.link = 'https://knowledge.sakura.ad.jp/';
         break;
     }
 
@@ -213,13 +220,24 @@ export class FeedCrawler {
   }
 
   private static async fetchOgsResult(url: string): Promise<OgsResult> {
+    // TODO: note系ブログのデータが取得できないので対応
     const ogsResponse: { result: OgsResult } = await ogs({
       url: url,
       timeout: 10 * 1000,
+      // 10MB
+      downloadLimit: 10 * 1000 * 1000,
+      headers: {
+        'user-agent': constants.requestUserAgent,
+      },
     });
 
     const ogsResult = ogsResponse.result;
     const ogImageUrl = ogsResult?.ogImage?.url;
+
+    // 一部URLがおかしいものの対応
+    if (ogImageUrl && ogImageUrl.startsWith('https://tech.fusic.co.jphttps')) {
+      ogsResult.ogImage.url = ogImageUrl.substring('https://tech.fusic.co.jp'.length);
+    }
 
     // http から始まってなければ調整
     if (ogImageUrl && !ogImageUrl.startsWith('http')) {

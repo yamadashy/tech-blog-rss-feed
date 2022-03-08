@@ -2,7 +2,7 @@ const htmlmin = require('html-minifier-terser');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const ts = require('typescript');
-const constants = require('src/common/constants');
+const constants = require('./src/common/constants');
 
 Image.concurrency = 50;
 
