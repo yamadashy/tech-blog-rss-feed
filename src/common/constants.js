@@ -31,5 +31,5 @@ module.exports = {
   globalSiteTagKey: 'G-CNNNTL0NB3',
 
   // フィードの取得などに使う UserAgent
-  requestUserAgent: 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)',
+  requestUserAgent: 'facebookexternalhit/1.1; yamadashy/tech-blog-rss-feed',
 };
