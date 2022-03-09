@@ -261,7 +261,7 @@ img {
     margin: 0.3em 0;
     font-size: 0.75em;
 }
-.ui-feed-item .ui-feed-item__blog-title:hover {
+.ui-feed-item .ui-feed-item__blog-title--link:hover {
     text-decoration: underline;
 }
 .ui-feed-item .ui-feed-item__summary {
@@ -374,14 +374,6 @@ img {
     .ui-blog .ui-blog__title  {
         margin-top: 0.5em;
     }
-}
-
-/**
- * ブログごとのフィード
- */
-.ui-container-feed--no-image .ui-feed-item {
-    display: grid;
-    grid-template-columns: 1fr;
 }
 
 /*

@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Feed } from 'feed';
-import { OgsResultMap, CustomRssParserFeed, CustomRssParserItem } from './feed-crawler';
+import { OgsResultMap, CustomRssParserFeed, CustomRssParserItem, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
@@ -20,6 +20,8 @@ type BlogFeed = {
     link: string;
     summary: string;
     isoDate: string;
+    hatenaCount: number;
+    ogImageUrl: string;
   }[];
 };
 
@@ -33,7 +35,8 @@ export class FeedStorer {
 
   async storeBlogFeeds(
     feeds: CustomRssParserFeed[],
-    blogOgsResultMap: OgsResultMap,
+    ogsResultMap: OgsResultMap,
+    allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     storeDirPath: string,
   ): Promise<void> {
     await fs.rmdir(storeDirPath, { recursive: true });
@@ -46,8 +49,8 @@ export class FeedStorer {
         title: feed.title,
         link: feed.link,
         linkMd5Hash: textToMd5Hash(feed.link),
-        ogImageUrl: blogOgsResultMap.get(feed.link)?.ogImage?.url,
-        ogDescription: blogOgsResultMap.get(feed.link)?.ogDescription,
+        ogImageUrl: ogsResultMap.get(feed.link)?.ogImage?.url,
+        ogDescription: ogsResultMap.get(feed.link)?.ogDescription,
         items: [],
       };
 
@@ -58,6 +61,8 @@ export class FeedStorer {
           summary: textTruncate(feedItemSummary, 100, '...'),
           link: feedItem.link,
           isoDate: feedItem.isoDate,
+          hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
+          ogImageUrl: ogsResultMap.get(feedItem.link)?.ogImage?.url,
         });
       }
 
@@ -69,18 +74,17 @@ export class FeedStorer {
 
   async cacheImages(
     allFeedItems: CustomRssParserItem[],
-    allFeedItemOgsResultMap: OgsResultMap,
+    ogsResultMap: OgsResultMap,
     feeds: CustomRssParserFeed[],
-    blogOgsResultMap: OgsResultMap,
   ): Promise<void> {
     let ogImageUrls: string[] = [];
 
     for (const feedItem of allFeedItems) {
-      ogImageUrls.push(allFeedItemOgsResultMap.get(feedItem.link)?.ogImage?.url);
+      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url);
     }
 
     for (const feed of feeds) {
-      ogImageUrls.push(blogOgsResultMap.get(feed.link)?.ogImage?.url);
+      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url);
     }
 
     // フィルタ

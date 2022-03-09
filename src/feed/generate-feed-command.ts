@@ -27,11 +27,12 @@ const feedStorer = new FeedStorer();
     feedCrawler.fetchHatenaCountMap(allFeedItems),
     feedCrawler.fetchFeedOgsResultMap(feeds, FEED_OGP_FETCH_CONCURRENCY),
   ]);
+  const ogsResultMap = new Map([...allFeedItemOgsResultMap, ...feedOgsResultMap]);
 
   // まとめフィード作成
   const aggregatedFeed = feedGenerator.generateFeed(
     allFeedItems,
-    allFeedItemOgsResultMap,
+    ogsResultMap,
     allFeedItemHatenaCountMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
@@ -46,7 +47,7 @@ const feedStorer = new FeedStorer();
   // ファイル出力、画像キャッシュ
   await Promise.all([
     feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),
-    feedStorer.storeBlogFeeds(feeds, feedOgsResultMap, STORE_BLOG_FEEDS_DIR_PATH),
-    feedStorer.cacheImages(allFeedItems, allFeedItemOgsResultMap, feeds, feedOgsResultMap),
+    feedStorer.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, STORE_BLOG_FEEDS_DIR_PATH),
+    feedStorer.cacheImages(allFeedItems, ogsResultMap, feeds),
   ]);
 })();
