@@ -5,7 +5,7 @@ import * as dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
 import * as retry from 'async-retry';
-import { objectDeepCopy } from './common-util';
+import { objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
@@ -133,6 +133,10 @@ export class FeedCrawler {
 
     // 全ブログの調整
     for (const feedItem of feed.items) {
+      // 記事URLのクエリパラメーター削除
+      feedItem.link = urlRemoveQueryParams(feedItem.link);
+
+      // view用
       feedItem.blogTitle = feed.title;
       feedItem.blogLink = feed.link;
     }

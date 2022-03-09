@@ -16,5 +16,9 @@ export const textTruncate = (text: string, maxLength: number, postFix: string): 
 };
 
 export const urlRemoveQueryParams = (url: string) => {
+  if (!url.includes('?')) {
+    return url;
+  }
+
   return url.split('?')[0];
 };
