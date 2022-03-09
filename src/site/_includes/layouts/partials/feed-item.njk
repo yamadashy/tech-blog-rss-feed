@@ -14,9 +14,9 @@
                 <span>{{ feedItem._custom.hatenaCount }}</span>
             </div>
         {% endif %}
-        <div class='ui-feed-item__blog-title'>{{ feedItem._custom.blogTitle }}</div>
+        <a class='ui-feed-item__blog-title' href='{{ page.url | relativeUrl }}blogs/{{ feedItem._custom.blogLinkMd5Hash }}'>{{ feedItem._custom.blogTitle }}</a>
         {% if feedItem.summary %}
-            <a class='ui-feed-item__summary' href='{{ feedItem.url }}'>{{ feedItem.summary | truncate(200, true, "...") }}</a>
+            <div class='ui-feed-item__summary'>{{ feedItem.summary | truncate(200, true, "...") }}</div>
         {% endif %}
         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
     </div>

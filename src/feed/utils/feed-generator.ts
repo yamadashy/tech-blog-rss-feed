@@ -1,7 +1,7 @@
 import * as RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
-import { textTruncate, urlRemoveQueryParams } from './common-util';
+import { textToMd5Hash, textTruncate, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
 
@@ -71,8 +71,10 @@ export class FeedGenerator {
             name: '_custom',
             objects: {
               hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
-              originalTitle: feedItem.title || '',
-              blogTitle: feedItem.blogTitle || '',
+              originalTitle: feedItem.title,
+              blogTitle: feedItem.blogTitle,
+              blogLink: feedItem.blogLink,
+              blogLinkMd5Hash: textToMd5Hash(feedItem.blogLink),
             },
           },
         ],

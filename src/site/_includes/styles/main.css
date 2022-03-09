@@ -261,6 +261,9 @@ img {
     margin: 0.3em 0;
     font-size: 0.75em;
 }
+.ui-feed-item .ui-feed-item__blog-title:hover {
+    text-decoration: underline;
+}
 .ui-feed-item .ui-feed-item__summary {
     font-size: 0.75em;
     margin: 0.3em 0;
