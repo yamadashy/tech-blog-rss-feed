@@ -219,6 +219,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['i-plug', 'https://itbl.hatenablog.com/feed'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
+  ['ispec', 'https://zenn.dev/ispec/feed'],
   ['justInCaseTechnologies', 'https://jict.hatenablog.com/feed'],
   ['mikan', 'https://mikan-tech.hatenablog.jp/feed'],
   ['nana music', 'https://tech.nana-music.com/feed'],
