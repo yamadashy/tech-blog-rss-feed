@@ -33,6 +33,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['BIGLOBE', 'https://style.biglobe.co.jp/feed/category/TechBlog'],
   ['BRANU', 'https://tech.branu.jp/feed'],
   ['Babel', 'https://dev.babel.jp/feed'],
+  ['Baseconnect', 'https://techblog.baseconnect.in/feed'],
   ['Basicinc', 'https://tech.basicinc.jp/feed'],
   ['Beatrust', 'https://tech.beatrust.com/feed'],
   ['BrainPad', 'https://blog.brainpad.co.jp/feed'],
@@ -190,6 +191,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Unipos', 'https://fringeneer.hatenablog.com/feed'],
   ['Uzabase', 'https://tech.uzabase.com/feed'],
   ['VA Linux', 'https://valinux.hatenablog.com/feed'],
+  ['VirtualCast', 'https://virtualcast.jp/blog/category/tech/feed/'],
   ['Visional', 'https://engineering.visional.inc/blog/index.xml'],
   ['Voicy', 'https://medium.com/feed/voicy-engineering'],
   ['WASD', 'https://tech.wasd-inc.com/feed'],
@@ -316,6 +318,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ゼネット', 'https://media.zenet-web.co.jp/feed'],
   ['タイマーズ', 'https://techblog.timers-inc.com/feed'],
   ['タイミー', 'https://tech.timee.co.jp/feed'],
+  ['ダイニー', 'https://note.com/dinii/m/mf6424286cfa2/rss'],
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
@@ -470,4 +473,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://segaxd.co.jp/news/?category=blog
  * https://tech.smartshopping.co.jp/
  * https://olaris.jp/category/technology
+ * https://licensecounter.jp/engineer-voice/blog/
  */
