@@ -1,17 +1,21 @@
 :root {
-    --base-background: #fff;
-    --base-color: #333;
-    --base-color-lighter: #777;
-    --base-color-muted: #999;
-
     /**
      * 色参考
      * @see https://material.io/resources/color/
      */
-    --yellow-background: #fff9c4;
-    --yellow-background-lighter: #fffde7;
-    --orange-background-dark: #ff9800;
-    --orange-background-dark-active: #fb8c00;
+    --material-color-yellow-50: #fffde7;
+    --material-color-yellow-100: #fff9c4;
+    --material-color-orange-500: #ff9800;
+    --material-color-orange-600: #fb8c00;
+
+    --base-background: #fff;
+    --base-color: #333;
+    --base-color-lighter: #777;
+    --base-color-muted: #999;
+    --yellow-background: var(--material-color-yellow-100);
+    --yellow-background-lighter: var(--material-color-yellow-50);
+    --orange-background-dark: var(--material-color-orange-500);
+    --orange-background-dark-active: var(--material-color-orange-600);
 
     --hatena-color: #01a5df;
 
