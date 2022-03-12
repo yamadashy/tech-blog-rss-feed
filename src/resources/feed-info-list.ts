@@ -125,6 +125,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['MicroAd', 'https://developers.microad.co.jp/feed'],
   ['Mirrativ', 'https://tech.mirrativ.stream/feed'],
   ['Money Forward Kessai', 'https://tech.mfkessai.co.jp/index.xml'],
+  ['N-Technologies', 'https://zenn.dev/n1nc/feed'],
   ['N.F.Laboratories', 'https://blog.nflabs.jp/feed'],
   ['NAXA', 'https://blog.naxa.co.jp/feed'],
   ['NEMTUS', 'https://zenn.dev/nemtus/feed'],
