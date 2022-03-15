@@ -78,6 +78,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['GMOメディア', 'https://blog.gmo.media/feed/atom/'],
   ['GMOリサーチ', 'https://gmor-sys.com/feed'],
   ['GREE', 'https://labs.gree.jp/blog/feed/'],
+  ['GRIPHONE', 'https://tech.griphone.co.jp/feed/'],
   ['Game Server Services', 'https://gs2.hatenablog.com/feed'],
   ['GameWith', 'https://tech.gamewith.co.jp/feed'],
   ['Goodpatch', 'https://goodpatch-tech.hatenablog.com/feed'],
