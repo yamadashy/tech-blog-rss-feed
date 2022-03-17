@@ -32,7 +32,10 @@ module.exports = async () => {
 
     // ソート用の数値。日が建つほど優先度が低くなる
     const feedItemDiffDays = dayjs().tz().diff(feedItem.date_published, 'day');
-    const feedItemPriorityFactor = Math.max(0.1, (FEED_ITEM_FILTER_DAY - feedItemDiffDays) / FEED_ITEM_FILTER_DAY);
+    const feedItemPriorityFactor = Math.max(
+      0.05,
+      ((FEED_ITEM_FILTER_DAY - feedItemDiffDays) / FEED_ITEM_FILTER_DAY) ** 3,
+    );
     feedItem.priorityForSort = feedItem._custom.hatenaCount * feedItemPriorityFactor;
   }
 
