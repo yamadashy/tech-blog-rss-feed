@@ -294,6 +294,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クラウドワークス', 'https://engineer.crowdworks.jp/feed'],
   ['クラシコム', 'https://note.com/kurashicom_tech/rss'],
   ['クラッソーネ', 'https://tech.crassone.jp/rss.xml'],
+  ['クリアコード', 'https://www.clear-code.com/blog/index.rdf'],
   ['コインチェック', 'https://tech.coincheck.blog/feed'],
   ['ココナラ', 'https://yomoyamablog.coconala.co.jp/feed'],
   ['ココネ', 'https://engineering.cocone.io/feed/'],
