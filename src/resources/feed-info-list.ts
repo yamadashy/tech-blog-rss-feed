@@ -392,7 +392,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['メディアエンジン', 'https://zenn.dev/media_engine/feed'],
   ['メディアドゥ', 'https://techdo.mediado.jp/feed'],
   ['メドピア', 'https://tech.medpeer.co.jp/feed'],
-  ['メドレー', 'https://developer.medley.jp/feed'],
+  ['メドレー', 'https://developer.medley.jp/rss.xml'],
   ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml/'],
   ['メンテモ', 'https://engineering.mentemo.com/feed'],
   ['モノグサ', 'https://tech.monoxer.com/feed'],
