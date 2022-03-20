@@ -176,6 +176,7 @@ img {
 .ui-feed-toggle-nav .ui-feed-toggle-nav__link--active {
     color: var(--base-color);
     border-bottom-color: var(--base-color);
+    font-weight: bold;
 }
 
 /**
