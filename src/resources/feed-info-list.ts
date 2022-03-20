@@ -210,6 +210,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ZOZO', 'https://techblog.zozo.com/feed'],
   ['Zaim', 'https://blog.zaim.co.jp/rss'],
   ['Zeals', 'https://tech.zeals.co.jp/feed'],
+  ['atama plus', 'https://zenn.dev/atamaplus_dev/feed'],
   ['aumo', 'https://techblog.aumo.co.jp/feed'],
   ['auカブコム証券', 'https://engineering.kabu.com/feed'],
   ['auコマース＆ライフ', 'https://kcf-developers.hatenablog.jp/feed'],
