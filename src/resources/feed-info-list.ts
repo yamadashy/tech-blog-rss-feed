@@ -341,7 +341,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トライト', 'https://tryt-group.hatenablog.com/feed'],
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
-  ['トラーナ', 'https://tech.torana.co.jp/feed'],
+  ['トラーナ', 'https://toranabox.com/rss/category/Tech'],
   ['トレタ', 'https://tech.toreta.in/feed'],
   ['ドクターズプライム', encodeURI('https://blog.drsprime.com/feed/category/エンジニアリング')],
   ['ドコカデ', 'https://zenn.dev/dokokade/feed'],
