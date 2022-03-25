@@ -195,7 +195,14 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (feedItem) => {
-        const ogsResult = await FeedCrawler.fetchOgsResult(feedItem.link);
+        const ogsResult = await retry(
+          async () => {
+            return await FeedCrawler.fetchOgsResult(feedItem.link);
+          },
+          {
+            retries: 3,
+          },
+        );
         feedItemOgsResultMap.set(feedItem.link, ogsResult);
         logger.info('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
@@ -215,7 +222,14 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (feed) => {
-        const ogsResult = await FeedCrawler.fetchOgsResult(feed.link);
+        const ogsResult = await retry(
+          async () => {
+            return await FeedCrawler.fetchOgsResult(feed.link);
+          },
+          {
+            retries: 3,
+          },
+        );
         feedOgsResultMap.set(feed.link, ogsResult);
         logger.info('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
@@ -224,10 +238,9 @@ export class FeedCrawler {
   }
 
   private static async fetchOgsResult(url: string): Promise<OgsResult> {
-    // TODO: note系ブログのデータが取得できないので対応
     const ogsResponse: { result: OgsResult } = await ogs({
       url: url,
-      timeout: 10 * 1000,
+      timeout: 30 * 1000,
       // 10MB
       downloadLimit: 10 * 1000 * 1000,
       headers: {
