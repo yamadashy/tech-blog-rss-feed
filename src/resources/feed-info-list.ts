@@ -54,6 +54,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ContractS', 'https://tech.contracts.co.jp/feed'],
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
   ['CyberZ', 'https://note.com/cyberz_cto/rss'],
+  ['DATAFLUCT', 'https://note.datafluct.jp/m/m61a989a0a473/rss'],
   ['DMM', 'https://inside.dmm.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
@@ -141,6 +142,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Nota', 'https://blog.notainc.com/feed'],
   ['OPEN8', 'https://open8tech.hatenablog.com/feed'],
   ['OPTiM', 'https://tech-blog.optim.co.jp/feed'],
+  ['Offers', 'https://zenn.dev/offers/feed'],
   ['Open Reach Tech', 'https://zenn.dev/openreachtech/feed'],
   ['OpenWork', 'https://techblog.openwork.co.jp/feed'],
   ['PHONE APPLI', 'https://phoneappli.net/recruit/blog/atom.xml'],
@@ -486,4 +488,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://tech.smartshopping.co.jp/
  * https://olaris.jp/category/technology
  * https://licensecounter.jp/engineer-voice/blog/
+ *
+ * TODO: スライド系も追加？
+ * https://speakerdeck.com/line_developers
  */
