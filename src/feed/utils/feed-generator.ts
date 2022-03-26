@@ -36,6 +36,12 @@ export class FeedGenerator {
       const ogsResult = feedItemOgsResultMap.get(feedItem.link);
       const ogImage = ogsResult?.ogImage;
 
+      // 日付がないものは入れない
+      if (!feedItem.isoDate) {
+        logger.warn('[feed-item] フィードの日付がありません。', feedItem.isoDate, feedItem.title);
+        continue;
+      }
+
       outputFeed.addItem({
         id: feedItemId,
         guid: feedItemId,
@@ -56,16 +62,16 @@ export class FeedGenerator {
                   name: feedItem.creator,
                 },
               ]
-            : null,
+            : undefined,
         image:
           ogImage && ogImage.url
             ? {
                 type: ogImage.type,
                 url: urlRemoveQueryParams(ogImage.url),
               }
-            : null,
-        published: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
-        date: feedItem.isoDate ? new Date(feedItem.isoDate) : null,
+            : undefined,
+        published: new Date(feedItem.isoDate),
+        date: new Date(feedItem.isoDate),
         extensions: [
           {
             name: '_custom',

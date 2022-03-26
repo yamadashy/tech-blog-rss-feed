@@ -49,20 +49,20 @@ export class FeedStorer {
         title: feed.title,
         link: feed.link,
         linkMd5Hash: textToMd5Hash(feed.link),
-        ogImageUrl: ogsResultMap.get(feed.link)?.ogImage?.url,
-        ogDescription: ogsResultMap.get(feed.link)?.ogDescription,
+        ogImageUrl: ogsResultMap.get(feed.link)?.ogImage?.url || '',
+        ogDescription: ogsResultMap.get(feed.link)?.ogDescription || '',
         items: [],
       };
 
       for (const feedItem of feed.items) {
         const feedItemSummary = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
         customFeed.items.push({
-          title: feedItem.title,
+          title: feedItem.title || '',
           summary: textTruncate(feedItemSummary, 100, '...'),
           link: feedItem.link,
           isoDate: feedItem.isoDate,
           hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
-          ogImageUrl: ogsResultMap.get(feedItem.link)?.ogImage?.url,
+          ogImageUrl: ogsResultMap.get(feedItem.link)?.ogImage?.url || '',
         });
       }
 
@@ -80,11 +80,11 @@ export class FeedStorer {
     let ogImageUrls: string[] = [];
 
     for (const feedItem of allFeedItems) {
-      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url);
+      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url || '');
     }
 
     for (const feed of feeds) {
-      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url);
+      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url || '');
     }
 
     // フィルタ

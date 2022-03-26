@@ -2,7 +2,10 @@ const elemCopyButtons = document.querySelectorAll('.feed-url-copy-button');
 
 elemCopyButtons.forEach((elemCopyButton) => {
   elemCopyButton.addEventListener('click', () => {
-    const elemInput = elemCopyButton.parentElement.querySelector('input');
+    const elemInput = elemCopyButton.parentElement?.querySelector('input');
+    if (!elemInput) {
+      throw new Error('要素が見つかりません');
+    }
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(elemInput.value);

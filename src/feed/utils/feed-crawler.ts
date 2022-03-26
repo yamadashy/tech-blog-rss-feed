@@ -27,10 +27,15 @@ export type OgsResult = {
 export type OgsResultMap = Map<string, OgsResult>;
 export type FeedItemHatenaCountMap = Map<string, number>;
 export type CustomRssParserItem = RssParser.Item & {
+  link: string;
+  isoDate: string;
   blogTitle: string;
   blogLink: string;
 };
-export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem>;
+export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem> & {
+  link: string;
+  title: string;
+};
 
 export class FeedCrawler {
   private rssParser;
@@ -108,40 +113,44 @@ export class FeedCrawler {
   /**
    * 取得したフィードの調整
    */
-  private static postProcessFeed(feedInfo: FeedInfo, feed: CustomRssParserFeed): CustomRssParserFeed {
+  private static postProcessFeed(feedInfo: FeedInfo, feed: RssParser.Output<RssParser.Item>): CustomRssParserFeed {
+    const customFeed = feed as CustomRssParserFeed;
+
     // ブログごとの調整
     switch (feedInfo.label) {
       case 'メルカリ':
         // 9時間ずれているので調整
-        FeedCrawler.subtractFeedItemsDateHour(feed, 9);
-        feed.link = 'https://engineering.mercari.com/blog/';
+        FeedCrawler.subtractFeedItemsDateHour(customFeed, 9);
+        customFeed.link = 'https://engineering.mercari.com/blog/';
         break;
       case 'KAIZEN PLATFORM':
         // 9時間ずれているので調整
-        FeedCrawler.subtractFeedItemsDateHour(feed, 9);
+        FeedCrawler.subtractFeedItemsDateHour(customFeed, 9);
         break;
       case 'Tokyo Otaku Mode':
-        feed.link = 'https://blog.otakumode.com/';
+        customFeed.link = 'https://blog.otakumode.com/';
         break;
       case 'フューチャー':
-        feed.link = 'https://future-architect.github.io/';
+        customFeed.link = 'https://future-architect.github.io/';
         break;
       case 'さくら':
-        feed.link = 'https://knowledge.sakura.ad.jp/';
+        customFeed.link = 'https://knowledge.sakura.ad.jp/';
         break;
     }
 
     // 全ブログの調整
-    for (const feedItem of feed.items) {
+    for (const feedItem of customFeed.items) {
+      feedItem.link = feedItem.link || '';
+
       // 記事URLのクエリパラメーター削除
       feedItem.link = urlRemoveQueryParams(feedItem.link);
 
       // view用
-      feedItem.blogTitle = feed.title;
-      feedItem.blogLink = feed.link;
+      feedItem.blogTitle = feed.title || '';
+      feedItem.blogLink = feed.link || '';
     }
 
-    return feed;
+    return customFeed;
   }
 
   aggregateFeeds(feeds: CustomRssParserFeed[], filterArticleDate: Date) {
@@ -153,11 +162,19 @@ export class FeedCrawler {
     for (const feed of copiedFeeds) {
       // 公開日時でフィルタ
       feed.items = feed.items.filter((feedItem) => {
+        if (!feedItem.isoDate) {
+          return false;
+        }
+
         return feedItem.isoDate >= filterIsoDate;
       });
 
       // 現在時刻より未来のものはフィルタ。UTC表記で日本時間設定しているブログがあるので。
       feed.items = feed.items.filter((feedItem) => {
+        if (!feedItem.isoDate) {
+          return false;
+        }
+
         if (feedItem.isoDate > currentIsoDate) {
           logger.warn('[aggregate-feed] 記事の公開日時が未来になっています。', feedItem.title, feedItem.link);
           return false;

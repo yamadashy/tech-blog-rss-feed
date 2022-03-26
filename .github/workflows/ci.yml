@@ -26,8 +26,8 @@ jobs:
       - name: Install node packages
         run: yarn install
 
-      - name: Run eslint
-        run: yarn lint
+      - name: Run code analyze
+        run: yarn analyze
 
       - name: Run test
         run: yarn test
