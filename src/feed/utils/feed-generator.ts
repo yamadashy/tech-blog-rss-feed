@@ -1,4 +1,4 @@
-import * as RssParser from 'rss-parser';
+import RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate, urlRemoveQueryParams } from './common-util';

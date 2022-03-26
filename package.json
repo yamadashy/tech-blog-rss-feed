@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "yarn feed:generate && yarn site:build",
-    "feed:generate": "ts-node src/feed/generate-feed-command.ts",
+    "feed:generate": "node --require esbuild-register src/feed/generate-feed-command.ts",
     "site:build": "eleventy",
     "site:serve": "eleventy --serve",
     "analyze": "yarn lint && yarn type-check",
@@ -50,6 +50,7 @@
     "async-retry": "^1.3.3",
     "axios": "^0.26.0",
     "dayjs": "^1.10.7",
+    "esbuild-register": "^3.3.2",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-formatter-friendly": "^7.0.0",
@@ -62,7 +63,6 @@
     "open-graph-scraper": "^4.11.0",
     "prettier": "^2.5.1",
     "rss-parser": "^3.12.0",
-    "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "typesync": "^0.8.0",
     "vitest": "^0.7.7"

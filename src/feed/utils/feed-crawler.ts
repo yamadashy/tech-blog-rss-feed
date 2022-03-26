@@ -1,13 +1,13 @@
-import * as RssParser from 'rss-parser';
+import RssParser from 'rss-parser';
 import { PromisePool } from '@supercharge/promise-pool';
 import { FeedInfo } from '../../resources/feed-info-list';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
-import * as retry from 'async-retry';
+import retry from 'async-retry';
 import { objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
-import * as constants from '../../common/constants';
+import constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
 
 export type OgsResult = {
