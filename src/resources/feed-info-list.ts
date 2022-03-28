@@ -219,6 +219,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['cloud.config', 'https://tech-blog.cloud-config.jp/feed/'],
   ['dely', 'https://tech.dely.jp/feed'],
   ['dip', 'https://developer.dip-net.co.jp/feed'],
+  ['efoo', 'https://efoo.hatenablog.com/feed'],
   ['estie', 'https://inside.estie.co.jp/feed'],
   ['for Startups', 'https://tech.forstartups.com/feed'],
   ['freee', 'https://developers.freee.co.jp/feed'],
