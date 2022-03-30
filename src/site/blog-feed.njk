@@ -23,7 +23,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
                         {% if feedItem.ogImageUrl %}
                             {% image feedItem.ogImageUrl, '記事のアイキャッチ画像', page.url | relativeUrl %}
                         {% else %}
-                            <img src='{{ page.url | relativeUrl }}images/icon256-transparent.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
+                            <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
                         {% endif %}
                     </a>
                     <div class='ui-feed-item__content'>
