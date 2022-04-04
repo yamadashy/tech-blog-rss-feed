@@ -11,7 +11,7 @@ eleventyComputed:
 
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
-        {% include 'layouts/partials/feed-toggle-nav.njk' %}
+        <h2 class='ui-typography-heading'>直近1週間の更新</h2>
 
         {% for dateString, feedItems in feedItemsChunks %}
             <h3 class='ui-section-content__feed-date-heading'>{{ dateString }}</h3>

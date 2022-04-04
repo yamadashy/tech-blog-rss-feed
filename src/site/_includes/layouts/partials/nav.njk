@@ -1,11 +1,9 @@
 <nav class='ui-nav'>
     <div class='ui-layout-container'>
         <div class='ui-section-nav__layout ui-layout-flex'>
-            <a class='ui-section-nav__link {% if ['/', '/hot/'].includes(page.url) %}ui-section-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}'>フィード</a>
+            <a class='ui-section-nav__link {% if ['/'].includes(page.url) %}ui-section-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}'>フィード</a>
+            <a class='ui-section-nav__link {% if ['/hot/'].includes(page.url) %}ui-section-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}hot/'>人気フィード</a>
             <a class='ui-section-nav__link {% if ['/blogs/'].includes(page.url) %}ui-section-nav__link--active{% endif %}' href='{{ page.url | relativeUrl }}blogs/'>ブログ一覧</a>
-            {% if blogFeed %}
-                <a class='ui-section-nav__link ui-section-nav__link--active' href='{{ page.url }}'>{{ blogFeed.title }}</a>
-            {% endif %}
         </div>
     </div>
 </nav>

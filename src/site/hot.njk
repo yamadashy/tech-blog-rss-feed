@@ -1,7 +1,7 @@
 ---
 layout: layouts/main.njk
 eleventyComputed:
-    pageTitle: "人気｜{{ constants.siteTitle }}"
+    pageTitle: "人気フィード｜{{ constants.siteTitle }}"
     lastUpdated: "{{ lastModifiedBlogsDate }}"
 ---
 
@@ -9,7 +9,7 @@ eleventyComputed:
 
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
-        {% include 'layouts/partials/feed-toggle-nav.njk' %}
+        <h2 class='ui-typography-heading'>直近1週間の人気フィード</h2>
 
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--hot">
             {% asyncEach feedItem in feedItemsHot %}
