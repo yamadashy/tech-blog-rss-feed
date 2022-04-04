@@ -22,3 +22,15 @@ export const urlRemoveQueryParams = (url: string) => {
 
   return url.split('?')[0];
 };
+
+export const isValidHttpUrl = (url: string) => {
+  let urlObject;
+
+  try {
+    urlObject = new URL(url);
+  } catch (_) {
+    return false;
+  }
+
+  return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
+};

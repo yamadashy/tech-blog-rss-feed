@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
 import retry from 'async-retry';
-import { objectDeepCopy, urlRemoveQueryParams } from './common-util';
+import { isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
@@ -136,6 +136,14 @@ export class FeedCrawler {
       case 'さくら':
         customFeed.link = 'https://knowledge.sakura.ad.jp/';
         break;
+    }
+
+    if (!isValidHttpUrl(customFeed.link)) {
+      logger.warn('取得したフィードのURLが正しくありません。 ', feedInfo.label, customFeed.link);
+    }
+
+    if (customFeed.items.length === 0) {
+      logger.warn('取得したフィードの記事ががありません', feedInfo.label);
     }
 
     // 全ブログの調整
