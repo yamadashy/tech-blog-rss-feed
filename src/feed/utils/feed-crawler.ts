@@ -265,7 +265,7 @@ export class FeedCrawler {
   private static async fetchOgsResult(url: string): Promise<OgsResult> {
     const ogsResponse: { result: OgsResult } = await ogs({
       url: url,
-      timeout: 30 * 1000,
+      timeout: 60 * 1000,
       // 10MB
       downloadLimit: 10 * 1000 * 1000,
       headers: {
