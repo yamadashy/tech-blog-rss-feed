@@ -359,6 +359,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ネフロック', 'https://blog.nefrock.com/feed'],
   ['ハイウィザード', 'https://high-wizard.hatenablog.com/feed'],
   ['ハウテレビジョン', 'https://blog.howtelevision.co.jp/feed'],
+  ['ハロー', 'https://tech.hello.ai/feed'],
   ['ハンズラボ', 'https://www.hands-lab.com/feed'],
   ['ハートビーツ', 'https://heartbeats.jp/hbblog/atom.xml'],
   ['バイセル', 'https://tech.buysell-technologies.com/feed'],
