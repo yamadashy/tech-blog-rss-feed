@@ -10,6 +10,7 @@ eleventyComputed:
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
         <h2 class='ui-typography-heading'>直近1週間の人気フィード</h2>
+        <p class='ui-text-note'>はてなブックマーク数を元に新着優先で並べ替え</p>
 
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--hot">
             {% asyncEach feedItem in feedItemsHot %}

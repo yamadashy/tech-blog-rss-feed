@@ -186,6 +186,10 @@ img {
 .ui-section-feed .ui-layout-grid {
     align-items: flex-start;
 }
+.ui-section-feed .ui-text-note {
+    text-align: left;
+    font-size: 0.9em;
+}
 .ui-container-feed {
     text-align: left;
     margin-top: 1em;
