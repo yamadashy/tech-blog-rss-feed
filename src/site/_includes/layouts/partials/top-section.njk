@@ -9,7 +9,7 @@
                     <label class='ui-component-form__label' for='feed-url-slack'>
                         <img src='{{ page.url | relativeUrl }}images/slack-mark.png' alt='Slackのロゴ' loading="lazy" decoding='async' width='96' height='96'>
                     </label>
-                    <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.atom }}'>
+                    <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.rss }}'>
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                 </form>
                 <p class="ui-text-note"><small>Slackに貼り付けると更新を受け取ることができます</small></p>
@@ -18,13 +18,6 @@
                         <span>RSS URL</span>
                     </label>
                     <input type='text' id='feed-url-rss' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.rss }}'>
-                    <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
-                </form>
-                <form class="ui-component-form ui-layout-grid">
-                    <label class='ui-component-form__label' for='feed-url-atom'>
-                        <span>Atom URL</span>
-                    </label>
-                    <input type='text' id='feed-url-atom' class="ui-component-input ui-component-input-medium" readonly value='{{ constants.feedUrls.atom }}'>
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                 </form>
                 <div class='ui-top-section__subscribe'>
