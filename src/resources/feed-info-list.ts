@@ -319,6 +319,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['シナプス', 'https://tech.synapse.jp/feed'],
   ['シビラ', 'https://zenn.dev/sivira/feed'],
   ['シンシア', 'https://tech-blog.xincere.jp/feed'],
+  ['シンプルフォーム', 'https://zenn.dev/simpleform/feed'],
   ['シー・エス・エス', 'https://blog.css-net.co.jp/feed'],
   ['ジモティー', 'https://jmty-tech.hatenablog.com/feed'],
   ['ジークレスト', 'https://blog.gcrest.com/feed'],
