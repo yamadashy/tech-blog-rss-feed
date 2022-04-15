@@ -2,8 +2,7 @@ name: Generate feeds and site
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   schedule:
     # NOTE: UTCなので9時間引く
     # 平日 8~24時の1時間おき
