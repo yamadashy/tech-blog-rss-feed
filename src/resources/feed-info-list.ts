@@ -189,6 +189,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
   ['TURING', 'https://zenn.dev/turing/feed'],
   ['TVISION INSIGHTS', 'https://tech.tvisioninsights.co.jp/feed'],
+  ['TVer', 'https://techblog.tver-tech.co.jp/feed'],
   ['TeamSpirit', 'https://teamspirit.hatenablog.com/feed'],
   ['TechRacho', 'https://techracho.bpsinc.jp/feed'],
   ['TechTrain', 'https://zenn.dev/techtrain/feed'],
@@ -469,6 +470,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
 /**
  * その他候補
  *
+ * できたばかりなので様子見
+ * ['Amayz', 'https://blog.amayz.co.jp/?feed=rss2'],
+ *
  * パースエラー修正
  * ['Qiita', 'https://zine.qiita.com/'],
  *
@@ -480,6 +484,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
+ * ['Findy Teams', 'https://engineering-org.findy-teams.com/feed.xml'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
