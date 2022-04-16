@@ -382,6 +382,33 @@ img {
     }
 }
 
+/**
+ * ブログのフィード
+ */
+.ui-container-blog-summary {
+    text-align: left;
+    margin-bottom: 2em;
+}
+.ui-blog-summary {
+
+}
+.ui-blog-summary .ui-blog-summary__link {
+    display: block;
+    /*font-size: 0.8em;*/
+    word-break: break-all;
+    overflow: hidden;
+    margin: 0.2em 0;
+}
+.ui-blog-summary .ui-blog-summary__link:hover {
+    text-decoration: underline;
+}
+.ui-blog-summary .ui-blog-summary__description {
+    /*font-size: 0.9em;*/
+    margin: 0.3em 0;
+    word-break: break-all;
+    color: var(--base-color-muted);
+}
+
 /*
  * フッター
  */
