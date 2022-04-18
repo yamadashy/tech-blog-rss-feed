@@ -328,6 +328,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['スイッチサイエンス', 'https://tech.144lab.com/feed'],
   ['スタディサプリ', 'https://blog.studysapuri.jp/feed'],
   ['スタディスト', 'https://studist.tech/feed'],
+  ['スタメン', 'https://tech.stmn.co.jp/feed'],
   ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
   ['スターフェスティバル', 'https://zenn.dev/stafes/feed'],
   ['ストックマーク', 'https://tech.stockmark.co.jp/index.xml'],
