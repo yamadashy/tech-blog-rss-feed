@@ -141,6 +141,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['NearMe', 'https://tech.nearme.jp/feed'],
   ['Nextat', 'https://nextat.co.jp/staff/index.rss'],
   ['Nota', 'https://blog.notainc.com/feed'],
+  ['OLTA', 'https://techblog.olta.co.jp/feed'],
   ['OPEN8', 'https://open8tech.hatenablog.com/feed'],
   ['OPTiM', 'https://tech-blog.optim.co.jp/feed'],
   ['Offers', 'https://zenn.dev/offers/feed'],
