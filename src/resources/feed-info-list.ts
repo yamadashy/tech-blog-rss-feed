@@ -50,6 +50,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Cerevo', 'https://tech-blog.cerevo.com/feed'],
   ['Chatwork', 'https://creators-note.chatwork.com/feed'],
   ['Classi', 'https://tech.classi.jp/feed'],
+  ['Cluster', 'https://note.com/cluster_official/m/m2ad487750b4e/rss'],
   ['Colorful Palette', 'https://media.colorfulpalette.co.jp/m/m753f507dae79/rss'],
   ['ContractS', 'https://tech.contracts.co.jp/feed'],
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
@@ -131,7 +132,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Money Forward Kessai', 'https://tech.mfkessai.co.jp/index.xml'],
   ['N-Technologies', 'https://zenn.dev/n1nc/feed'],
   ['N.F.Laboratories', 'https://blog.nflabs.jp/feed'],
-  ['NAXA', 'https://blog.naxa.co.jp/feed'],
   ['NEMTUS', 'https://zenn.dev/nemtus/feed'],
   ['NHNテコラス', 'https://techblog.nhn-techorus.com/feed'],
   ['NRIネットコム', 'https://tech.nri-net.com/feed/category/Technology'],
@@ -170,6 +170,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Ridge-i', 'https://iblog.ridge-i.com/feed'],
   ['SCSK', 'https://blog.usize-tech.com/feed/'],
   ['SEGA', 'https://techblog.sega.jp/feed'],
+  ['SHIFT Group', 'https://note.com/shift_tech/rss'],
   ['SO Technologies', 'https://developer.so-tech.co.jp/feed'],
   ['SOELU', 'https://engineering.soelu.com/feed'],
   ['Safie', 'https://engineers.safie.link/feed'],
@@ -223,6 +224,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['auカブコム証券', 'https://engineering.kabu.com/feed'],
   ['auコマース＆ライフ', 'https://kcf-developers.hatenablog.jp/feed'],
   ['cloud.config', 'https://tech-blog.cloud-config.jp/feed/'],
+  ['crispy', 'https://blog.crispy-inc.com/feed'],
   ['dely', 'https://tech.dely.jp/feed'],
   ['dip', 'https://developer.dip-net.co.jp/feed'],
   ['efoo', 'https://efoo.hatenablog.com/feed'],
@@ -499,6 +501,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * pubDate なし
  * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
+ *
+ * 削除された？
+ * ['NAXA', 'https://blog.naxa.co.jp/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
