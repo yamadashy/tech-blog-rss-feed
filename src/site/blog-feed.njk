@@ -25,7 +25,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
 
         <h3 class='ui-typography-heading'>フィード</h3>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
-            {% for feedItem in blogFeed.items %}
+            {% asyncEach feedItem in blogFeed.items %}
                 <div class='ui-feed-item'>
                     <a class='ui-feed-item__ogp-image' href='{{ feedItem.link }}'>
                         {% if feedItem.ogImageUrl %}
@@ -49,7 +49,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
                         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                     </div>
                 </div>
-            {% endfor %}
+            {% endeach %}
         </div>
     </div>
 </section>

@@ -13,14 +13,14 @@ eleventyComputed:
     <div class="ui-layout-container">
         <h2 class='ui-typography-heading'>直近1週間の更新</h2>
 
-        {% for dateString, feedItems in feedItemsChunks %}
+        {% asyncEach dateString, feedItems in feedItemsChunks %}
             <h3 class='ui-section-content__feed-date-heading'>{{ dateString }}</h3>
             <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed">
                 {% asyncEach feedItem in feedItems %}
                     {% include 'layouts/partials/feed-item.njk' %}
                 {% endeach %}
             </div>
-        {% endfor %}
+        {% endeach %}
     </div>
 </section>
 

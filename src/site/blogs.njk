@@ -11,7 +11,7 @@ eleventyComputed:
     <div class="ui-layout-container">
         <h2 class='ui-typography-heading'>ブログ一覧<small>（更新順）</small></h2>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-blog">
-            {% for blogFeed in blogFeeds %}
+            {% asyncEach blogFeed in blogFeeds %}
                 <div class='ui-blog'>
                     <a class='ui-blog__ogp-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                         {% if blogFeed.ogImageUrl %}
@@ -33,7 +33,7 @@ eleventyComputed:
                         {% endif %}
                     </div>
                 </div>
-            {% endfor %}
+            {% endeach %}
         </div>
     </div>
 </section>
