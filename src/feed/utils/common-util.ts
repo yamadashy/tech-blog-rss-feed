@@ -1,5 +1,6 @@
 import * as v8 from 'v8';
 import * as crypto from 'crypto';
+import retry from 'async-retry';
 
 export const objectDeepCopy = <T>(data: T): T => {
   // TODO: Node.js 17 以上にしたら structuredClone 使う
@@ -33,4 +34,11 @@ export const isValidHttpUrl = (url: string) => {
   }
 
   return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
+};
+
+export const backoff = async <A>(retrier: retry.RetryFunction<A>): Promise<A> => {
+  return await retry(retrier, {
+    retries: 3,
+    factor: 2,
+  });
 };

@@ -1,8 +1,8 @@
 import { FEED_INFO_LIST, FeedInfo } from '../src/resources/feed-info-list';
 import { FeedCrawler } from '../src/feed/utils/feed-crawler';
 import { describe, it, expect } from 'vitest';
+import { backoff } from '../src/feed/utils/common-util';
 const RssParser = require('rss-parser');
-const retry = require('async-retry');
 
 const rssParser = new RssParser();
 
@@ -18,17 +18,13 @@ describe('FEED_INFO_LIST', () => {
 // フィード取得テスト
 describe('フィードが取得可能', () => {
   FEED_INFO_LIST.map((feedInfo: FeedInfo) => {
+    const testTitle = `${feedInfo.label} / ${feedInfo.url}`;
     it.concurrent(
-      `${feedInfo.label} / ${feedInfo.url}`,
+      testTitle,
       async () => {
-        const feed = await retry(
-          async () => {
-            return rssParser.parseURL(feedInfo.url);
-          },
-          {
-            retries: 3,
-          },
-        );
+        const feed = await backoff(async () => {
+          return rssParser.parseURL(feedInfo.url);
+        });
         expect(feed.items.length).toBeGreaterThanOrEqual(0);
       },
       60 * 1000,

@@ -4,8 +4,7 @@ import { FeedInfo } from '../../resources/feed-info-list';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import { URL } from 'url';
-import retry from 'async-retry';
-import { isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
+import { backoff, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
@@ -67,14 +66,9 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (feedInfo) => {
-        const feed = await retry(
-          async () => {
-            return (await this.rssParser.parseURL(feedInfo.url)) as CustomRssParserFeed;
-          },
-          {
-            retries: 3,
-          },
-        );
+        const feed = await backoff(async () => {
+          return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
+        });
         const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
         feeds.push(postProcessedFeed);
         logger.info('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
@@ -220,14 +214,9 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (feedItem) => {
-        const ogsResult = await retry(
-          async () => {
-            return await FeedCrawler.fetchOgsResult(feedItem.link);
-          },
-          {
-            retries: 3,
-          },
-        );
+        const ogsResult = await backoff(async () => {
+          return FeedCrawler.fetchOgsResult(feedItem.link);
+        });
         feedItemOgsResultMap.set(feedItem.link, ogsResult);
         logger.info('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
@@ -247,14 +236,9 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (feed) => {
-        const ogsResult = await retry(
-          async () => {
-            return await FeedCrawler.fetchOgsResult(feed.link);
-          },
-          {
-            retries: 3,
-          },
-        );
+        const ogsResult = await backoff(async () => {
+          return FeedCrawler.fetchOgsResult(feed.link);
+        });
         feedOgsResultMap.set(feed.link, ogsResult);
         logger.info('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
