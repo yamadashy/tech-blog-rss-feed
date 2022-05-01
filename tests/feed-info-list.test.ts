@@ -27,7 +27,7 @@ describe('フィードが取得可能', () => {
         });
         expect(feed.items.length).toBeGreaterThanOrEqual(0);
       },
-      60 * 1000,
+      180 * 1000,
     );
   });
 });
