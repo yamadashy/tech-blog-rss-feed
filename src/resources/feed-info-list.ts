@@ -348,6 +348,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['タイミー', 'https://tech.timee.co.jp/feed'],
   ['ダイアログ', 'https://dialog-tech.hatenablog.com/feed'],
   ['ダイニー', 'https://note.com/dinii/m/mf6424286cfa2/rss'],
+  ['テクニカルエージェント', 'https://tracl.cloud/archives/engineerblog/feed/'],
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
