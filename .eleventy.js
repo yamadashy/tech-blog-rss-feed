@@ -3,6 +3,7 @@ const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const ts = require('typescript');
 const constants = require('./src/common/constants');
+const eleventyCacheOption = require('./src/common/eleventy-cache-option');
 
 Image.concurrency = 50;
 
@@ -31,14 +32,7 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
       formats: ["webp", "jpeg"],
       outputDir: 'public/images/feed-thumbnails',
       urlPath: `${pathPrefix}images/feed-thumbnails/`,
-      cacheOptions: {
-        duration: '3d',
-        fetchOptions: {
-          headers: {
-            'user-agent': constants.requestUserAgent,
-          },
-        },
-      },
+      cacheOptions: eleventyCacheOption,
       sharpWebpOptions: {
         quality: 50,
       },

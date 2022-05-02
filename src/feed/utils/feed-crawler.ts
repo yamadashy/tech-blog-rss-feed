@@ -7,8 +7,9 @@ import { URL } from 'url';
 import { backoff, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import constants from '../../common/constants';
+import eleventyCacheOption from '../../common/eleventy-cache-option';
 const ogs = require('open-graph-scraper');
-const Cache = require('@11ty/eleventy-cache-assets');
+const EleventyFetch = require('@11ty/eleventy-fetch');
 
 export type OgsResult = {
   ogTitle: string;
@@ -330,7 +331,7 @@ export class FeedCrawler {
     const ogImageUrlsLength = ogImageUrls.length;
     let fetchProcessCounter = 1;
 
-    Cache.concurrency = concurrency;
+    EleventyFetch.concurrency = concurrency;
 
     await PromisePool.for(ogImageUrls)
       .withConcurrency(concurrency)
@@ -339,15 +340,7 @@ export class FeedCrawler {
         logger.trace(error);
       })
       .process(async (ogImageUrl) => {
-        await Cache(ogImageUrl, {
-          duration: '3d',
-          type: 'buffer',
-          fetchOptions: {
-            headers: {
-              'user-agent': constants.requestUserAgent,
-            },
-          },
-        });
+        await EleventyFetch(ogImageUrl, eleventyCacheOption);
         logger.info('[cache-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
       });
   }
