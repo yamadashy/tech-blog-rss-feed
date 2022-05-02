@@ -66,5 +66,4 @@ export class FeedStorer {
 
     await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(blogFeeds, null, 2), 'utf-8');
   }
-
 }
