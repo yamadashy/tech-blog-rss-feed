@@ -4,13 +4,12 @@
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "build": "yarn feed:generate && yarn site:build",
-    "feed:generate": "node --require esbuild-register src/feed/generate-feed-command.ts",
-    "site:build": "eleventy",
-    "site:serve": "eleventy --serve",
-    "analyze": "yarn lint && yarn type-check",
+    "build": "yarn feed-generate && yarn site-build",
+    "feed-generate": "node --require esbuild-register src/feed/generate-feed-command.ts",
+    "site-build": "eleventy",
+    "site-serve": "eleventy --serve",
     "lint": "eslint ./src ./tests --max-warnings 0 --ext .ts --cache --format friendly",
-    "lint:fix": "yarn lint --fix",
+    "lint-fix": "yarn lint --fix",
     "type-check": "yarn tsc --noEmit",
     "test": "vitest run",
     "preinstall": "typesync || :"

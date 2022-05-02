@@ -45,10 +45,10 @@ jobs:
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
 
       - name: Generate feed
-        run: yarn feed:generate
+        run: yarn feed-generate
 
       - name: Generate site
-        run: yarn site:build
+        run: yarn site-build
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

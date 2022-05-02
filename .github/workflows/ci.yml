@@ -28,8 +28,11 @@ jobs:
       - name: Install node packages
         run: yarn install
 
-      - name: Run code analyze
-        run: yarn analyze
+      - name: Run lint
+        run: yarn lint
+
+      - name: Run type check
+        run: yarn type-check
 
       - name: Run test
         run: yarn test
