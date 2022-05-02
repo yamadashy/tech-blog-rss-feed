@@ -1,13 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Feed } from 'feed';
-import { OgsResultMap, CustomRssParserFeed, CustomRssParserItem, FeedItemHatenaCountMap } from './feed-crawler';
+import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
-import { logger } from './logger';
-import * as constants from '../../common/constants';
-const Cache = require('@11ty/eleventy-cache-assets');
-
-Cache.concurrency = 50;
 
 type BlogFeed = {
   title: string;
@@ -72,39 +67,4 @@ export class FeedStorer {
     await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(blogFeeds, null, 2), 'utf-8');
   }
 
-  async cacheImages(
-    allFeedItems: CustomRssParserItem[],
-    ogsResultMap: OgsResultMap,
-    feeds: CustomRssParserFeed[],
-  ): Promise<void> {
-    let ogImageUrls: string[] = [];
-
-    for (const feedItem of allFeedItems) {
-      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url || '');
-    }
-
-    for (const feed of feeds) {
-      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url || '');
-    }
-
-    // フィルタ
-    ogImageUrls = ogImageUrls.filter(Boolean);
-
-    // 画像取得
-    const fetchImagePromises = ogImageUrls.map((ogImageUrl) => {
-      return Cache(ogImageUrl, {
-        duration: '3d',
-        type: 'buffer',
-        fetchOptions: {
-          headers: {
-            'user-agent': constants.requestUserAgent,
-          },
-        },
-      }).catch((error: Error) => {
-        logger.error('[cache-image] error', ogImageUrl);
-        logger.trace(error);
-      });
-    });
-    await Promise.all(fetchImagePromises);
-  }
 }

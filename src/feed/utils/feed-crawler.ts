@@ -8,6 +8,7 @@ import { backoff, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from '.
 import { logger } from './logger';
 import constants from '../../common/constants';
 const ogs = require('open-graph-scraper');
+const Cache = require('@11ty/eleventy-cache-assets');
 
 export type OgsResult = {
   ogTitle: string;
@@ -304,6 +305,51 @@ export class FeedCrawler {
     logger.info('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
+  }
+
+  async fetchAndCacheOgImages(
+    allFeedItems: CustomRssParserItem[],
+    ogsResultMap: OgsResultMap,
+    feeds: CustomRssParserFeed[],
+    concurrency: number,
+  ): Promise<void> {
+    let ogImageUrls: string[] = [];
+
+    for (const feedItem of allFeedItems) {
+      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url || '');
+    }
+
+    for (const feed of feeds) {
+      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url || '');
+    }
+
+    // フィルタ
+    ogImageUrls = ogImageUrls.filter(Boolean);
+
+    // 画像取得
+    const ogImageUrlsLength = ogImageUrls.length;
+    let fetchProcessCounter = 1;
+
+    Cache.concurrency = concurrency;
+
+    await PromisePool.for(ogImageUrls)
+      .withConcurrency(concurrency)
+      .handleError(async (error, ogImageUrl) => {
+        logger.error('[cache-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
+        logger.trace(error);
+      })
+      .process(async (ogImageUrl) => {
+        await Cache(ogImageUrl, {
+          duration: '3d',
+          type: 'buffer',
+          fetchOptions: {
+            headers: {
+              'user-agent': constants.requestUserAgent,
+            },
+          },
+        });
+        logger.info('[cache-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
+      });
   }
 
   private static subtractFeedItemsDateHour(feed: CustomRssParserFeed, subHours: number) {
