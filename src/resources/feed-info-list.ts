@@ -163,7 +163,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ROBOT PAYMENT', 'https://tech.robotpayment.co.jp/feed'],
   ['ROXX', 'https://techblog.roxx.co.jp/feed'],
   ['Red Hat', 'https://rheb.hatenablog.com/feed'],
-  ['Reigle', 'https://www.reigle.info/feed'],
   ['Repro', 'https://tech.repro.io/feed'],
   ['Retail AI', 'https://note.com/retail_ai/rss'],
   ['Retty', 'https://engineer.retty.me/feed'],
@@ -507,6 +506,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 削除された？
  * ['NAXA', 'https://blog.naxa.co.jp/feed'],
+ * ['Reigle', 'https://www.reigle.info/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
