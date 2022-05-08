@@ -1,6 +1,7 @@
 import * as v8 from 'v8';
 import * as crypto from 'crypto';
-import retry from 'async-retry';
+import axios from 'axios';
+import { to } from 'await-to-js';
 
 export const objectDeepCopy = <T>(data: T): T => {
   // TODO: Node.js 17 以上にしたら structuredClone 使う
@@ -36,9 +37,29 @@ export const isValidHttpUrl = (url: string) => {
   return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
 };
 
-export const backoff = async <A>(retrier: retry.RetryFunction<A>): Promise<A> => {
-  return await retry(retrier, {
-    retries: 3,
-    factor: 2,
-  });
+export const backoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
+  let attemptLimitReached = false;
+  let attemptNumber = 0;
+
+  while (!attemptLimitReached) {
+    const [error, result] = await to(retrier());
+    if (error) {
+      attemptNumber++;
+      attemptLimitReached = attemptNumber > retries;
+
+      if (attemptLimitReached) {
+        throw error;
+      }
+    } else {
+      return result;
+    }
+  }
+
+  throw new Error('Something went wrong.');
+};
+
+export const fetchHatenaCountMap = async (urls: string[]): Promise<{ [key: string]: number }> => {
+  const params = urls.map((url) => `url=${url}`).join('&');
+  const response = await axios.get(`https://bookmark.hatenaapis.com/count/entries?${params}`);
+  return response.data;
 };

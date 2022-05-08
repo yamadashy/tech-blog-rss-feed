@@ -2,12 +2,12 @@ import RssParser from 'rss-parser';
 import { PromisePool } from '@supercharge/promise-pool';
 import { FeedInfo } from '../../resources/feed-info-list';
 import dayjs from 'dayjs';
-import axios from 'axios';
 import { URL } from 'url';
-import { backoff, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
+import { backoff, fetchHatenaCountMap, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
 import { logger } from './logger';
 import constants from '../../common/constants';
 import eleventyCacheOption from '../../common/eleventy-cache-option';
+import { to } from 'await-to-js';
 const ogs = require('open-graph-scraper');
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
@@ -58,19 +58,23 @@ export class FeedCrawler {
 
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
-      .handleError(async (error, feedInfo) => {
-        logger.error(
-          '[fetch-feed] error',
-          `${fetchProcessCounter++}/${feedInfoListLength}`,
-          feedInfo.label,
-          feedInfo.url,
-        );
-        logger.trace(error);
-      })
       .process(async (feedInfo) => {
-        const feed = await backoff(async () => {
-          return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
-        });
+        const [error, feed] = await to(
+          backoff(() => {
+            return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
+          }),
+        );
+        if (error) {
+          logger.error(
+            '[fetch-feed] error',
+            `${fetchProcessCounter++}/${feedInfoListLength}`,
+            feedInfo.label,
+            feedInfo.url,
+          );
+          logger.trace(error);
+          return;
+        }
+
         const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
         feeds.push(postProcessedFeed);
         logger.info('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
@@ -109,7 +113,7 @@ export class FeedCrawler {
   /**
    * 取得したフィードの調整
    */
-  private static postProcessFeed(feedInfo: FeedInfo, feed: RssParser.Output<RssParser.Item>): CustomRssParserFeed {
+  private static postProcessFeed(feedInfo: FeedInfo, feed: CustomRssParserFeed): CustomRssParserFeed {
     const customFeed = feed as CustomRssParserFeed;
 
     // ブログごとの調整
@@ -206,19 +210,23 @@ export class FeedCrawler {
 
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
-      .handleError(async (error, feedItem) => {
-        logger.error(
-          '[fetch-feed-item-ogp] error',
-          `${fetchProcessCounter++}/${feedItemsLength}`,
-          feedItem.title,
-          feedItem.link,
-        );
-        logger.trace(error);
-      })
       .process(async (feedItem) => {
-        const ogsResult = await backoff(async () => {
-          return FeedCrawler.fetchOgsResult(feedItem.link);
-        });
+        const [error, ogsResult] = await to(
+          backoff(() => {
+            return FeedCrawler.fetchOgsResult(feedItem.link);
+          }),
+        );
+        if (error) {
+          logger.error(
+            '[fetch-feed-item-ogp] error',
+            `${fetchProcessCounter++}/${feedItemsLength}`,
+            feedItem.title,
+            feedItem.link,
+          );
+          logger.trace(error);
+          return;
+        }
+
         feedItemOgsResultMap.set(feedItem.link, ogsResult);
         logger.info('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
@@ -233,14 +241,18 @@ export class FeedCrawler {
 
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
-      .handleError(async (error, feed) => {
-        logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
-        logger.trace(error);
-      })
       .process(async (feed) => {
-        const ogsResult = await backoff(async () => {
-          return FeedCrawler.fetchOgsResult(feed.link);
-        });
+        const [error, ogsResult] = await to(
+          backoff(() => {
+            return FeedCrawler.fetchOgsResult(feed.link);
+          }),
+        );
+        if (error) {
+          logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
+          logger.trace(error);
+          return;
+        }
+
         feedOgsResultMap.set(feed.link, ogsResult);
         logger.info('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
@@ -249,15 +261,20 @@ export class FeedCrawler {
   }
 
   private static async fetchOgsResult(url: string): Promise<OgsResult> {
-    const ogsResponse: { result: OgsResult } = await ogs({
-      url: url,
-      timeout: 60 * 1000,
-      // 10MB
-      downloadLimit: 10 * 1000 * 1000,
-      headers: {
-        'user-agent': constants.requestUserAgent,
-      },
-    });
+    const [error, ogsResponse] = await to<{ result: OgsResult }>(
+      ogs({
+        url: url,
+        timeout: 60 * 1000,
+        // 10MB
+        downloadLimit: 10 * 1000 * 1000,
+        headers: {
+          'user-agent': constants.requestUserAgent,
+        },
+      }),
+    );
+    if (error) {
+      throw new Error(`OGPの取得に失敗しました。 url: ${url}`);
+    }
 
     const ogsResult = ogsResponse.result;
     const ogImageUrl = ogsResult?.ogImage?.url;
@@ -294,11 +311,13 @@ export class FeedCrawler {
     }
 
     for (const feedItemUrls of feedItemUrlsChunks) {
-      const params = feedItemUrls.map((url) => `url=${url}`).join('&');
-      const response = await axios.get(`https://bookmark.hatenaapis.com/count/entries?${params}`);
-      const hatenaCountMap: { [key: string]: number } = response.data;
+      const [error, hatenaCountMap] = await to(fetchHatenaCountMap(feedItemUrls));
 
-      for (const feedItemUrl in response.data) {
+      if (error) {
+        throw new Error('[hatena-count] Fail to get hatena bookmark count');
+      }
+
+      for (const feedItemUrl in hatenaCountMap) {
         feedItemHatenaCountMap.set(feedItemUrl, hatenaCountMap[feedItemUrl]);
       }
     }
@@ -335,12 +354,14 @@ export class FeedCrawler {
 
     await PromisePool.for(ogImageUrls)
       .withConcurrency(concurrency)
-      .handleError(async (error, ogImageUrl) => {
-        logger.error('[cache-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
-        logger.trace(error);
-      })
       .process(async (ogImageUrl) => {
-        await EleventyFetch(ogImageUrl, eleventyCacheOption);
+        const [error] = await to(EleventyFetch(ogImageUrl, eleventyCacheOption));
+        if (error) {
+          logger.error('[cache-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
+          logger.trace(error);
+          return;
+        }
+
         logger.info('[cache-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
       });
   }
