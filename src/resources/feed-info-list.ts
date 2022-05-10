@@ -227,6 +227,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['crispy', 'https://blog.crispy-inc.com/feed'],
   ['dely', 'https://tech.dely.jp/feed'],
   ['dip', 'https://developer.dip-net.co.jp/feed'],
+  ['divx', 'https://engineering.divx.co.jp/feed'],
   ['efoo', 'https://efoo.hatenablog.com/feed'],
   ['estie', 'https://inside.estie.co.jp/feed'],
   ['for Startups', 'https://tech.forstartups.com/feed'],
@@ -301,6 +302,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['キカガク', 'https://blog.kikagaku.co.jp/feed'],
   ['キッチハイク', 'https://tech.kitchhike.com/feed'],
   ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
+  ['キュービック', 'https://cuebic.hatenablog.com/feed'],
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
   ['クックパッド', 'https://techlife.cookpad.com/feed'],
@@ -516,6 +518,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://tech.smartshopping.co.jp/
  * https://olaris.jp/category/technology
  * https://licensecounter.jp/engineer-voice/blog/
+ * https://tech.ilovex.co.jp/
  *
  * TODO: スライド系も追加？
  * https://speakerdeck.com/line_developers
