@@ -136,6 +136,12 @@ export class FeedCrawler {
       case 'さくら':
         customFeed.link = 'https://knowledge.sakura.ad.jp/';
         break;
+      case 'YOJO Technologies':
+        customFeed.title = 'YOJO Technologies Blog';
+        break;
+      case 'POL':
+        customFeed.title = 'POL テックノート';
+        break;
     }
 
     if (!isValidHttpUrl(customFeed.link)) {
@@ -154,8 +160,8 @@ export class FeedCrawler {
       feedItem.link = urlRemoveQueryParams(feedItem.link);
 
       // view用
-      feedItem.blogTitle = feed.title || '';
-      feedItem.blogLink = feed.link || '';
+      feedItem.blogTitle = customFeed.title || '';
+      feedItem.blogLink = customFeed.link || '';
     }
 
     return customFeed;
