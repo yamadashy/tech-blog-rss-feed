@@ -4,12 +4,29 @@ import { BlogFeed } from './utils/feed-storer';
 import * as constants from '../common/constants';
 import { sleep } from './utils/common-util';
 const key = require('../../storage/service_account.json');
-const blogFeeds: BlogFeed[] = require('../site/blog-feeds/blog-feeds.json');
+let blogFeeds: BlogFeed[] = require('../site/blog-feeds/blog-feeds.json');
 
-const indexTargetUrls = blogFeeds.map((blogFeed) => {
-  return `${constants.siteUrlStem}/${blogFeed.linkMd5Hash}/`;
-});
 const GOOGLE_INDEXING_API_END_POINT = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
+const INDEXING_LIMIT = 200;
+
+// ソート
+blogFeeds = blogFeeds.sort((a, b) => {
+  const aLastUpdated = a.items[0]?.isoDate;
+  const bLastUpdated = b.items[0]?.isoDate;
+
+  if (!aLastUpdated) {
+    return 1;
+  }
+  if (!bLastUpdated) {
+    return -1;
+  }
+
+  return -1 * aLastUpdated.localeCompare(bLastUpdated);
+});
+
+const indexTargetUrls = blogFeeds.slice(0, INDEXING_LIMIT).map((blogFeed) => {
+  return `${constants.siteUrlStem}/blogs/${blogFeed.linkMd5Hash}/`;
+});
 
 const jwtClient = new google.auth.JWT({
   email: key.client_email,
