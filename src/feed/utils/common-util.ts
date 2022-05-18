@@ -63,3 +63,9 @@ export const fetchHatenaCountMap = async (urls: string[]): Promise<{ [key: strin
   const response = await axios.get(`https://bookmark.hatenaapis.com/count/entries?${params}`);
   return response.data;
 };
+
+export const sleep = (waitTime: number) => {
+  return new Promise((resolve) => {
+    return setTimeout(resolve, waitTime);
+  });
+};

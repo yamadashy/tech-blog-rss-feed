@@ -4,7 +4,7 @@ import { Feed } from 'feed';
 import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 
-type BlogFeed = {
+export type BlogFeed = {
   title: string;
   link: string;
   linkMd5Hash: string;
