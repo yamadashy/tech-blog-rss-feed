@@ -43,8 +43,8 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
                             </div>
                         {% endif %}
                         <div class='ui-feed-item__blog-title'>{{ blogFeed.title }}</div>
-                        {% if feedItem.summary %}
-                            <div class='ui-feed-item__summary'>{{ feedItem.summary | truncate(200, true, "...") }}</div>
+                        {% if feedItem.content_html %}
+                            <div class='ui-feed-item__summary'>{{ feedItem.content_html | truncate(1000, true, "...") }}</div>
                         {% endif %}
                         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
                     </div>

@@ -14,6 +14,7 @@ export type BlogFeed = {
     title: string;
     link: string;
     summary: string;
+    content_html: string;
     isoDate: string;
     hatenaCount: number;
     ogImageUrl: string;
@@ -50,10 +51,11 @@ export class FeedStorer {
       };
 
       for (const feedItem of feed.items) {
-        const feedItemSummary = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
+        const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
         customFeed.items.push({
           title: feedItem.title || '',
-          summary: textTruncate(feedItemSummary, 100, '...'),
+          summary: textTruncate(feedItemContent, 200, '...'),
+          content_html: textTruncate(feedItemContent, 1000, '...'),
           link: feedItem.link,
           isoDate: feedItem.isoDate,
           hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,

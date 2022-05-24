@@ -15,8 +15,8 @@
             </div>
         {% endif %}
         <a class='ui-feed-item__blog-title ui-feed-item__blog-title--link' href='{{ page.url | relativeUrl }}blogs/{{ feedItem._custom.blogLinkMd5Hash }}'>{{ feedItem._custom.blogTitle }}</a>
-        {% if feedItem.summary %}
-            <div class='ui-feed-item__summary'>{{ feedItem.summary | truncate(200, true, "...") }}</div>
+        {% if feedItem.content_html %}
+            <div class='ui-feed-item__summary'>{{ feedItem.content_html | truncate(500, true, "...") }}</div>
         {% endif %}
         <div class='ui-feed-item__date' title='{{ feedItem.pubDateForHuman }}'>{{ feedItem.diffDateForHuman }}</div>
     </div>
