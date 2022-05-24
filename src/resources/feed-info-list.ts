@@ -356,6 +356,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
+  ['テリロジー', 'https://terilogy-tech.hatenablog.com/feed'],
   ['デザインワン・ジャパン', 'https://tech.designone.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
   ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
@@ -522,6 +523,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://olaris.jp/category/technology
  * https://licensecounter.jp/engineer-voice/blog/
  * https://tech.ilovex.co.jp/
+ * https://developer.nvidia.com/ja-jp/blog/
  *
  * TODO: スライド系も追加？
  * https://speakerdeck.com/line_developers
