@@ -14,6 +14,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ constants.siteTitle }}" />
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="{{ constants.siteUrl }}">
+    <meta property="twitter:url" content="{{ constants.siteUrl }}">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:description" content="{{ constants.siteDescription }}">
+    <meta name="twitter:image" content="{{ constants.siteUrl }}images/ogp.png">
+
     {% if constants.googleSiteVerification %}
         <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
     {% endif %}
