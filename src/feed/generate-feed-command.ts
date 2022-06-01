@@ -7,7 +7,7 @@ import { to } from 'await-to-js';
 
 const FEED_FETCH_CONCURRENCY = 50;
 const FEED_OGP_FETCH_CONCURRENCY = 20;
-const OG_IMAGE_FETCH_CONCURRENCY = 20;
+// const OG_IMAGE_FETCH_CONCURRENCY = 20;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
 const MAX_FEED_CONTENT_LENGTH = 500;
