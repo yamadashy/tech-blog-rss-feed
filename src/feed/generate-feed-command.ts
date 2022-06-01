@@ -57,7 +57,8 @@ const feedStorer = new FeedStorer();
     Promise.all([
       feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),
       feedStorer.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, STORE_BLOG_FEEDS_DIR_PATH),
-      feedCrawler.fetchAndCacheOgImages(allFeedItems, ogsResultMap, feeds, OG_IMAGE_FETCH_CONCURRENCY),
+      // TODO: プロセスが終了しなくなるので一旦コメントアウト。あとで調査
+      // feedCrawler.fetchAndCacheOgImages(allFeedItems, ogsResultMap, feeds, OG_IMAGE_FETCH_CONCURRENCY),
     ]),
   );
   if (errorStoreFeed) {
