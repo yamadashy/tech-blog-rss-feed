@@ -6,8 +6,7 @@ import { FeedStorer } from './utils/feed-storer';
 import { to } from 'await-to-js';
 
 const FEED_FETCH_CONCURRENCY = 50;
-const FEED_OGP_FETCH_CONCURRENCY = 20;
-// const OG_IMAGE_FETCH_CONCURRENCY = 20;
+const FEED_OG_FETCH_CONCURRENCY = 20;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
 const MAX_FEED_CONTENT_LENGTH = 500;
@@ -26,18 +25,18 @@ const feedStorer = new FeedStorer();
   // フィード関連データ取得
   const [errorFetchFeedData, results] = await to(
     Promise.all([
-      feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OGP_FETCH_CONCURRENCY),
+      feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OG_FETCH_CONCURRENCY),
       feedCrawler.fetchHatenaCountMap(allFeedItems),
-      feedCrawler.fetchFeedOgsResultMap(feeds, FEED_OGP_FETCH_CONCURRENCY),
+      feedCrawler.fetchFeedBlogOgsResultMap(feeds, FEED_OG_FETCH_CONCURRENCY),
     ]),
   );
   if (errorFetchFeedData) {
     throw new Error('フィード関連データの取得に失敗しました');
   }
-  const [allFeedItemOgsResultMap, allFeedItemHatenaCountMap, feedOgsResultMap] = results;
+  const [allFeedItemOgsResultMap, allFeedItemHatenaCountMap, feedBlogOgsResultMap] = results;
 
   // まとめフィード作成
-  const ogsResultMap = new Map([...allFeedItemOgsResultMap, ...feedOgsResultMap]);
+  const ogsResultMap = new Map([...allFeedItemOgsResultMap, ...feedBlogOgsResultMap]);
   const aggregatedFeed = feedGenerator.generateFeed(
     allFeedItems,
     ogsResultMap,
@@ -57,8 +56,6 @@ const feedStorer = new FeedStorer();
     Promise.all([
       feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),
       feedStorer.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, STORE_BLOG_FEEDS_DIR_PATH),
-      // TODO: プロセスが終了しなくなるので一旦コメントアウト。あとで調査
-      // feedCrawler.fetchAndCacheOgImages(allFeedItems, ogsResultMap, feeds, OG_IMAGE_FETCH_CONCURRENCY),
     ]),
   );
   if (errorStoreFeed) {

@@ -224,7 +224,7 @@ export class FeedCrawler {
         );
         if (error) {
           logger.error(
-            '[fetch-feed-item-ogp] error',
+            '[fetch-feed-item-og] error',
             `${fetchProcessCounter++}/${feedItemsLength}`,
             feedItem.title,
             feedItem.link,
@@ -234,13 +234,13 @@ export class FeedCrawler {
         }
 
         feedItemOgsResultMap.set(feedItem.link, ogsResult);
-        logger.info('[fetch-feed-item-ogp] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
+        logger.info('[fetch-feed-item-og] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
     return feedItemOgsResultMap;
   }
 
-  async fetchFeedOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
+  async fetchFeedBlogOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
     const feedOgsResultMap: OgsResultMap = new Map();
     const feedsLength = feeds.length;
     let fetchProcessCounter = 1;
@@ -254,13 +254,13 @@ export class FeedCrawler {
           }),
         );
         if (error) {
-          logger.error('[fetch-feed-ogp] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
+          logger.error('[fetch-feed-blog-og] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
           logger.trace(error);
           return;
         }
 
         feedOgsResultMap.set(feed.link, ogsResult);
-        logger.info('[fetch-feed-ogp] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
+        logger.info('[fetch-feed-blog-og] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
 
     return feedOgsResultMap;
@@ -279,7 +279,7 @@ export class FeedCrawler {
       }),
     );
     if (error) {
-      throw new Error(`OGPの取得に失敗しました。 url: ${url}`);
+      throw new Error(`OGの取得に失敗しました。 url: ${url}`);
     }
 
     const ogsResult = ogsResponse.result;
@@ -363,12 +363,12 @@ export class FeedCrawler {
       .process(async (ogImageUrl) => {
         const [error] = await to(EleventyFetch(ogImageUrl, eleventyCacheOption));
         if (error) {
-          logger.error('[cache-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
+          logger.error('[cache-og-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
           logger.trace(error);
           return;
         }
 
-        logger.info('[cache-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
+        logger.info('[cache-og-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
       });
   }
 

@@ -1,5 +1,5 @@
 <div class='ui-feed-item'>
-    <a class='ui-feed-item__ogp-image' href='{{ feedItem.url }}'>
+    <a class='ui-feed-item__og-image' href='{{ feedItem.url }}'>
         {% if feedItem.image %}
             {% image feedItem.image.url, '記事のアイキャッチ画像', page.url | relativeUrl %}
         {% else %}
