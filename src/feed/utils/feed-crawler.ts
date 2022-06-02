@@ -156,7 +156,7 @@ export class FeedCrawler {
     for (const feedItem of customFeed.items) {
       feedItem.link = feedItem.link || '';
 
-      // 記事URLのクエリパラメーター削除
+      // 記事URLのクエリパラメーター削除。はてな用
       feedItem.link = urlRemoveQueryParams(feedItem.link);
 
       // view用

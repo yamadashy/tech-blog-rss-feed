@@ -1,12 +1,18 @@
 import RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
-import { textToMd5Hash, textTruncate, urlRemoveQueryParams } from './common-util';
+import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
 
+export interface OutputFeedSet {
+  atom: string;
+  rss: string;
+  json: string;
+}
+
 export class FeedGenerator {
-  generateFeed(
+  createFeed(
     feedItems: CustomRssParserItem[],
     feedItemOgsResultMap: OgsResultMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
@@ -67,7 +73,7 @@ export class FeedGenerator {
           ogImage && ogImage.url
             ? {
                 type: ogImage.type,
-                url: urlRemoveQueryParams(ogImage.url),
+                url: ogImage.url,
               }
             : undefined,
         published: new Date(feedItem.isoDate),
@@ -90,21 +96,28 @@ export class FeedGenerator {
     return outputFeed;
   }
 
+  public generateOutputFeedSet(feed: Feed): OutputFeedSet {
+    return {
+      // 出力されているXMLで & がエスケープされていないのでパッチ対応
+      atom: escapeTextForXml(feed.atom1()),
+      rss: escapeTextForXml(feed.rss2()),
+      json: feed.json1(),
+    };
+  }
+
   /**
    * rss-parser で変換してみてエラーが出ないか確認
    */
-  public async validateAggregatedFeed(outputFeed: Feed): Promise<boolean> {
+  public async validateOutputFeedSet(outputFeedSet: OutputFeedSet): Promise<boolean> {
     const rssParser = new RssParser();
-    const feedAtom = outputFeed.atom1();
-    const feedRss = outputFeed.rss2();
 
     let isValid = true;
 
-    await rssParser.parseString(feedAtom).catch((error) => {
+    await rssParser.parseString(outputFeedSet.atom).catch((error) => {
       isValid = false;
       logger.error('[feed-generator] validate feed atom error', error);
     });
-    await rssParser.parseString(feedRss).catch((error) => {
+    await rssParser.parseString(outputFeedSet.rss).catch((error) => {
       isValid = false;
       logger.error('[feed-generator] validate feed rss error', error);
     });

@@ -25,6 +25,14 @@ export const urlRemoveQueryParams = (url: string) => {
   return url.split('?')[0];
 };
 
+export const escapeTextForXml = (text: string) => {
+  if (text.includes('&')) {
+    text = text.replace(/&/g, '&amp;');
+  }
+
+  return text;
+};
+
 export const isValidHttpUrl = (url: string) => {
   let urlObject;
 

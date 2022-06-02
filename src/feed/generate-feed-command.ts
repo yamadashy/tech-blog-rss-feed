@@ -37,16 +37,17 @@ const feedStorer = new FeedStorer();
 
   // まとめフィード作成
   const ogsResultMap = new Map([...allFeedItemOgsResultMap, ...feedBlogOgsResultMap]);
-  const aggregatedFeed = feedGenerator.generateFeed(
+  const aggregatedFeed = feedGenerator.createFeed(
     allFeedItems,
     ogsResultMap,
     allFeedItemHatenaCountMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
   );
+  const outputFeedSet = feedGenerator.generateOutputFeedSet(aggregatedFeed);
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  const isValid = await feedGenerator.validateAggregatedFeed(aggregatedFeed);
+  const isValid = await feedGenerator.validateOutputFeedSet(outputFeedSet);
   if (!isValid) {
     throw new Error('まとめフィードのバリデーションエラーです');
   }
@@ -54,7 +55,7 @@ const feedStorer = new FeedStorer();
   // ファイル出力、画像キャッシュ
   const [errorStoreFeed] = await to(
     Promise.all([
-      feedStorer.storeFeeds(aggregatedFeed, STORE_FEEDS_DIR_PATH),
+      feedStorer.storeFeeds(outputFeedSet, STORE_FEEDS_DIR_PATH),
       feedStorer.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, STORE_BLOG_FEEDS_DIR_PATH),
     ]),
   );

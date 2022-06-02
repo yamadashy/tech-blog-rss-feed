@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { Feed } from 'feed';
 import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
+import { OutputFeedSet } from './feed-generator';
 
 export type BlogFeed = {
   title: string;
@@ -22,11 +22,11 @@ export type BlogFeed = {
 };
 
 export class FeedStorer {
-  async storeFeeds(aggregatedFeed: Feed, storeDirPath: string): Promise<void> {
+  async storeFeeds(outputFeedSet: OutputFeedSet, storeDirPath: string): Promise<void> {
     await fs.mkdir(storeDirPath, { recursive: true });
-    await fs.writeFile(path.join(storeDirPath, 'atom.xml'), aggregatedFeed.atom1(), 'utf-8');
-    await fs.writeFile(path.join(storeDirPath, 'rss.xml'), aggregatedFeed.rss2(), 'utf-8');
-    await fs.writeFile(path.join(storeDirPath, 'feed.json'), aggregatedFeed.json1(), 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'atom.xml'), outputFeedSet.atom, 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'rss.xml'), outputFeedSet.rss, 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'feed.json'), outputFeedSet.json, 'utf-8');
   }
 
   async storeBlogFeeds(
