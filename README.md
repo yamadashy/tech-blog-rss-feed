@@ -54,12 +54,22 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 - `src/common/constants.js` の URL など
 
 ### 開発用コマンド
+フィード生成とサイト立ち上げ
 ```bash
 $ # フィードを取得して作成
 $ yarn feed:generate
 
 $ # localhost:8080 で確認
 $ yarn site:serve
+```
+
+コードのチェック
+```bash
+$ # lint
+$ yarn lint
+
+$ # テスト
+$ yarn test
 ```
 
 ## ライセンス
