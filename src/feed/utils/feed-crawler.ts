@@ -217,11 +217,7 @@ export class FeedCrawler {
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .process(async (feedItem) => {
-        const [error, ogsResult] = await to(
-          backoff(() => {
-            return FeedCrawler.fetchOgsResult(feedItem.link);
-          }),
-        );
+        const [error, ogsResult] = await to(FeedCrawler.fetchOgsResult(feedItem.link));
         if (error) {
           logger.error(
             '[fetch-feed-item-og] error',
@@ -248,11 +244,7 @@ export class FeedCrawler {
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
       .process(async (feed) => {
-        const [error, ogsResult] = await to(
-          backoff(() => {
-            return FeedCrawler.fetchOgsResult(feed.link);
-          }),
-        );
+        const [error, ogsResult] = await to(FeedCrawler.fetchOgsResult(feed.link));
         if (error) {
           logger.error('[fetch-feed-blog-og] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
           logger.trace(error);
@@ -273,6 +265,7 @@ export class FeedCrawler {
         timeout: 60 * 1000,
         // 10MB
         downloadLimit: 10 * 1000 * 1000,
+        retry: 3,
         headers: {
           'user-agent': constants.requestUserAgent,
         },
