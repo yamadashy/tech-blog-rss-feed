@@ -3,6 +3,7 @@ import * as path from 'path';
 import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 import { OutputFeedSet } from './feed-generator';
+import { logger } from './logger';
 
 export type BlogFeed = {
   title: string;
@@ -27,6 +28,8 @@ export class FeedStorer {
     await fs.writeFile(path.join(storeDirPath, 'atom.xml'), outputFeedSet.atom, 'utf-8');
     await fs.writeFile(path.join(storeDirPath, 'rss.xml'), outputFeedSet.rss, 'utf-8');
     await fs.writeFile(path.join(storeDirPath, 'feed.json'), outputFeedSet.json, 'utf-8');
+
+    logger.info('[store-feeds] finished');
   }
 
   async storeBlogFeeds(
@@ -67,5 +70,7 @@ export class FeedStorer {
     }
 
     await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(blogFeeds, null, 2), 'utf-8');
+
+    logger.info('[store-blog-feeds] finished');
   }
 }

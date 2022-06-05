@@ -80,6 +80,8 @@ export class FeedCrawler {
         logger.info('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
       });
 
+    logger.info('[fetch-feed] finished');
+
     return feeds;
   }
 
@@ -233,6 +235,8 @@ export class FeedCrawler {
         logger.info('[fetch-feed-item-og] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
+    logger.info('[fetch-feed-item-og] finished');
+
     return feedItemOgsResultMap;
   }
 
@@ -254,6 +258,8 @@ export class FeedCrawler {
         feedOgsResultMap.set(feed.link, ogsResult);
         logger.info('[fetch-feed-blog-og] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
+
+    logger.info('[fetch-feed-blog-og] finished');
 
     return feedOgsResultMap;
   }
@@ -363,6 +369,8 @@ export class FeedCrawler {
 
         logger.info('[cache-og-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
       });
+
+    logger.info('[cache-og-image] finished');
   }
 
   private static subtractFeedItemsDateHour(feed: CustomRssParserFeed, subHours: number) {

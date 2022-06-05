@@ -34,7 +34,7 @@ export class FeedGenerator {
     } as FeedOptions);
 
     for (const feedItem of feedItems) {
-      logger.info('[feed-item]', feedItem.isoDate, feedItem.title);
+      logger.info('[create-feed-item]', feedItem.isoDate, feedItem.title);
 
       const feedItemId = feedItem.guid || feedItem.link;
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
@@ -92,6 +92,8 @@ export class FeedGenerator {
         ],
       });
     }
+
+    logger.info('[create-feed] finished');
 
     return outputFeed;
   }
