@@ -148,6 +148,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Offers', 'https://zenn.dev/offers/feed'],
   ['Open Reach Tech', 'https://zenn.dev/openreachtech/feed'],
   ['OpenWork', 'https://techblog.openwork.co.jp/feed'],
+  ['OptFit', 'https://zenn.dev/optfit/feed'],
   ['PHONE APPLI', 'https://phoneappli.net/recruit/blog/atom.xml'],
   ['PLAID', 'https://tech.plaid.co.jp/rss.xml'],
   ['POL', 'https://note.com/pollabbase/m/ma74382b91025/rss'],
@@ -288,6 +289,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['エス・エム・エス', 'https://tech.bm-sms.co.jp/feed'],
   ['エニグモ', 'https://tech.enigmo.co.jp/feed'],
   ['エブリー', 'https://tech.every.tv/feed'],
+  ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
   ['エムオーテックス', 'https://tech.motex.co.jp/feed'],
   ['エムスリー', 'https://www.m3tech.blog/feed'],
   ['エムティーアイ', 'https://tech.mti.co.jp/feed'],
@@ -373,7 +375,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ドリコム', 'https://tech.drecom.co.jp/feed/'],
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],
   ['ドワンゴ教育サービス', 'https://blog.nnn.dev/feed'],
+  ['ナレッジコミュニケーション', 'https://recipe.kc-cloud.jp/feed'],
   ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
+  ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
   ['ネクストビート', 'https://medium.com/feed/nextbeat-engineering'],
   ['ネフロック', 'https://blog.nefrock.com/feed'],
@@ -412,6 +416,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
   ['ホワイトプラス', 'https://blog.wh-plus.co.jp/feed'],
   ['マクロミル', 'https://techblog.macromill.com/feed'],
+  ['マチマチ', 'https://tech.machimachi.com/feed'],
   ['マナリンク', 'https://zenn.dev/manalink/feed'],
   ['マネックス', 'https://blog.tech-monex.com/feed'],
   ['マネーフォワード ', 'https://moneyforward.com/engineers_blog/feed/'],
@@ -524,6 +529,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://licensecounter.jp/engineer-voice/blog/
  * https://tech.ilovex.co.jp/
  * https://developer.nvidia.com/ja-jp/blog/
+ * https://www.vision-c.co.jp/engineerblog
  *
  * TODO: スライド系も追加？
  * https://speakerdeck.com/line_developers
