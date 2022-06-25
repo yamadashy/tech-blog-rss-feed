@@ -184,7 +184,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['SmartNewsメディア担当チーム', 'https://www.mediatechnology.jp/feed'],
   ['Speee', 'https://tech.speee.jp/feed'],
   ['Studyplus', 'https://tech.studyplus.co.jp/feed'],
-  ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
   ['Synamon', 'https://synamon.hatenablog.com/feed'],
   ['Sysdig', 'https://www.scsk.jp/sp/sysdig/rss.xml'],
   ['TANP', encodeURI('https://www.tanp-blog.com/feed/category/エンジニアブログ')],
@@ -211,7 +210,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Voicy', 'https://medium.com/feed/voicy-engineering'],
   ['WASD', 'https://tech.wasd-inc.com/feed'],
   ['WESEEK', 'https://weseek.co.jp/tech/feed/'],
-  ['Wantedly', 'https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml'],
   ['Wiz', 'https://tech.012grp.co.jp/feed'],
   ['YAZ', 'https://www.yaz.co.jp/feed'],
   ['YOJO Technologies', 'https://note.com/yojo_engineering/m/m59a0657d21e2/rss'],
@@ -504,6 +502,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
+ * ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
+ * ['Wantedly', 'https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml'],
  *
  * 500
  * ['LIG', 'https://liginc.co.jp/technology/feed'],
