@@ -112,7 +112,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LAPRAS', 'https://ai-lab.lapras.com/feed/'],
   ['LCL', 'https://techblog.lclco.com/feed'],
   ['LIFULL', 'https://www.lifull.blog/feed'],
-  ['LIG', 'https://liginc.co.jp/technology/feed'],
   ['LINE', 'https://engineering.linecorp.com/ja/feed/'],
   ['LIVESENSE', 'https://made.livesense.co.jp/feed'],
   ['LayerX', 'https://tech.layerx.co.jp/feed'],
@@ -289,7 +288,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['エス・エム・エス', 'https://tech.bm-sms.co.jp/feed'],
   ['エニグモ', 'https://tech.enigmo.co.jp/feed'],
   ['エブリー', 'https://tech.every.tv/feed'],
-  ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
   ['エムオーテックス', 'https://tech.motex.co.jp/feed'],
   ['エムスリー', 'https://www.m3tech.blog/feed'],
   ['エムティーアイ', 'https://tech.mti.co.jp/feed'],
@@ -311,7 +309,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
   ['クックパッド', 'https://techlife.cookpad.com/feed'],
-  ['クラウドエース', 'https://cloud-ace.jp/tech_blog/feed'],
   ['クラウドワークス', 'https://engineer.crowdworks.jp/feed'],
   ['クラシコム', 'https://note.com/kurashicom_tech/rss'],
   ['クラッソーネ', 'https://tech.crassone.jp/rss.xml'],
@@ -416,7 +413,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
   ['ホワイトプラス', 'https://blog.wh-plus.co.jp/feed'],
   ['マクロミル', 'https://techblog.macromill.com/feed'],
-  ['マチマチ', 'https://tech.machimachi.com/feed'],
   ['マナリンク', 'https://zenn.dev/manalink/feed'],
   ['マネックス', 'https://blog.tech-monex.com/feed'],
   ['マネーフォワード ', 'https://moneyforward.com/engineers_blog/feed/'],
@@ -509,8 +505,12 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
  *
+ * 500
+ * ['LIG', 'https://liginc.co.jp/technology/feed'],
+ *
  * Error: unable to verify the first certificate
  * ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
+ * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
  *
  * pubDate なし
  * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
