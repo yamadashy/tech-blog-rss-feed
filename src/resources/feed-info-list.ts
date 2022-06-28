@@ -21,7 +21,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['207', 'https://tech.207-inc.com/feed'],
   ['ABEJA', 'https://tech-blog.abeja.asia/feed'],
   ['ACES', 'https://tech.acesinc.co.jp/feed'],
-  ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed/'],
   ['AI inside', 'https://note.com/aiinside_tech/rss'],
   ['AIREV', 'https://zenn.dev/airev/feed'],
   ['ANDPAD', 'https://tech.andpad.co.jp/feed'],
@@ -509,6 +508,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 403 Forbidden
  * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
+ * ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed'],
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
