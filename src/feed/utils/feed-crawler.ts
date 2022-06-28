@@ -144,6 +144,9 @@ export class FeedCrawler {
       case 'POL':
         customFeed.title = 'POL テックノート';
         break;
+      case 'mofmof':
+        customFeed.link = 'https://tech.mof-mof.co.jp';
+        break;
     }
 
     if (!isValidHttpUrl(customFeed.link)) {
