@@ -445,6 +445,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
   ['ライトハウス', 'https://developers.lighthouse-frontier.tech/feed'],
   ['ラクス', 'https://tech-blog.rakus.co.jp/feed'],
+  ['ラクスフロントエンドチーム', 'https://note.com/rakus_fe/m/m653605948abe/rss'],
   ['ラクスル', 'https://tech.raksul.com/feed'],
   ['ラクーン', 'https://techblog.raccoon.ne.jp/feed'],
   ['ラック', 'https://devblog.lac.co.jp/feed'],
