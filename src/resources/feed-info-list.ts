@@ -327,7 +327,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['サイオステクノロジー', 'https://tech-lab.sios.jp/feed'],
   ['サイゼント', 'https://cyzennt.co.jp/blog/feed/'],
   ['サイバーエージェント', 'https://developers.cyberagent.co.jp/blog/feed/'],
-  ['サイバーディフェンス研究所', 'https://io.cyberdefense.jp/feed'],
   ['サイボウズ', 'https://blog.cybozu.io/feed'],
   ['サムザップ', 'https://tech.sumzap.co.jp/feed'],
   ['シェアフル', 'https://zenn.dev/sharefull/feed'],
@@ -503,6 +502,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * パースエラー修正
  * ['Qiita', 'https://zine.qiita.com/'],
+ * ['サイバーディフェンス研究所', 'https://io.cyberdefense.jp/index.xml'],
  *
  * 日本語以外が交じるのを解消できたら入れたい
  * ['クラスメソッド', 'https://dev.classmethod.jp/feed'],
