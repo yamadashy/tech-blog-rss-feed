@@ -410,7 +410,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['フェンリル', 'https://engineers.fenrir-inc.com/feed'],
   ['フォトシンス', 'https://akerun.hateblo.jp/feed'],
   ['フォージビジョン', 'https://techblog.forgevision.com/feed'],
-  ['フクロウラボ', 'https://developers.fukurou-labo.co.jp/feed/'],
   ['フューチャー', 'https://future-architect.github.io/atom.xml'],
   ['フリュー', 'https://tech.furyu.jp/index.xml'],
   ['ブックウォーカー', 'https://developers.bookwalker.jp/feed'],
@@ -524,6 +523,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 500
  * ['LIG', 'https://liginc.co.jp/technology/feed'],
+ *
+ * 503
+ * ['フクロウラボ', 'https://developers.fukurou-labo.co.jp/feed/'],
  *
  * Error: unable to verify the first certificate
  * ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
