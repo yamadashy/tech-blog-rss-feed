@@ -77,7 +77,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/feed'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
-  ['GA TECHNOLOGIES', 'https://tech.ga-tech.co.jp/feed'],
   ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
   ['GMOインターネット', 'https://developers.gmo.jp/feed/'],
   ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
