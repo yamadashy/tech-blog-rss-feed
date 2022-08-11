@@ -40,6 +40,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Beatrust', 'https://tech.beatrust.com/feed'],
   ['BrainPad', 'https://blog.brainpad.co.jp/feed'],
   ['CADDi', 'https://caddi.tech/feed'],
+  ['CAMPFIRE', 'https://note.com/campfire_dev/rss'],
   ['CARTA', 'https://techblog.cartaholdings.co.jp/feed'],
   ['CCCマーケティング', 'https://techblog.cccmk.co.jp/feed'],
   ['CData Software', 'https://www.cdatablog.jp/feed'],
@@ -73,11 +74,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Finatext', 'https://medium.com/feed/finatext'],
   ['Findy', 'https://findy-code.io/engineer-lab/feed/atom'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
+  ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/feed'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
   ['GA TECHNOLOGIES', 'https://tech.ga-tech.co.jp/feed'],
   ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
   ['GMOインターネット', 'https://developers.gmo.jp/feed/'],
+  ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
   ['GMOグローバルサイン・ホールディングス', 'https://tech.gmogshd.com/feed'],
   ['GMOペパボ', 'https://tech.pepabo.com/feed.xml'],
   ['GMOメディア', 'https://blog.gmo.media/feed/atom/'],
@@ -95,6 +98,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['HERP', 'https://tech-hub.herp.co.jp/feed.xml'],
   ['HRBrain', 'https://times.hrbrain.co.jp/feed'],
   ['Hajimari', 'https://tech.hajimari.inc/feed'],
+  ['HashPort', 'https://tech.hashport.io/feed/'],
   ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
   ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
   ['HiTalent', 'https://medium.com/feed/@hitalent'],
@@ -129,6 +133,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['MNTSQ', 'https://tech.mntsq.co.jp/feed'],
   ['MUGENUP', 'https://mugenup-tech.hatenadiary.com/feed'],
   ['Magic Moment', 'https://zenn.dev/magicmoment/feed'],
+  ['Makuake', 'https://note.com/dev_makuake/rss'],
   ['MicroAd', 'https://developers.microad.co.jp/feed'],
   ['Mirrativ', 'https://tech.mirrativ.stream/feed'],
   ['Money Forward Kessai', 'https://tech.mfkessai.co.jp/index.xml'],
@@ -174,6 +179,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['SEGA XD', 'https://note.com/segaxd/m/m81bdf8ff4be8/rss'],
   ['SEGA', 'https://techblog.sega.jp/feed'],
   ['SHIFT Group', 'https://note.com/shift_tech/rss'],
+  ['SHOWROOM', 'https://note.com/showroom_blog/rss'],
   ['SO Technologies', 'https://developer.so-tech.co.jp/feed'],
   ['SOELU', 'https://engineering.soelu.com/feed'],
   ['SQUARE ENIX', 'https://blog.jp.square-enix.com/iteng-blog/index.xml'],
@@ -242,6 +248,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['hokan', 'https://medium.com/feed/@hokan_dev'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['i-plug', 'https://itbl.hatenablog.com/feed'],
+  ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['intage', 'https://www.intage-ts.com/feed'],
   ['ispec', 'https://zenn.dev/ispec/feed'],
@@ -255,6 +262,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['stand.fm', 'https://note.com/standfm_company/rss'],
   ['var', 'https://zenn.dev/var/feed'],
   ['vivit', 'https://vivit.hatenablog.com/feed'],
+  ['wywy', 'https://wywy.jp/feed.xml'],
   ['x garden', 'https://x-garde-creation.hatenablog.com/feed'],
   ['あした', 'https://engineer.ashita-team.com/feed'],
   ['あすけん', 'https://tech.asken.inc/feed'],
@@ -262,6 +270,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['くらしのマーケット', 'https://tech.curama.jp/feed'],
   ['ぐるなび', 'https://developers.gnavi.co.jp/feed'],
   ['さくら', 'https://knowledge.sakura.ad.jp/rss/'],
+  ['じげん', 'https://overs.zigexn.co.jp/technology/feed/'],
   ['はてな', 'https://developer.hatenastaff.com/feed'],
   ['みてね', 'https://team-blog.mitene.us/feed'],
   ['みらい翻訳', 'https://miraitranslate-tech.hatenablog.jp/feed'],
@@ -280,7 +289,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['アプリボット', 'https://blog.applibot.co.jp/feed'],
   ['アメリエフ', 'https://staffblog.amelieff.jp/feed'],
   ['アルダグラム', 'https://zenn.dev/aldagram/feed'],
+  ['アームズ', 'https://tech.arms-soft.co.jp/feed'],
   ['イエソド', 'https://zenn.dev/yesodco/feed'],
+  ['イタンジ', 'https://tech.itandi.co.jp/feed'],
   ['イノベーター・ジャパン', 'https://tech.innovator.jp.net/feed'],
   ['インターステラ', 'https://blog.interstellar.co.jp/feed/'],
   ['インテリジェントテクノロジー', 'https://iti.hatenablog.jp/feed'],
@@ -293,6 +304,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['エクサウィザーズ', 'https://techblog.exawizards.com/feed'],
   ['エス・エム・エス', 'https://tech.bm-sms.co.jp/feed'],
   ['エニグモ', 'https://tech.enigmo.co.jp/feed'],
+  ['エビリー', 'https://zenn.dev/eviry/feed'],
   ['エブリー', 'https://tech.every.tv/feed'],
   ['エムオーテックス', 'https://tech.motex.co.jp/feed'],
   ['エムスリー', 'https://www.m3tech.blog/feed'],
@@ -302,6 +314,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['オプトテクノロジーズ', 'https://tech-magazine.opt.ne.jp/feed'],
   ['オルターブース', 'https://aadojo.alterbooth.com/feed'],
   ['オールアバウト', 'https://allabout-tech.hatenablog.com/feed'],
+  ['カイユウ', 'https://kai-you-tech.hatenablog.com/feed'],
+  ['カウシェ', 'https://note.com/kauche/m/meb1f972d92dc/rss'],
   ['カケハシ', 'https://kakehashi-dev.hatenablog.com/feed'],
   ['カミナシ', 'https://kaminashi-developer.hatenablog.jp/feed'],
   ['カヤック', 'https://techblog.kayac.com/feed'],
@@ -315,6 +329,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
   ['クックパッド', 'https://techlife.cookpad.com/feed'],
+  ['クラウドエース', 'https://zenn.dev/cloud_ace/feed'],
   ['クラウドワークス', 'https://engineer.crowdworks.jp/feed'],
   ['クラシコム', 'https://note.com/kurashicom_tech/rss'],
   ['クラッソーネ', 'https://tech.crassone.jp/rss.xml'],
@@ -360,6 +375,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['タイミー', 'https://tech.timee.co.jp/feed'],
   ['ダイアログ', 'https://dialog-tech.hatenablog.com/feed'],
   ['ダイニー', 'https://note.com/dinii/m/mf6424286cfa2/rss'],
+  ['ダンクハーツ', 'https://dhe.dank-hearts.net/m/m18705e344ee6/rss'],
   ['テクニカルエージェント', 'https://tracl.cloud/archives/engineerblog/feed/'],
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
@@ -396,7 +412,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['バスキュール', 'https://blog.bascule.co.jp/feed'],
   ['バレットグループ', 'https://blog.bltinc.co.jp/feed'],
   ['パトコア', 'https://tech.patcore.com/feed'],
+  ['パーソルキャリア', 'https://techtekt.persol-career.co.jp/feed'],
   ['パーソルプロセス＆テクノロジー', 'https://note.com/ppt_hr/m/md77242321979/rss'],
+  ['パーソンリンク', 'https://zenn.dev/person_link/feed'],
   ['ヒストリア', 'https://historia.co.jp/feed'],
   ['ヒュープロ', 'https://hupro-techblog.hatenablog.com/feed'],
   ['ビザスク', 'https://tech.visasq.com/feed'],
@@ -405,6 +423,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ピクスタ', 'https://texta.pixta.jp/feed'],
   ['ピリカ', 'https://devblog.pirika.org/feed'],
   ['ファブリカ', 'https://www.fabrica-com.co.jp/techblog/feed/'],
+  ['ファンコミュニケーションズ', 'https://tech-blog.fancs.com/feed'],
   ['ファンタラクティブ', 'https://zenn.dev/funteractive/feed'],
   ['フィードフォース', 'https://developer.feedforce.jp/feed'],
   ['フェンリル', 'https://engineers.fenrir-inc.com/feed'],
@@ -412,11 +431,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['フォージビジョン', 'https://techblog.forgevision.com/feed'],
   ['フューチャー', 'https://future-architect.github.io/atom.xml'],
   ['フリュー', 'https://tech.furyu.jp/index.xml'],
+  ['フリークアウト', 'https://backyard.fout.co.jp/feed'],
   ['ブックウォーカー', 'https://developers.bookwalker.jp/feed'],
   ['プラミナス', 'https://zenn.dev/plminus/feed'],
   ['プレックス', 'https://product.plex.co.jp/feed'],
   ['ヘイ データチーム', 'https://data.hey.jp/feed'],
   ['ヘイ', 'https://tech.hey.jp/feed'],
+  ['ベイジ', 'https://baigie.me/feed/'],
   ['ベルシステム', 'https://note.com/pocke_techblog/rss'],
   ['ペイトナー', 'https://paytner.hatenablog.com/feed'],
   ['ペライチ', 'https://zenn.dev/peraichi/feed'],
@@ -508,6 +529,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * 日本語以外が交じるのを解消できたら入れたい
  * ['クラスメソッド', 'https://dev.classmethod.jp/feed'],
  *
+ * 技術のカテゴリ切られてないので悩ましい
+ * ['Ragate', 'https://www.ragate.co.jp/blog/'],
+ *
  * 403 Forbidden
  * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
  * ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed'],
@@ -515,6 +539,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
  * ['Findy Teams', 'https://engineering-org.findy-teams.com/feed.xml'],
+ * ['KINTOテクノロジーズ', 'https://blog.kinto-technologies.com/feed.xml'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
@@ -551,6 +576,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://www.vision-c.co.jp/engineerblog
  * https://www.cresco.co.jp/blog/
  * https://blog.genda.jp/creators/
+ * https://lab.hokadoko.com/news/RTEPiK54
+ *
+ * 日本語以外
+ * https://medium.com/feed/mcdonalds-technical-blog
+ * https://netflixtechblog.com/
+ * https://discord.com/blog/
+ * https://www.twilio.com/blog
  *
  * TODO: スライド系も追加？
  * https://speakerdeck.com/line_developers
