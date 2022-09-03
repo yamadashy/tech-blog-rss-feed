@@ -187,6 +187,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Salesforce', 'https://developer.salesforce.com/jpblogs/feed/'],
   ['Sansan', 'https://buildersbox.corp-sansan.com/feed'],
   ['Seeed', 'https://lab.seeed.co.jp/feed'],
+  ['Seibii', 'https://zenn.dev/seibii/feed'],
   ['Showcase Gig', 'https://note.com/scg_tech/rss'],
   ['SmartBank', 'https://blog.smartbank.co.jp/feed'],
   ['SmartHR', 'https://tech.smarthr.jp/feed'],
@@ -267,6 +268,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['あすけん', 'https://tech.asken.inc/feed'],
   ['おてつたび', 'https://zenn.dev/otetsutabi_tech/feed'],
   ['くらしのマーケット', 'https://tech.curama.jp/feed'],
+  ['クロスマート', 'https://xmart-techblog.hatenablog.com/feed'],
   ['ぐるなび', 'https://developers.gnavi.co.jp/feed'],
   ['さくら', 'https://knowledge.sakura.ad.jp/rss/'],
   ['じげん', 'https://overs.zigexn.co.jp/technology/feed/'],
@@ -296,6 +298,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['インテリジェントテクノロジー', 'https://iti.hatenablog.jp/feed'],
   ['インフィニットループ', 'https://www.infiniteloop.co.jp/tech-blog/feed/'],
   ['ウィルゲート', 'https://tech.willgate.co.jp/feed'],
+  ['ウイングアーク１ｓｔ', 'https://note.wingarc.com/m/m1d39b8a5d9be/rss'],
   ['ウェイブ', 'https://tech.wwwave.jp/feed'],
   ['ウエディングパーク', 'https://engineers.weddingpark.co.jp/feed'],
   ['ウォーターセル', 'https://watercelldev.hatenablog.jp/feed'],
@@ -335,7 +338,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クリアコード', 'https://www.clear-code.com/blog/index.rdf'],
   ['グッドワークス', 'https://zenn.dev/goodworks/feed'],
   ['コインチェック', 'https://tech.coincheck.blog/feed'],
-  ['ココナラ', 'https://yomoyamablog.coconala.co.jp/feed'],
+  ['ココナラ', 'https://zenn.dev/coconala/feed'],
   ['ココネ', 'https://engineering.cocone.io/feed/'],
   ['コネヒト', 'https://tech.connehito.com/feed'],
   ['コミューン', 'https://tech.commmune.jp/feed'],
@@ -380,6 +383,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['テックタッチ', 'https://tech.techtouch.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
   ['テリロジー', 'https://terilogy-tech.hatenablog.com/feed'],
+  ['ディーネット', 'https://blog.denet.co.jp/feed/'],
   ['デザインワン・ジャパン', 'https://tech.designone.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
   ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
@@ -403,6 +407,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ネクストビート', 'https://medium.com/feed/nextbeat-engineering'],
   ['ネフロック', 'https://blog.nefrock.com/feed'],
   ['ハイウィザード', 'https://high-wizard.hatenablog.com/feed'],
+  ['ハイリンク', 'https://tech.high-link.co.jp/feed'],
   ['ハウテレビジョン', 'https://blog.howtelevision.co.jp/feed'],
   ['ハロー', 'https://tech.hello.ai/feed'],
   ['ハンズラボ', 'https://www.hands-lab.com/feed'],
@@ -432,6 +437,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['フリュー', 'https://tech.furyu.jp/index.xml'],
   ['フリークアウト', 'https://backyard.fout.co.jp/feed'],
   ['ブックウォーカー', 'https://developers.bookwalker.jp/feed'],
+  ['ブレインズコンサルティング', 'https://blog.brains-consulting.tech/feed'],
+  ['プラチナゲームズ', 'https://www.platinumgames.co.jp/official-blog/feed/'],
   ['プラミナス', 'https://zenn.dev/plminus/feed'],
   ['プレックス', 'https://product.plex.co.jp/feed'],
   ['ヘイ データチーム', 'https://data.hey.jp/feed'],
@@ -463,6 +470,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ユカシカド', 'https://note.com/tech_yukashikado/rss'],
   ['ユニファ', 'https://tech.unifa-e.com/feed'],
   ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
+  ['ユビレジ', 'https://note.com/ubiregi/m/madc9f4f38ad9/rss'],
   ['ライトハウス', 'https://developers.lighthouse-frontier.tech/feed'],
   ['ラクス', 'https://tech-blog.rakus.co.jp/feed'],
   ['ラクスフロントエンドチーム', 'https://note.com/rakus_fe/m/m653605948abe/rss'],
@@ -576,6 +584,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://www.cresco.co.jp/blog/
  * https://blog.genda.jp/creators/
  * https://lab.hokadoko.com/news/RTEPiK54
+ * https://subthread.co.jp/blog/
  *
  * 日本語以外
  * https://medium.com/feed/mcdonalds-technical-blog
