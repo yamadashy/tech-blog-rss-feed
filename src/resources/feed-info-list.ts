@@ -256,6 +256,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['justInCaseTechnologies', 'https://jict.hatenablog.com/feed'],
   ['mikan', 'https://mikan-tech.hatenablog.jp/feed'],
   ['mofmof', 'https://tech.mof-mof.co.jp/feed.xml'],
+  ['mutex', 'https://zenn.dev/mutex/feed'],
   ['nana music', 'https://tech.nana-music.com/feed'],
   ['no plan', 'https://zenn.dev/no_plan/feed'],
   ['paiza', 'https://paiza.hatenablog.com/feed'],
