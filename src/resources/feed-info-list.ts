@@ -521,6 +521,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['食べチョク', 'https://tech.tabechoku.com/feed'],
   ['食べログ', 'https://note.com/tabelog_frontend/rss'],
   ['ＦＦＲＩセキュリティ', 'https://engineers.ffri.jp/feed'],
+  ['note', 'https://engineerteam.note.jp/m/m70da42dac8cf/rss'],
 ]);
 
 /**
