@@ -32,4 +32,8 @@ module.exports = {
 
   // フィードの取得などに使う UserAgent
   requestUserAgent: 'facebookexternalhit/1.1; yamadashy/tech-blog-rss-feed',
+
+  // サイトの追加方法のリンク
+  howToAddSiteLink:
+    'https://github.com/yamadashy/tech-blog-rss-feed#%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0%E6%96%B9%E6%B3%95',
 };

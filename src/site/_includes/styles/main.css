@@ -414,3 +414,13 @@ img {
  */
 footer {
 }
+
+.ui-section-footer .ui-section-footer__site-info {
+    margin-bottom: 1.5em;
+    display: block;
+}
+
+.ui-section-footer .ui-section-footer__site-info .ui-text-note {
+    margin-bottom: 0.7em;
+    line-height: 1.4em;
+}

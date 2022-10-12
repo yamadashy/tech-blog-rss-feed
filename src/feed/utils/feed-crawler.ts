@@ -147,6 +147,9 @@ export class FeedCrawler {
       case 'mofmof':
         customFeed.link = 'https://tech.mof-mof.co.jp';
         break;
+      case 'CADDi':
+        customFeed.link = 'https://caddi.tech/';
+        break;
     }
 
     if (!isValidHttpUrl(customFeed.link)) {
