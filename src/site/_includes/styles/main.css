@@ -418,6 +418,7 @@ footer {
 .ui-section-footer .ui-section-footer__site-info {
     margin-bottom: 1.5em;
     display: block;
+    font-size: 0.9em;
 }
 
 .ui-section-footer .ui-section-footer__site-info .ui-text-note {
