@@ -57,7 +57,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ContractS', 'https://tech.contracts.co.jp/feed'],
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
   ['CyberZ', 'https://note.com/cyberz_cto/rss'],
-  ['DATAFLUCT', 'https://note.datafluct.jp/m/m61a989a0a473/rss'],
+  ['DATAFLUCT', 'https://tech.datafluct.com/feed'],
   ['DMM', 'https://inside.dmm.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
@@ -98,7 +98,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Hajimari', 'https://tech.hajimari.inc/feed'],
   ['HashPort', 'https://tech.hashport.io/feed/'],
   ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
-  ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
   ['HiTalent', 'https://medium.com/feed/@hitalent'],
   ['HireRoo', 'https://hireroo.io/rss/IJhPN95WMIcPni1r59Tt'],
   ['IDCフロンティア', 'https://blog.idcf.jp/feed'],
@@ -394,7 +393,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トライト', 'https://tryt-group.hatenablog.com/feed'],
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
-  ['トラーナ', 'https://toranabox.com/rss/category/Tech'],
+  ['トラーナ', 'https://tech.torana.co.jp/feed'],
   ['トレタ', 'https://tech.toreta.in/feed'],
   ['ドクターズプライム', encodeURI('https://blog.drsprime.com/feed/category/エンジニアリング')],
   ['ドコカデ', 'https://zenn.dev/dokokade/feed'],
@@ -435,7 +434,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['フォトシンス', 'https://akerun.hateblo.jp/feed'],
   ['フォージビジョン', 'https://techblog.forgevision.com/feed'],
   ['フューチャー', 'https://future-architect.github.io/atom.xml'],
-  ['フリュー', 'https://tech.furyu.jp/index.xml'],
+  ['フリュー', 'https://tech.furyu.jp/feed'],
   ['フリークアウト', 'https://backyard.fout.co.jp/feed'],
   ['ブックウォーカー', 'https://developers.bookwalker.jp/feed'],
   ['ブレインズコンサルティング', 'https://blog.brains-consulting.tech/feed'],
@@ -453,7 +452,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['マクロミル', 'https://techblog.macromill.com/feed'],
   ['マナリンク', 'https://zenn.dev/manalink/feed'],
   ['マネックス', 'https://blog.tech-monex.com/feed'],
-  ['マネーフォワード ', 'https://moneyforward.com/engineers_blog/feed/'],
+  ['マネーフォワード ', 'https://moneyforward-dev.jp/feed'],
   ['マンハッタンコード', 'https://zenn.dev/manhattan_code/feed'],
   ['ミクシィ', 'https://mixi-developers.mixi.co.jp/feed'],
   ['ミツエーリンクス', 'https://tsd.mitsue.co.jp/assets/rss/atom.xml'],
@@ -573,6 +572,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * 削除された？
  * ['NAXA', 'https://blog.naxa.co.jp/feed'],
  * ['Reigle', 'https://www.reigle.info/feed'],
+ * ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
