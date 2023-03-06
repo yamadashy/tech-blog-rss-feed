@@ -45,7 +45,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
   ['COOSY', 'https://coosy.co.jp/blog/category/system-develop/feed/'],
-  ['CROOZ SHOPLIST', 'https://crooz.co.jp/recruit_group/blog/category/%e3%83%86%e3%83%83%e3%82%af%e3%83%96%e3%83%ad%e3%82%b0/feed/'],
+  [
+    'CROOZ SHOPLIST',
+    'https://crooz.co.jp/recruit_group/blog/category/%e3%83%86%e3%83%83%e3%82%af%e3%83%96%e3%83%ad%e3%82%b0/feed/',
+  ],
   ['CROOZ', 'https://croozblog.hatenablog.com/feed'],
   ['CULTA', 'https://techblog.culta.jp/feed'],
   ['CauchyE', 'https://zenn.dev/cauchye/feed'],
