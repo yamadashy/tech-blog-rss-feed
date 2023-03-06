@@ -45,7 +45,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
   ['COOSY', 'https://coosy.co.jp/blog/category/system-develop/feed/'],
-  ['CROOZ SHOPLIST', 'https://crooz.shoplist.com/blog-category/technology/feed'],
+  ['CROOZ SHOPLIST', 'https://crooz.co.jp/recruit_group/blog/category/%e3%83%86%e3%83%83%e3%82%af%e3%83%96%e3%83%ad%e3%82%b0/feed/'],
   ['CROOZ', 'https://croozblog.hatenablog.com/feed'],
   ['CULTA', 'https://techblog.culta.jp/feed'],
   ['CauchyE', 'https://zenn.dev/cauchye/feed'],
@@ -58,7 +58,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Croooober', 'https://tech.croooober.co.jp/feed'],
   ['CyberZ', 'https://note.com/cyberz_cto/rss'],
   ['DATAFLUCT', 'https://tech.datafluct.com/feed'],
-  ['DMM', 'https://inside.dmm.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
   ['Dentsu Digital', 'https://note.com/dd_techblog/rss'],
@@ -525,6 +524,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
 
 /**
  * その他候補
+ *
+ * リニューアルされてフィードが消えたのでしばらくしたら確認
+ * ['DMM', 'https://inside.dmm.com/feed'],
  *
  * できたばかりなので様子見
  * ['Amayz', 'https://blog.amayz.co.jp/?feed=rss2'],
