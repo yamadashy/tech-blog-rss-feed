@@ -69,7 +69,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ENECHANGE', 'https://tech.enechange.co.jp/feed'],
   ['Emotion Tech', 'https://tech.emotion-tech.co.jp/feed'],
   ['Eureka', 'https://medium.com/feed/eureka-engineering'],
-  ['FLINTERS', 'https://labs.septeni.co.jp/feed'],
   ['FiNC', 'https://medium.com/feed/finc-engineering'],
   ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
   ['Finatext', 'https://medium.com/feed/finatext'],
@@ -236,7 +235,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['auカブコム証券', 'https://engineering.kabu.com/feed'],
   ['auコマース＆ライフ', 'https://kcf-developers.hatenablog.jp/feed'],
   ['cloud.config', 'https://tech-blog.cloud-config.jp/feed/'],
-  ['crispy', 'https://blog.crispy-inc.com/feed'],
   ['dely', 'https://tech.dely.jp/feed'],
   ['dip', 'https://developer.dip-net.co.jp/feed'],
   ['divx', 'https://engineering.divx.co.jp/feed'],
@@ -555,6 +553,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['KINTOテクノロジーズ', 'https://blog.kinto-technologies.com/feed.xml'],
  * ['テリロジー', 'https://terilogy-tech.hatenablog.com/feed'],
  * ['ヘイ データチーム', 'https://data.hey.jp/feed'],
+ * ['FLINTERS', 'https://labs.septeni.co.jp/feed'],
+ * ['crispy', 'https://blog.crispy-inc.com/feed'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
