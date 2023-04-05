@@ -45,7 +45,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CCCマーケティング', 'https://techblog.cccmk.co.jp/feed'],
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
-  ['COOSY', 'https://coosy.co.jp/blog/category/system-develop/feed/'],
+  ['COOSY', 'https://coosy.co.jp/blog/category/web-development/feed/'],
   [
     'CROOZ SHOPLIST',
     'https://crooz.co.jp/recruit_group/blog/category/%e3%83%86%e3%83%83%e3%82%af%e3%83%96%e3%83%ad%e3%82%b0/feed/',
@@ -59,7 +59,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Cluster', 'https://tech-blog.cluster.mu/rss'],
   ['Colorful Palette', 'https://media.colorfulpalette.co.jp/m/m753f507dae79/rss'],
   ['ContractS', 'https://tech.contracts.co.jp/feed'],
-  ['Croooober', 'https://tech.croooober.co.jp/feed'],
   ['CyberZ', 'https://note.com/cyberz_cto/rss'],
   ['DATAFLUCT', 'https://tech.datafluct.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
@@ -337,7 +336,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クラッソーネ', 'https://tech.crassone.jp/rss.xml'],
   ['クリアコード', 'https://www.clear-code.com/blog/index.rdf'],
   ['クロスマート', 'https://xmart-techblog.hatenablog.com/feed'],
-  ['グッドワークス', 'https://zenn.dev/goodworks/feed'],
   ['コインチェック', 'https://tech.coincheck.blog/feed'],
   ['ココナラ', 'https://zenn.dev/coconala/feed'],
   ['ココネ', 'https://engineering.cocone.io/feed/'],
@@ -402,6 +400,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],
   ['ドワンゴ教育サービス', 'https://blog.nnn.dev/feed'],
   ['ナレッジコミュニケーション', 'https://recipe.kc-cloud.jp/feed'],
+  ['ナレッジワーク', 'https://note.com/knowledgework/rss'] ,
   ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
@@ -579,6 +578,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['NAXA', 'https://blog.naxa.co.jp/feed'],
  * ['Reigle', 'https://www.reigle.info/feed'],
  * ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
+ * ['グッドワークス', 'https://zenn.dev/goodworks/feed'],
+ * ['Croooober', 'https://tech.croooober.co.jp/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
