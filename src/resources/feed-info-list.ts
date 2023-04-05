@@ -208,7 +208,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TeamSpirit', 'https://teamspirit.hatenablog.com/feed'],
   ['TechRacho', 'https://techracho.bpsinc.jp/feed'],
   ['TechTrain', 'https://zenn.dev/techtrain/feed'],
-  ['Tier IV', 'https://tech.tier4.jp/feed'],
+  ['Tier IV', 'https://medium.com/feed/tier-iv-tech-blog/tagged/tech-blog'],
   ['Tokyo Otaku Mode', 'https://blog.otakumode.com/atom.xml'],
   ['UUUM', 'https://system.blog.uuum.jp/feed'],
   ['Ubie', 'https://zenn.dev/ubie/feed'],
