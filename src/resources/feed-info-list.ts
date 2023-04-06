@@ -400,7 +400,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],
   ['ドワンゴ教育サービス', 'https://blog.nnn.dev/feed'],
   ['ナレッジコミュニケーション', 'https://recipe.kc-cloud.jp/feed'],
-  ['ナレッジワーク', 'https://note.com/knowledgework/rss'] ,
+  ['ナレッジワーク', 'https://note.com/knowledgework/rss'],
   ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
