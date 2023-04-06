@@ -49,9 +49,14 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 - 休日 8時-24時の2時間おき
 
 ### フォークして使う場合
-以下を書き換えると独自のサイトが動くと思います。
+以下を書き換えると独自のサイトが動きます。
 
 - `src/common/constants.js` の URL など
+- `src/resources/feed-info-list.ts` のブログ情報
+
+特定のブログに絞ったり、以下のように全く違ったフィードを作るもの良いと思います。
+
+- [MATLAB-blog-rss-feed](https://github.com/minoue-xx/MATLAB-blog-rss-feed) ... MATLAB/Simulink 関連ブログの更新をまとめたRSSフィードを配信
 
 ### 開発用コマンド
 フィード生成とサイト立ち上げ
