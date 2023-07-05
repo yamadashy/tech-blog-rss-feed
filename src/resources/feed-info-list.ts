@@ -331,6 +331,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
   ['クックパッド', 'https://techlife.cookpad.com/feed'],
   ['クラウドエース', 'https://zenn.dev/cloud_ace/feed'],
+  ['クラウドネイティブ', 'https://blog.cloudnative.co.jp/feed/'],
   ['クラウドワークス', 'https://engineer.crowdworks.jp/feed'],
   ['クラシコム', 'https://note.com/kurashicom_tech/rss'],
   ['クラッソーネ', 'https://tech.crassone.jp/rss.xml'],
