@@ -469,6 +469,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['モルフォ', 'https://techblog.morphoinc.com/feed'],
   ['モンスターラボ', 'https://engineering.monstar-lab.com/rss/feed_jp.xml'],
   ['モンスターラボ(EN)', 'https://engineering.monstar-lab.com/rss/feed_en.xml'],
+  ['モンスターラボ DX BLOG', 'https://monstar-lab.com/dx/feed/'],
   ['ユカシカド', 'https://note.com/tech_yukashikado/rss'],
   ['ユニファ', 'https://tech.unifa-e.com/feed'],
   ['ユニラボ', 'https://note.unilabo.jp/m/mc84cf9468445/rss'],
