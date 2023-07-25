@@ -13,7 +13,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 
 - その企業の取り組みでないものが多く投稿される可能性があるブログ
   - テック系メディア
-  - Qiita Organization など、組織として投稿しているかの線引が曖昧なもの
+  - Qiita Organization や Zenn Publication など、組織として投稿しているかの線引が曖昧なものは、投稿内容を見て検討します
 - 記事が自社製品の紹介のみ
 - 日本語以外の言語で書かれている記事が多いブログ
 
