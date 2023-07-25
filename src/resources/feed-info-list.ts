@@ -72,7 +72,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['FiNC', 'https://medium.com/feed/finc-engineering'],
   ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
   ['Finatext', 'https://medium.com/feed/finatext'],
-  ['Findy', 'https://findy-code.io/engineer-lab/feed/atom'],
+  ['Findy', 'https://findy-code.io/engineer-lab/rss'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
   ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/feed'],
@@ -82,7 +82,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
   ['GMOグローバルサイン・ホールディングス', 'https://tech.gmogshd.com/feed'],
   ['GMOペパボ', 'https://tech.pepabo.com/feed.xml'],
-  ['GMOメディア', 'https://blog.gmo.media/feed/atom/'],
   ['GMOリサーチ', 'https://gmor-sys.com/feed'],
   ['GREE', 'https://labs.gree.jp/blog/feed/'],
   ['GRIPHONE', 'https://tech.griphone.co.jp/feed/'],
@@ -149,7 +148,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['OLTA', 'https://techblog.olta.co.jp/feed'],
   ['OPEN8', 'https://open8tech.hatenablog.com/feed'],
   ['OPTiM', 'https://tech-blog.optim.co.jp/feed'],
-  ['ORENDA', 'https://orenda.co.jp/blog/feed/'],
   ['Offers', 'https://zenn.dev/offers/feed'],
   ['Open Reach Tech', 'https://zenn.dev/openreachtech/feed'],
   ['OpenWork', 'https://techblog.openwork.co.jp/feed'],
@@ -298,7 +296,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['インフィニットループ', 'https://www.infiniteloop.co.jp/tech-blog/feed/'],
   ['ウィルゲート', 'https://tech.willgate.co.jp/feed'],
   ['ウイングアーク１ｓｔ', 'https://note.wingarc.com/m/m1d39b8a5d9be/rss'],
-  ['ウェイブ', 'https://tech.wwwave.jp/feed'],
+  ['ウェイブ', 'https://zenn.dev/p/wwwave/feed'],
   ['ウエディングパーク', 'https://engineers.weddingpark.co.jp/feed'],
   ['ウォーターセル', 'https://watercelldev.hatenablog.jp/feed'],
   ['エキサイト', 'https://tech.excite.co.jp/feed'],
@@ -325,7 +323,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ガイアックス', 'https://gaiax.hatenablog.com/feed'],
   ['キカガク', 'https://blog.kikagaku.co.jp/feed'],
   ['キッチハイク', 'https://tech.kitchhike.com/feed'],
-  ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
   ['キュービック', 'https://cuebic.hatenablog.com/feed'],
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
@@ -476,7 +473,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ライトハウス', 'https://developers.lighthouse-frontier.tech/feed'],
   ['ラクス', 'https://tech-blog.rakus.co.jp/feed'],
   ['ラクスフロントエンドチーム', 'https://note.com/rakus_fe/m/m653605948abe/rss'],
-  ['ラクスル', 'https://tech.raksul.com/feed'],
+  ['ラクスル', 'https://techblog.raksul.com/feed'],
   ['ラクーン', 'https://techblog.raccoon.ne.jp/feed'],
   ['ラック', 'https://devblog.lac.co.jp/feed'],
   ['ランサーズ', 'https://engineer.blog.lancers.jp/feed/'],
@@ -529,6 +526,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
 /**
  * その他候補
  *
+ * RSSがなくなった。復活したら入れたい
+ * https://blog.gmo.media/
+ * https://orenda.co.jp/bloglist/
+ *
  * リニューアルされてフィードが消えたのでしばらくしたら確認
  * ['DMM', 'https://inside.dmm.com/feed'],
  *
@@ -573,6 +574,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * Error: unable to verify the first certificate
  * ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
  * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
+ * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
  *
  * pubDate なし
  * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
@@ -605,6 +607,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://netflixtechblog.com/
  * https://discord.com/blog/
  * https://www.twilio.com/blog
+ * https://engineering.monstar-lab.com/en/
  *
  * TODO: スライド系も追加？
  * https://speakerdeck.com/line_developers
