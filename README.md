@@ -1,11 +1,10 @@
-# <img src="src/site/images/icon-transparent.png" height=26> 企業テックブログRSS
-企業のテックブログの更新をまとめたRSSフィードを配信しています。  
+# <img src="src/site/images/icon-transparent.png" height=26> 生成AI・LLM関連テックブログRSS
+生成AI・LLM関連テックブログの更新をまとめたRSSフィードを配信しています。  
 記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。
 
-https://yamadashy.github.io/tech-blog-rss-feed/
+https://r-kagaya.github.io/llm-tech-blog-rss-feed/
 
-
-独自のフィードを作って公開したい場合は自由にフォークしてください。
+[@yamadashy](https://github.com/yamadashy)さんの作成された[yamadashy/tech-blog-rss-feed](https://github.com/yamadashy/tech-blog-rss-feed)をフォークして作成されています。
 
 ## サイト追加の方針
 企業のテックブログ（技術ブログ、エンジニアブログ）であれば、基本的には追加します。  
