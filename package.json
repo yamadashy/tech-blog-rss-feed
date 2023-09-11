@@ -1,6 +1,6 @@
 {
-  "name": "tech-blog-rss-feed",
-  "description": "企業のテックブログの更新をまとめたRSSフィードを配信",
+  "name": "llm-tech-blog-rss-feed",
+  "description": "生成AI/LLM関連の企業・個人のテックブログの更新をまとめたRSSフィードを配信",
   "version": "1.0.0",
   "main": "",
   "scripts": {
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/yamadashy/tech-blog--rss-feed.git"
+    "url": "git://github.com/r-kagaya/llm-tech-blog--rss-feed.git"
   },
   "bugs": {
-    "url": "https://github.com/yamadashy/tech-blog-rss-feed/issues"
+    "url": "https://github.com/r-kagaya/llm-tech-blog-rss-feed/issues"
   },
-  "author": "yamadashy",
+  "author": "r-kagaya",
   "license": "MIT",
   "keywords": [
     "blog",
