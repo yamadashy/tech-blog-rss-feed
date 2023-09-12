@@ -22,4 +22,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   // ['企業名・製品名など', 'RSS/AtomフィードのURL'],
   ['OpenAI', 'https://jamesg.blog/openai.xml'],
   ['Zennのトピック「LLM」', 'https://zenn.dev/topics/llm/feed'],
+  ['LangChain blog', 'https://blog.langchain.dev/rss/'],
 ]);
