@@ -27,4 +27,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Chip Huyen', 'https://huyenchip.com/feed'],
   ['梶谷健人 / Kent Kajitani - Note', 'https://note.com/kajiken0630/rss'],
   ['LLM - Medium', 'https://medium.com/feed/tag/llm'],
+  ['Platinum Data Blog by BrainPad', 'https://blog.brainpad.co.jp/feed'],
 ]);
