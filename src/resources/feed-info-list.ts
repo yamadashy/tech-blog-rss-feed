@@ -23,4 +23,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['OpenAI', 'https://jamesg.blog/openai.xml'],
   ['Zennのトピック「LLM」', 'https://zenn.dev/topics/llm/feed'],
   ['LangChain blog', 'https://blog.langchain.dev/rss/'],
+  ['Chip Huyen', 'https://huyenchip.com/feed'],
 ]);
