@@ -24,4 +24,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Zennのトピック「LLM」', 'https://zenn.dev/topics/llm/feed'],
   ['LangChain blog', 'https://blog.langchain.dev/rss/'],
   ['Chip Huyen', 'https://huyenchip.com/feed'],
+  ['梶谷健人 / Kent Kajitani - Note', 'https://note.com/kajiken0630/rss']
 ]);
