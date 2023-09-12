@@ -23,4 +23,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['OpenAI', 'https://jamesg.blog/openai.xml'],
   ['Zennのトピック「LLM」', 'https://zenn.dev/topics/llm/feed'],
   ['MLQ.ai', 'https://www.mlq.ai/rss/'],
+  ['LangChain blog', 'https://blog.langchain.dev/rss/'],
+  ['Chip Huyen', 'https://huyenchip.com/feed'],
+  ['梶谷健人 / Kent Kajitani - Note', 'https://note.com/kajiken0630/rss'],
+  ['LLM - Medium', 'https://medium.com/feed/tag/llm'],
 ]);
