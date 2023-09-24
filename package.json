@@ -83,7 +83,7 @@
     "quoteProps": "consistent"
   },
   "engines": {
-    "node": ">=14",
+    "node": ">=18",
     "yarn": "^1.18.0"
   }
 }
