@@ -1,8 +1,8 @@
 ---
 layout: layouts/main.njk
 eleventyComputed:
-    pageTitle: "フィード｜{{ constants.siteTitle }}"
-    lastUpdated: "{{ blogFeeds.lastUpdatedIso }}"  {# 適切な値に変更してください #}
+    pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
+    lastUpdated: "{{ blogFeed.lastUpdatedIso }}"
 pagination:
     data: blogFeeds
     size: 1
