@@ -3,11 +3,6 @@ layout: layouts/main.njk
 eleventyComputed:
     pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
     lastUpdated: "{{ blogFeed.lastUpdatedIso }}"
-pagination:
-    data: blogFeeds
-    size: 1
-    alias: blogFeed
-    addAllPagesToCollections: true
 permalink: "blogs/{{ targetDate }}/"
 ---
 
@@ -21,9 +16,27 @@ permalink: "blogs/{{ targetDate }}/"
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
             {% asyncEach feedItem in blogFeed.items %}
                 {% if feedItem.pubDate === targetDate %}
-                    <div class='ui-feed-item'>
-                        <!-- 以前のコードをそのまま使う -->
-                    </div>
+                  <div class='ui-blog'>
+                      <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
+                          {% if blogFeed.ogImageUrl %}
+                              {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '../' %}
+                          {% else %}
+                              <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
+                          {% endif %}
+                      </a>
+                      <div class='ui-blog__content'>
+                          <a class='ui-blog__title' href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
+                          <a class='ui-blog__link' href='{{ blogFeed.link }}'>{{ blogFeed.link }}</a>
+                          {% if blogFeed.ogDescription %}
+                              <div class='ui-blog__description'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</div>
+                          {% endif %}
+                          {% if blogFeed.lastUpdated %}
+                              <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>
+                          {% else %}
+                              <div class='ui-blog__date' title='更新日時なし'>-</div>
+                          {% endif %}
+                      </div>
+                  </div>
                 {% endif %}
             {% endeach %}
         </div>
