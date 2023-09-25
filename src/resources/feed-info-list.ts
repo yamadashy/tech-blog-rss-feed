@@ -30,7 +30,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Platinum Data Blog by BrainPad', 'https://blog.brainpad.co.jp/feed'],
   ['LlamaIndex Blog - Medium', 'https://medium.com/feed/llamaindex-blog'],
   ['mah_lab / 西見 公宏 - Note', 'https://note.com/mahlab/rss'],
-  ['生成AI - Note','https://note.com/hashtag/%E7%94%9F%E6%88%90AI/rss'],
   ['LLM - Note', 'https://note.com/hashtag/LLM/rss'],
   ['LangChain - Note', 'https://note.com/hashtag/LangChain/rss'],
   ['character.ai', 'https://blog.character.ai/rss/'],
