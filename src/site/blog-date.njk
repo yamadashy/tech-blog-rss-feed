@@ -1,0 +1,31 @@
+---
+layout: layouts/main.njk
+eleventyComputed:
+    pageTitle: "フィード｜{{ constants.siteTitle }}"
+    lastUpdated: "{{ blogFeeds.lastUpdatedIso }}"  {# 適切な値に変更してください #}
+pagination:
+    data: blogFeeds
+    size: 1
+    alias: blogFeed
+    addAllPagesToCollections: true
+permalink: "blogs/{{ targetDate }}/"
+---
+
+{% include 'layouts/partials/nav.njk' %}
+
+<section class="ui-section-content ui-section-feed">
+    <div class="ui-layout-container">
+        <h2 class='ui-typography-heading'>{{ targetDate }}のフィード</h2>
+
+        <h3 class='ui-typography-heading'>フィード</h3>
+        <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
+            {% asyncEach feedItem in blogFeed.items %}
+                {% if feedItem.pubDate === targetDate %}
+                    <div class='ui-feed-item'>
+                        <!-- 以前のコードをそのまま使う -->
+                    </div>
+                {% endif %}
+            {% endeach %}
+        </div>
+    </div>
+</section>
