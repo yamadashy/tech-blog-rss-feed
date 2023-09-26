@@ -11,10 +11,6 @@ pagination:
 permalink: "blogs/date/{{ date }}/"
 ---
 
-{% macro formatDate(dateString) %}
-  {{ dateString.split('T')[0].toString() }}
-{% endmacro %}
-
 {% include 'layouts/partials/nav.njk' %}
 
 <section class="ui-section-content ui-section-feed">
