@@ -24,7 +24,7 @@ permalink: "blogs/date/{{ date }}/"
             {% asyncEach blogFeed in blogFeeds %}
                 {% set formattedDate = formatDate(blogFeed.lastUpdated) %}
                 {{ formattedDate }}
-               # {% if formattedDate == date %}
+               # {% if formattedDate.include(date) %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                           {% if blogFeed.ogImageUrl %}
