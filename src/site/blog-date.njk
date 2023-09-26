@@ -12,7 +12,7 @@ permalink: "blogs/date/{{ date }}/"
 ---
 
 {% macro formatDate(dateString) %}
-  {{ dateString.split('T')[0] }}
+  {{ dateString.split('T')[0].toString() }}
 {% endmacro %}
 
 {% include 'layouts/partials/nav.njk' %}
@@ -25,6 +25,7 @@ permalink: "blogs/date/{{ date }}/"
                 {% set formattedDate = formatDate(blogFeed.lastUpdated) %}
                 {{ blogFeed }}
                 {{ formattedDate }}
+                {{ date }}
                 {% if formattedDate == date %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
