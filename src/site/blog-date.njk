@@ -3,6 +3,11 @@ layout: layouts/main.njk
 eleventyComputed:
     pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
     lastUpdated: "{{ blogFeed.lastUpdatedIso }}"
+pagination:
+    data: dates
+    size: 1
+    alias: date
+    addAllPagesToCollections: true
 permalink: "blogs/date/{{ date }}/"
 ---
 
@@ -10,12 +15,12 @@ permalink: "blogs/date/{{ date }}/"
 
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
-        <h2 class='ui-typography-heading'>{{ targetDate }}のフィード</h2>
+        <h2 class='ui-typography-heading'>{{ date }}のフィード</h2>
 
         <h3 class='ui-typography-heading'>フィード</h3>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
             {% asyncEach feedItem in blogFeed.items %}
-                {% if feedItem.pubDate === targetDate %}
+                {% if feedItem.pubDate === date %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                           {% if blogFeed.ogImageUrl %}
