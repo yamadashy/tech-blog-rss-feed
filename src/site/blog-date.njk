@@ -3,7 +3,7 @@ layout: layouts/main.njk
 eleventyComputed:
     pageTitle: "{{ blogFeed.title }}のフィード｜{{ constants.siteTitle }}"
     lastUpdated: "{{ blogFeed.lastUpdatedIso }}"
-permalink: "blogs/{{ targetDate }}/"
+    permalink: "blogs/{{ targetDate }}/index.html"
 ---
 
 {% include 'layouts/partials/nav.njk' %}
