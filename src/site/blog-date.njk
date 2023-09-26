@@ -1,7 +1,3 @@
-{% macro formatDate(dateString) %}
-  {{ dateString.split('T')[0] }}
-{% endmacro %}
-
 ---
 layout: layouts/main.njk
 eleventyComputed:
@@ -14,6 +10,10 @@ pagination:
     addAllPagesToCollections: true
 permalink: "blogs/date/{{ date }}/"
 ---
+
+{% macro formatDate(dateString) %}
+  {{ dateString.split('T')[0] }}
+{% endmacro %}
 
 {% include 'layouts/partials/nav.njk' %}
 
