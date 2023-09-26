@@ -24,10 +24,10 @@ permalink: "blogs/date/{{ date }}/"
           {% asyncEach dateString, feedItems in feedItemsChunks %}
             {{ dateString }}
             {{ feedItems | dump | safe }}
-            {% set formattedDate = formatDate(feedItems.date_published) %}
-            {% if formattedDate.includes(date) %}
+           # {% set formattedDate = formatDate(feedItems.date_published) %}
+           # {% if formattedDate.includes(date) %}
               {% include 'layouts/partials/feed-item.njk' %}
-            {% endif %}
+           # {% endif %}
           {% endeach %}
         </div>
     </div>
