@@ -20,11 +20,9 @@ permalink: "blogs/date/{{ date }}/"
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
         <h2 class='ui-typography-heading'>{{ date }}のフィード</h2>
-
-        <h3 class='ui-typography-heading'>フィード</h3>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
             {% asyncEach blogFeed in blogFeeds %}
-                {% set formattedDate = formatDate(feedItem.pubDate) %}
+                {% set formattedDate = formatDate(blogFeed.pubDate) %}
                 {% if formattedDate == date %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
