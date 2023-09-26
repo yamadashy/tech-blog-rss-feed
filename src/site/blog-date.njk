@@ -1,3 +1,7 @@
+{% macro formatDate(dateString) %}
+  {{ dateString.split('T')[0] }}
+{% endmacro %}
+
 ---
 layout: layouts/main.njk
 eleventyComputed:
@@ -20,7 +24,8 @@ permalink: "blogs/date/{{ date }}/"
         <h3 class='ui-typography-heading'>フィード</h3>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
             {% asyncEach feedItem in blogFeed.items %}
-                {% if date.includes(feedItem.pubDate) %}
+                {% set formattedDate = formatDate(feedItem.pubDate) %}
+                {% if formattedDate === date %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                           {% if blogFeed.ogImageUrl %}
