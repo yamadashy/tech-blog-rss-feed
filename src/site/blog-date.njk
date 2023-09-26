@@ -24,7 +24,7 @@ permalink: "blogs/date/{{ date }}/"
             {% asyncEach blogFeed in blogFeeds %}
                 {% set formattedDate = formatDate(blogFeed.lastUpdated) %}
                 {{ formattedDate }}
-               # {% if formattedDate.include(date) %}
+                {% if formattedDate.include(date) %}
                   <div class='ui-blog'>
                       <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
                           {% if blogFeed.ogImageUrl %}
@@ -46,7 +46,7 @@ permalink: "blogs/date/{{ date }}/"
                           {% endif %}
                       </div>
                   </div>
-               # {% endif %}
+               {% endif %}
             {% endeach %}
         </div>
     </div>
