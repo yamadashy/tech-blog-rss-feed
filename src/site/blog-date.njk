@@ -21,32 +21,14 @@ permalink: "blogs/date/{{ date }}/"
     <div class="ui-layout-container">
         <h2 class='ui-typography-heading'>{{ date }}のフィード</h2>
         <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed ui-container-feed--no-image">
-            {% asyncEach blogFeed in blogFeeds %}
-                {% set formattedDate = formatDate(blogFeed.lastUpdated) %}
-                {% if formattedDate.includes(date) %}
-                  <div class='ui-blog'>
-                      <a class='ui-blog__og-image' href='./{{ blogFeed.linkMd5Hash }}/'>
-                          {% if blogFeed.ogImageUrl %}
-                              {% image blogFeed.ogImageUrl, 'ブログのアイキャッチ画像', '../' %}
-                          {% else %}
-                              <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="lazy" decoding='async' alt='記事のアイキャッチ画像' width='256' height='256'>
-                          {% endif %}
-                      </a>
-                      <div class='ui-blog__content'>
-                          <a class='ui-blog__title' href='./{{ blogFeed.linkMd5Hash }}/'>{{ blogFeed.title }}</a>
-                          <a class='ui-blog__link' href='{{ blogFeed.link }}'>{{ blogFeed.link }}</a>
-                          {% if blogFeed.ogDescription %}
-                              <div class='ui-blog__description'>{{ blogFeed.ogDescription | truncate(200, true, "...") }}</div>
-                          {% endif %}
-                          {% if blogFeed.lastUpdated %}
-                              <div class='ui-blog__date' title='{{ blogFeed.lastUpdatedForHuman }}'>{{ blogFeed.diffLastUpdatedDateForHuman }}</div>
-                          {% else %}
-                              <div class='ui-blog__date' title='更新日時なし'>-</div>
-                          {% endif %}
-                      </div>
-                  </div>
-               {% endif %}
-            {% endeach %}
+          {% asyncEach dateString, feedItems in feedItemsChunks %}
+            {{ dateString }}
+            {{ feedItems }}
+            {% set formattedDate = formatDate(feedItems.date_published) %}
+            {% if formattedDate.includes(date) %}
+              {% include 'layouts/partials/feed-item.njk' %}
+            {% endif %}
+          {% endeach %}
         </div>
     </div>
 </section>
