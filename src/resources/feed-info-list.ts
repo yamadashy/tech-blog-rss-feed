@@ -38,5 +38,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Hugging Face - Blog', 'https://huggingface.co/blog/feed.xml'],
   ['RevComm Tech Blog', 'https://tech.revcomm.co.jp/feed'],
   ["Writer's·Room·|·AI·blog", 'https://writer.com/blog/feed/'],
-  ['にょす - Note', 'https://note.com/nyosubro/'],
+  ['にょす - Note', 'https://note.com/nyosubro/rss'],
 ]);
