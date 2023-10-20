@@ -169,6 +169,17 @@ export class FeedCrawler {
       // 記事URLのクエリパラメーター削除。はてな用
       feedItem.link = urlRemoveQueryParams(feedItem.link);
 
+      // 不正な文字列の削除
+      if (feedItem.title) {
+        feedItem.title = feedItem.title.replace(/[^\x20-\x7E]/g, '');
+      }
+      if (feedItem.summary) {
+        feedItem.summary = feedItem.summary.replace(/[^\x20-\x7E]/g, '');
+      }
+      if (feedItem.content) {
+        feedItem.title = feedItem.content.replace(/[^\x20-\x7E]/g, '');
+      }
+
       // view用
       feedItem.blogTitle = customFeed.title || '';
       feedItem.blogLink = customFeed.link || '';

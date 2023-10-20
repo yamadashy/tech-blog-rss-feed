@@ -1,4 +1,3 @@
-import RssParser from 'rss-parser';
 import { Feed, FeedOptions } from 'feed';
 import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
 import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
@@ -105,25 +104,5 @@ export class FeedGenerator {
       rss: escapeTextForXml(feed.rss2()),
       json: feed.json1(),
     };
-  }
-
-  /**
-   * rss-parser で変換してみてエラーが出ないか確認
-   */
-  public async validateOutputFeedSet(outputFeedSet: OutputFeedSet): Promise<boolean> {
-    const rssParser = new RssParser();
-
-    let isValid = true;
-
-    await rssParser.parseString(outputFeedSet.atom).catch((error) => {
-      isValid = false;
-      logger.error('[feed-generator] validate feed atom error', error);
-    });
-    await rssParser.parseString(outputFeedSet.rss).catch((error) => {
-      isValid = false;
-      logger.error('[feed-generator] validate feed rss error', error);
-    });
-
-    return isValid;
   }
 }
