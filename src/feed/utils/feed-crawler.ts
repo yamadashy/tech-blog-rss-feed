@@ -49,7 +49,13 @@ export class FeedCrawler {
   private rssParser;
 
   constructor() {
-    this.rssParser = new RssParser();
+    this.rssParser = new RssParser({
+      maxRedirects: 5,
+      timeout: 1000 * 10,
+      headers: {
+        'user-agent': constants.requestUserAgent,
+      },
+    });
   }
 
   /**
