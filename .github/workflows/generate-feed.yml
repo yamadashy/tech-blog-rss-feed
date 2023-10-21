@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 20.8.1
           cache: yarn
@@ -40,7 +40,7 @@ jobs:
         shell: bash
 
       - name: Cache feed images
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .cache
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
