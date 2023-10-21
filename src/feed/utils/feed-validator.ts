@@ -1,40 +1,51 @@
 import RssParser from 'rss-parser';
-import { XMLValidator } from 'fast-xml-parser';
+import { ValidationError, XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
 import libxmljs from 'libxmljs';
 
-export class FeedValidator {
-  /**
-   * フィードのバリデーション
-   */
-  public async validate(feedXml: string): Promise<boolean> {
-    const rssParser = new RssParser();
+export type FeedValidateResult = {
+  isValid: boolean;
+  rssParserError: Error | null;
+  atomValidateError: ValidationError | null;
+  libxmljsError: Error | null;
+};
 
-    let isValid = true;
+/**
+ * フィードのバリデーション
+ */
+export class FeedValidator {
+  public async validate(feedXml: string): Promise<FeedValidateResult> {
+    const rssParser = new RssParser();
+    const feedValidateResult: FeedValidateResult = {
+      isValid: true,
+      rssParserError: null,
+      atomValidateError: null,
+      libxmljsError: null,
+    };
 
     logger.info('[FeedValidator] バリデーション開始');
 
     // rss-parser で変換してみてエラーが出ないか確認
     await rssParser.parseString(feedXml).catch((error) => {
-      isValid = false;
-      logger.error('[FeedValidator] RssParser でフィードのエラーが発生', error);
+      feedValidateResult.isValid = false;
+      feedValidateResult.rssParserError = error;
     });
 
     // XMLValidator でバリデーション
     const atomValidateResult = XMLValidator.validate(feedXml);
     if (atomValidateResult !== true) {
-      isValid = false;
-      logger.error('[FeedValidator] XMLValidator でフィードのエラーが発生', atomValidateResult);
+      feedValidateResult.isValid = false;
+      feedValidateResult.atomValidateError = atomValidateResult;
     }
 
     // libxmljs でバリデーション
     await libxmljs.parseXmlAsync(feedXml).catch((error) => {
-      isValid = false;
-      logger.error('[FeedValidator] libxmljs でフィードのエラーが発生', error);
+      feedValidateResult.isValid = false;
+      feedValidateResult.libxmljsError = error;
     });
 
     logger.info('[FeedValidator] バリデーション終了');
 
-    return isValid;
+    return feedValidateResult;
   }
 }

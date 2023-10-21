@@ -49,10 +49,14 @@ const feedStorer = new FeedStorer();
   const outputFeedSet = feedGenerator.generateOutputFeedSet(aggregatedFeed);
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  const isValidRss = await feedValidator.validate(outputFeedSet.rss);
-  const isValidAtom = await feedValidator.validate(outputFeedSet.atom);
-  if (!isValidRss || !isValidAtom) {
-    throw new Error(`まとめフィードのバリデーションエラーです。 RSS: ${isValidRss}, Atom: ${isValidAtom}`);
+  const rssValidationResult = await feedValidator.validate(outputFeedSet.rss);
+  const atomValidationResult = await feedValidator.validate(outputFeedSet.atom);
+  if (!rssValidationResult.isValid || !atomValidationResult.isValid) {
+    const rssValidationResultJson = JSON.stringify(rssValidationResult);
+    const atomValidationResultJson = JSON.stringify(atomValidationResult);
+    throw new Error(
+      `まとめフィードのバリデーションエラーです。 rss: ${rssValidationResultJson}, atom: ${atomValidationResultJson}`,
+    );
   }
 
   // ファイル出力、画像キャッシュ
