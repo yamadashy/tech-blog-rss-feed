@@ -4,6 +4,7 @@ import { FeedGenerator } from './utils/feed-generator';
 import * as path from 'path';
 import { FeedStorer } from './utils/feed-storer';
 import { to } from 'await-to-js';
+import { FeedValidator } from './utils/feed-validator';
 
 const FEED_FETCH_CONCURRENCY = 50;
 const FEED_OG_FETCH_CONCURRENCY = 20;
@@ -15,6 +16,7 @@ const STORE_BLOG_FEEDS_DIR_PATH = path.join(__dirname, '../site/blog-feeds');
 
 const feedCrawler = new FeedCrawler();
 const feedGenerator = new FeedGenerator();
+const feedValidator = new FeedValidator();
 const feedStorer = new FeedStorer();
 
 (async () => {
@@ -47,9 +49,14 @@ const feedStorer = new FeedStorer();
   const outputFeedSet = feedGenerator.generateOutputFeedSet(aggregatedFeed);
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  const isValid = await feedGenerator.validateOutputFeedSet(outputFeedSet);
-  if (!isValid) {
-    throw new Error('まとめフィードのバリデーションエラーです');
+  const rssValidationResult = await feedValidator.validate(outputFeedSet.rss);
+  const atomValidationResult = await feedValidator.validate(outputFeedSet.atom);
+  if (!rssValidationResult.isValid || !atomValidationResult.isValid) {
+    const rssValidationResultJson = JSON.stringify(rssValidationResult);
+    const atomValidationResultJson = JSON.stringify(atomValidationResult);
+    throw new Error(
+      `まとめフィードのバリデーションエラーです。 rss: ${rssValidationResultJson}, atom: ${atomValidationResultJson}`,
+    );
   }
 
   // ファイル出力、画像キャッシュ

@@ -88,8 +88,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['GIBJapan', 'https://zenn.dev/p/gibjapan/feed', [FLAG_ZENN_PUBLICATION]],
   ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
   ['GMOインターネット', 'https://developers.gmo.jp/feed/'],
-  // TODO: 不正な文字列の削除対応次第コメントイン
-  // ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
+  ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
   ['GMOグローバルサイン・ホールディングス', 'https://tech.gmogshd.com/feed'],
   ['GMOペパボ', 'https://tech.pepabo.com/feed.xml'],
   ['GMOリサーチ', 'https://gmor-sys.com/feed'],

@@ -3,7 +3,14 @@ import { PromisePool } from '@supercharge/promise-pool';
 import { FeedInfo } from '../../resources/feed-info-list';
 import dayjs from 'dayjs';
 import { URL } from 'url';
-import { backoff, fetchHatenaCountMap, isValidHttpUrl, objectDeepCopy, urlRemoveQueryParams } from './common-util';
+import {
+  backoff,
+  fetchHatenaCountMap,
+  isValidHttpUrl,
+  objectDeepCopy,
+  removeInvalidUnicode,
+  urlRemoveQueryParams,
+} from './common-util';
 import { logger } from './logger';
 import constants from '../../common/constants';
 import eleventyCacheOption from '../../common/eleventy-cache-option';
@@ -168,6 +175,14 @@ export class FeedCrawler {
 
       // 記事URLのクエリパラメーター削除。はてな用
       feedItem.link = urlRemoveQueryParams(feedItem.link);
+
+      // 不正な文字列の削除
+      feedItem.title = feedItem.title ? removeInvalidUnicode(feedItem.title) : '';
+      feedItem.summary = feedItem.summary ? removeInvalidUnicode(feedItem.summary) : '';
+      feedItem.content = feedItem.content ? removeInvalidUnicode(feedItem.content) : '';
+      feedItem.contentSnippet = feedItem.contentSnippet ? removeInvalidUnicode(feedItem.contentSnippet) : '';
+      feedItem.creator = feedItem.creator ? removeInvalidUnicode(feedItem.creator) : '';
+      feedItem.categories = feedItem.categories?.map(removeInvalidUnicode) || [];
 
       // view用
       feedItem.blogTitle = customFeed.title || '';
