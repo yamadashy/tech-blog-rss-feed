@@ -52,7 +52,7 @@ const feedStorer = new FeedStorer();
   const isValidRss = await feedValidator.validate(outputFeedSet.rss);
   const isValidAtom = await feedValidator.validate(outputFeedSet.atom);
   if (!isValidRss || !isValidAtom) {
-    throw new Error('まとめフィードのバリデーションエラーです');
+    throw new Error(`まとめフィードのバリデーションエラーです。 RSS: ${isValidRss}, Atom: ${isValidAtom}`);
   }
 
   // ファイル出力、画像キャッシュ

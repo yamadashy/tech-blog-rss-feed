@@ -1,6 +1,3 @@
-import RssParser from 'rss-parser';
-import { XMLValidator } from 'fast-xml-parser';
-import libxmljs from 'libxmljs';
 import { FeedValidator } from '../src/feed/utils/feed-validator';
 import { describe, it, expect } from 'vitest';
 
