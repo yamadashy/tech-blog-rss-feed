@@ -181,7 +181,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Playground', 'https://tech.playground.style/feed/'],
   ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'],
   ['Progate', 'https://tech.prog-8.com/feed'],
-  ['QualiArts', 'https://technote.qualiarts.jp/rss.xml'],
   ['R&D', 'https://zenn.dev/randd/feed'],
   ['READYFOR', 'https://tech.readyfor.jp/feed'],
   ['READYFOR', 'https://zenn.dev/p/readyfor_blog/feed', [FLAG_ZENN_PUBLICATION]],
@@ -404,7 +403,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['スタディサプリ', 'https://blog.studysapuri.jp/feed'],
   ['スタディスト', 'https://studist.tech/feed'],
   ['スタメン', 'https://tech.stmn.co.jp/feed'],
-  ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
   ['スターフェスティバル', 'https://zenn.dev/p/stafes_blog/feed', [FLAG_ZENN_PUBLICATION]],
   ['スターフェスティバル', 'https://zenn.dev/stafes/feed'],
   ['ストックマーク', 'https://tech.stockmark.co.jp/index.xml'],
@@ -434,7 +432,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トドケール', 'https://zenn.dev/p/todoker_blog/feed', [FLAG_ZENN_PUBLICATION]],
   ['トドケール', 'https://zenn.dev/todoker/feed'],
   ['トヨクモ', 'https://tech.toyokumo.co.jp/feed'],
-  ['トライステージ', 'https://blog.ddm.tri-stage.jp/feed/'],
   ['トライト', 'https://tryt-group.hatenablog.com/feed'],
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
@@ -617,6 +614,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['ヘイ データチーム', 'https://data.hey.jp/feed'],
  * ['FLINTERS', 'https://labs.septeni.co.jp/feed'],
  * ['crispy', 'https://blog.crispy-inc.com/feed'],
+ * ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
@@ -647,6 +645,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
  * ['グッドワークス', 'https://zenn.dev/goodworks/feed'],
  * ['Croooober', 'https://tech.croooober.co.jp/feed'],
+ * ['トライステージ', 'https://blog.ddm.tri-stage.jp/feed/'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
@@ -663,6 +662,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * https://blog.genda.jp/creators/
  * https://lab.hokadoko.com/news/RTEPiK54
  * https://subthread.co.jp/blog/
+ * ['QualiArts', 'https://technote.qualiarts.jp/rss.xml'],
  *
  * 日本語以外
  * https://medium.com/feed/mcdonalds-technical-blog
