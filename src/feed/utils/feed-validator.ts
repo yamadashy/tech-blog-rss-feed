@@ -2,6 +2,7 @@ import RssParser from 'rss-parser';
 import { ValidationError, XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
 import libxmljs from 'libxmljs';
+import { to } from 'await-to-js';
 
 export type FeedValidateResult = {
   isValid: boolean;
@@ -26,10 +27,11 @@ export class FeedValidator {
     logger.info('[FeedValidator] バリデーション開始');
 
     // rss-parser で変換してみてエラーが出ないか確認
-    await rssParser.parseString(feedXml).catch((error) => {
+    const [rssParserError] = await to(rssParser.parseString(feedXml));
+    if (rssParserError) {
       feedValidateResult.isValid = false;
-      feedValidateResult.rssParserError = error;
-    });
+      feedValidateResult.rssParserError = rssParserError;
+    }
 
     // XMLValidator でバリデーション
     const atomValidateResult = XMLValidator.validate(feedXml);
@@ -39,10 +41,14 @@ export class FeedValidator {
     }
 
     // libxmljs でバリデーション
-    await libxmljs.parseXmlAsync(feedXml).catch((error) => {
+    try {
+      libxmljs.parseXml(feedXml);
+    } catch (libxmljsError) {
       feedValidateResult.isValid = false;
-      feedValidateResult.libxmljsError = error;
-    });
+      if (libxmljsError instanceof Error) {
+        feedValidateResult.libxmljsError = libxmljsError;
+      }
+    }
 
     logger.info('[FeedValidator] バリデーション終了');
 
