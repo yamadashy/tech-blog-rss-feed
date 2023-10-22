@@ -5,7 +5,7 @@ const ts = require('typescript');
 const constants = require('./src/common/constants');
 const eleventyCacheOption = require('./src/common/eleventy-cache-option');
 
-Image.concurrency = 50;
+Image.concurrency = 100;
 
 const minifyHtmlTransform = (content, outputPath) => {
   if(outputPath && outputPath.endsWith('.html')) {
