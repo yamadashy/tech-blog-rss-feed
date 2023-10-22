@@ -67,6 +67,8 @@ const feedStorer = new FeedStorer();
     ]),
   );
   if (errorStoreFeed) {
-    throw new Error('ファイル出力に失敗しました');
+    throw new Error('ファイル出力に失敗しました', {
+      cause: errorStoreFeed,
+    });
   }
 })();
