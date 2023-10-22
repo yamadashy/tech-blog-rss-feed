@@ -4,11 +4,11 @@ import { FeedInfo } from '../../resources/feed-info-list';
 import dayjs from 'dayjs';
 import { URL } from 'url';
 import {
-  backoff,
   fetchHatenaCountMap,
   isValidHttpUrl,
   objectDeepCopy,
   removeInvalidUnicode,
+  exponentialBackoff,
   urlRemoveQueryParams,
 } from './common-util';
 import { logger } from './logger';
@@ -49,7 +49,13 @@ export class FeedCrawler {
   private rssParser;
 
   constructor() {
-    this.rssParser = new RssParser();
+    this.rssParser = new RssParser({
+      maxRedirects: 5,
+      timeout: 1000 * 10,
+      headers: {
+        'user-agent': constants.requestUserAgent,
+      },
+    });
   }
 
   /**
@@ -67,7 +73,7 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feedInfo) => {
         const [error, feed] = await to(
-          backoff(() => {
+          exponentialBackoff(() => {
             return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
           }),
         );
@@ -95,7 +101,7 @@ export class FeedCrawler {
   /**
    * フィード情報のチェック
    */
-  public static validateFeedInfoList(feedInfoList: FeedInfo[]) {
+  public static validateFeedInfoList(feedInfoList: FeedInfo[]): void {
     const allLabels = feedInfoList.map((feedInfo) => {
       return feedInfo.label + ':' + feedInfo.flags?.map((flag: symbol) => flag.toString()).join(',');
     });
@@ -242,7 +248,11 @@ export class FeedCrawler {
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .process(async (feedItem) => {
-        const [error, ogsResult] = await to(FeedCrawler.fetchOgsResult(feedItem.link));
+        const [error, ogsResult] = await to(
+          exponentialBackoff(() => {
+            return FeedCrawler.fetchOgsResult(feedItem.link);
+          }),
+        );
         if (error) {
           logger.error(
             '[fetch-feed-item-og] error',
@@ -271,7 +281,11 @@ export class FeedCrawler {
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
       .process(async (feed) => {
-        const [error, ogsResult] = await to(FeedCrawler.fetchOgsResult(feed.link));
+        const [error, ogsResult] = await to(
+          exponentialBackoff(() => {
+            return FeedCrawler.fetchOgsResult(feed.link);
+          }),
+        );
         if (error) {
           logger.error('[fetch-feed-blog-og] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
           logger.trace(error);
@@ -291,7 +305,7 @@ export class FeedCrawler {
     const [error, ogsResponse] = await to<{ result: OgsResult }>(
       ogs({
         url: url,
-        timeout: 60 * 1000,
+        timeout: 10 * 1000,
         // 10MB
         downloadLimit: 10 * 1000 * 1000,
         retry: 3,
@@ -301,7 +315,11 @@ export class FeedCrawler {
       }),
     );
     if (error) {
-      throw new Error(`OGの取得に失敗しました。 url: ${url}`);
+      return Promise.reject(
+        new Error(`OGの取得に失敗しました。 url: ${url}`, {
+          cause: error,
+        }),
+      );
     }
 
     const ogsResult = ogsResponse.result;
@@ -342,7 +360,7 @@ export class FeedCrawler {
       const [error, hatenaCountMap] = await to(fetchHatenaCountMap(feedItemUrls));
 
       if (error) {
-        throw new Error('[hatena-count] Fail to get hatena bookmark count');
+        Promise.reject(new Error('[hatena-count] Fail to get hatena bookmark count', { cause: error }));
       }
 
       for (const feedItemUrl in hatenaCountMap) {

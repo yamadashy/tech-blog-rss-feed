@@ -15,19 +15,19 @@ on:
 jobs:
   generate-feed:
     name: Generate Feed
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 30
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.20.0
+          node-version: 20.8.1
           cache: yarn
 
       - name: Install node packages
@@ -40,7 +40,7 @@ jobs:
         shell: bash
 
       - name: Cache feed images
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .cache
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}

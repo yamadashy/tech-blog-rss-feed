@@ -12,28 +12,71 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
-    runs-on: ubuntu-20.04
+  lint:
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
-
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.20.0
-          cache: yarn
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.8.1
+        cache: yarn
 
-      - name: Install node packages
-        run: yarn install
+    - name: Install dependencies
+      run: yarn install
 
-      - name: Run lint
-        run: yarn lint
+    - name: Run type check
+      run: yarn type-check
 
-      - name: Run type check
-        run: yarn type-check
+    - name: Lint
+      run: yarn lint
 
-      - name: Run test
-        run: yarn test
+  test:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.8.1
+        cache: yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Test
+      run: yarn test
+
+  generate:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.8.1
+        cache: yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Generate feed
+      run: yarn feed-generate
+
+    - name: Generate site
+      run: yarn site-build
+
+    - name: Archive feed
+      uses: actions/upload-artifact@v3
+      with:
+        name: feed-generate-results
+        path: public/feeds

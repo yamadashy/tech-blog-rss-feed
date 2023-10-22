@@ -38,7 +38,7 @@ export class FeedStorer {
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     storeDirPath: string,
   ): Promise<void> {
-    await fs.rmdir(storeDirPath, { recursive: true });
+    await fs.rm(storeDirPath, { recursive: true, force: true });
     await fs.mkdir(storeDirPath, { recursive: true });
 
     const blogFeeds: BlogFeed[] = [];
