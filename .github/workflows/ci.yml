@@ -37,3 +37,9 @@ jobs:
 
       - name: Run test
         run: yarn test
+
+      - name: Generate feed
+        run: yarn feed-generate
+
+      - name: Generate site
+        run: yarn site-build
