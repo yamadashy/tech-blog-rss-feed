@@ -3,6 +3,10 @@ import * as crypto from 'crypto';
 import axios from 'axios';
 import { to } from 'await-to-js';
 
+type HatenaCountMap = {
+  [key: string]: number;
+};
+
 export const objectDeepCopy = <T>(data: T): T => {
   // TODO: Node.js 17 以上にしたら structuredClone 使う
   return v8.deserialize(v8.serialize(data));
@@ -50,7 +54,7 @@ export const isValidHttpUrl = (url: string) => {
   return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
 };
 
-export const backoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
+export const exponentialBackoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
   let attemptLimitReached = false;
   let attemptNumber = 0;
 
@@ -62,6 +66,9 @@ export const backoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
 
       if (attemptLimitReached) {
         throw error;
+      } else {
+        const waitTime = Math.pow(2, attemptNumber) * 1000;
+        await sleep(waitTime);
       }
     } else {
       return result;
@@ -71,9 +78,9 @@ export const backoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
   throw new Error('Something went wrong.');
 };
 
-export const fetchHatenaCountMap = async (urls: string[]): Promise<{ [key: string]: number }> => {
+export const fetchHatenaCountMap = async (urls: string[]): Promise<HatenaCountMap> => {
   const params = urls.map((url) => `url=${url}`).join('&');
-  const response = await axios.get(`https://bookmark.hatenaapis.com/count/entries?${params}`);
+  const response = await axios.get<HatenaCountMap>(`https://bookmark.hatenaapis.com/count/entries?${params}`);
   return response.data;
 };
 

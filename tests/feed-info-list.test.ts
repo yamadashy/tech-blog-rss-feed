@@ -1,7 +1,7 @@
 import { FEED_INFO_LIST, FeedInfo } from '../src/resources/feed-info-list';
 import { FeedCrawler } from '../src/feed/utils/feed-crawler';
 import { describe, it, expect } from 'vitest';
-import { backoff } from '../src/feed/utils/common-util';
+import { exponentialBackoff } from '../src/feed/utils/common-util';
 import RssParser from 'rss-parser';
 import { to } from 'await-to-js';
 
@@ -25,7 +25,7 @@ describe('フィードが取得可能', () => {
     it.concurrent(
       testTitle,
       async () => {
-        const feed = await backoff(async () => {
+        const feed = await exponentialBackoff(async () => {
           return rssParser.parseURL(feedInfo.url);
         });
         expect(feed.items.length).toBeGreaterThanOrEqual(0);
