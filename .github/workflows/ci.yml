@@ -74,3 +74,9 @@ jobs:
 
     - name: Generate site
       run: yarn site-build
+
+    - name: Archive feed
+      uses: actions/upload-artifact@v3
+      with:
+        name: feed-generate-results
+        path: public/feeds
