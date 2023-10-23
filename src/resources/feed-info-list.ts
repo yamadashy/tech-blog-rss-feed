@@ -127,7 +127,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LAPRAS', 'https://ai-lab.lapras.com/feed/'],
   ['LCL', 'https://techblog.lclco.com/feed'],
   ['LIFULL', 'https://www.lifull.blog/feed'],
-  ['LINE', 'https://engineering.linecorp.com/ja/feed/'],
   ['LINEヤフー', 'https://techblog.lycorp.co.jp/ja/feed/index.xml'],
   ['LIVESENSE', 'https://made.livesense.co.jp/feed'],
   ['LayerX', 'https://tech.layerx.co.jp/feed'],
