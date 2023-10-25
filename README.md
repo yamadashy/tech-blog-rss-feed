@@ -58,20 +58,31 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 
 - [MATLAB-blog-rss-feed](https://github.com/minoue-xx/MATLAB-blog-rss-feed) ... MATLAB/Simulink 関連ブログの更新をまとめたRSSフィードを配信
 
-### 開発用コマンド
+### 開発環境とコマンド
+環境
+- Node.js >= 20
+
+パッケージのインストール
+```bash
+$ yarn
+```
+
 フィード生成とサイト立ち上げ
 ```bash
 $ # フィードを取得して作成
-$ yarn feed:generate
+$ yarn feed-generate
 
 $ # localhost:8080 で確認
-$ yarn site:serve
+$ yarn site-serve
 ```
 
 コードのチェック
 ```bash
 $ # lint
 $ yarn lint
+
+$ # TypeScript のチェック
+$ yarn type-check
 
 $ # テスト
 $ yarn test
