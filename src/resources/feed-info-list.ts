@@ -41,4 +41,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['にょす - Note', 'https://note.com/nyosubro/rss'],
   ['Stories by Cassie Kozyrkov on Medium', 'https://kozyrkov.medium.com/feed'],
   ['Stories by Assaf Elovic on Medium', 'https://medium.com/feed/@assafelovic'],
+  ['Stories by Cobus Greyling on Medium', 'https://medium.com/feed/@cobusgreyling'],
 ]);
