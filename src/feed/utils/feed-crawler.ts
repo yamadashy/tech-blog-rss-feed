@@ -68,6 +68,7 @@ export class FeedCrawler {
     let fetchProcessCounter = 1;
 
     const feeds: CustomRssParserFeed[] = [];
+    const feedLinkSet = new Set<string>();
 
     await PromisePool.for(feedInfoList)
       .withConcurrency(concurrency)
@@ -89,6 +90,14 @@ export class FeedCrawler {
         }
 
         const postProcessedFeed = FeedCrawler.postProcessFeed(feedInfo, feed);
+
+        // フィードのリンクの重複チェック。すでにあったらスキップ
+        if (feedLinkSet.has(postProcessedFeed.link)) {
+          logger.warn('フィードのリンクが重複しているのでスキップしました ', feedInfo.label, postProcessedFeed.link);
+          return;
+        }
+        feedLinkSet.add(postProcessedFeed.link);
+
         feeds.push(postProcessedFeed);
         logger.info('[fetch-feed] fetched', `${fetchProcessCounter++}/${feedInfoListLength}`, feedInfo.label);
       });
