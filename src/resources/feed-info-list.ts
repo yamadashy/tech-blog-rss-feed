@@ -247,7 +247,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['YAZ', 'https://www.yaz.co.jp/feed'],
   ['YOJO Technologies', 'https://note.com/yojo_engineering/m/m59a0657d21e2/rss'],
   ['YOUTRUST', 'https://tech.youtrust.co.jp/feed'],
-  ['Yahoo! JAPAN', 'https://techblog.yahoo.co.jp/atom.xml'],
   ['Yappli', 'https://tech.yappli.io/feed'],
   ['ZEROUM', 'https://zenn.dev/zeroum/feed'],
   ['ZOZO', 'https://techblog.zozo.com/feed'],
