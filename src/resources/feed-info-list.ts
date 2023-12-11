@@ -166,6 +166,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['OLTA', 'https://techblog.olta.co.jp/feed'],
   ['OPEN8', 'https://open8tech.hatenablog.com/feed'],
   ['OPTiM', 'https://tech-blog.optim.co.jp/feed'],
+  ['OSSTech', 'https://blog.osstech.co.jp/posts/index.xml'],
   ['Offers', 'https://zenn.dev/offers/feed'],
   ['Offers', 'https://zenn.dev/p/overflow_offers/feed', [FLAG_ZENN_PUBLICATION]],
   ['Open Reach Tech', 'https://zenn.dev/openreachtech/feed'],
