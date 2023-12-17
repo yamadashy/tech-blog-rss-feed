@@ -49,7 +49,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CADDi', 'https://caddi.tech/feed'],
   ['CAMPFIRE', 'https://note.com/campfire_dev/rss'],
   ['CARTA', 'https://techblog.cartaholdings.co.jp/feed'],
-  ['CCCマーケティング', 'https://techblog.cccmk.co.jp/feed'],
+  ['CCCMKホールディングス', 'https://techblog.cccmkhd.co.jp/feed'],
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
   ['COOSY', 'https://coosy.co.jp/blog/category/web-development/feed/'],
@@ -232,7 +232,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TechTrain', 'https://zenn.dev/techtrain/feed'],
   ['Tier IV', 'https://medium.com/feed/tier-iv-tech-blog/tagged/tech-blog'],
   ['Tokyo Otaku Mode', 'https://blog.otakumode.com/atom.xml'],
-  ['UUUM', 'https://system.blog.uuum.jp/feed'],
   ['Ubie', 'https://zenn.dev/ubie/feed'],
   ['UnReact', 'https://zenn.dev/unreact/feed'],
   ['Unipos', 'https://fringeneer.hatenablog.com/feed'],
@@ -262,7 +261,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['cloud.config', 'https://tech-blog.cloud-config.jp/feed/'],
   ['dely', 'https://tech.dely.jp/feed'],
   ['dip', 'https://developer.dip-net.co.jp/feed'],
-  ['divx', 'https://engineering.divx.co.jp/feed'],
   ['efoo', 'https://efoo.hatenablog.com/feed'],
   ['estie', 'https://www.estie.jp/blog/feed'],
   ['for Startups', 'https://tech.forstartups.com/feed'],
@@ -271,7 +269,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['hacomono', 'https://techblog.hacomono.jp/feed'],
   ['hokan', 'https://medium.com/feed/@hokan_dev'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
-  ['i-plug', 'https://itbl.hatenablog.com/feed'],
   ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['intage', 'https://www.intage-ts.com/feed'],
@@ -357,9 +354,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['カラビナテクノロジー', 'https://zenn.dev/p/karabiner_inc/feed', [FLAG_ZENN_PUBLICATION]],
   ['カンムテック', 'https://tech.kanmu.co.jp/feed'],
   ['ガイアックス', 'https://gaiax.hatenablog.com/feed'],
-  ['キカガク', 'https://blog.kikagaku.co.jp/feed'],
+  ['キカガク', 'https://www.kikagaku.co.jp/kikagaku-blog/feed/'],
   ['キッチハイク', 'https://tech.kitchhike.com/feed'],
-  ['キュービック', 'https://cuebic.hatenablog.com/feed'],
+  ['キュービック', 'https://cuebic.co.jp/tech-blog/feed'],
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
   ['クイックガード', 'https://tech.quickguard.jp/index.xml'],
   ['クックパッド', 'https://techlife.cookpad.com/feed'],
@@ -464,7 +461,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['パーソルプロセス＆テクノロジー', 'https://note.com/ppt_hr/m/md77242321979/rss'],
   ['パーソンリンク', 'https://zenn.dev/person_link/feed'],
   ['ヒストリア', 'https://historia.co.jp/feed/'],
-  ['ヒュープロ', 'https://hupro-techblog.hatenablog.com/feed'],
   ['ビザスク', 'https://tech.visasq.com/feed'],
   ['ビザスク', 'https://zenn.dev/p/visasq/feed', [FLAG_ZENN_PUBLICATION]],
   ['ビットバンク', 'https://tech.bitbank.cc/rss/'],
@@ -585,6 +581,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * リニューアルされてフィードが消えたのでしばらくしたら確認
  * ['DMM', 'https://inside.dmm.com/feed'],
+ * ['divx', 'https://engineering.divx.co.jp/feed'],
  *
  * できたばかりなので様子見
  * ['Amayz', 'https://blog.amayz.co.jp/?feed=rss2'],
@@ -603,6 +600,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
  * ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed'],
  * ['BRANU', 'https://tech.branu.jp/feed'],
+ * ['i-plug', 'https://itbl.hatenablog.com/feed'],
+ * ['UUUM', 'https://system.blog.uuum.jp/feed'],
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
@@ -644,6 +643,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['グッドワークス', 'https://zenn.dev/goodworks/feed'],
  * ['Croooober', 'https://tech.croooober.co.jp/feed'],
  * ['トライステージ', 'https://blog.ddm.tri-stage.jp/feed/'],
+ * ['ヒュープロ', 'https://hupro-techblog.hatenablog.com/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
