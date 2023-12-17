@@ -52,8 +52,8 @@ export class FeedGenerator {
         guid: feedItemId,
         // 「記事タイトル | ブログ名」の形にする。タイトルだけでどの企業かわかるように
         title: `${feedItem.title} | ${feedItem.blogTitle}`,
-        description: textTruncate(feedItemContent, maxFeedDescriptionLength, '...'),
-        content: textTruncate(feedItemContent, maxFeedContentLength, '...'),
+        description: textTruncate(feedItemContent, maxFeedDescriptionLength),
+        content: textTruncate(feedItemContent, maxFeedContentLength),
         link: feedItem.link,
         category: (feedItem.categories || []).map((category) => {
           return {

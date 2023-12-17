@@ -57,8 +57,8 @@ export class FeedStorer {
         const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
         customFeed.items.push({
           title: feedItem.title || '',
-          summary: textTruncate(feedItemContent, 200, '...'),
-          content_html: textTruncate(feedItemContent, 1000, '...'),
+          summary: textTruncate(feedItemContent, 200),
+          content_html: textTruncate(feedItemContent, 1000),
           link: feedItem.link,
           isoDate: feedItem.isoDate,
           hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,

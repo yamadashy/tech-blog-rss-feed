@@ -17,8 +17,8 @@ export const textToMd5Hash = (text: string): string => {
   return md5.update(text, 'binary').digest('hex');
 };
 
-export const textTruncate = (text: string, maxLength: number, postFix: string): string => {
-  return text.length > maxLength ? text.substring(0, maxLength) + postFix : text;
+export const textTruncate = (text: string, maxLength: number): string => {
+  return Array.from(text).slice(0, maxLength).join('');
 };
 
 export const urlRemoveQueryParams = (url: string) => {
