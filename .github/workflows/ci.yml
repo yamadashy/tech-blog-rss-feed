@@ -22,7 +22,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v3
       with:
-        node-version: 20.8.1
+        node-version-file: .tool-versions
         cache: yarn
 
     - name: Install dependencies
@@ -44,7 +44,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v3
       with:
-        node-version: 20.8.1
+        node-version-file: .tool-versions
         cache: yarn
 
     - name: Install dependencies
@@ -63,7 +63,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v3
       with:
-        node-version: 20.8.1
+        node-version-file: .tool-versions
         cache: yarn
 
     - name: Install dependencies
