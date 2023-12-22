@@ -354,7 +354,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['カラビナテクノロジー', 'https://zenn.dev/p/karabiner_inc/feed', [FLAG_ZENN_PUBLICATION]],
   ['カンムテック', 'https://tech.kanmu.co.jp/feed'],
   ['ガイアックス', 'https://gaiax.hatenablog.com/feed'],
-  ['キカガク', 'https://www.kikagaku.co.jp/kikagaku-blog/feed/'],
+  ['キカガク', 'https://blog.kikagaku.co.jp/feed/'],
   ['キッチハイク', 'https://tech.kitchhike.com/feed'],
   ['キュービック', 'https://cuebic.co.jp/tech-blog/feed'],
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
