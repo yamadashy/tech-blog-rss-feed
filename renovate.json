@@ -3,7 +3,10 @@
   "extends": [
     "config:recommended"
   ],
-  "schedule": "before 2pm on Saturday",
+  "schedule": [
+    "after 0am on Saturday",
+    "before 22pm on Sunday"
+  ],
   "timezone": "Asia/Tokyo",
   "dependencyDashboard": false,
   "automerge": true,
