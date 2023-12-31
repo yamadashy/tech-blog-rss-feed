@@ -4,8 +4,7 @@
     "config:recommended"
   ],
   "schedule": [
-    "after 8am on Saturday",
-    "before 10pm on Sunday"
+    "every weekend"
   ],
   "timezone": "Asia/Tokyo",
   "dependencyDashboard": false,
