@@ -2,10 +2,9 @@
 企業のテックブログの更新をまとめたRSSフィードを配信しています。  
 記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。
 
-https://yamadashy.github.io/tech-blog-rss-feed/
+https://cami-crane.github.io/tech-blog-rss-feed/  
 
-
-独自のフィードを作って公開したい場合は自由にフォークしてください。
+[@yamadashy](https://github.com/yamadashy)さんの作成された[yamadashy/tech-blog-rss-feed](https://github.com/yamadashy/tech-blog-rss-feed)をベースにカスタムしております。
 
 ## サイト追加の方針
 企業のテックブログ（技術ブログ、エンジニアブログ）であれば、基本的には追加します。  
@@ -54,18 +53,23 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 - `src/common/constants.js` の URL など
 - `src/resources/feed-info-list.ts` のブログ情報
 
-特定のブログに絞ったり、以下のように全く違ったフィードを作るもの良いと思います。
-
-- [MATLAB-blog-rss-feed](https://github.com/minoue-xx/MATLAB-blog-rss-feed) ... MATLAB/Simulink 関連ブログの更新をまとめたRSSフィードを配信
-
 ### 開発環境とコマンド
 環境
-- Node.js >= 20
+- Node.js >= 20  
+
+voltaでnodeとyarnのバージョンをピン留め
+```
+"volta": {
+   "node": "20.10.0",
+   "yarn": "1.18.0"
+}
+```
 
 パッケージのインストール
 ```bash
 $ yarn
 ```
+
 
 フィード生成とサイト立ち上げ
 ```bash
