@@ -13,6 +13,7 @@
     <meta property="og:description" content="{{ constants.siteDescription }}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ constants.siteTitle }}" />
+    <meta property="og:locale" content="ja_JP">
 
     <meta name="twitter:card" content="summary">
     <meta property="twitter:domain" content="{{ constants.siteUrl }}">
@@ -21,7 +22,12 @@
     <meta name="twitter:description" content="{{ constants.siteDescription }}">
     <meta name="twitter:image" content="{{ constants.siteUrl }}images/og-image.png">
 
+    <meta name="thumbnail" content="{{ constants.siteUrl }}images/og-image.png" />
+
     <link rel="preload" href="{{ page.url | relativeUrl }}styles/bundle.css" as="style">
+    {% if ['/'].includes(page.url) %}
+      <link rel="prerender" href="{{ page.url | relativeUrl }}hot/">
+    {% endif %}
 
     {% if constants.googleSiteVerification %}
         <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
