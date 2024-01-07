@@ -7,7 +7,7 @@
             <div class="ui-component-cta ui-layout-flex">
                 <form class="ui-component-form ui-layout-grid">
                     <label class='ui-component-form__label' for='feed-url-slack'>
-                        <img src='{{ page.url | relativeUrl }}images/slack-mark.png' alt='Slackのロゴ' loading="lazy" decoding='async' width='96' height='96'>
+                        <img src='{{ page.url | relativeUrl }}images/slack-mark.png' alt='Slackのロゴ' loading="eager" width='96' height='96'>
                     </label>
                     <input type='text' id='feed-url-slack' class="ui-component-input ui-component-input-medium" readonly value='/feed {{ constants.feedUrls.rss }}'>
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
@@ -22,10 +22,10 @@
                 </form>
                 <div class='ui-top-section__subscribe'>
                     <a href='https://feedly.com/i/subscription/feed/{{ constants.feedUrls.rss }}' target="_blank" rel="noopener">
-                        <img src='{{ page.url | relativeUrl }}images/subscribe-feedly.png' alt='follow us in feedly' width='152' height='56'>
+                        <img src='{{ page.url | relativeUrl }}images/subscribe-feedly.png' loading="eager" alt='follow us in feedly' width='152' height='56'>
                     </a>
                     <a href="https://www.inoreader.com?add_feed={{ constants.feedUrls.rss }}" target="_blank" rel="noopener">
-                        <img src="{{ page.url | relativeUrl }}images/subscribe-inoreader.png" alt="follow us in inoreader" width='260' height='72'>
+                        <img src="{{ page.url | relativeUrl }}images/subscribe-inoreader.png" loading="eager" alt="follow us in inoreader" width='260' height='72'>
                     </a>
                 </div>
             </div>
