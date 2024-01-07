@@ -582,7 +582,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['現場サポート', 'https://support.genbasupport.com/techblog/feed/'],
   ['虎の穴', 'https://toranoana-lab.hatenablog.com/feed'],
   ['遊舎工房', 'https://blog.yushakobo.jp/feed'],
-  ['電通国際情報サービス', 'https://tech.isid.co.jp/feed'],
+  ['電通国際情報サービス', 'https://tech.dentsusoken.com/feed'],
   ['食べチョク', 'https://tech.tabechoku.com/feed'],
   ['食べログ', 'https://tech-blog.tabelog.com/feed'],
   ['ＦＦＲＩセキュリティ', 'https://engineers.ffri.jp/feed'],
