@@ -4,6 +4,7 @@ const path = require('path');
 const ts = require('typescript');
 const constants = require('./src/common/constants');
 const eleventyCacheOption = require('./src/common/eleventy-cache-option');
+const CleanCSS = require("clean-css");
 
 Image.concurrency = 50;
 
@@ -59,6 +60,10 @@ const relativeUrlFilter = (url) => {
   return relativeUrl === '' ? './' : `${relativeUrl}/`;
 }
 
+const minifyCssFilter = (css) => {
+  return new CleanCSS({}).minify(css).styles;
+}
+
 const supportTypeScriptTemplate = (eleventyConfig) => {
   eleventyConfig.addTemplateFormats('ts');
   eleventyConfig.addExtension('ts', {
@@ -80,11 +85,14 @@ module.exports = function (eleventyConfig) {
   // images
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
-  // minify
+  // minify html
   eleventyConfig.addTransform('minify html', minifyHtmlTransform);
 
   // relative path
   eleventyConfig.addFilter("relativeUrl", relativeUrlFilter);
+
+  // minify css
+  eleventyConfig.addFilter("minifyCss", minifyCssFilter);
 
   // TypeScript
   supportTypeScriptTemplate(eleventyConfig);

@@ -1,0 +1,9 @@
+---
+permalink: styles/bundle.css
+---
+{% set css %}
+  {% include "styles/vendor/reset.css" %}
+  {% include "styles/vendor/base.css" %}
+  {% include "styles/main.css" %}
+{% endset %}
+{{ css | minifyCss | safe }}

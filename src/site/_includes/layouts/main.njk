@@ -21,6 +21,8 @@
     <meta name="twitter:description" content="{{ constants.siteDescription }}">
     <meta name="twitter:image" content="{{ constants.siteUrl }}images/og-image.png">
 
+    <link rel="preload" href="{{ page.url | relativeUrl }}styles/bundle.css" as="style">
+
     {% if constants.googleSiteVerification %}
         <meta name="google-site-verification" content="{{ constants.googleSiteVerification }}" />
     {% endif %}
@@ -31,11 +33,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="{{ page.url | relativeUrl }}feeds/rss.xml" />
     <link rel="alternate" type="application/json" href="{{ page.url | relativeUrl }}feeds/feed.json" />
 
-    <style>
-        {% include "styles/vendor/reset.css" %}
-        {% include "styles/vendor/base.css" %}
-        {% include "styles/main.css" %}
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ page.url | relativeUrl }}styles/bundle.css" />
 
     {% if constants.globalSiteTagKey %}
         <!-- Global site tag (gtag.js) - Google Analytics -->
