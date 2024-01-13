@@ -248,7 +248,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Visional', 'https://engineering.visional.inc/blog/index.xml'],
   ['Voicy', 'https://medium.com/feed/voicy-engineering'],
   ['Voicy', 'https://zenn.dev/p/voicy/feed', [FLAG_ZENN_PUBLICATION]],
-  ['WASD', 'https://tech.wasd-inc.com/feed'],
   ['WESEEK', 'https://weseek.co.jp/tech/feed/'],
   ['Wiz', 'https://tech.012grp.co.jp/feed'],
   ['YAZ', 'https://www.yaz.co.jp/feed'],
