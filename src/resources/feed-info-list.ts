@@ -239,7 +239,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TechTrain', 'https://zenn.dev/techtrain/feed'],
   ['Tier IV', 'https://medium.com/feed/tier-iv-tech-blog/tagged/tech-blog'],
   ['Tokyo Otaku Mode', 'https://blog.otakumode.com/atom.xml'],
-  ['Ubie', 'https://zenn.dev/ubie/feed'],
+  ['Ubie', 'https://zenn.dev/p/ubie_dev/feed', [FLAG_ZENN_PUBLICATION]],
   ['UnReact', 'https://zenn.dev/unreact/feed'],
   ['Unipos', 'https://fringeneer.hatenablog.com/feed'],
   ['Uzabase', 'https://tech.uzabase.com/feed'],
@@ -645,7 +645,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
  *
  * Error: Invalid character in entity name
- * ['Ubie', 'https://zenn.dev/p/ubie_dev', [FLAG_ZENN_PUBLICATION]],
  * ['アイデミー', 'https://zenn.dev/p/aidemy', [FLAG_ZENN_PUBLICATION]],
  *
  * pubDate なし
