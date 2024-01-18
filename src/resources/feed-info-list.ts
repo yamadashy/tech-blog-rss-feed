@@ -83,6 +83,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Finatext', 'https://medium.com/feed/finatext'],
   ['Findy', 'https://findy-code.io/engineer-lab/rss'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
+  ['FLYWHEEL', 'https://www.flywheel.jp/topics-tag/tech/feed'],
   ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/rss.xml'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
