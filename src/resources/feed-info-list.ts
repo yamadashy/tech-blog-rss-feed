@@ -20,7 +20,7 @@ const createFeedInfoList = (feedInfoTuples: [label: string, url: string, flags?:
 // フィード情報一覧。アルファベット順
 export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   // ['企業名・製品名など', 'RSS/AtomフィードのURL'],
-  ['10ANTZ', 'https://developers.10antz.co.jp/feed'],
+  ['10ANTZ', 'https://developers.10antz.co.jp/feed/'],
   ['10X', 'https://product.10x.co.jp/feed'],
   ['207', 'https://tech.207-inc.com/feed'],
   ['ABEJA', 'https://tech-blog.abeja.asia/feed'],
