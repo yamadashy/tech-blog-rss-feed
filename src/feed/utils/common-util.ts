@@ -54,20 +54,20 @@ export const isValidHttpUrl = (url: string) => {
   return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
 };
 
-export const exponentialBackoff = async <A>(retrier: () => Promise<A>, retries = 3) => {
+export const exponentialBackoff = async <A>(retrier: (attemptCount: number) => Promise<A>, retries = 3) => {
   let attemptLimitReached = false;
-  let attemptNumber = 0;
+  let attemptCount = 0;
 
   while (!attemptLimitReached) {
-    const [error, result] = await to(retrier());
+    const [error, result] = await to(retrier(attemptCount));
     if (error) {
-      attemptNumber++;
-      attemptLimitReached = attemptNumber > retries;
+      attemptCount++;
+      attemptLimitReached = attemptCount > retries;
 
       if (attemptLimitReached) {
         throw error;
       } else {
-        const waitTime = Math.pow(2, attemptNumber) * 1000;
+        const waitTime = Math.pow(2, attemptCount) * 1000;
         await sleep(waitTime);
       }
     } else {
