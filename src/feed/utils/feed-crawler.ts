@@ -85,7 +85,7 @@ export class FeedCrawler {
             }
 
             const feedData = await response.text();
-            return this.rssParser.parseString(feedData);
+            return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
           }),
         );
         if (error) {
