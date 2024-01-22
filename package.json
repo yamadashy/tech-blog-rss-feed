@@ -33,7 +33,6 @@
     "rss",
     "atom"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
@@ -88,6 +87,7 @@
   },
   "engines": {
     "node": ">=20",
-    "yarn": "^1.18.0"
-  }
+    "yarn": ">=3.7.0"
+  },
+  "packageManager": "yarn@3.7.0"
 }
