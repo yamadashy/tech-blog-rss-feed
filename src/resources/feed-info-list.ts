@@ -117,7 +117,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['IDCフロンティア', 'https://blog.idcf.jp/feed'],
   ['IIJ', 'https://eng-blog.iij.ad.jp/feed'],
   ['IVRy', 'https://zenn.dev/p/ivry/feed', [FLAG_ZENN_PUBLICATION]],
-  ['JBCC', 'https://jbcc-tech.hatenablog.com/feed'],
   ['JMDC', 'https://techblog.jmdc.co.jp/feed'],
   ['JTP', 'https://tech-blog.jtp.co.jp/feed'],
   ['JX通信社', 'https://tech.jxpress.net/feed'],
@@ -629,6 +628,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['FLINTERS', 'https://labs.septeni.co.jp/feed'],
  * ['crispy', 'https://blog.crispy-inc.com/feed'],
  * ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
+ * ['JBCC', 'https://jbcc-tech.hatenablog.com/feed'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
