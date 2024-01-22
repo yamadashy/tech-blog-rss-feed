@@ -3,7 +3,6 @@ import { FeedCrawler } from '../src/feed/utils/feed-crawler';
 import { describe, it, expect } from 'vitest';
 import { exponentialBackoff } from '../src/feed/utils/common-util';
 import RssParser from 'rss-parser';
-import { to } from 'await-to-js';
 
 const rssParser = new RssParser({
   maxRedirects: 0,
