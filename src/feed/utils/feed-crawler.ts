@@ -74,8 +74,18 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feedInfo) => {
         const [error, feed] = await to(
-          exponentialBackoff(() => {
-            return this.rssParser.parseURL(feedInfo.url) as Promise<CustomRssParserFeed>;
+          exponentialBackoff(async (attemptCount: number) => {
+            if (attemptCount > 0) {
+              logger.warn(`[fetch-feed] retry ${feedInfo.url}`);
+            }
+
+            const response = await fetch(feedInfo.url);
+            if (!response.ok) {
+              throw new Error(`HTTP Error: ${response.status}`);
+            }
+
+            const feedData = await response.text();
+            return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
           }),
         );
         if (error) {
@@ -258,7 +268,11 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feedItem) => {
         const [error, ogsResult] = await to(
-          exponentialBackoff(() => {
+          exponentialBackoff((attemptCount: number) => {
+            if (attemptCount > 0) {
+              logger.warn(`[fetch-feed-item-og] retry ${feedItem.link}`);
+            }
+
             return FeedCrawler.fetchOgsResult(feedItem.link);
           }),
         );
@@ -291,7 +305,11 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feed) => {
         const [error, ogsResult] = await to(
-          exponentialBackoff(() => {
+          exponentialBackoff((attemptCount: number) => {
+            if (attemptCount > 0) {
+              logger.warn(`[fetch-feed-blog-og] retry ${feed.link}`);
+            }
+
             return FeedCrawler.fetchOgsResult(feed.link);
           }),
         );
