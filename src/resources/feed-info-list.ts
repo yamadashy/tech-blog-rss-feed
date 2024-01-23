@@ -240,7 +240,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Tier IV', 'https://medium.com/feed/tier-iv-tech-blog/tagged/tech-blog'],
   ['Tokyo Otaku Mode', 'https://blog.otakumode.com/atom.xml'],
   ['Ubie', 'https://zenn.dev/p/ubie_dev/feed', [FLAG_ZENN_PUBLICATION]],
-  ['UnReact', 'https://zenn.dev/unreact/feed'],
   ['Unipos', 'https://fringeneer.hatenablog.com/feed'],
   ['Uzabase', 'https://tech.uzabase.com/feed'],
   ['VA Linux', 'https://valinux.hatenablog.com/feed'],
@@ -629,6 +628,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['crispy', 'https://blog.crispy-inc.com/feed'],
  * ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
  * ['JBCC', 'https://jbcc-tech.hatenablog.com/feed'],
+ * ['UnReact', 'https://zenn.dev/unreact/feed'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
