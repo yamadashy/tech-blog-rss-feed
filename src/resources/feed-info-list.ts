@@ -356,6 +356,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['オールアバウト', 'https://allabout-tech.hatenablog.com/feed'],
   ['カイユウ', 'https://kai-you-tech.hatenablog.com/feed'],
   ['カウシェ', 'https://note.com/kauche/m/meb1f972d92dc/rss'],
+  ['カカクコム', 'https://kakaku-techblog.com/feed'],
   ['カケハシ', 'https://kakehashi-dev.hatenablog.com/feed'],
   ['カミナシ', 'https://kaminashi-developer.hatenablog.jp/feed'],
   ['カヤック', 'https://techblog.kayac.com/feed'],
