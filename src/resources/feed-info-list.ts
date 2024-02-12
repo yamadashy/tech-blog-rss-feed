@@ -257,7 +257,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ZOZO', 'https://techblog.zozo.com/feed'],
   ['ZOZO', 'https://zenn.dev/p/zozotech/feed', [FLAG_ZENN_PUBLICATION]],
   ['Zaim', 'https://blog.zaim.co.jp/rss'],
-  ['Zeals', 'https://tech.zeals.co.jp/feed'],
   ['Zenn', 'https://zenn.dev/p/team_zenn/feed', [FLAG_ZENN_PUBLICATION]],
   ['atama plus', 'https://zenn.dev/atamaplus_dev/feed'],
   ['aumo', 'https://techblog.aumo.co.jp/feed'],
@@ -629,6 +628,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['スタートアップテクノロジー', 'https://startup-technology.com/feed'],
  * ['JBCC', 'https://jbcc-tech.hatenablog.com/feed'],
  * ['UnReact', 'https://zenn.dev/unreact/feed'],
+ * ['Zeals', 'https://tech.zeals.co.jp/feed'],
  *
  * 406
  * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
