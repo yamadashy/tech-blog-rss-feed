@@ -33,6 +33,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Adways', 'https://blog.engineer.adways.net/feed'],
   ['Aiming', 'https://developer.aiming-inc.com/feed/'],
   ['AppBrew', 'https://tech.appbrew.io/feed'],
+  ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
   ['Assured', 'https://tech.assured.jp/feed'],
   ['BABYJOB', 'https://zenn.dev/p/babyjob/feed', [FLAG_ZENN_PUBLICATION]],
   ['BASE', 'https://devblog.thebase.in/feed'],
@@ -632,7 +633,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['Zeals', 'https://tech.zeals.co.jp/feed'],
  *
  * 406
- * ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
  * ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
  * ['Wantedly', 'https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml'],
  *
