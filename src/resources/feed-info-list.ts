@@ -25,6 +25,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['207', 'https://tech.207-inc.com/feed'],
   ['ABEJA', 'https://tech-blog.abeja.asia/feed'],
   ['ACES', 'https://tech.acesinc.co.jp/feed'],
+  ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed'],
   ['AI inside', 'https://note.com/aiinside_tech/rss'],
   ['AIREV', 'https://zenn.dev/airev/feed'],
   ['ANDPAD', 'https://tech.andpad.co.jp/feed'],
@@ -54,7 +55,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
   ['COOSY', 'https://coosy.co.jp/blog/category/web-development/feed/'],
-  ['CROOZ SHOPLIST', encodeURI('https://crooz.co.jp/recruit_group/blog/category/テックブログ/feed/')],
   ['CROOZ', 'https://croozblog.hatenablog.com/feed'],
   ['CULTA', 'https://techblog.culta.jp/feed'],
   ['CastingONE', 'https://zenn.dev/p/castingone_dev/feed', [FLAG_ZENN_PUBLICATION]],
@@ -79,12 +79,12 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ENECHANGE', 'https://zenn.dev/p/enechange_blog/feed', [FLAG_ZENN_PUBLICATION]],
   ['Emotion Tech', 'https://tech.emotion-tech.co.jp/feed'],
   ['Eureka', 'https://medium.com/feed/eureka-engineering'],
+  ['FLYWHEEL', 'https://www.flywheel.jp/topics-tag/tech/feed/'],
   ['FiNC', 'https://medium.com/feed/finc-engineering'],
   ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
   ['Finatext', 'https://medium.com/feed/finatext'],
   ['Findy', 'https://findy-code.io/engineer-lab/rss'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
-  ['FLYWHEEL', 'https://www.flywheel.jp/topics-tag/tech/feed/'],
   ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/rss.xml'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
@@ -130,6 +130,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LAPRAS', 'https://ai-lab.lapras.com/feed/'],
   ['LCL', 'https://techblog.lclco.com/feed'],
   ['LIFULL', 'https://www.lifull.blog/feed'],
+  ['LIG', 'https://liginc.co.jp/technology/feed'],
   ['LINEヤフー', 'https://techblog.lycorp.co.jp/ja/feed/index.xml'],
   ['LIVESENSE', 'https://made.livesense.co.jp/feed'],
   ['LayerX', 'https://tech.layerx.co.jp/feed'],
@@ -185,6 +186,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Playground', 'https://tech.playground.style/feed/'],
   ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'],
   ['Progate', 'https://tech.prog-8.com/feed'],
+  ['Qiita', 'https://zine.qiita.com/feed/'],
   ['R&D', 'https://zenn.dev/randd/feed'],
   ['READYFOR', 'https://tech.readyfor.jp/feed'],
   ['READYFOR', 'https://zenn.dev/p/readyfor_blog/feed', [FLAG_ZENN_PUBLICATION]],
@@ -390,6 +392,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['サイオステクノロジー', 'https://tech-lab.sios.jp/feed'],
   ['サイゼント', 'https://cyzennt.co.jp/blog/feed/'],
   ['サイバーエージェント', 'https://developers.cyberagent.co.jp/blog/feed/'],
+  ['サイバーディフェンス研究所', 'https://io.cyberdefense.jp/index.xml'],
   ['サイボウズ Necoチーム', 'https://zenn.dev/p/cybozu_neco/feed', [FLAG_ZENN_PUBLICATION]],
   ['サイボウズ データチーム', 'https://zenn.dev/p/cybozu_data/feed', [FLAG_ZENN_PUBLICATION]],
   ['サイボウズ フロントエンド', 'https://zenn.dev/p/cybozu_frontend/feed', [FLAG_ZENN_PUBLICATION]],
@@ -415,6 +418,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['スターフェスティバル', 'https://zenn.dev/stafes/feed'],
   ['ストックマーク', 'https://tech.stockmark.co.jp/index.xml'],
   ['スピッカート', 'https://zenn.dev/spicato_inc/feed'],
+  ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
   ['スペースリー', 'https://tech.spacely.co.jp/feed'],
   ['スマートキャンプ', 'https://tech.smartcamp.co.jp/feed'],
   ['スマートスタイル', 'https://blog.s-style.co.jp/feed/'],
@@ -487,6 +491,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['フェンリル', 'https://engineers.fenrir-inc.com/feed'],
   ['フォトシンス', 'https://akerun.hateblo.jp/feed'],
   ['フォージビジョン', 'https://techblog.forgevision.com/feed'],
+  ['フクロウラボ', 'https://developers.fukurou-labo.co.jp/feed/'],
   ['フューチャー', 'https://future-architect.github.io/atom.xml'],
   ['フリュー', 'https://tech.furyu.jp/feed'],
   ['フリークアウト', 'https://backyard.fout.co.jp/feed/'],
@@ -602,10 +607,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * できたばかりなので様子見
  * ['Amayz', 'https://blog.amayz.co.jp/?feed=rss2'],
  *
- * パースエラー修正
- * ['Qiita', 'https://zine.qiita.com/'],
- * ['サイバーディフェンス研究所', 'https://io.cyberdefense.jp/index.xml'],
- *
  * 日本語以外が交じるのを解消できたら入れたい
  * ['クラスメソッド', 'https://dev.classmethod.jp/feed'],
  *
@@ -614,10 +615,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 403 Forbidden
  * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
- * ['AI Shift', 'https://www.ai-shift.co.jp/techblog/feed'],
  * ['BRANU', 'https://tech.branu.jp/feed'],
  * ['i-plug', 'https://itbl.hatenablog.com/feed'],
  * ['UUUM', 'https://system.blog.uuum.jp/feed'],
+ * ['CROOZ SHOPLIST', encodeURI('https://crooz.co.jp/recruit_group/blog/category/テックブログ/feed/')],
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
@@ -632,20 +633,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['UnReact', 'https://zenn.dev/unreact/feed'],
  * ['Zeals', 'https://tech.zeals.co.jp/feed'],
  *
+ * Error: unable to verify the first certificate
+ * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
+ * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
+ *
  * 406
  * ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
  * ['Wantedly', 'https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml'],
- *
- * 500
- * ['LIG', 'https://liginc.co.jp/technology/feed'],
- *
- * 503
- * ['フクロウラボ', 'https://developers.fukurou-labo.co.jp/feed/'],
- *
- * Error: unable to verify the first certificate
- * ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'],
- * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
- * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
  *
  * pubDate なし
  * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
