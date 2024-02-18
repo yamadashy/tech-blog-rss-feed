@@ -25,7 +25,7 @@ jobs:
           ref: main
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: .tool-versions
           cache: yarn
@@ -40,7 +40,7 @@ jobs:
         shell: bash
 
       - name: Cache feed images
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .cache
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
