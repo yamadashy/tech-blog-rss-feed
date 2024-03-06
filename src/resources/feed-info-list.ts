@@ -83,7 +83,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['FiNC', 'https://medium.com/feed/finc-engineering'],
   ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
   ['Finatext', 'https://medium.com/feed/finatext'],
-  ['Findy', 'https://findy-code.io/engineer-lab/rss'],
+  ['Findy', 'https://tech.findy.co.jp/feed'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
   ['Fracton', 'https://tech.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/rss.xml'],
