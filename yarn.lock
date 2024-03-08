@@ -34,14 +34,14 @@ __metadata:
   linkType: hard
 
 "@11ty/eleventy-fetch@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@11ty/eleventy-fetch@npm:4.0.0"
+  version: 4.0.1
+  resolution: "@11ty/eleventy-fetch@npm:4.0.1"
   dependencies:
-    debug: "npm:^4.3.4"
-    flat-cache: "npm:^3.0.4"
-    node-fetch: "npm:^2.6.7"
-    p-queue: "npm:^6.6.2"
-  checksum: 7fb500db66afca621d97b5c79a144f82fb2449f386018713e63b8dc2609f85e59bad8c257c9ebdc80ca7309b99774e0a811d9ba74466fc2471e3230981415324
+    debug: ^4.3.4
+    flat-cache: ^3.0.4
+    node-fetch: ^2.6.7
+    p-queue: ^6.6.2
+  checksum: 98d0f56ebe8027c1f94a27dbce1c215ffa819037f90b357ce693467a0adbc167b7b8e9e0f93d67236fd2670c027c1155192478c7f4e6b35aeae36d002699db85
   languageName: node
   linkType: hard
 
@@ -862,11 +862,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^20.10.4":
-  version: 20.11.24
-  resolution: "@types/node@npm:20.11.24"
+  version: 20.11.25
+  resolution: "@types/node@npm:20.11.25"
   dependencies:
     undici-types: ~5.26.4
-  checksum: b11a650e09e254f4725c94f226752b69949a9ac4a5e004e98f109437ac50b02df3ab4d12b2086722fedf2cb62e68b9e723abd3f358a7d7d90d741a0d3bee90c2
+  checksum: bdb29da3f3dc687a0104cb70e30b5277d9df8f22843a4ed94835762683a95a8a0ea0c2ed0cf96f6eeff348491dd50dd9b20307d08f71ba7cb489d54a81cbbfec
   languageName: node
   linkType: hard
 
@@ -7361,22 +7361,22 @@ __metadata:
   linkType: hard
 
 "typescript@npm:^5.2.2":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
+  version: 5.4.2
+  resolution: "typescript@npm:5.4.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2007ccb6e51bbbf6fde0a78099efe04dc1c3dfbdff04ca3b6a8bc717991862b39fd6126c0c3ebf2d2d98ac5e960bcaa873826bb2bb241f14277034148f41f6a2
+  checksum: 96d80fde25a09bcb04d399082fb27a808a9e17c2111e43849d2aafbd642d835e4f4ef0de09b0ba795ec2a700be6c4c2c3f62bf4660c05404c948727b5bbfb32a
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^5.2.2#~builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+  version: 5.4.2
+  resolution: "typescript@patch:typescript@npm%3A5.4.2#~builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 4e604a9e107ce0c23b16a2f8d79d0531d4d8fe9ebbb7a8c395c66998c39892f0e0a071ef0b0d4e66420a8ec2b8d6cfd9cdb29ba24f25b37cba072e9282376df9
+  checksum: 797ac213c03a19749181c745647b4cab03d13bf4b6b738b05a3426f46c6b540f908989e839d9b0c89d7a4ee2bdb50493b4d4898d4ef1c897c3e9d0b082e78a67
   languageName: node
   linkType: hard
 
