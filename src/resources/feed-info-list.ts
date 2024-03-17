@@ -276,7 +276,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['freee', 'https://developers.freee.co.jp/feed'],
   ['gaudiy', 'https://techblog.gaudiy.com/feed'],
   ['hacomono', 'https://techblog.hacomono.jp/feed'],
-  ['hokan', 'https://medium.com/feed/@hokan_dev'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
@@ -636,6 +635,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['JBCC', 'https://jbcc-tech.hatenablog.com/feed'],
  * ['UnReact', 'https://zenn.dev/unreact/feed'],
  * ['Zeals', 'https://tech.zeals.co.jp/feed'],
+ * ['hokan', 'https://medium.com/feed/@hokan_dev'],
  *
  * Error: unable to verify the first certificate
  * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
