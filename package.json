@@ -13,6 +13,7 @@
     "lint-fix": "yarn lint --fix",
     "type-check": "yarn tsc --noEmit",
     "test": "vitest run",
+    "renovate-validate": "renovate-config-validator",
     "preinstall": "typesync || :"
   },
   "repository": {
@@ -70,6 +71,7 @@
     "log4js": "^6.9.1",
     "open-graph-scraper": "^4.11.0",
     "prettier": "^3.0.3",
+    "renovate": "^37.253.1",
     "request": "^2.88.2",
     "rss-parser": "^3.12.0",
     "typescript": "^5.2.2",
