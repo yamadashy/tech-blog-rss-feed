@@ -439,6 +439,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['テックタッチ', 'https://techtouch.hatenablog.jp/feed'],
   ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'],
   ['テラーノベル', 'https://zenn.dev/p/tellernovel_inc/feed', [FLAG_ZENN_PUBLICATION]],
+  ['チームラボ　フロントエンド班', 'https://zenn.dev/p/teamlab_fe/feed', [FLAG_ZENN_PUBLICATION]],
   ['ディーネット', 'https://blog.denet.co.jp/feed/'],
   ['デザインワン・ジャパン', 'https://tech.designone.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
