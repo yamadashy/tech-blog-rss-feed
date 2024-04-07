@@ -113,7 +113,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['HRBrain', 'https://zenn.dev/p/hrbrain/feed', [FLAG_ZENN_PUBLICATION]],
   ['Hajimari', 'https://tech.hajimari.inc/feed'],
   ['HashPort', 'https://tech.hashport.io/feed/'],
-  ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
   ['HiTalent', 'https://medium.com/feed/@hitalent'],
   ['HireRoo', 'https://hireroo.io/rss/IJhPN95WMIcPni1r59Tt'],
   ['IDCフロンティア', 'https://blog.idcf.jp/feed'],
@@ -488,7 +487,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ピクスタ', 'https://texta.pixta.jp/feed'],
   ['ピリカ', 'https://devblog.pirika.org/feed'],
   ['ファブリカ', 'https://www.fabrica-com.co.jp/techblog/feed/'],
-  ['ファンコミュニケーションズ', 'https://tech-blog.fancs.com/feed'],
   ['ファンタラクティブ', 'https://zenn.dev/funteractive/feed'],
   ['フィードフォース', 'https://developer.feedforce.jp/feed'],
   ['フェンリル', 'https://engineers.fenrir-inc.com/feed'],
@@ -513,7 +511,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ホワイトプラス', 'https://blog.wh-plus.co.jp/feed'],
   ['マイベスト', 'https://zenn.dev/mybest/feed'],
   ['マインディア', 'https://zenn.dev/p/minedia/feed', [FLAG_ZENN_PUBLICATION]],
-  ['マクロミル', 'https://techblog.macromill.com/feed'],
   ['マップボックス・ジャパン', 'https://zenn.dev/p/mapbox_japan/feed', [FLAG_ZENN_PUBLICATION]],
   ['マナリンク', 'https://zenn.dev/manalink/feed'],
   ['マナリンク', 'https://zenn.dev/p/manalink_dev/feed', [FLAG_ZENN_PUBLICATION]],
@@ -624,6 +621,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['i-plug', 'https://itbl.hatenablog.com/feed'],
  * ['UUUM', 'https://system.blog.uuum.jp/feed'],
  * ['CROOZ SHOPLIST', encodeURI('https://crooz.co.jp/recruit_group/blog/category/テックブログ/feed/')],
+ * ['マクロミル', 'https://techblog.macromill.com/feed'],
  *
  * 404
  * ['リクルートデータ', 'https://blog.recruit.co.jp/data/index.json'],
@@ -658,6 +656,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['Croooober', 'https://tech.croooober.co.jp/feed'],
  * ['トライステージ', 'https://blog.ddm.tri-stage.jp/feed/'],
  * ['ヒュープロ', 'https://hupro-techblog.hatenablog.com/feed'],
+ * ['ファンコミュニケーションズ', 'https://tech-blog.fancs.com/feed'],
+ * ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
