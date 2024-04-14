@@ -44,4 +44,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Stories by Cobus Greyling on Medium', 'https://medium.com/feed/@cobusgreyling'],
   ['Algomatic Tech Blog', 'https://tech.algomatic.jp/feed'],
   ['株式会社エクスプラザ（公式）', 'https://note.com/explaza_inc/rss'],
+  ['LLM Agent - Medium', 'https://medium.com/feed/tag/llm-agent'],
 ]);
