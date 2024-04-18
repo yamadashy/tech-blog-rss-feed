@@ -45,4 +45,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Algomatic Tech Blog', 'https://tech.algomatic.jp/feed'],
   ['株式会社エクスプラザ（公式）', 'https://note.com/explaza_inc/rss'],
   ['LLM Agent - Medium', 'https://medium.com/feed/tag/llm-agent'],
+  ['The latest on AI | Sequoia Capital', 'https://www.sequoiacap.com/article/tag/ai/feed'],
 ]);
