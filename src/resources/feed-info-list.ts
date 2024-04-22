@@ -33,7 +33,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LLM - Note', 'https://note.com/hashtag/LLM/rss'],
   ['LangChain - Note', 'https://note.com/hashtag/LangChain/rss'],
   ['character.ai', 'https://blog.character.ai/rss/'],
-  ['Context by Cohere', 'https://txt.cohere.com/rss/'],
   ['Blog - AutoGPT Official', 'https://autogpt.net/blog/feed/'],
   ['Hugging Face - Blog', 'https://huggingface.co/blog/feed.xml'],
   ['RevComm Tech Blog', 'https://tech.revcomm.co.jp/feed'],
@@ -46,4 +45,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['株式会社エクスプラザ（公式）', 'https://note.com/explaza_inc/rss'],
   ['LLM Agent - Medium', 'https://medium.com/feed/tag/llm-agent'],
   ['The latest on AI | Sequoia Capital', 'https://www.sequoiacap.com/article/tag/ai/feed'],
+  ['Microsoft Research', 'https://www.microsoft.com/en-us/research/blog/feed/'],
 ]);
