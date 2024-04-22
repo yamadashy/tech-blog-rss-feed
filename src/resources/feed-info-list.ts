@@ -33,7 +33,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LLM - Note', 'https://note.com/hashtag/LLM/rss'],
   ['LangChain - Note', 'https://note.com/hashtag/LangChain/rss'],
   ['character.ai', 'https://blog.character.ai/rss/'],
-  ['Context by Cohere', 'https://txt.cohere.com/rss/'],
   ['Blog - AutoGPT Official', 'https://autogpt.net/blog/feed/'],
   ['Hugging Face - Blog', 'https://huggingface.co/blog/feed.xml'],
   ['RevComm Tech Blog', 'https://tech.revcomm.co.jp/feed'],
