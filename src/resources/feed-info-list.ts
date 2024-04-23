@@ -46,4 +46,5 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['LLM Agent - Medium', 'https://medium.com/feed/tag/llm-agent'],
   ['The latest on AI | Sequoia Capital', 'https://www.sequoiacap.com/article/tag/ai/feed'],
   ['Microsoft Research', 'https://www.microsoft.com/en-us/research/blog/feed/'],
+  ['The Gradient', 'https://thegradient.pub/rss/'],
 ]);
