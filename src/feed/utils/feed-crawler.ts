@@ -191,7 +191,7 @@ export class FeedCrawler {
     }
 
     if (customFeed.items.length === 0) {
-      logger.warn('取得したフィードの記事ががありません', feedInfo.label);
+      logger.warn('取得したフィードの記事がありません', feedInfo.label);
     }
 
     // 全ブログの調整
