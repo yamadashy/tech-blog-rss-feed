@@ -228,6 +228,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Studyplus', 'https://tech.studyplus.co.jp/feed'],
   ['Synamon', 'https://synamon.hatenablog.com/feed'],
   ['Sysdig', 'https://www.scsk.jp/sp/sysdig/rss.xml'],
+  ['TalentX', 'https://tech.talentx.co.jp/feed'],
   ['TANP', 'https://www.tanp-blog.com/feed'],
   ['TENTIAL', 'https://tech.tential.jp/feed'],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
