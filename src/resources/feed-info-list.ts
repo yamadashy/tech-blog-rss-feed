@@ -290,6 +290,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['nana music', 'https://tech.nana-music.com/feed'],
   ['no plan', 'https://zenn.dev/no_plan/feed'],
   ['note', 'https://engineerteam.note.jp/m/m70da42dac8cf/rss'],
+  ['newmo', 'https://tech.newmo.me/feed'],
   ['paiza', 'https://paiza.hatenablog.com/feed'],
   ['pipon', 'https://zenn.dev/p/pipon_tech_blog/feed', [FLAG_ZENN_PUBLICATION]],
   ['pixiv', 'https://zenn.dev/p/pixiv/feed', [FLAG_ZENN_PUBLICATION]],
