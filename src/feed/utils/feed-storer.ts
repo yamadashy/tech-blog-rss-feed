@@ -5,7 +5,7 @@ import { textToMd5Hash, textTruncate } from './common-util';
 import { OutputFeedSet } from './feed-generator';
 import { logger } from './logger';
 
-export interface BlogFeed {
+export type BlogFeed = {
   title: string;
   link: string;
   linkMd5Hash: string;
@@ -20,7 +20,7 @@ export interface BlogFeed {
     hatenaCount: number;
     ogImageUrl: string;
   }[];
-}
+};
 
 export class FeedStorer {
   async storeFeeds(outputFeedSet: OutputFeedSet, storeDirPath: string): Promise<void> {

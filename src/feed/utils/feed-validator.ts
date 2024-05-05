@@ -4,12 +4,12 @@ import { logger } from './logger';
 import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
 
-export interface FeedValidateResult {
+export type FeedValidateResult = {
   isValid: boolean;
   rssParserError: Error | null;
   atomValidateError: ValidationError | null;
   libxmljsError: Error | null;
-}
+};
 
 /**
  * フィードのバリデーション
