@@ -14,13 +14,10 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "minor and patch dependencies",
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "groupName": "major dependencies",
-      "automerge": false
+      "groupName": "minor and patch dependencies"
     }
-  ]
+  ],
+  "major": {
+    "enabled": false
+  }
 }
