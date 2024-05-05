@@ -18,7 +18,7 @@ import { to } from 'await-to-js';
 const ogs = require('open-graph-scraper');
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
-export type OgsResult = {
+export interface OgsResult {
   ogTitle: string;
   ogType: string;
   ogUrl: string;
@@ -31,7 +31,7 @@ export type OgsResult = {
     height: string;
     type: string;
   };
-};
+}
 export type OgsResultMap = Map<string, OgsResult>;
 export type FeedItemHatenaCountMap = Map<string, number>;
 export type CustomRssParserItem = RssParser.Item & {
@@ -366,7 +366,7 @@ export class FeedCrawler {
   }
 
   async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
-    const feedItemHatenaCountMap: Map<string, number> = new Map();
+    const feedItemHatenaCountMap = new Map<string, number>();
     const feedItemUrlsChunks: string[][] = [];
     let feedItemCounter = 0;
 
