@@ -1,11 +1,11 @@
 export const FLAG_ZENN_PUBLICATION: unique symbol = Symbol('Zenn Publication');
 type FEED_INFO_FLAG = typeof FLAG_ZENN_PUBLICATION;
 
-export type FeedInfo = {
+export interface FeedInfo {
   label: string;
   url: string;
   flags?: FEED_INFO_FLAG[];
-};
+}
 
 const createFeedInfoList = (feedInfoTuples: [label: string, url: string, flags?: FEED_INFO_FLAG[]][]) => {
   const feedInfoList: FeedInfo[] = [];

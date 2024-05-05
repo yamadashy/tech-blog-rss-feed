@@ -3,9 +3,7 @@ import * as crypto from 'crypto';
 import axios from 'axios';
 import { to } from 'await-to-js';
 
-type HatenaCountMap = {
-  [key: string]: number;
-};
+type HatenaCountMap = Record<string, number>;
 
 export const objectDeepCopy = <T>(data: T): T => {
   // TODO: Node.js 17 以上にしたら structuredClone 使う
