@@ -2,8 +2,9 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
-import { OutputFeedSet } from './feed-generator';
+import { FeedDistributionSet } from './feed-generator';
 import { logger } from './logger';
+import { to } from 'await-to-js';
 
 export type BlogFeed = {
   title: string;
@@ -23,16 +24,37 @@ export type BlogFeed = {
 };
 
 export class FeedStorer {
-  async storeFeeds(outputFeedSet: OutputFeedSet, storeDirPath: string): Promise<void> {
+  public async storeFeeds(
+    feedDistributionSet: FeedDistributionSet,
+    storeArticleDirPath: string,
+    feeds: CustomRssParserFeed[],
+    ogsResultMap: OgsResultMap,
+    allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
+    storeBlogDirPath: string,
+  ): Promise<void> {
+    const [errorStoreFeed] = await to(
+      Promise.all([
+        this.storeArticleFeeds(feedDistributionSet, storeArticleDirPath),
+        this.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, storeBlogDirPath),
+      ]),
+    );
+    if (errorStoreFeed) {
+      throw new Error('ファイル出力に失敗しました', {
+        cause: errorStoreFeed,
+      });
+    }
+  }
+
+  private async storeArticleFeeds(feedDistributionSet: FeedDistributionSet, storeDirPath: string): Promise<void> {
     await fs.mkdir(storeDirPath, { recursive: true });
-    await fs.writeFile(path.join(storeDirPath, 'atom.xml'), outputFeedSet.atom, 'utf-8');
-    await fs.writeFile(path.join(storeDirPath, 'rss.xml'), outputFeedSet.rss, 'utf-8');
-    await fs.writeFile(path.join(storeDirPath, 'feed.json'), outputFeedSet.json, 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'atom.xml'), feedDistributionSet.atom, 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'rss.xml'), feedDistributionSet.rss, 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'feed.json'), feedDistributionSet.json, 'utf-8');
 
     logger.info('[store-feeds] finished');
   }
 
-  async storeBlogFeeds(
+  private async storeBlogFeeds(
     feeds: CustomRssParserFeed[],
     ogsResultMap: OgsResultMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,

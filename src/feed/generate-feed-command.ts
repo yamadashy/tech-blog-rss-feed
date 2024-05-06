@@ -3,7 +3,6 @@ import { FeedCrawler } from './utils/feed-crawler';
 import { FeedGenerator } from './utils/feed-generator';
 import * as path from 'path';
 import { FeedStorer } from './utils/feed-storer';
-import { to } from 'await-to-js';
 import { FeedValidator } from './utils/feed-validator';
 
 const FEED_FETCH_CONCURRENCY = 50;
@@ -20,55 +19,34 @@ const feedValidator = new FeedValidator();
 const feedStorer = new FeedStorer();
 
 (async () => {
-  // フィード取得、後処理
-  const feeds = await feedCrawler.fetchFeedsAsync(FEED_INFO_LIST, FEED_FETCH_CONCURRENCY);
-  const allFeedItems = feedCrawler.aggregateFeeds(feeds, FILTER_ARTICLE_DATE);
-
-  // フィード関連データ取得
-  const [errorFetchFeedData, results] = await to(
-    Promise.all([
-      feedCrawler.fetchFeedItemOgsResultMap(allFeedItems, FEED_OG_FETCH_CONCURRENCY),
-      feedCrawler.fetchHatenaCountMap(allFeedItems),
-      feedCrawler.fetchFeedBlogOgsResultMap(feeds, FEED_OG_FETCH_CONCURRENCY),
-    ]),
+  // フィード取得
+  const crawlFeedsResult = await feedCrawler.crawlFeeds(
+    FEED_INFO_LIST,
+    FEED_FETCH_CONCURRENCY,
+    FEED_OG_FETCH_CONCURRENCY,
+    FILTER_ARTICLE_DATE,
   );
-  if (errorFetchFeedData) {
-    throw new Error('フィード関連データの取得に失敗しました');
-  }
-  const [allFeedItemOgsResultMap, allFeedItemHatenaCountMap, feedBlogOgsResultMap] = results;
 
   // まとめフィード作成
-  const ogsResultMap = new Map([...allFeedItemOgsResultMap, ...feedBlogOgsResultMap]);
-  const aggregatedFeed = feedGenerator.createFeed(
-    allFeedItems,
+  const ogsResultMap = new Map([...crawlFeedsResult.feedItemOgsResultMap, ...crawlFeedsResult.feedBlogOgsResultMap]);
+  const generateFeedsResult = feedGenerator.generateFeeds(
+    crawlFeedsResult.feedItems,
     ogsResultMap,
-    allFeedItemHatenaCountMap,
+    crawlFeedsResult.feedItemHatenaCountMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
   );
-  const outputFeedSet = feedGenerator.generateOutputFeedSet(aggregatedFeed);
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  const rssValidationResult = await feedValidator.validate(outputFeedSet.rss);
-  const atomValidationResult = await feedValidator.validate(outputFeedSet.atom);
-  if (!rssValidationResult.isValid || !atomValidationResult.isValid) {
-    const rssValidationResultJson = JSON.stringify(rssValidationResult);
-    const atomValidationResultJson = JSON.stringify(atomValidationResult);
-    throw new Error(
-      `まとめフィードのバリデーションエラーです。 rss: ${rssValidationResultJson}, atom: ${atomValidationResultJson}`,
-    );
-  }
+  await feedValidator.assertValidFeeds(generateFeedsResult.feedDistributionSet);
 
   // ファイル出力、画像キャッシュ
-  const [errorStoreFeed] = await to(
-    Promise.all([
-      feedStorer.storeFeeds(outputFeedSet, STORE_FEEDS_DIR_PATH),
-      feedStorer.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, STORE_BLOG_FEEDS_DIR_PATH),
-    ]),
+  await feedStorer.storeFeeds(
+    generateFeedsResult.feedDistributionSet,
+    STORE_FEEDS_DIR_PATH,
+    crawlFeedsResult.feeds,
+    ogsResultMap,
+    crawlFeedsResult.feedItemHatenaCountMap,
+    STORE_BLOG_FEEDS_DIR_PATH,
   );
-  if (errorStoreFeed) {
-    throw new Error('ファイル出力に失敗しました', {
-      cause: errorStoreFeed,
-    });
-  }
 })();

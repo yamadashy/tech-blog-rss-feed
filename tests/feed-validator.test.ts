@@ -4,7 +4,7 @@ import { describe, it, expect } from 'vitest';
 describe('FeedValidator', () => {
   it('正しいXMLフィードはtrue', async () => {
     const feedValidator = new FeedValidator();
-    const validateResult = await feedValidator.validate(
+    const validateResult = await feedValidator.validateFeed(
       `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
         <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
@@ -16,7 +16,7 @@ describe('FeedValidator', () => {
 
   it('正しいXMLフィードはtrue', async () => {
     const feedValidator = new FeedValidator();
-    const validateResult = await feedValidator.validate(
+    const validateResult = await feedValidator.validateFeed(
       `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
         <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
@@ -33,7 +33,7 @@ describe('FeedValidator', () => {
 
   it('正しくないXMLフィードはfalse', async () => {
     const feedValidator = new FeedValidator();
-    const validateResult = await feedValidator.validate(
+    const validateResult = await feedValidator.validateFeed(
       `<?xml version="1.0" encoding="UTF-8"?>
       <rss version="2.0">`,
     );
@@ -42,7 +42,7 @@ describe('FeedValidator', () => {
 
   it('不正な文字を含む場合はfalse', async () => {
     const feedValidator = new FeedValidator();
-    const validateResult = await feedValidator.validate(
+    const validateResult = await feedValidator.validateFeed(
       `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
         <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
@@ -54,7 +54,7 @@ describe('FeedValidator', () => {
 
   it('不正な文字を含む場合はfalse', async () => {
     const feedValidator = new FeedValidator();
-    const validateResult = await feedValidator.validate(
+    const validateResult = await feedValidator.validateFeed(
       `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
         <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>

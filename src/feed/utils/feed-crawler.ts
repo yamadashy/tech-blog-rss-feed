@@ -45,6 +45,14 @@ export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem> & {
   title: string;
 };
 
+export type ClawlFeedsResult = {
+  feeds: CustomRssParserFeed[];
+  feedItems: CustomRssParserItem[];
+  feedItemOgsResultMap: OgsResultMap;
+  feedItemHatenaCountMap: FeedItemHatenaCountMap;
+  feedBlogOgsResultMap: OgsResultMap;
+};
+
 export class FeedCrawler {
   private rssParser;
 
@@ -58,10 +66,39 @@ export class FeedCrawler {
     });
   }
 
+  public async crawlFeeds(
+    feedInfoList: FeedInfo[],
+    feedFetchConcurrency: number,
+    feedOgFetchConcurrency: number,
+    filterArticleDate: Date,
+  ): Promise<ClawlFeedsResult> {
+    const feeds = await this.fetchFeedsAsync(feedInfoList, feedFetchConcurrency);
+    const allFeedItems = this.aggregateFeeds(feeds, filterArticleDate);
+
+    const [errorFetchFeedData, results] = await to(
+      Promise.all([
+        this.fetchFeedItemOgsResultMap(allFeedItems, feedOgFetchConcurrency),
+        this.fetchHatenaCountMap(allFeedItems),
+        this.fetchFeedBlogOgsResultMap(feeds, feedOgFetchConcurrency),
+      ]),
+    );
+    if (errorFetchFeedData) {
+      throw new Error('フィード関連データの取得に失敗しました');
+    }
+
+    return {
+      feeds: feeds,
+      feedItems: allFeedItems,
+      feedItemOgsResultMap: results[0],
+      feedItemHatenaCountMap: results[1],
+      feedBlogOgsResultMap: results[2],
+    };
+  }
+
   /**
    * フィード取得 + 取得後の調整
    */
-  async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<CustomRssParserFeed[]> {
+  private async fetchFeedsAsync(feedInfoList: FeedInfo[], concurrency: number): Promise<CustomRssParserFeed[]> {
     FeedCrawler.validateFeedInfoList(feedInfoList);
 
     const feedInfoListLength = feedInfoList.length;
@@ -217,7 +254,7 @@ export class FeedCrawler {
     return customFeed;
   }
 
-  aggregateFeeds(feeds: CustomRssParserFeed[], filterArticleDate: Date) {
+  private aggregateFeeds(feeds: CustomRssParserFeed[], filterArticleDate: Date) {
     let allFeedItems: CustomRssParserItem[] = [];
     const copiedFeeds: CustomRssParserFeed[] = objectDeepCopy(feeds);
     const filterIsoDate = filterArticleDate.toISOString();
@@ -259,7 +296,10 @@ export class FeedCrawler {
     return allFeedItems;
   }
 
-  async fetchFeedItemOgsResultMap(feedItems: CustomRssParserItem[], concurrency: number): Promise<OgsResultMap> {
+  private async fetchFeedItemOgsResultMap(
+    feedItems: CustomRssParserItem[],
+    concurrency: number,
+  ): Promise<OgsResultMap> {
     const feedItemOgsResultMap: OgsResultMap = new Map();
     const feedItemsLength = feedItems.length;
     let fetchProcessCounter = 1;
@@ -296,7 +336,7 @@ export class FeedCrawler {
     return feedItemOgsResultMap;
   }
 
-  async fetchFeedBlogOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
+  private async fetchFeedBlogOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
     const feedOgsResultMap: OgsResultMap = new Map();
     const feedsLength = feeds.length;
     let fetchProcessCounter = 1;
@@ -365,7 +405,7 @@ export class FeedCrawler {
     return ogsResponse.result;
   }
 
-  async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
+  private async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
     const feedItemHatenaCountMap: Map<string, number> = new Map();
     const feedItemUrlsChunks: string[][] = [];
     let feedItemCounter = 0;
@@ -400,7 +440,7 @@ export class FeedCrawler {
     return feedItemHatenaCountMap;
   }
 
-  async fetchAndCacheOgImages(
+  public async fetchAndCacheOgImages(
     allFeedItems: CustomRssParserItem[],
     ogsResultMap: OgsResultMap,
     feeds: CustomRssParserFeed[],
