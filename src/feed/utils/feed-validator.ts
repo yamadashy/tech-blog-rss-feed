@@ -5,12 +5,12 @@ import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
 import { FeedDistributionSet } from './feed-generator';
 
-export type FeedValidateResult = {
+export interface FeedValidateResult {
   isValid: boolean;
   rssParserError: Error | null;
   atomValidateError: ValidationError | null;
   libxmljsError: Error | null;
-};
+}
 
 /**
  * フィードのバリデーション

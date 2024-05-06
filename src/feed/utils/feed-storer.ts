@@ -6,7 +6,7 @@ import { FeedDistributionSet } from './feed-generator';
 import { logger } from './logger';
 import { to } from 'await-to-js';
 
-export type BlogFeed = {
+export interface BlogFeed {
   title: string;
   link: string;
   linkMd5Hash: string;
@@ -21,7 +21,7 @@ export type BlogFeed = {
     hatenaCount: number;
     ogImageUrl: string;
   }[];
-};
+}
 
 export class FeedStorer {
   public async storeFeeds(
