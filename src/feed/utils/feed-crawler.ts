@@ -45,13 +45,13 @@ export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem> & {
   title: string;
 };
 
-export type ClawlFeedsResult = {
+export interface ClawlFeedsResult {
   feeds: CustomRssParserFeed[];
   feedItems: CustomRssParserItem[];
   feedItemOgsResultMap: OgsResultMap;
   feedItemHatenaCountMap: FeedItemHatenaCountMap;
   feedBlogOgsResultMap: OgsResultMap;
-};
+}
 
 export class FeedCrawler {
   private rssParser;
@@ -406,7 +406,7 @@ export class FeedCrawler {
   }
 
   private async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
-    const feedItemHatenaCountMap: Map<string, number> = new Map();
+    const feedItemHatenaCountMap = new Map<string, number>();
     const feedItemUrlsChunks: string[][] = [];
     let feedItemCounter = 0;
 
