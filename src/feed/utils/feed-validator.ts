@@ -3,6 +3,7 @@ import { ValidationError, XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
 import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
+import { FeedDistributionSet } from './feed-generator';
 
 export type FeedValidateResult = {
   isValid: boolean;
@@ -15,7 +16,19 @@ export type FeedValidateResult = {
  * フィードのバリデーション
  */
 export class FeedValidator {
-  public async validate(feedXml: string): Promise<FeedValidateResult> {
+  public async assertValidFeeds(feedDistributionSet: FeedDistributionSet): Promise<void> {
+    const rssValidationResult = await this.validateFeed(feedDistributionSet.rss);
+    const atomValidationResult = await this.validateFeed(feedDistributionSet.atom);
+    if (!rssValidationResult.isValid || !atomValidationResult.isValid) {
+      const rssValidationResultJson = JSON.stringify(rssValidationResult);
+      const atomValidationResultJson = JSON.stringify(atomValidationResult);
+      throw new Error(
+        `まとめフィードのバリデーションエラーです。 rss: ${rssValidationResultJson}, atom: ${atomValidationResultJson}`,
+      );
+    }
+  }
+
+  public async validateFeed(feedXml: string): Promise<FeedValidateResult> {
     const rssParser = new RssParser();
     const feedValidateResult: FeedValidateResult = {
       isValid: true,

@@ -4,14 +4,45 @@ import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
 
-export interface OutputFeedSet {
+export interface FeedDistributionSet {
   atom: string;
   rss: string;
   json: string;
 }
 
+export interface GenerateFeedResult {
+  aggregatedFeed: Feed;
+  feedDistributionSet: FeedDistributionSet;
+}
+
 export class FeedGenerator {
-  createFeed(
+  public generateFeeds(
+    feedItems: CustomRssParserItem[],
+    feedItemOgsResultMap: OgsResultMap,
+    allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
+    maxFeedDescriptionLength: number,
+    maxFeedContentLength: number,
+  ): GenerateFeedResult {
+    const aggregatedFeed = this.generateAggregatedFeed(
+      feedItems,
+      feedItemOgsResultMap,
+      allFeedItemHatenaCountMap,
+      maxFeedDescriptionLength,
+      maxFeedContentLength,
+    );
+
+    return {
+      aggregatedFeed,
+      feedDistributionSet: {
+        // 出力されているXMLで & がエスケープされていないのでパッチ対応
+        atom: escapeTextForXml(aggregatedFeed.atom1()),
+        rss: escapeTextForXml(aggregatedFeed.rss2()),
+        json: aggregatedFeed.json1(),
+      },
+    };
+  }
+
+  private generateAggregatedFeed(
     feedItems: CustomRssParserItem[],
     feedItemOgsResultMap: OgsResultMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
@@ -95,14 +126,5 @@ export class FeedGenerator {
     logger.info('[create-feed] finished');
 
     return outputFeed;
-  }
-
-  public generateOutputFeedSet(feed: Feed): OutputFeedSet {
-    return {
-      // 出力されているXMLで & がエスケープされていないのでパッチ対応
-      atom: escapeTextForXml(feed.atom1()),
-      rss: escapeTextForXml(feed.rss2()),
-      json: feed.json1(),
-    };
   }
 }
