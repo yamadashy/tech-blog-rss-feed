@@ -6,7 +6,6 @@ import { CustomRssParserFeed, CustomRssParserItem, OgObjectMap } from './feed-cr
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
 export class ImagePrecacher {
-
   public async fetchAndCacheFeedImages(
     feeds: CustomRssParserFeed[],
     feedItems: CustomRssParserItem[],
@@ -47,5 +46,4 @@ export class ImagePrecacher {
 
     logger.info('[cache-og-image] finished');
   }
-
 }
