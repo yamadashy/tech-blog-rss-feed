@@ -4588,7 +4588,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cacache@npm:18.0.2, cacache@npm:^18.0.0":
+"cacache@npm:18.0.3":
+  version: 18.0.3
+  resolution: "cacache@npm:18.0.3"
+  dependencies:
+    "@npmcli/fs": "npm:^3.1.0"
+    fs-minipass: "npm:^3.0.0"
+    glob: "npm:^10.2.2"
+    lru-cache: "npm:^10.0.1"
+    minipass: "npm:^7.0.3"
+    minipass-collect: "npm:^2.0.1"
+    minipass-flush: "npm:^1.0.5"
+    minipass-pipeline: "npm:^1.2.4"
+    p-map: "npm:^4.0.0"
+    ssri: "npm:^10.0.0"
+    tar: "npm:^6.1.11"
+    unique-filename: "npm:^3.0.0"
+  checksum: 10/d4c161f071524bb636334b8cf94780c014e29c180a886b8184da8f2f44d2aca88d5664797c661e9f74bdbd34697c2f231ed7c24c256cecbb0a0563ad1ada2219
+  languageName: node
+  linkType: hard
+
+"cacache@npm:^18.0.0":
   version: 18.0.2
   resolution: "cacache@npm:18.0.2"
   dependencies:
@@ -10843,8 +10863,8 @@ __metadata:
   linkType: hard
 
 "renovate@npm:^37.253.1":
-  version: 37.354.5
-  resolution: "renovate@npm:37.354.5"
+  version: 37.354.6
+  resolution: "renovate@npm:37.354.6"
   dependencies:
     "@aws-sdk/client-codecommit": "npm:3.565.0"
     "@aws-sdk/client-ec2": "npm:3.565.0"
@@ -10879,7 +10899,7 @@ __metadata:
     azure-devops-node-api: "npm:13.0.0"
     better-sqlite3: "npm:9.6.0"
     bunyan: "npm:1.8.15"
-    cacache: "npm:18.0.2"
+    cacache: "npm:18.0.3"
     cacheable-lookup: "npm:5.0.4"
     chalk: "npm:4.1.2"
     changelog-filename-regex: "npm:2.0.1"
@@ -10964,7 +10984,7 @@ __metadata:
   bin:
     renovate: dist/renovate.js
     renovate-config-validator: dist/config-validator.js
-  checksum: 10/3b4ef024d5501e63b81af27a0edc2b4964562a8f03725b1d0e424c0f97ea2777e54d82807f5f0f6735631b464f3eab26355028aedaf51582952e705d024d8acb
+  checksum: 10/d0f449d0bc82ba390a4bfded84bba5d0f04273954f5c18896687c8744a101473c953ff75d213dbd1c437805454c87d26075d2bc450d33d324e26c32a766eaa2c
   languageName: node
   linkType: hard
 
