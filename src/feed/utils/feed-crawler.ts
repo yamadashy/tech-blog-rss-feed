@@ -16,23 +16,14 @@ import constants from '../../common/constants';
 import eleventyCacheOption from '../../common/eleventy-cache-option';
 import { to } from 'await-to-js';
 const ogs = require('open-graph-scraper');
+import { OpenGraphScraperOptions, OgObject, ImageObject } from 'open-graph-scraper/dist/lib/types';
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
-export interface OgsResult {
-  ogTitle: string;
-  ogType: string;
-  ogUrl: string;
-  ogDescription: string;
-  favicon: string;
-  requestUrl: string;
-  ogImage: {
-    url: string;
-    width: string;
-    height: string;
-    type: string;
-  };
-}
-export type OgsResultMap = Map<string, OgsResult>;
+export type CustomOgObject = OgObject & {
+  // 画像は一つだけとする
+  customOgImage?: ImageObject;
+};
+export type OgObjectMap = Map<string, CustomOgObject>;
 export type FeedItemHatenaCountMap = Map<string, number>;
 export type CustomRssParserItem = RssParser.Item & {
   link: string;
@@ -48,9 +39,9 @@ export type CustomRssParserFeed = RssParser.Output<CustomRssParserItem> & {
 export interface ClawlFeedsResult {
   feeds: CustomRssParserFeed[];
   feedItems: CustomRssParserItem[];
-  feedItemOgsResultMap: OgsResultMap;
+  feedItemOgObjectMap: OgObjectMap;
   feedItemHatenaCountMap: FeedItemHatenaCountMap;
-  feedBlogOgsResultMap: OgsResultMap;
+  feedBlogOgObjectMap: OgObjectMap;
 }
 
 export class FeedCrawler {
@@ -72,14 +63,16 @@ export class FeedCrawler {
     feedOgFetchConcurrency: number,
     filterArticleDate: Date,
   ): Promise<ClawlFeedsResult> {
+    // フィード取得してまとめる
     const feeds = await this.fetchFeedsAsync(feedInfoList, feedFetchConcurrency);
     const allFeedItems = this.aggregateFeeds(feeds, filterArticleDate);
 
+    // OGPなどの情報取得
     const [errorFetchFeedData, results] = await to(
       Promise.all([
-        this.fetchFeedItemOgsResultMap(allFeedItems, feedOgFetchConcurrency),
+        this.fetchFeedItemOgObjectMap(allFeedItems, feedOgFetchConcurrency),
         this.fetchHatenaCountMap(allFeedItems),
-        this.fetchFeedBlogOgsResultMap(feeds, feedOgFetchConcurrency),
+        this.fetchFeedBlogOgObjectMap(feeds, feedOgFetchConcurrency),
       ]),
     );
     if (errorFetchFeedData) {
@@ -89,9 +82,9 @@ export class FeedCrawler {
     return {
       feeds: feeds,
       feedItems: allFeedItems,
-      feedItemOgsResultMap: results[0],
+      feedItemOgObjectMap: results[0],
       feedItemHatenaCountMap: results[1],
-      feedBlogOgsResultMap: results[2],
+      feedBlogOgObjectMap: results[2],
     };
   }
 
@@ -296,24 +289,21 @@ export class FeedCrawler {
     return allFeedItems;
   }
 
-  private async fetchFeedItemOgsResultMap(
-    feedItems: CustomRssParserItem[],
-    concurrency: number,
-  ): Promise<OgsResultMap> {
-    const feedItemOgsResultMap: OgsResultMap = new Map();
+  private async fetchFeedItemOgObjectMap(feedItems: CustomRssParserItem[], concurrency: number): Promise<OgObjectMap> {
+    const feedItemOgObjectMap: OgObjectMap = new Map();
     const feedItemsLength = feedItems.length;
     let fetchProcessCounter = 1;
 
     await PromisePool.for(feedItems)
       .withConcurrency(concurrency)
       .process(async (feedItem) => {
-        const [error, ogsResult] = await to(
+        const [error, ogObject] = await to(
           exponentialBackoff((attemptCount: number) => {
             if (attemptCount > 0) {
               logger.warn(`[fetch-feed-item-og] retry ${feedItem.link}`);
             }
 
-            return FeedCrawler.fetchOgsResult(feedItem.link);
+            return FeedCrawler.fetchOgObject(feedItem.link);
           }),
         );
         if (error) {
@@ -327,30 +317,30 @@ export class FeedCrawler {
           return;
         }
 
-        feedItemOgsResultMap.set(feedItem.link, ogsResult);
+        feedItemOgObjectMap.set(feedItem.link, ogObject);
         logger.info('[fetch-feed-item-og] fetched', `${fetchProcessCounter++}/${feedItemsLength}`, feedItem.title);
       });
 
     logger.info('[fetch-feed-item-og] finished');
 
-    return feedItemOgsResultMap;
+    return feedItemOgObjectMap;
   }
 
-  private async fetchFeedBlogOgsResultMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgsResultMap> {
-    const feedOgsResultMap: OgsResultMap = new Map();
+  private async fetchFeedBlogOgObjectMap(feeds: CustomRssParserFeed[], concurrency: number): Promise<OgObjectMap> {
+    const feedOgObjectMap: OgObjectMap = new Map();
     const feedsLength = feeds.length;
     let fetchProcessCounter = 1;
 
     await PromisePool.for(feeds)
       .withConcurrency(concurrency)
       .process(async (feed) => {
-        const [error, ogsResult] = await to(
+        const [error, ogObject] = await to(
           exponentialBackoff((attemptCount: number) => {
             if (attemptCount > 0) {
               logger.warn(`[fetch-feed-blog-og] retry ${feed.link}`);
             }
 
-            return FeedCrawler.fetchOgsResult(feed.link);
+            return FeedCrawler.fetchOgObject(feed.link);
           }),
         );
         if (error) {
@@ -359,28 +349,26 @@ export class FeedCrawler {
           return;
         }
 
-        feedOgsResultMap.set(feed.link, ogsResult);
+        feedOgObjectMap.set(feed.link, ogObject);
         logger.info('[fetch-feed-blog-og] fetched', `${fetchProcessCounter++}/${feedsLength}`, feed.title);
       });
 
     logger.info('[fetch-feed-blog-og] finished');
 
-    return feedOgsResultMap;
+    return feedOgObjectMap;
   }
 
-  private static async fetchOgsResult(url: string): Promise<OgsResult> {
-    const [error, ogsResponse] = await to<{ result: OgsResult }>(
-      ogs({
-        url: url,
-        timeout: 10 * 1000,
-        // 10MB
-        downloadLimit: 10 * 1000 * 1000,
-        retry: 3,
+  private static async fetchOgObject(url: string): Promise<CustomOgObject> {
+    const options: OpenGraphScraperOptions = {
+      url: url,
+      timeout: 10 * 1000,
+      fetchOptions: {
         headers: {
           'user-agent': constants.requestUserAgent,
         },
-      }),
-    );
+      },
+    };
+    const [error, ogsResponse] = await to<{ result: OgObject }>(ogs(options));
     if (error) {
       return Promise.reject(
         new Error(`OGの取得に失敗しました。 url: ${url}`, {
@@ -389,20 +377,31 @@ export class FeedCrawler {
       );
     }
 
-    const ogsResult = ogsResponse.result;
-    const ogImageUrl = ogsResult?.ogImage?.url;
+    const ogObject = ogsResponse.result;
+    const ogImages = ogObject?.ogImage;
 
-    // 一部URLがおかしいものの対応
-    if (ogImageUrl && ogImageUrl.startsWith('https://tech.fusic.co.jphttps')) {
-      ogsResult.ogImage.url = ogImageUrl.substring('https://tech.fusic.co.jp'.length);
+    // データの調整
+    if (ogImages !== undefined) {
+      for (const ogImage of ogImages) {
+        const ogImageUrl = ogImage.url;
+
+        // 一部URLがおかしいものの対応
+        if (ogImageUrl && ogImageUrl.startsWith('https://tech.fusic.co.jphttps')) {
+          ogImage.url = ogImageUrl.substring('https://tech.fusic.co.jp'.length);
+        }
+
+        // http から始まってなければ調整
+        if (ogImageUrl && !ogImageUrl.startsWith('http')) {
+          ogImage.url = new URL(ogImageUrl, url).toString();
+        }
+      }
     }
 
-    // http から始まってなければ調整
-    if (ogImageUrl && !ogImageUrl.startsWith('http')) {
-      ogsResult.ogImage.url = new URL(ogImageUrl, url).toString();
-    }
+    // 画像は一つとして扱いたいのでカスタム
+    const customOgObject: CustomOgObject = ogObject;
+    customOgObject.customOgImage = ogImages?.[0];
 
-    return ogsResponse.result;
+    return customOgObject;
   }
 
   private async fetchHatenaCountMap(feedItems: CustomRssParserItem[]): Promise<FeedItemHatenaCountMap> {
@@ -442,18 +441,18 @@ export class FeedCrawler {
 
   public async fetchAndCacheOgImages(
     allFeedItems: CustomRssParserItem[],
-    ogsResultMap: OgsResultMap,
+    ogObjectMap: OgObjectMap,
     feeds: CustomRssParserFeed[],
     concurrency: number,
   ): Promise<void> {
     let ogImageUrls: string[] = [];
 
     for (const feedItem of allFeedItems) {
-      ogImageUrls.push(ogsResultMap.get(feedItem.link)?.ogImage?.url || '');
+      ogImageUrls.push(ogObjectMap.get(feedItem.link)?.customOgImage?.url || '');
     }
 
     for (const feed of feeds) {
-      ogImageUrls.push(ogsResultMap.get(feed.link)?.ogImage?.url || '');
+      ogImageUrls.push(ogObjectMap.get(feed.link)?.customOgImage?.url || '');
     }
 
     // フィルタ
