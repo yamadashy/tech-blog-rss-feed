@@ -21,6 +21,10 @@
       "matchUpdateTypes": ["major"],
       "groupName": "major dependencies",
       "automerge": false
+    },
+    {
+      "matchPackageNames": ["renovate"],
+      "enabled": false
     }
   ]
 }
