@@ -1,5 +1,5 @@
 import { Feed, FeedOptions } from 'feed';
-import { CustomRssParserItem, FeedItemHatenaCountMap, OgsResultMap } from './feed-crawler';
+import { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
 import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
 import { logger } from './logger';
 import * as constants from '../../common/constants';
@@ -18,14 +18,14 @@ export interface GenerateFeedResult {
 export class FeedGenerator {
   public generateFeeds(
     feedItems: CustomRssParserItem[],
-    feedItemOgsResultMap: OgsResultMap,
+    feedItemOgObjectMap: OgObjectMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     maxFeedDescriptionLength: number,
     maxFeedContentLength: number,
   ): GenerateFeedResult {
     const aggregatedFeed = this.generateAggregatedFeed(
       feedItems,
-      feedItemOgsResultMap,
+      feedItemOgObjectMap,
       allFeedItemHatenaCountMap,
       maxFeedDescriptionLength,
       maxFeedContentLength,
@@ -44,7 +44,7 @@ export class FeedGenerator {
 
   private generateAggregatedFeed(
     feedItems: CustomRssParserItem[],
-    feedItemOgsResultMap: OgsResultMap,
+    feedItemOgObjectMap: OgObjectMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     maxFeedDescriptionLength: number,
     maxFeedContentLength: number,
@@ -69,8 +69,9 @@ export class FeedGenerator {
       const feedItemId = feedItem.guid || feedItem.link;
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
 
-      const ogsResult = feedItemOgsResultMap.get(feedItem.link);
-      const ogImage = ogsResult?.ogImage;
+      const ogObject = feedItemOgObjectMap.get(feedItem.link);
+      // 配列担っているが2つ目以降を使う理由もないので0を使う
+      const ogImage = ogObject?.customOgImage;
 
       // 日付がないものは入れない
       if (!feedItem.isoDate) {

@@ -28,24 +28,26 @@ const feedStorer = new FeedStorer();
   );
 
   // まとめフィード作成
-  const ogsResultMap = new Map([...crawlFeedsResult.feedItemOgsResultMap, ...crawlFeedsResult.feedBlogOgsResultMap]);
+  const ogObjectMap = new Map([...crawlFeedsResult.feedItemOgObjectMap, ...crawlFeedsResult.feedBlogOgObjectMap]);
   const generateFeedsResult = feedGenerator.generateFeeds(
     crawlFeedsResult.feedItems,
-    ogsResultMap,
+    ogObjectMap,
     crawlFeedsResult.feedItemHatenaCountMap,
     MAX_FEED_DESCRIPTION_LENGTH,
     MAX_FEED_CONTENT_LENGTH,
   );
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  await feedValidator.assertValidFeeds(generateFeedsResult.feedDistributionSet);
+  await feedValidator.assertFeed(generateFeedsResult.aggregatedFeed);
+  await feedValidator.assertXmlFeed('atom', generateFeedsResult.feedDistributionSet.atom);
+  await feedValidator.assertXmlFeed('rss', generateFeedsResult.feedDistributionSet.rss);
 
   // ファイル出力、画像キャッシュ
   await feedStorer.storeFeeds(
     generateFeedsResult.feedDistributionSet,
     STORE_FEEDS_DIR_PATH,
     crawlFeedsResult.feeds,
-    ogsResultMap,
+    ogObjectMap,
     crawlFeedsResult.feedItemHatenaCountMap,
     STORE_BLOG_FEEDS_DIR_PATH,
   );

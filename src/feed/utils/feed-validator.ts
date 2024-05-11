@@ -1,70 +1,62 @@
 import RssParser from 'rss-parser';
-import { ValidationError, XMLValidator } from 'fast-xml-parser';
+import { XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
 import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
-import { FeedDistributionSet } from './feed-generator';
-
-export type FeedValidateResult = {
-  isValid: boolean;
-  rssParserError: Error | null;
-  atomValidateError: ValidationError | null;
-  libxmljsError: Error | null;
-};
+import { Feed } from 'feed';
 
 /**
  * フィードのバリデーション
  */
 export class FeedValidator {
-  public async assertValidFeeds(feedDistributionSet: FeedDistributionSet): Promise<void> {
-    const rssValidationResult = await this.validateFeed(feedDistributionSet.rss);
-    const atomValidationResult = await this.validateFeed(feedDistributionSet.atom);
-    if (!rssValidationResult.isValid || !atomValidationResult.isValid) {
-      const rssValidationResultJson = JSON.stringify(rssValidationResult);
-      const atomValidationResultJson = JSON.stringify(atomValidationResult);
-      throw new Error(
-        `まとめフィードのバリデーションエラーです。 rss: ${rssValidationResultJson}, atom: ${atomValidationResultJson}`,
-      );
+  public async assertFeed(feed: Feed): Promise<void> {
+    logger.info('[FeedValidator] フィードのバリデーション開始');
+
+    // 一つでもimageがあればok
+    let isImageFound = false;
+    for (const item of feed.items) {
+      if (item.image) {
+        isImageFound = true;
+        break;
+      }
     }
+    if (!isImageFound) {
+      throw new Error('フィードに画像情報が一つもありません');
+    }
+
+    logger.info('[FeedValidator] フィードのバリデーション完了');
   }
 
-  public async validateFeed(feedXml: string): Promise<FeedValidateResult> {
+  public async assertXmlFeed(label: string, feedXml: string): Promise<void> {
     const rssParser = new RssParser();
-    const feedValidateResult: FeedValidateResult = {
-      isValid: true,
-      rssParserError: null,
-      atomValidateError: null,
-      libxmljsError: null,
-    };
 
-    logger.info('[FeedValidator] バリデーション開始');
+    logger.info(`[FeedValidator] XMLフィードのバリデーション開始。 label: ${label}`);
 
     // rss-parser で変換してみてエラーが出ないか確認
     const [rssParserError] = await to(rssParser.parseString(feedXml));
     if (rssParserError) {
-      feedValidateResult.isValid = false;
-      feedValidateResult.rssParserError = rssParserError;
+      throw new Error(
+        `rss-parserによるフィードのバリデーションエラーです。 label: ${label}, error: ${rssParserError}}`,
+      );
     }
 
-    // XMLValidator でバリデーション
+    // fast-xml-parser XMLValidator でバリデーション
     const atomValidateResult = XMLValidator.validate(feedXml);
     if (atomValidateResult !== true) {
-      feedValidateResult.isValid = false;
-      feedValidateResult.atomValidateError = atomValidateResult;
+      throw new Error(
+        `fast-xml-parser XMLValidatorによるフィードのバリデーションエラーです。 label: ${label}, result: ${atomValidateResult}`,
+      );
     }
 
     // libxmljs でバリデーション
     try {
       libxmljs.parseXml(feedXml);
     } catch (libxmljsError) {
-      feedValidateResult.isValid = false;
       if (libxmljsError instanceof Error) {
-        feedValidateResult.libxmljsError = libxmljsError;
+        throw new Error(`libxmljsによるフィードのバリデーションエラーです。 error: ${libxmljsError.message}`);
       }
     }
 
-    logger.info('[FeedValidator] バリデーション終了');
-
-    return feedValidateResult;
+    logger.info(`[FeedValidator] XMLフィードのバリデーション完了。 label: ${label}`);
   }
 }

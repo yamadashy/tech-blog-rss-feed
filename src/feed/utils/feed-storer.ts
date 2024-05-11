@@ -1,12 +1,12 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { OgsResultMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
+import { OgObjectMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
 import { textToMd5Hash, textTruncate } from './common-util';
 import { FeedDistributionSet } from './feed-generator';
 import { logger } from './logger';
 import { to } from 'await-to-js';
 
-export type BlogFeed = {
+export interface BlogFeed {
   title: string;
   link: string;
   linkMd5Hash: string;
@@ -21,21 +21,21 @@ export type BlogFeed = {
     hatenaCount: number;
     ogImageUrl: string;
   }[];
-};
+}
 
 export class FeedStorer {
   public async storeFeeds(
     feedDistributionSet: FeedDistributionSet,
     storeArticleDirPath: string,
     feeds: CustomRssParserFeed[],
-    ogsResultMap: OgsResultMap,
+    ogObjectMap: OgObjectMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     storeBlogDirPath: string,
   ): Promise<void> {
     const [errorStoreFeed] = await to(
       Promise.all([
         this.storeArticleFeeds(feedDistributionSet, storeArticleDirPath),
-        this.storeBlogFeeds(feeds, ogsResultMap, allFeedItemHatenaCountMap, storeBlogDirPath),
+        this.storeBlogFeeds(feeds, ogObjectMap, allFeedItemHatenaCountMap, storeBlogDirPath),
       ]),
     );
     if (errorStoreFeed) {
@@ -56,7 +56,7 @@ export class FeedStorer {
 
   private async storeBlogFeeds(
     feeds: CustomRssParserFeed[],
-    ogsResultMap: OgsResultMap,
+    ogObjectMap: OgObjectMap,
     allFeedItemHatenaCountMap: FeedItemHatenaCountMap,
     storeDirPath: string,
   ): Promise<void> {
@@ -70,8 +70,8 @@ export class FeedStorer {
         title: feed.title,
         link: feed.link,
         linkMd5Hash: textToMd5Hash(feed.link),
-        ogImageUrl: ogsResultMap.get(feed.link)?.ogImage?.url || '',
-        ogDescription: ogsResultMap.get(feed.link)?.ogDescription || '',
+        ogImageUrl: ogObjectMap.get(feed.link)?.customOgImage?.url || '',
+        ogDescription: ogObjectMap.get(feed.link)?.ogDescription || '',
         items: [],
       };
 
@@ -84,7 +84,7 @@ export class FeedStorer {
           link: feedItem.link,
           isoDate: feedItem.isoDate,
           hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
-          ogImageUrl: ogsResultMap.get(feedItem.link)?.ogImage?.url || '',
+          ogImageUrl: ogObjectMap.get(feedItem.link)?.customOgImage?.url || '',
         });
       }
 

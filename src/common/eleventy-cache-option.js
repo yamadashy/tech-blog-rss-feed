@@ -8,4 +8,4 @@ module.exports = {
       'user-agent': constants.requestUserAgent,
     },
   },
-}
+};

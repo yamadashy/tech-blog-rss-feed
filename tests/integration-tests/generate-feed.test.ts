@@ -27,10 +27,10 @@ describe('フィード生成', async () => {
     );
 
     // まとめフィード作成
-    const ogsResultMap = new Map([...crawlFeedsResult.feedItemOgsResultMap, ...crawlFeedsResult.feedBlogOgsResultMap]);
+    const ogObjectMap = new Map([...crawlFeedsResult.feedItemOgObjectMap, ...crawlFeedsResult.feedBlogOgObjectMap]);
     const generateFeedsResult = feedGenerator.generateFeeds(
       crawlFeedsResult.feedItems,
-      ogsResultMap,
+      ogObjectMap,
       crawlFeedsResult.feedItemHatenaCountMap,
       MAX_FEED_DESCRIPTION_LENGTH,
       MAX_FEED_CONTENT_LENGTH,
