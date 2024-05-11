@@ -401,6 +401,11 @@ export class FeedCrawler {
     const customOgObject: CustomOgObject = ogObject;
     customOgObject.customOgImage = ogImages?.[0];
 
+    // faviconはフルURLにする
+    if (customOgObject.favicon && !customOgObject.favicon.startsWith('http')) {
+      customOgObject.favicon = new URL(customOgObject.favicon, url).toString();
+    }
+
     return customOgObject;
   }
 
@@ -437,47 +442,6 @@ export class FeedCrawler {
     logger.info('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 
     return feedItemHatenaCountMap;
-  }
-
-  public async fetchAndCacheOgImages(
-    allFeedItems: CustomRssParserItem[],
-    ogObjectMap: OgObjectMap,
-    feeds: CustomRssParserFeed[],
-    concurrency: number,
-  ): Promise<void> {
-    let ogImageUrls: string[] = [];
-
-    for (const feedItem of allFeedItems) {
-      ogImageUrls.push(ogObjectMap.get(feedItem.link)?.customOgImage?.url || '');
-    }
-
-    for (const feed of feeds) {
-      ogImageUrls.push(ogObjectMap.get(feed.link)?.customOgImage?.url || '');
-    }
-
-    // フィルタ
-    ogImageUrls = ogImageUrls.filter(Boolean);
-
-    // 画像取得
-    const ogImageUrlsLength = ogImageUrls.length;
-    let fetchProcessCounter = 1;
-
-    EleventyFetch.concurrency = concurrency;
-
-    await PromisePool.for(ogImageUrls)
-      .withConcurrency(concurrency)
-      .process(async (ogImageUrl) => {
-        const [error] = await to(EleventyFetch(ogImageUrl, eleventyCacheOption));
-        if (error) {
-          logger.error('[cache-og-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
-          logger.trace(error);
-          return;
-        }
-
-        logger.info('[cache-og-image] fetched', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
-      });
-
-    logger.info('[cache-og-image] finished');
   }
 
   private static subtractFeedItemsDateHour(feed: CustomRssParserFeed, subHours: number) {
