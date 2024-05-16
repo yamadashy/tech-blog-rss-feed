@@ -187,6 +187,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
   ['Pentagon', 'https://blog.pentagon.tokyo/category/engineer/feed/'],
   ['PharmaX', 'https://zenn.dev/p/pharmax/feed', [FLAG_ZENN_PUBLICATION]],
+  ['PLAY', 'https://developers.play.jp/rss'],
   ['Playground', 'https://tech.playground.style/feed/'],
   ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'],
   ['Progate', 'https://tech.prog-8.com/feed'],
