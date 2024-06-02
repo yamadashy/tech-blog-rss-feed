@@ -11,7 +11,7 @@
   "automerge": true,
   "branchConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "labels": ["dependencies"],
+  "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "minor"],
