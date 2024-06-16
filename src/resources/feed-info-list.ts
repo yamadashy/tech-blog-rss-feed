@@ -409,6 +409,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['サイボウズ 生産性向上チーム', 'https://zenn.dev/p/cybozu_ept/feed', [FLAG_ZENN_PUBLICATION]],
   ['サイボウズ', 'https://blog.cybozu.io/feed'],
   ['サムザップ', 'https://tech.sumzap.co.jp/feed'],
+  ['サントリーウエルネス', 'https://wellness-tech.suntory.co.jp/index.xml'],
   ['シェアフル', 'https://zenn.dev/sharefull/feed'],
   ['シナジーマーケティング', 'https://blog.techscore.com/feed'],
   ['シナプス', 'https://tech.synapse.jp/feed'],
