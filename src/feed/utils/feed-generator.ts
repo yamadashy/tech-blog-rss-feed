@@ -102,10 +102,7 @@ export class FeedGenerator {
             : undefined,
         image:
           ogImage && ogImage.url
-            ? {
-                type: ogImage.type,
-                url: ogImage.url,
-              }
+            ? ogImage
             : undefined,
         published: new Date(feedItem.isoDate),
         date: new Date(feedItem.isoDate),
@@ -118,6 +115,7 @@ export class FeedGenerator {
               blogTitle: feedItem.blogTitle,
               blogLink: feedItem.blogLink,
               blogLinkMd5Hash: textToMd5Hash(feedItem.blogLink),
+              favicon: ogObject?.favicon
             },
           },
         ],

@@ -1,7 +1,7 @@
 <div class='ui-feed-item'>
     <a class='ui-feed-item__og-image' href='{{ feedItem.url }}'>
         {% if feedItem.image %}
-            {% image feedItem.image.url, '記事のアイキャッチ画像', page.url | relativeUrl %}
+            {% imageThumbnail feedItem.image.url, '記事のアイキャッチ画像', page.url | relativeUrl %}
         {% else %}
             <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="lazy" alt='記事のアイキャッチ画像' width='256' height='256'>
         {% endif %}
@@ -10,11 +10,16 @@
         <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem._custom.originalTitle }}</a>
         {% if feedItem._custom.hatenaCount > 0 %}
             <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
-                <img src='{{ page.url | relativeUrl }}images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" width='96' height='96'>
+                <img src='{{ page.url | relativeUrl }}images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="lazy" width='16' height='16'>
                 <span>{{ feedItem._custom.hatenaCount }}</span>
             </div>
         {% endif %}
-        <a class='ui-feed-item__blog-title ui-feed-item__blog-title--link' href='{{ page.url | relativeUrl }}blogs/{{ feedItem._custom.blogLinkMd5Hash }}'>{{ feedItem._custom.blogTitle }}</a>
+        <a class='ui-feed-item__blog-title ui-feed-item__blog-title--link' href='{{ page.url | relativeUrl }}blogs/{{ feedItem._custom.blogLinkMd5Hash }}'>
+          {% if feedItem._custom.favicon %}
+            {% imageIcon feedItem._custom.favicon, 'ブログのファビコン', page.url | relativeUrl %}
+          {% endif %}
+          <span>{{ feedItem._custom.blogTitle }}</span>
+        </a>
         {% if feedItem.content_html %}
             <div class='ui-feed-item__summary'>{{ feedItem.content_html | truncate(500, true, "...") }}</div>
         {% endif %}

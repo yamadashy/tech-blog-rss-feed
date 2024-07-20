@@ -2,9 +2,11 @@ const htmlmin = require('html-minifier-terser');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const ts = require('typescript');
-const constants = require('./src/common/constants');
 const eleventyCacheOption = require('./src/common/eleventy-cache-option');
 const CleanCSS = require("clean-css");
+const EleventyFetch = require("@11ty/eleventy-fetch");
+const sharpIco = require("sharp-ico");
+const url = require('url');
 
 Image.concurrency = 50;
 
@@ -24,7 +26,7 @@ const minifyHtmlTransform = (content, outputPath) => {
   return content;
 }
 
-const imageShortcode = async (src, alt, pathPrefix = '') => {
+const imageThumbnailShortcode = async (src, alt, pathPrefix = '') => {
   let metadata = null;
 
   try {
@@ -41,15 +43,59 @@ const imageShortcode = async (src, alt, pathPrefix = '') => {
         quality: 70,
       }
     });
-  } catch (e) {
+  } catch {
     // エラーが起きたら代替画像にする
-    console.log('[image-short-code] error', src);
+    console.log('[image-thumbnail-short-code] error', src);
     return `<img src='${pathPrefix}images/alternate-feed-image.png' alt='${alt}' loading='lazy' width='256' height='256'>`
   }
 
   return Image.generateHTML(metadata, {
     alt,
     sizes: '100vw',
+    loading: 'lazy',
+    decoding: 'async',
+  });
+}
+
+const imageIconShortcode = async (src, alt, pathPrefix = '') => {
+  const parsedUrl = url.parse(src);
+  const fileName = path.basename(parsedUrl.pathname);
+  const fileExtension = path.extname(fileName).toLowerCase();
+  let imageSrc = src;
+  let metadata = null;
+
+  if (fileExtension === '.ico') {
+    try {
+      const icoBuffer = await EleventyFetch(src, eleventyCacheOption);
+      const sharpInstances = await sharpIco.sharpsFromIco(icoBuffer);
+      const sharpInstance = sharpInstances.sort((a, b) => b.width - a.width)[0];
+      imageSrc = await sharpInstance.png().toBuffer();
+    } catch (error) {
+      // エラーが起きたら画像なし
+      console.error('[image-icon-short-code] Error processing ICO:', src, error);
+      return ``;
+    }
+  }
+
+  try {
+    metadata = await Image(imageSrc, {
+      widths: [16],
+      formats: ["png"],
+      outputDir: 'public/images/feed-icons',
+      urlPath: `${pathPrefix}images/feed-icons/`,
+      cacheOptions: eleventyCacheOption,
+      sharpPngOptions: {
+        quality: 50,
+      }
+    });
+  } catch (error) {
+    // エラーが起きたら画像なし
+    console.log('[image-icon-short-code] Error processing image', src, error);
+    return ``
+  }
+
+  return Image.generateHTML(metadata, {
+    alt,
     loading: 'lazy',
     decoding: 'async',
   });
@@ -83,7 +129,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/site/feeds');
 
   // images
-  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode('imageThumbnail', imageThumbnailShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode('imageIcon', imageIconShortcode);
 
   // minify html
   eleventyConfig.addTransform('minify html', minifyHtmlTransform);

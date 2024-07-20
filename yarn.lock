@@ -1246,6 +1246,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@canvas/image-data@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@canvas/image-data@npm:1.0.0"
+  checksum: 10/0929dfedb2545297fd1f74ac9c8d38d4517615a5d17e8e812929caeec677ab96c86ec491640441bd7880a4b5612a91e0243acf29a4576d1e0fbc7537f875bb7d
+  languageName: node
+  linkType: hard
+
 "@cdktf/hcl2json@npm:0.20.7":
   version: 0.20.7
   resolution: "@cdktf/hcl2json@npm:0.20.7"
@@ -1261,6 +1268,15 @@ __metadata:
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: 10/9c804f79453aa378fbcd0106e67216b9dc2514ec6d4c0ce06aa5483ba853c6f92e1b84cc60b4253276df7355daf40eda5c929b4613e7179bed4f4d3be7d74d83
+  languageName: node
+  linkType: hard
+
+"@emnapi/runtime@npm:^1.1.1":
+  version: 1.2.0
+  resolution: "@emnapi/runtime@npm:1.2.0"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10/c954b36493b713e451c74e9f1a48124b5491196700ec458c5d4a94eac3351e14803b4fd48ae6f72c77956d75792093d377f96412a6f59766099cb142e5c5b8f4
   languageName: node
   linkType: hard
 
@@ -1532,9 +1548,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-darwin-arm64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-darwin-arm64@npm:0.33.4"
+  dependencies:
+    "@img/sharp-libvips-darwin-arm64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-darwin-arm64":
+      optional: true
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-x64@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-darwin-x64@npm:0.33.3"
+  dependencies:
+    "@img/sharp-libvips-darwin-x64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-darwin-x64":
+      optional: true
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@img/sharp-darwin-x64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-darwin-x64@npm:0.33.4"
   dependencies:
     "@img/sharp-libvips-darwin-x64": "npm:1.0.2"
   dependenciesMeta:
@@ -1612,9 +1652,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-linux-arm64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linux-arm64@npm:0.33.4"
+  dependencies:
+    "@img/sharp-libvips-linux-arm64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linux-arm64":
+      optional: true
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
 "@img/sharp-linux-arm@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-linux-arm@npm:0.33.3"
+  dependencies:
+    "@img/sharp-libvips-linux-arm": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linux-arm":
+      optional: true
+  conditions: os=linux & cpu=arm & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@img/sharp-linux-arm@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linux-arm@npm:0.33.4"
   dependencies:
     "@img/sharp-libvips-linux-arm": "npm:1.0.2"
   dependenciesMeta:
@@ -1636,9 +1700,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-linux-s390x@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linux-s390x@npm:0.33.4"
+  dependencies:
+    "@img/sharp-libvips-linux-s390x": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linux-s390x":
+      optional: true
+  conditions: os=linux & cpu=s390x & libc=glibc
+  languageName: node
+  linkType: hard
+
 "@img/sharp-linux-x64@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-linux-x64@npm:0.33.3"
+  dependencies:
+    "@img/sharp-libvips-linux-x64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linux-x64":
+      optional: true
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@img/sharp-linux-x64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linux-x64@npm:0.33.4"
   dependencies:
     "@img/sharp-libvips-linux-x64": "npm:1.0.2"
   dependenciesMeta:
@@ -1660,9 +1748,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-linuxmusl-arm64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linuxmusl-arm64@npm:0.33.4"
+  dependencies:
+    "@img/sharp-libvips-linuxmusl-arm64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linuxmusl-arm64":
+      optional: true
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
 "@img/sharp-linuxmusl-x64@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-linuxmusl-x64@npm:0.33.3"
+  dependencies:
+    "@img/sharp-libvips-linuxmusl-x64": "npm:1.0.2"
+  dependenciesMeta:
+    "@img/sharp-libvips-linuxmusl-x64":
+      optional: true
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@img/sharp-linuxmusl-x64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-linuxmusl-x64@npm:0.33.4"
   dependencies:
     "@img/sharp-libvips-linuxmusl-x64": "npm:1.0.2"
   dependenciesMeta:
@@ -1681,6 +1793,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-wasm32@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-wasm32@npm:0.33.4"
+  dependencies:
+    "@emnapi/runtime": "npm:^1.1.1"
+  conditions: cpu=wasm32
+  languageName: node
+  linkType: hard
+
 "@img/sharp-win32-ia32@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-win32-ia32@npm:0.33.3"
@@ -1688,9 +1809,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-win32-ia32@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-win32-ia32@npm:0.33.4"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
 "@img/sharp-win32-x64@npm:0.33.3":
   version: 0.33.3
   resolution: "@img/sharp-win32-x64@npm:0.33.3"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@img/sharp-win32-x64@npm:0.33.4":
+  version: 0.33.4
+  resolution: "@img/sharp-win32-x64@npm:0.33.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -5416,6 +5551,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decode-bmp@npm:^0.2.0":
+  version: 0.2.1
+  resolution: "decode-bmp@npm:0.2.1"
+  dependencies:
+    "@canvas/image-data": "npm:^1.0.0"
+    to-data-view: "npm:^1.1.0"
+  checksum: 10/659ac3330e901e5b275207b5b3a792b939185f7f31f2c26864ff1b3db18f875fbf0e7dc0fedcb6ae69538d8b4ee2aa745a8bf5856df0c4858ffd0f2987204735
+  languageName: node
+  linkType: hard
+
+"decode-ico@npm:*":
+  version: 0.4.1
+  resolution: "decode-ico@npm:0.4.1"
+  dependencies:
+    "@canvas/image-data": "npm:^1.0.0"
+    decode-bmp: "npm:^0.2.0"
+    to-data-view: "npm:^1.1.0"
+  checksum: 10/b5a049b2227d7c3cb569f9f3a889f91da200403989a8eeb8e001a335056c1857617038810f0dbf3e77d0fc930c677a6d5e6f106a0bc64cf0475e2e390b487aff
+  languageName: node
+  linkType: hard
+
 "decompress-response@npm:^6.0.0":
   version: 6.0.0
   resolution: "decompress-response@npm:6.0.0"
@@ -7757,6 +7913,13 @@ __metadata:
   version: 1.0.4
   resolution: "iced-runtime@npm:1.0.4"
   checksum: 10/5be6704535e10352f6eb0dbf068bca05db454b9b8aa9652e58fdb249cff0ec98af037b262aed9aa5d12a4a2afba45b5365100feae56ecb32be28ec871d2fde93
+  languageName: node
+  linkType: hard
+
+"ico-endec@npm:*":
+  version: 0.1.6
+  resolution: "ico-endec@npm:0.1.6"
+  checksum: 10/36fcdcb9681f153bebef2a386e740b2ac8c22fc5bce6fbbd96700a958d105269c59ebed8c73df9295618a5baa8a4ca35d15bb6676a9918ba04c0bd4cb90cdb9c
   languageName: node
   linkType: hard
 
@@ -11687,6 +11850,86 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sharp-ico@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "sharp-ico@npm:0.1.5"
+  dependencies:
+    decode-ico: "npm:*"
+    ico-endec: "npm:*"
+    sharp: "npm:*"
+  checksum: 10/8d958147fa4de0a3dd0693871564318accf56940b642a732b98e75d3d694569d4b8857184aacc83cc24ff7340a5eb35552449758e7224bd4f7cef8ba13e66f4f
+  languageName: node
+  linkType: hard
+
+"sharp@npm:*":
+  version: 0.33.4
+  resolution: "sharp@npm:0.33.4"
+  dependencies:
+    "@img/sharp-darwin-arm64": "npm:0.33.4"
+    "@img/sharp-darwin-x64": "npm:0.33.4"
+    "@img/sharp-libvips-darwin-arm64": "npm:1.0.2"
+    "@img/sharp-libvips-darwin-x64": "npm:1.0.2"
+    "@img/sharp-libvips-linux-arm": "npm:1.0.2"
+    "@img/sharp-libvips-linux-arm64": "npm:1.0.2"
+    "@img/sharp-libvips-linux-s390x": "npm:1.0.2"
+    "@img/sharp-libvips-linux-x64": "npm:1.0.2"
+    "@img/sharp-libvips-linuxmusl-arm64": "npm:1.0.2"
+    "@img/sharp-libvips-linuxmusl-x64": "npm:1.0.2"
+    "@img/sharp-linux-arm": "npm:0.33.4"
+    "@img/sharp-linux-arm64": "npm:0.33.4"
+    "@img/sharp-linux-s390x": "npm:0.33.4"
+    "@img/sharp-linux-x64": "npm:0.33.4"
+    "@img/sharp-linuxmusl-arm64": "npm:0.33.4"
+    "@img/sharp-linuxmusl-x64": "npm:0.33.4"
+    "@img/sharp-wasm32": "npm:0.33.4"
+    "@img/sharp-win32-ia32": "npm:0.33.4"
+    "@img/sharp-win32-x64": "npm:0.33.4"
+    color: "npm:^4.2.3"
+    detect-libc: "npm:^2.0.3"
+    semver: "npm:^7.6.0"
+  dependenciesMeta:
+    "@img/sharp-darwin-arm64":
+      optional: true
+    "@img/sharp-darwin-x64":
+      optional: true
+    "@img/sharp-libvips-darwin-arm64":
+      optional: true
+    "@img/sharp-libvips-darwin-x64":
+      optional: true
+    "@img/sharp-libvips-linux-arm":
+      optional: true
+    "@img/sharp-libvips-linux-arm64":
+      optional: true
+    "@img/sharp-libvips-linux-s390x":
+      optional: true
+    "@img/sharp-libvips-linux-x64":
+      optional: true
+    "@img/sharp-libvips-linuxmusl-arm64":
+      optional: true
+    "@img/sharp-libvips-linuxmusl-x64":
+      optional: true
+    "@img/sharp-linux-arm":
+      optional: true
+    "@img/sharp-linux-arm64":
+      optional: true
+    "@img/sharp-linux-s390x":
+      optional: true
+    "@img/sharp-linux-x64":
+      optional: true
+    "@img/sharp-linuxmusl-arm64":
+      optional: true
+    "@img/sharp-linuxmusl-x64":
+      optional: true
+    "@img/sharp-wasm32":
+      optional: true
+    "@img/sharp-win32-ia32":
+      optional: true
+    "@img/sharp-win32-x64":
+      optional: true
+  checksum: 10/f396d1363d8e5320596404ae2ce064bdc4378cd1c2b84d7dc5a42d51b566180548b95bfde85ec5b590c6480adce68b4f287495f64b766b8fc2100c3d355a3a91
+  languageName: node
+  linkType: hard
+
 "sharp@npm:^0.33.2":
   version: 0.33.3
   resolution: "sharp@npm:0.33.3"
@@ -12415,6 +12658,7 @@ __metadata:
     renovate: "npm:^37.253.1"
     request: "npm:^2.88.2"
     rss-parser: "npm:^3.12.0"
+    sharp-ico: "npm:^0.1.5"
     typescript: "npm:^5.2.2"
     typesync: "npm:^0.12.0"
     vitest: "npm:^2.0.0"
@@ -12513,6 +12757,13 @@ __metadata:
   version: 3.0.0
   resolution: "tinyspy@npm:3.0.0"
   checksum: 10/b5b686acff2b88de60ff8ecf89a2042320406aaeee2fba1828a7ea8a925fad3ed9f5e4d7a068154a9134473c472aa03da8ca92ee994bc57a741c5ede5fa7de4d
+  languageName: node
+  linkType: hard
+
+"to-data-view@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "to-data-view@npm:1.1.0"
+  checksum: 10/53bf818cf7ed4b481568085cfed5528b268efe1e95d0b90c2a45031de9cf40de91600771c046924348fdedbedb54f655f98e7bf1c51041ba06f0ec3f2fd53dc6
   languageName: node
   linkType: hard
 
