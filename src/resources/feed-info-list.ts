@@ -1,15 +1,20 @@
-type FeedInfoTuple = [label: string, url: string];
+type ValidUrl = `${'http' | 'https'}://${string}.${string}`;
+
+type FeedInfoTuple = [label: string, url: ValidUrl];
 
 export interface FeedInfo {
   label: string;
-  url: string;
+  url: ValidUrl;
 }
 
 const createFeedInfoList = (feedInfoTuples: FeedInfoTuple[]) => {
   const feedInfoList: FeedInfo[] = [];
 
   for (const [label, url] of feedInfoTuples) {
-    feedInfoList.push({ label, url });
+    feedInfoList.push({
+      label,
+      url
+    });
   }
 
   return feedInfoList;
@@ -19,6 +24,7 @@ const createFeedInfoList = (feedInfoTuples: FeedInfoTuple[]) => {
  * フィード情報一覧。アルファベット順
  * ラベルが被るとバリデーションエラーになるので別のラベルを設定してください
  */
+// prettier-ignore
 export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   // ['企業名・製品名など', 'RSS/AtomフィードのURL'],
   ['10ANTZ', 'https://developers.10antz.co.jp/feed'],
@@ -481,7 +487,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
   ['トラーナ', 'https://tech.torana.co.jp/feed'],
   ['トレタ', 'https://tech.toreta.in/feed'],
-  ['ドクターズプライム', encodeURI('https://blog.drsprime.com/feed/category/エンジニアリング')],
+  ['ドクターズプライム', 'https://blog.drsprime.com/feed/category/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0'],
   ['ドコカデ', 'https://zenn.dev/dokokade/feed'],
   ['ドリコム', 'https://tech.drecom.co.jp/feed/'],
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],
@@ -618,7 +624,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['朝日ネット', 'https://techblog.asahi-net.co.jp/feed'],
   ['朝日新聞社', 'https://note.com/asahi_ictrad/rss'],
   ['東京ガス内製開発チーム', 'https://tech-blog.tokyo-gas.co.jp/feed'],
-  ['楽天コマース', encodeURI('https://commerce-engineer.rakuten.careers/feed/category/テック')],
+  ['楽天コマース', 'https://commerce-engineer.rakuten.careers/feed/category/%E3%83%86%E3%83%83%E3%82%AF'],
   ['永和システムマネジメント', 'https://blog.agile.esm.co.jp/feed'],
   ['現場サポート', 'https://support.genbasupport.com/techblog/feed/'],
   ['虎の穴', 'https://toranoana-lab.hatenablog.com/feed'],

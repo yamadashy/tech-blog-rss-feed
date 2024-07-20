@@ -170,6 +170,13 @@ export class FeedCrawler {
       }
       urlSet.add(url);
     }
+
+    // url の正当性チェック
+    for (const url of allUrls) {
+      if (!isValidHttpUrl(url)) {
+        throw new Error(`フィードのURL「${url}」が正しくありません`);
+      }
+    }
   }
 
   /**
