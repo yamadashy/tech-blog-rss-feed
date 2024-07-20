@@ -149,9 +149,7 @@ export class FeedCrawler {
    * フィード情報のチェック
    */
   public static validateFeedInfoList(feedInfoList: FeedInfo[]): void {
-    const allLabels = feedInfoList.map((feedInfo) => {
-      return feedInfo.label + ':' + feedInfo.flags?.map((flag: symbol) => flag.toString()).join(',');
-    });
+    const allLabels = feedInfoList.map((feedInfo) => feedInfo.label);
     const allUrls = feedInfoList.map((feedInfo) => feedInfo.url);
 
     const labelSet = new Set<string>();
