@@ -15,8 +15,8 @@ import { logger } from './logger';
 import constants from '../../common/constants';
 import eleventyCacheOption from '../../common/eleventy-cache-option';
 import { to } from 'await-to-js';
-const ogs = require('open-graph-scraper');
-import { OpenGraphScraperOptions, OgObject, ImageObject } from 'open-graph-scraper/dist/lib/types';
+import { default as ogs } from 'open-graph-scraper';
+import { OpenGraphScraperOptions, OgObject, ImageObject } from 'open-graph-scraper/types/lib/types';
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
 export type CustomOgObject = OgObject & {

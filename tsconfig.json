@@ -11,7 +11,8 @@
     ],
     "types": [
       "node",
-      "vitest/globals"
+      "vitest/globals",
+      "open-graph-scraper"
     ],
     "allowJs": true,
     "noImplicitAny": true,
