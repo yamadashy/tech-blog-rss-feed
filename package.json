@@ -9,9 +9,7 @@
     "register-index": "node --require esbuild-register src/feed/register-index-command.ts",
     "site-build": "eleventy",
     "site-serve": "eleventy --serve",
-    "lint": "eslint ./src ./tests --max-warnings 0 --cache --format friendly",
-    "lint-fix": "yarn lint --fix",
-    "type-check": "yarn tsc --noEmit",
+    "lint": "eslint ./src ./tests --max-warnings 0 --cache --format friendly --fix && tsc --noEmit",
     "test": "vitest run",
     "renovate-validate": "renovate-config-validator",
     "preinstall": "typesync || :"
