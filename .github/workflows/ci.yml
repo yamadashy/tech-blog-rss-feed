@@ -48,7 +48,7 @@ jobs:
       run: yarn install
 
     - name: Test
-      run: yarn test
+      run: yarn test-coverage
 
   generate:
     runs-on: ubuntu-22.04
