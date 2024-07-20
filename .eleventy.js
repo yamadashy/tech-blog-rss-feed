@@ -4,6 +4,9 @@ const path = require('path');
 const ts = require('typescript');
 const eleventyCacheOption = require('./src/common/eleventy-cache-option');
 const CleanCSS = require("clean-css");
+const EleventyFetch = require("@11ty/eleventy-fetch");
+const sharpIco = require("sharp-ico");
+const url = require('url');
 
 Image.concurrency = 50;
 
@@ -55,10 +58,27 @@ const imageThumbnailShortcode = async (src, alt, pathPrefix = '') => {
 }
 
 const imageIconShortcode = async (src, alt, pathPrefix = '') => {
+  const parsedUrl = url.parse(src);
+  const fileName = path.basename(parsedUrl.pathname);
+  const fileExtension = path.extname(fileName).toLowerCase();
+  let imageSrc = src;
   let metadata = null;
 
+  if (fileExtension === '.ico') {
+    try {
+      const icoBuffer = await EleventyFetch(src, eleventyCacheOption);
+      const sharpInstances = await sharpIco.sharpsFromIco(icoBuffer);
+      const sharpInstance = sharpInstances.sort((a, b) => b.width - a.width)[0];
+      imageSrc = await sharpInstance.png().toBuffer();
+    } catch (error) {
+      // エラーが起きたら画像なし
+      console.error('[image-icon-short-code] Error processing ICO:', src, error);
+      return ``;
+    }
+  }
+
   try {
-    metadata = await Image(src, {
+    metadata = await Image(imageSrc, {
       widths: [16],
       formats: ["png"],
       outputDir: 'public/images/feed-icons',
@@ -68,10 +88,9 @@ const imageIconShortcode = async (src, alt, pathPrefix = '') => {
         quality: 50,
       }
     });
-  } catch {
+  } catch (error) {
     // エラーが起きたら画像なし
-    // NOTE: sharpがicoに対応していないのでエラーが出る
-    console.log('[image-icon-short-code] error', src);
+    console.log('[image-icon-short-code] Error processing image', src, error);
     return ``
   }
 
