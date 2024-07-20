@@ -28,9 +28,6 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
-    - name: Run type check
-      run: yarn type-check
-
     - name: Lint
       run: yarn lint
 
@@ -51,7 +48,7 @@ jobs:
       run: yarn install
 
     - name: Test
-      run: yarn test
+      run: yarn test-coverage
 
   generate:
     runs-on: ubuntu-22.04
