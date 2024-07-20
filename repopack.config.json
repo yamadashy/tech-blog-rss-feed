@@ -1,0 +1,10 @@
+{
+  "output": {
+    "filePath": "repopack-output.txt",
+    "headerText": "このプロジェクトは主にsrc/feedとsrc/siteの2つのディレクトリで構成されています。src/feedはRSSフィードの収集と処理を担当し、src/siteは11tyを使用してウェブサイトを生成します。この構造により、多数のフィードの更新情報を集約し、1つのウェブサイトとフィードとして提供しています。"
+  },
+  "ignore": {
+    "useDefaultPatterns": true,
+    "customPatterns": []
+  }
+}
