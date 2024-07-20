@@ -219,7 +219,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['STORES', 'https://product.st.inc/feed'],
   ['SUPER STUDIO', 'https://zenn.dev/p/superstudio/feed'],
   ['Safie', 'https://engineers.safie.link/feed'],
-  ['Salesforce', 'https://developer.salesforce.com/jpblogs/feed/'],
   ['Sansan', 'https://buildersbox.corp-sansan.com/feed'],
   ['Seeed', 'https://lab.seeed.co.jp/feed'],
   ['Seibii', 'https://zenn.dev/seibii/feed'],
@@ -372,7 +371,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['カケハシ', 'https://kakehashi-dev.hatenablog.com/feed'],
   ['カミナシ', 'https://kaminashi-developer.hatenablog.jp/feed'],
   ['カヤック', 'https://techblog.kayac.com/feed'],
-  ['カラビナテクノロジー', 'https://zenn.dev/karabiner/feed'],
   ['カラビナテクノロジー', 'https://zenn.dev/p/karabiner_inc/feed', [FLAG_ZENN_PUBLICATION]],
   ['カンムテック', 'https://tech.kanmu.co.jp/feed'],
   ['ガイアックス', 'https://gaiax.hatenablog.com/feed'],
@@ -666,6 +664,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['ファンコミュニケーションズ', 'https://tech-blog.fancs.com/feed'],
  * ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
  * ['シタテル', 'https://tech-blog.sitateru.com/feeds/posts/default'],
+ * ['Salesforce', 'https://developer.salesforce.com/jpblogs/feed/'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
