@@ -41,7 +41,7 @@
     "@supercharge/promise-pool": "^3.1.0",
     "@types/11ty__eleventy-img": "^4.0.0",
     "@types/async-retry": "^1.4.3",
-    "@types/eslint": "^8.4.1",
+    "@types/eslint": "^9.0.0",
     "@types/eslint-config-prettier": "^6.11.2",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/eslint__js": "~8.42.3",

@@ -3498,23 +3498,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*":
+"@types/eslint@npm:*, @types/eslint@npm:^9.0.0":
   version: 9.6.0
   resolution: "@types/eslint@npm:9.6.0"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
   checksum: 10/39fc797c671ec9c9184802b4974748cf45ee1b11d7aaaaede44426abcafd07ec7c18eb090e8f5b3387b51637ce3fdf54499472d8dd58a928f0d005cbacb573b4
-  languageName: node
-  linkType: hard
-
-"@types/eslint@npm:^8.4.1":
-  version: 8.56.11
-  resolution: "@types/eslint@npm:8.56.11"
-  dependencies:
-    "@types/estree": "npm:*"
-    "@types/json-schema": "npm:*"
-  checksum: 10/cfc4409973ed8d3ed183bc477bcfed39ea3fd264dc1da4a11b9c002d1e5fb96de8abed67f60a0e32a668cc2817b2b1c27a1885ec5de5fdc5471bcc99d5d1f75b
   languageName: node
   linkType: hard
 
@@ -12615,7 +12605,7 @@ __metadata:
     "@supercharge/promise-pool": "npm:^3.1.0"
     "@types/11ty__eleventy-img": "npm:^4.0.0"
     "@types/async-retry": "npm:^1.4.3"
-    "@types/eslint": "npm:^8.4.1"
+    "@types/eslint": "npm:^9.0.0"
     "@types/eslint-config-prettier": "npm:^6.11.2"
     "@types/eslint-plugin-prettier": "npm:^3.1.0"
     "@types/eslint__js": "npm:~8.42.3"
