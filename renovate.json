@@ -27,5 +27,8 @@
       "matchPackageNames": ["renovate"],
       "enabled": false
     }
+  ],
+  "ignoreDeps": [
+    "node"
   ]
 }
