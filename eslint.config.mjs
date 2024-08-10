@@ -30,6 +30,7 @@ export default [
       ...typescriptEslint.configs.strict.rules,
       ...typescriptEslint.configs.stylistic.rules,
       '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
 
       ...importPlugin.configs.typescript.rules,
       'import/no-unresolved': 'off',

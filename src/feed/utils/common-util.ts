@@ -45,7 +45,7 @@ export const isValidHttpUrl = (url: string) => {
 
   try {
     urlObject = new URL(url);
-  } catch (_) {
+  } catch {
     return false;
   }
 
