@@ -558,7 +558,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ペイトナー', 'https://paytner.hatenablog.com/feed'],
   ['ペライチ', 'https://zenn.dev/peraichi/feed'],
   ['ペライチ(Zenn Publication)', 'https://zenn.dev/p/peraichi_blog/feed'],
-  ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
   ['ホワイトプラス', 'https://blog.wh-plus.co.jp/feed'],
   ['マイベスト', 'https://zenn.dev/mybest/feed'],
   ['マインディア', 'https://zenn.dev/p/minedia/feed'],
@@ -702,6 +701,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['HiCustomer', 'https://tech.hicustomer.jp/index.xml'],
  * ['シタテル', 'https://tech-blog.sitateru.com/feeds/posts/default'],
  * ['Salesforce', 'https://developer.salesforce.com/jpblogs/feed/'],
+ * ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
