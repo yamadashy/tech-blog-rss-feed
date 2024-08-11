@@ -1,9 +1,9 @@
 import { PromisePool } from '@supercharge/promise-pool';
 import { logger } from './logger';
-import eleventyCacheOption from '../../common/eleventy-cache-option';
+import { imageCacheOptions } from '../../common/eleventy-cache-option';
 import { to } from 'await-to-js';
 import { CustomRssParserFeed, CustomRssParserItem, OgObjectMap } from './feed-crawler';
-const EleventyFetch = require('@11ty/eleventy-fetch');
+import EleventyFetch from '@11ty/eleventy-fetch';
 
 export class ImagePrecacher {
   public async fetchAndCacheFeedImages(
@@ -29,12 +29,16 @@ export class ImagePrecacher {
     const ogImageUrlsLength = ogImageUrls.length;
     let fetchProcessCounter = 1;
 
-    EleventyFetch.concurrency = concurrency;
-
     await PromisePool.for(ogImageUrls)
       .withConcurrency(concurrency)
       .process(async (ogImageUrl) => {
-        const [error] = await to(EleventyFetch(ogImageUrl, eleventyCacheOption));
+        const [error] = await to(
+          EleventyFetch(ogImageUrl, {
+            type: 'buffer',
+            duration: imageCacheOptions.duration,
+            concurrency,
+          }),
+        );
         if (error) {
           logger.error('[cache-og-image] error', `${fetchProcessCounter++}/${ogImageUrlsLength}`, ogImageUrl);
           logger.trace(error);

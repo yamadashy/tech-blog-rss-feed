@@ -1,3 +1,4 @@
+// @ts-check
 const siteUrlStem = 'https://yamadashy.github.io/tech-blog-rss-feed';
 const siteUrl = `${siteUrlStem}/`;
 
