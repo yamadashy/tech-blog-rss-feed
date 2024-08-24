@@ -383,10 +383,17 @@ export class FeedCrawler {
     const ogObject = ogsResponse.result;
     const ogImages = ogObject?.ogImage;
 
-    // データの調整
+    let validOgImages: ImageObject[] = [];
+
+    // データの調整しつつ、利用可能なものを取得
     if (ogImages !== undefined) {
       for (const ogImage of ogImages) {
         const ogImageUrl = ogImage.url;
+
+        // 画像がないものはスキップ
+        if (ogImageUrl == null || ogImageUrl.trim() === '') {
+          continue;
+        }
 
         // 一部URLがおかしいものの対応
         if (ogImageUrl && ogImageUrl.startsWith('https://tech.fusic.co.jphttps')) {
@@ -397,12 +404,14 @@ export class FeedCrawler {
         if (ogImageUrl && !ogImageUrl.startsWith('http')) {
           ogImage.url = new URL(ogImageUrl, url).toString();
         }
+
+        validOgImages.push(ogImage);
       }
     }
 
     // 画像は一つとして扱いたいのでカスタム
     const customOgObject: CustomOgObject = ogObject;
-    customOgObject.customOgImage = ogImages?.[0];
+    customOgObject.customOgImage = validOgImages[0] || null;
 
     // faviconはフルURLにする
     if (customOgObject.favicon && !customOgObject.favicon.startsWith('http')) {

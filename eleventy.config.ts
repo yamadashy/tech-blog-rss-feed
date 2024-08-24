@@ -5,7 +5,6 @@ import path from 'path';
 import ts from 'typescript';
 import { imageCacheOptions } from './src/common/eleventy-cache-option';
 import CleanCSS from "clean-css";
-import { Sharp } from 'sharp';
 import sharpIco, {ImageData} from "sharp-ico";
 import url from 'url';
 import Eleventy from '@11ty/eleventy';
@@ -31,6 +30,13 @@ const minifyHtmlTransform = (content: string, outputPath: string) => {
 }
 
 const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: string = '') => {
+  // 取れなければ代替画像
+  const alternativeImageTag = `<img src='${pathPrefix}images/alternate-feed-image.png' alt='${alt}' loading='lazy' width='256' height='256'>`;
+
+  if (!src) {
+    return alternativeImageTag;
+  }
+
   let metadata: EleventyImage.Metadata;
 
   try {
@@ -50,7 +56,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: str
   } catch {
     // エラーが起きたら代替画像にする
     console.log('[image-thumbnail-short-code] error', src);
-    return `<img src='${pathPrefix}images/alternate-feed-image.png' alt='${alt}' loading='lazy' width='256' height='256'>`
+    return alternativeImageTag;
   }
 
   return EleventyImage.generateHTML(metadata, {
@@ -62,6 +68,13 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: str
 }
 
 const imageIconShortcode = async (src: string, alt: string, pathPrefix: string = '') => {
+  // 取れなければ画像なし
+  const alternativeImageTag = ``;
+
+  if (!src) {
+    return alternativeImageTag;
+  }
+
   const parsedUrl = url.parse(src);
   const fileName = path.basename(parsedUrl.pathname || '');
   const fileExtension = path.extname(fileName).toLowerCase();
@@ -81,9 +94,8 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix: string =
         imageSrc = await sharpIcoImage.image.png().toBuffer();
       }
     } catch (error) {
-      // エラーが起きたら画像なし
       console.error('[image-icon-short-code] Error processing ICO:', src, error);
-      return ``;
+      return alternativeImageTag;
     }
   }
 

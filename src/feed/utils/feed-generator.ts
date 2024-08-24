@@ -70,7 +70,7 @@ export class FeedGenerator {
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
 
       const ogObject = feedItemOgObjectMap.get(feedItem.link);
-      // 配列担っているが2つ目以降を使う理由もないので0を使う
+      // 配列になっているが2つ目以降を使う理由もないので0を使う
       const ogImage = ogObject?.customOgImage;
 
       // 日付がないものは入れない
