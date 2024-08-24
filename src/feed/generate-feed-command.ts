@@ -41,25 +41,49 @@ const feedImagePrecacher = new FeedImagePrecacher();
   );
 
   // まとめフィードのバリデーション。エラーならすぐに終了する
-  await feedValidator.assertFeed(generateFeedsResult.aggregatedFeed);
-  await feedValidator.assertXmlFeed('atom', generateFeedsResult.feedDistributionSet.atom);
-  await feedValidator.assertXmlFeed('rss', generateFeedsResult.feedDistributionSet.rss);
+  try {
+    await feedValidator.assertFeed(generateFeedsResult.aggregatedFeed);
+    await feedValidator.assertXmlFeed('atom', generateFeedsResult.feedDistributionSet.atom);
+    await feedValidator.assertXmlFeed('rss', generateFeedsResult.feedDistributionSet.rss);
+  } catch (e) {
+    const error = new Error('Failed to validate feed', {
+      cause: e,
+    });
+    console.error(error);
+    throw error;
+  }
 
   // ファイル出力
-  await feedStorer.storeFeeds(
-    generateFeedsResult.feedDistributionSet,
-    STORE_FEEDS_DIR_PATH,
-    crawlFeedsResult.feeds,
-    ogObjectMap,
-    crawlFeedsResult.feedItemHatenaCountMap,
-    STORE_BLOG_FEEDS_DIR_PATH,
-  );
+  try {
+    await feedStorer.storeFeeds(
+      generateFeedsResult.feedDistributionSet,
+      STORE_FEEDS_DIR_PATH,
+      crawlFeedsResult.feeds,
+      ogObjectMap,
+      crawlFeedsResult.feedItemHatenaCountMap,
+      STORE_BLOG_FEEDS_DIR_PATH,
+    );
+  } catch (e) {
+    const error = new Error('Failed to store feeds', {
+      cause: e,
+    });
+    console.error(error);
+    throw error;
+  }
 
   // 画像の事前キャッシュ
-  await feedImagePrecacher.fetchAndCacheFeedImages(
-    crawlFeedsResult.feeds,
-    crawlFeedsResult.feedItems,
-    ogObjectMap,
-    FETCH_IMAGE_CONCURRENCY,
-  );
+  try {
+    await feedImagePrecacher.fetchAndCacheFeedImages(
+      crawlFeedsResult.feeds,
+      crawlFeedsResult.feedItems,
+      ogObjectMap,
+      FETCH_IMAGE_CONCURRENCY,
+    );
+  } catch (e) {
+    const error = new Error('Failed to cache feed images', {
+      cause: e,
+    });
+    console.error(error);
+    throw error;
+  }
 })();
