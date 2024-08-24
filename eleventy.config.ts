@@ -75,6 +75,10 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix: string =
     return alternativeImageTag;
   }
 
+  if (src.startsWith('data:')) {
+    return `<img src='${src}' alt='${alt}' loading='lazy' width='16' height='16'>`;
+  }
+
   const parsedUrl = url.parse(src);
   const fileName = path.basename(parsedUrl.pathname || '');
   const fileExtension = path.extname(fileName).toLowerCase();
