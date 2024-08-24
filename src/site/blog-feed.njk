@@ -28,7 +28,7 @@ permalink: "blogs/{{ blogFeed.linkMd5Hash }}/"
             {% asyncEach feedItem in blogFeed.items %}
                 <div class='ui-feed-item'>
                     <a class='ui-feed-item__og-image' href='{{ feedItem.link }}'>
-                        {% if feedItem.ogImageUrl %}
+                        {% if feedItem.ogImageUrl !== null %}
                             {% imageThumbnail feedItem.ogImageUrl, '記事のアイキャッチ画像', page.url | relativeUrl %}
                         {% else %}
                             <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="lazy" alt='記事のアイキャッチ画像' width='256' height='256'>
