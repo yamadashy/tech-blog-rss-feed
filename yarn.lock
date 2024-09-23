@@ -7429,13 +7429,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^142.0.0":
-  version: 142.0.0
-  resolution: "googleapis@npm:142.0.0"
+"googleapis@npm:^144.0.0":
+  version: 144.0.0
+  resolution: "googleapis@npm:144.0.0"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 10/91560d2b55f4d3d88f0ad203a9bf85183b4bd2d120cabcaf8f4cfa5dbcdf0132597f877ade69234de00e7faef8497e08dc01dc09dd3e9536b6216f0f32a40c26
+  checksum: 10/cb6f622a9023653138f9e10903cb0c8c38ab22a12809de6144e796c08e441266b0bca83ab46390b467203e5d2fc14646329e225cc01a09717a694c4b25645376
   languageName: node
   linkType: hard
 
@@ -12617,7 +12617,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.0.1"
     fast-xml-parser: "npm:^4.3.2"
     feed: "npm:^4.2.2"
-    googleapis: "npm:^142.0.0"
+    googleapis: "npm:^144.0.0"
     html-minifier-terser: "npm:^7.2.0"
     http-server: "npm:^14.1.1"
     libxmljs: "npm:^1.0.11"
