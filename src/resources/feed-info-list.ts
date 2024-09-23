@@ -44,6 +44,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['AppBrew', 'https://tech.appbrew.io/feed'],
   ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
   ['Assured', 'https://tech.assured.jp/feed'],
+  ['Axelspace', 'https://zenn.dev/p/axelspace/feed'],
   ['BABYJOB', 'https://zenn.dev/p/babyjob/feed'],
   ['BASE', 'https://devblog.thebase.in/feed'],
   ['BEENOS', 'https://zenn.dev/beenos/feed'],
