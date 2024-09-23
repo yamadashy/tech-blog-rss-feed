@@ -68,7 +68,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "fast-xml-parser": "^4.3.2",
     "feed": "^4.2.2",
-    "googleapis": "^142.0.0",
+    "googleapis": "^144.0.0",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
     "libxmljs": "^1.0.11",
