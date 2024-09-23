@@ -427,7 +427,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ゲームエイト', 'https://zenn.dev/p/game8_blog/feed'],
   ['コインチェック', 'https://tech.coincheck.blog/feed'],
   ['ココナラ', 'https://zenn.dev/coconala/feed'],
-  ['ココネ', 'https://engineering.cocone.io/feed/'],
   ['コドモン', 'https://tech.codmon.com/feed'],
   ['コネヒト', 'https://tech.connehito.com/feed'],
   ['コミューン', 'https://tech.commmune.jp/feed'],
@@ -478,7 +477,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['タケユー・ウェブ', 'https://zenn.dev/p/takeyuwebinc/feed'],
   ['ダイアログ', 'https://dialog-tech.hatenablog.com/feed'],
   ['ダイニー', 'https://note.com/dinii/m/mf6424286cfa2/rss'],
-  ['ダンクハーツ', 'https://dhe.dank-hearts.net/m/m18705e344ee6/rss'],
   ['チームラボ　フロントエンド班', 'https://zenn.dev/p/teamlab_fe/feed'],
   ['テクニカルエージェント', 'https://tracl.cloud/archives/engineerblog/feed'],
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
@@ -578,7 +576,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['メドピア', 'https://tech.medpeer.co.jp/feed'],
   ['メドレー', 'https://developer.medley.jp/rss.xml'],
   ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml'],
-  ['メンテモ', 'https://engineering.mentemo.com/feed'],
   ['モニクル', 'https://zenn.dev/p/monicle/feed'],
   ['モノグサ', 'https://tech.monoxer.com/feed'],
   ['モノタロウ', 'https://tech-blog.monotaro.com/feed'],
@@ -652,6 +649,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * RSSがなくなった。復活したら入れたい
  * https://blog.gmo.media/
+ * ['ココネ', 'https://engineering.cocone.io/feed/'],
  *
  * リニューアルされてフィードが消えたのでしばらくしたら確認
  * ['DMM', 'https://inside.dmm.com/feed'],
@@ -704,6 +702,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['シタテル', 'https://tech-blog.sitateru.com/feeds/posts/default'],
  * ['Salesforce', 'https://developer.salesforce.com/jpblogs/feed/'],
  * ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
+ * ['メンテモ', 'https://engineering.mentemo.com/feed'],
+ * ['ダンクハーツ', 'https://dhe.dank-hearts.net/m/m18705e344ee6/rss'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
