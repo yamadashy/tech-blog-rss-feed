@@ -1,6 +1,5 @@
 import path from 'node:path';
 import url from 'node:url';
-import type Eleventy from '@11ty/eleventy';
 import EleventyFetch from '@11ty/eleventy-fetch';
 import EleventyImage from '@11ty/eleventy-img';
 import CleanCSS from 'clean-css';
@@ -136,7 +135,8 @@ const minifyCssFilter = (css: string) => {
   return new CleanCSS({}).minify(css).styles;
 };
 
-const supportTypeScriptTemplate = (eleventyConfig: Eleventy.UserConfig) => {
+// biome-ignore lint/suspicious/noExplicitAny: This is intentional
+const supportTypeScriptTemplate = (eleventyConfig: any) => {
   eleventyConfig.addTemplateFormats('ts');
   eleventyConfig.addExtension('ts', {
     outputFileExtension: 'js',
@@ -149,7 +149,8 @@ const supportTypeScriptTemplate = (eleventyConfig: Eleventy.UserConfig) => {
   });
 };
 
-module.exports = (eleventyConfig: Eleventy.UserConfig) => {
+// biome-ignore lint/suspicious/noExplicitAny: This is intentional
+module.exports = (eleventyConfig: any) => {
   // static assets
   eleventyConfig.addPassthroughCopy('src/site/images');
   eleventyConfig.addPassthroughCopy('src/site/feeds');

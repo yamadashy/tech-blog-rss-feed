@@ -1,16 +1,18 @@
-const path = require('node:path');
-const fs = require('node:fs/promises');
-const dayjs = require('dayjs');
-require('dayjs/locale/ja');
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
 
-dayjs.extend(require('dayjs/plugin/relativeTime'));
-dayjs.extend(require('dayjs/plugin/timezone'));
-dayjs.extend(require('dayjs/plugin/utc'));
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+dayjs.extend(utc);
 dayjs.locale('ja');
 dayjs.tz.setDefault('Asia/Tokyo');
 
-module.exports = async () => {
-  const feedData = JSON.parse(await fs.readFile(path.join(__dirname, '../feeds/feed.json')));
+export default async () => {
+  const feedDataModule = await import('../feeds/feed.json');
+  const feedData = feedDataModule.default;
 
   let feedItems = feedData.items;
 

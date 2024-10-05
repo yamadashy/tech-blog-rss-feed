@@ -1,8 +1,7 @@
-// @ts-check
 const siteUrlStem = 'https://yamadashy.github.io/tech-blog-rss-feed';
 const siteUrl = `${siteUrlStem}/`;
 
-module.exports = {
+export default {
   // サイト設定
   siteUrl: `${siteUrl}`,
   siteUrlStem: siteUrlStem,
