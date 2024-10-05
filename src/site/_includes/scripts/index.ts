@@ -1,5 +1,6 @@
 const elemCopyButtons = document.querySelectorAll('.feed-url-copy-button');
 
+// biome-ignore lint/complexity/noForEach: This is intentional
 elemCopyButtons.forEach((elemCopyButton) => {
   elemCopyButton.addEventListener('click', () => {
     const elemInput = elemCopyButton.parentElement?.querySelector('input');

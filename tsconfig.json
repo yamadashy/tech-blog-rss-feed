@@ -5,25 +5,13 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "types": [
-      "node",
-      "vitest/globals",
-      "open-graph-scraper"
-    ],
+    "lib": ["dom", "esnext"],
+    "types": ["node", "vitest/globals", "open-graph-scraper"],
     "allowJs": true,
     "noImplicitAny": true,
     "removeComments": true,
     "skipLibCheck": true,
     "sourceMap": true
   },
-  "include": [
-    "src/**/*",
-    "tests/**/*",
-    "vitest.config.ts",
-    "eleventy.config.ts",
-  ]
+  "include": ["src/**/*", "tests/**/*", "vitest.config.ts", "eleventy.config.ts"]
 }

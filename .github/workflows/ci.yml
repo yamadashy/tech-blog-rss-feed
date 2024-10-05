@@ -29,7 +29,7 @@ jobs:
       run: yarn install
 
     - name: Lint
-      run: yarn lint
+      run: yarn lint && git diff --exit-code
 
   test:
     runs-on: ubuntu-24.04

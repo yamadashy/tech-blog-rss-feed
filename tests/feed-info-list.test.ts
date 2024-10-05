@@ -1,8 +1,8 @@
-import { FEED_INFO_LIST, FeedInfo } from '../src/resources/feed-info-list';
-import { FeedCrawler } from '../src/feed/utils/feed-crawler';
-import { describe, it, expect } from 'vitest';
-import { exponentialBackoff } from '../src/feed/utils/common-util';
 import RssParser from 'rss-parser';
+import { describe, expect, it } from 'vitest';
+import { exponentialBackoff } from '../src/feed/utils/common-util';
+import { FeedCrawler } from '../src/feed/utils/feed-crawler';
+import { FEED_INFO_LIST, type FeedInfo } from '../src/resources/feed-info-list';
 
 const rssParser = new RssParser({
   maxRedirects: 0,

@@ -1,21 +1,21 @@
-import RssParser from 'rss-parser';
+import { URL } from 'node:url';
 import { PromisePool } from '@supercharge/promise-pool';
-import { FeedInfo } from '../../resources/feed-info-list';
+import { to } from 'await-to-js';
 import dayjs from 'dayjs';
-import { URL } from 'url';
+import { default as ogs } from 'open-graph-scraper';
+import type { ImageObject, OgObject, OpenGraphScraperOptions } from 'open-graph-scraper/types/lib/types';
+import RssParser from 'rss-parser';
+import constants from '../../common/constants';
+import type { FeedInfo } from '../../resources/feed-info-list';
 import {
+  exponentialBackoff,
   fetchHatenaCountMap,
   isValidHttpUrl,
   objectDeepCopy,
   removeInvalidUnicode,
-  exponentialBackoff,
   urlRemoveQueryParams,
 } from './common-util';
 import { logger } from './logger';
-import constants from '../../common/constants';
-import { to } from 'await-to-js';
-import { default as ogs } from 'open-graph-scraper';
-import { OpenGraphScraperOptions, OgObject, ImageObject } from 'open-graph-scraper/types/lib/types';
 
 export type CustomOgObject = OgObject & {
   // 画像は一つだけとする
@@ -383,7 +383,7 @@ export class FeedCrawler {
     const ogObject = ogsResponse.result;
     const ogImages = ogObject?.ogImage;
 
-    let validOgImages: ImageObject[] = [];
+    const validOgImages: ImageObject[] = [];
 
     // データの調整しつつ、利用可能なものを取得
     if (ogImages !== undefined) {
@@ -396,7 +396,7 @@ export class FeedCrawler {
         }
 
         // 一部URLがおかしいものの対応
-        if (ogImageUrl && ogImageUrl.startsWith('https://tech.fusic.co.jphttps')) {
+        if (ogImageUrl?.startsWith('https://tech.fusic.co.jphttps')) {
           ogImage.url = ogImageUrl.substring('https://tech.fusic.co.jp'.length);
         }
 

@@ -1,9 +1,9 @@
-import { PromisePool } from '@supercharge/promise-pool';
-import { logger } from './logger';
-import { imageCacheOptions } from '../../common/eleventy-cache-option';
-import { to } from 'await-to-js';
-import { CustomRssParserFeed, CustomRssParserItem, OgObjectMap } from './feed-crawler';
 import EleventyFetch from '@11ty/eleventy-fetch';
+import { PromisePool } from '@supercharge/promise-pool';
+import { to } from 'await-to-js';
+import { imageCacheOptions } from '../../common/eleventy-cache-option';
+import type { CustomRssParserFeed, CustomRssParserItem, OgObjectMap } from './feed-crawler';
+import { logger } from './logger';
 
 export class ImagePrecacher {
   public async fetchAndCacheFeedImages(

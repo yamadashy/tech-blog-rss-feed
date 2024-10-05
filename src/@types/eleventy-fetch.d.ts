@@ -1,5 +1,5 @@
 declare module '@11ty/eleventy-fetch' {
-  import { Buffer } from 'buffer';
+  import type { Buffer } from 'node:buffer';
 
   export type FetchType = 'json' | 'buffer' | 'text';
 
