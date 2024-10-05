@@ -1,8 +1,8 @@
-import * as request from 'request';
 import { google } from 'googleapis';
-import { BlogFeed } from './utils/feed-storer';
+import * as request from 'request';
 import * as constants from '../common/constants';
 import { sleep } from './utils/common-util';
+import type { BlogFeed } from './utils/feed-storer';
 const key = require('../../storage/service_account.json');
 let blogFeeds: BlogFeed[] = require('../site/blog-feeds/blog-feeds.json');
 
@@ -67,7 +67,7 @@ jwtClient.authorize(async (err, tokens) => {
         return;
       }
 
-      console.log('[index api] success! url: ' + body.urlNotificationMetadata.url);
+      console.log(`[index api] success! url: ${body.urlNotificationMetadata.url}`);
     });
 
     await sleep(1000);

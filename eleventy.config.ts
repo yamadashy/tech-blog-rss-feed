@@ -1,35 +1,35 @@
-import htmlmin from 'html-minifier-terser';
+import path from 'node:path';
+import url from 'node:url';
+import type Eleventy from '@11ty/eleventy';
+import EleventyFetch from '@11ty/eleventy-fetch';
 import EleventyImage from '@11ty/eleventy-img';
-import EleventyFetch from "@11ty/eleventy-fetch";
-import path from 'path';
+import CleanCSS from 'clean-css';
+import htmlmin from 'html-minifier-terser';
+import sharpIco, { type ImageData } from 'sharp-ico';
 import ts from 'typescript';
 import { imageCacheOptions } from './src/common/eleventy-cache-option';
-import CleanCSS from "clean-css";
-import sharpIco, {ImageData} from "sharp-ico";
-import url from 'url';
-import Eleventy from '@11ty/eleventy';
 
 const ELEVENTY_FETCH_CONCURRENCY = 50;
 
 EleventyImage.concurrency = ELEVENTY_FETCH_CONCURRENCY;
 
 const minifyHtmlTransform = (content: string, outputPath: string) => {
-  if(outputPath && outputPath.endsWith('.html')) {
-    return htmlmin.minify(content,  {
+  if (outputPath?.endsWith('.html')) {
+    return htmlmin.minify(content, {
       // オプション参考: https://github.com/terser/html-minifier-terser#options-quick-reference
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
       minifyCSS: true,
       minifyJS: true,
-      maxLineLength: 1000
+      maxLineLength: 1000,
     });
   }
 
   return content;
-}
+};
 
-const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: string = '') => {
+const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = '') => {
   // 取れなければ代替画像
   const alternativeImageTag = `<img src='${pathPrefix}images/alternate-feed-image.png' alt='${alt}' loading='lazy' width='256' height='256'>`;
 
@@ -42,7 +42,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: str
   try {
     metadata = await EleventyImage(src, {
       widths: [150, 450],
-      formats: ["webp", "jpeg"],
+      formats: ['webp', 'jpeg'],
       outputDir: 'public/images/feed-thumbnails',
       urlPath: `${pathPrefix}images/feed-thumbnails/`,
       cacheOptions: imageCacheOptions,
@@ -51,7 +51,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: str
       },
       sharpJpegOptions: {
         quality: 70,
-      }
+      },
     });
   } catch {
     // エラーが起きたら代替画像にする
@@ -65,11 +65,11 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix: str
     loading: 'lazy',
     decoding: 'async',
   });
-}
+};
 
-const imageIconShortcode = async (src: string, alt: string, pathPrefix: string = '') => {
+const imageIconShortcode = async (src: string, alt: string, pathPrefix = '') => {
   // 取れなければ画像なし
-  const alternativeImageTag = ``;
+  const alternativeImageTag = '';
 
   if (!src) {
     return alternativeImageTag;
@@ -92,7 +92,7 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix: string =
         duration: imageCacheOptions.duration,
         concurrency: ELEVENTY_FETCH_CONCURRENCY,
       });
-      const sharpIcoImages = await sharpIco.sharpsFromIco(icoBuffer, {}, true) as ImageData[];
+      const sharpIcoImages = (await sharpIco.sharpsFromIco(icoBuffer, {}, true)) as ImageData[];
       const sharpIcoImage = sharpIcoImages.sort((a, b) => b.width - a.width)[0];
       if (sharpIcoImage.image) {
         imageSrc = await sharpIcoImage.image.png().toBuffer();
@@ -106,18 +106,18 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix: string =
   try {
     metadata = await EleventyImage(imageSrc, {
       widths: [16],
-      formats: ["png"],
+      formats: ['png'],
       outputDir: 'public/images/feed-icons',
       urlPath: `${pathPrefix}images/feed-icons/`,
       cacheOptions: imageCacheOptions,
       sharpPngOptions: {
         quality: 50,
-      }
+      },
     });
   } catch (error) {
     // エラーが起きたら画像なし
     console.log('[image-icon-short-code] Error processing image', src, error);
-    return ``
+    return '';
   }
 
   return EleventyImage.generateHTML(metadata, {
@@ -125,16 +125,16 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix: string =
     loading: 'lazy',
     decoding: 'async',
   });
-}
+};
 
 const relativeUrlFilter = (url: string) => {
   const relativeUrl = path.relative(url, '/');
   return relativeUrl === '' ? './' : `${relativeUrl}/`;
-}
+};
 
 const minifyCssFilter = (css: string) => {
   return new CleanCSS({}).minify(css).styles;
-}
+};
 
 const supportTypeScriptTemplate = (eleventyConfig: Eleventy.UserConfig) => {
   eleventyConfig.addTemplateFormats('ts');
@@ -142,14 +142,14 @@ const supportTypeScriptTemplate = (eleventyConfig: Eleventy.UserConfig) => {
     outputFileExtension: 'js',
     compile: async (inputContent: string) => {
       return async () => {
-        const result = ts.transpileModule(inputContent, { compilerOptions: { module: ts.ModuleKind.CommonJS }});
+        const result = ts.transpileModule(inputContent, { compilerOptions: { module: ts.ModuleKind.CommonJS } });
         return result.outputText;
-      }
-    }
+      };
+    },
   });
-}
+};
 
-module.exports = function (eleventyConfig: Eleventy.UserConfig) {
+module.exports = (eleventyConfig: Eleventy.UserConfig) => {
   // static assets
   eleventyConfig.addPassthroughCopy('src/site/images');
   eleventyConfig.addPassthroughCopy('src/site/feeds');
@@ -162,10 +162,10 @@ module.exports = function (eleventyConfig: Eleventy.UserConfig) {
   eleventyConfig.addTransform('minify html', minifyHtmlTransform);
 
   // relative path
-  eleventyConfig.addFilter("relativeUrl", relativeUrlFilter);
+  eleventyConfig.addFilter('relativeUrl', relativeUrlFilter);
 
   // minify css
-  eleventyConfig.addFilter("minifyCss", minifyCssFilter);
+  eleventyConfig.addFilter('minifyCss', minifyCssFilter);
 
   // TypeScript
   supportTypeScriptTemplate(eleventyConfig);
@@ -178,7 +178,7 @@ module.exports = function (eleventyConfig: Eleventy.UserConfig) {
 
     dir: {
       input: 'src/site',
-      output: 'public'
-    }
-  }
-}
+      output: 'public',
+    },
+  };
+};

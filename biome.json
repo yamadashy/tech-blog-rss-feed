@@ -1,0 +1,42 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
+  "files": {
+    "include": [
+      "./src/**",
+      "./tests/**",
+      "package.json",
+      "biome.json",
+      ".secretlintrc.json",
+      "tsconfig.json",
+      "eleventy.config.ts",
+      "vite.config.ts"
+    ],
+    "ignore": ["./src/site/feeds/**/*", "./src/site/blog-feeds/**/*"]
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noEmptyBlock": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "all",
+      "semicolons": "always"
+    }
+  }
+}

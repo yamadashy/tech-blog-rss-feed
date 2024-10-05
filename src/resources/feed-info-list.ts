@@ -535,7 +535,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
   ['トラーナ', 'https://tech.torana.co.jp/feed'],
   ['トレタ', 'https://tech.toreta.in/feed'],
-  ['ドクターズプライム', 'https://blog.drsprime.com/feed/category/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0'],
+  [
+    'ドクターズプライム',
+    'https://blog.drsprime.com/feed/category/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0',
+  ],
   ['ドコカデ', 'https://zenn.dev/dokokade/feed'],
   ['ドリコム', 'https://tech.drecom.co.jp/feed/'],
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],

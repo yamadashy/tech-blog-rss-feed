@@ -1,10 +1,10 @@
-import * as fs from 'fs/promises';
-import * as path from 'path';
-import { OgObjectMap, CustomRssParserFeed, FeedItemHatenaCountMap } from './feed-crawler';
-import { textToMd5Hash, textTruncate } from './common-util';
-import { FeedDistributionSet } from './feed-generator';
-import { logger } from './logger';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 import { to } from 'await-to-js';
+import { textToMd5Hash, textTruncate } from './common-util';
+import type { CustomRssParserFeed, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
+import type { FeedDistributionSet } from './feed-generator';
+import { logger } from './logger';
 
 export interface BlogFeed {
   title: string;
@@ -91,7 +91,7 @@ export class FeedStorer {
       blogFeeds.push(customFeed);
     }
 
-    await fs.writeFile(path.join(storeDirPath, `blog-feeds.json`), JSON.stringify(blogFeeds, null, 2), 'utf-8');
+    await fs.writeFile(path.join(storeDirPath, 'blog-feeds.json'), JSON.stringify(blogFeeds, null, 2), 'utf-8');
 
     logger.info('[store-blog-feeds] finished');
   }

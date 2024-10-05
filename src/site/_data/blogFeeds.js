@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs/promises');
+const path = require('node:path');
+const fs = require('node:fs/promises');
 const dayjs = require('dayjs');
 require('dayjs/locale/ja');
 
@@ -14,7 +14,7 @@ module.exports = async () => {
 
   // データ調整
   for (const blogFeed of blogFeeds) {
-    let lastUpdated = blogFeed.items[0]?.isoDate;
+    const lastUpdated = blogFeed.items[0]?.isoDate;
 
     if (lastUpdated) {
       blogFeed.lastUpdated = lastUpdated;

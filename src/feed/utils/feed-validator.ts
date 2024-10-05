@@ -1,9 +1,9 @@
-import RssParser from 'rss-parser';
-import { XMLValidator } from 'fast-xml-parser';
-import { logger } from './logger';
-import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
-import { Feed } from 'feed';
+import { XMLValidator } from 'fast-xml-parser';
+import type { Feed } from 'feed';
+import libxmljs from 'libxmljs';
+import RssParser from 'rss-parser';
+import { logger } from './logger';
 
 /**
  * フィードのバリデーション

@@ -1,7 +1,7 @@
-import * as v8 from 'v8';
-import * as crypto from 'crypto';
-import axios from 'axios';
+import * as crypto from 'node:crypto';
+import * as v8 from 'node:v8';
 import { to } from 'await-to-js';
+import axios from 'axios';
 
 type HatenaCountMap = Record<string, number>;
 
@@ -28,20 +28,22 @@ export const urlRemoveQueryParams = (url: string) => {
 };
 
 export const removeInvalidUnicode = (text: string) => {
-  // eslint-disable-next-line no-control-regex
+  // biome-ignore lint/suspicious/noControlCharactersInRegex: This is intentional
   return text.replace(/[\x00-\x1F\x7F-\x9F]/g, '');
 };
 
 export const escapeTextForXml = (text: string) => {
+  let escapedText = text;
+
   if (text.includes('&')) {
-    text = text.replace(/&/g, '&amp;');
+    escapedText = text.replace(/&/g, '&amp;');
   }
 
-  return text;
+  return escapedText;
 };
 
 export const isValidHttpUrl = (url: string) => {
-  let urlObject;
+  let urlObject: URL;
 
   try {
     urlObject = new URL(url);
@@ -64,10 +66,9 @@ export const exponentialBackoff = async <A>(retrier: (attemptCount: number) => P
 
       if (attemptLimitReached) {
         throw error;
-      } else {
-        const waitTime = Math.pow(2, attemptCount) * 1000;
-        await sleep(waitTime);
       }
+      const waitTime = 2 ** attemptCount * 1000;
+      await sleep(waitTime);
     } else {
       return result;
     }

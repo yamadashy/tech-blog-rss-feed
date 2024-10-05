@@ -1,8 +1,8 @@
-import { Feed, FeedOptions } from 'feed';
-import { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
-import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
-import { logger } from './logger';
+import { Feed, type FeedOptions } from 'feed';
 import * as constants from '../../common/constants';
+import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
+import type { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
+import { logger } from './logger';
 
 export interface FeedDistributionSet {
   atom: string;
@@ -100,7 +100,7 @@ export class FeedGenerator {
                 },
               ]
             : undefined,
-        image: ogImage && ogImage.url ? ogImage : undefined,
+        image: ogImage?.url ? ogImage : undefined,
         published: new Date(feedItem.isoDate),
         date: new Date(feedItem.isoDate),
         extensions: [
