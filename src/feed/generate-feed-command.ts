@@ -1,4 +1,5 @@
 import * as path from 'node:path';
+import * as url from 'node:url';
 import { FEED_INFO_LIST } from '../resources/feed-info-list';
 import { FeedCrawler } from './utils/feed-crawler';
 import { FeedGenerator } from './utils/feed-generator';
@@ -6,14 +7,16 @@ import { ImagePrecacher as FeedImagePrecacher } from './utils/feed-image-precach
 import { FeedStorer } from './utils/feed-storer';
 import { FeedValidator } from './utils/feed-validator';
 
+const dirName = url.fileURLToPath(new URL('.', import.meta.url));
+
 const FEED_FETCH_CONCURRENCY = 50;
 const FEED_OG_FETCH_CONCURRENCY = 20;
 const FETCH_IMAGE_CONCURRENCY = 100;
 const FILTER_ARTICLE_DATE = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
 const MAX_FEED_DESCRIPTION_LENGTH = 200;
 const MAX_FEED_CONTENT_LENGTH = 500;
-const STORE_FEEDS_DIR_PATH = path.join(__dirname, '../site/feeds');
-const STORE_BLOG_FEEDS_DIR_PATH = path.join(__dirname, '../site/blog-feeds');
+const STORE_FEEDS_DIR_PATH = path.join(dirName, '../site/feeds');
+const STORE_BLOG_FEEDS_DIR_PATH = path.join(dirName, '../site/blog-feeds');
 
 const feedCrawler = new FeedCrawler();
 const feedGenerator = new FeedGenerator();

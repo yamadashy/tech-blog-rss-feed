@@ -5,10 +5,10 @@
   "main": "",
   "scripts": {
     "build": "yarn feed-generate && yarn site-build",
-    "feed-generate": "node --require esbuild-register src/feed/generate-feed-command.ts",
-    "register-index": "node --require esbuild-register src/feed/register-index-command.ts",
-    "site-build": "node --require esbuild-register ./node_modules/.bin/eleventy --config=eleventy.config.ts",
-    "site-serve": "node --require esbuild-register ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
+    "feed-generate": "tsx src/feed/generate-feed-command.ts",
+    "register-index": "tsx src/feed/register-index-command.ts",
+    "site-build": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
+    "site-serve": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
     "lint": "biome check --write && tsc --noEmit && secretlint '**/*'",
     "test": "vitest run",
     "test-coverage": "vitest run --coverage",
@@ -21,13 +21,14 @@
   "bugs": {
     "url": "https://github.com/yamadashy/tech-blog-rss-feed/issues"
   },
+  "type": "module",
   "author": "yamadashy",
   "license": "MIT",
   "keywords": ["blog", "tech blog", "engineer blog", "engineering blog", "feed", "rss", "atom"],
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-fetch": "^4.0.0",
-    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy-img": "^5.0.0",
     "@biomejs/biome": "^1.9.3",
     "@secretlint/core": "^8.3.0",
     "@secretlint/secretlint-rule-preset-recommend": "^8.3.0",
@@ -46,7 +47,6 @@
     "axios": "^1.6.0",
     "clean-css": "^5.3.3",
     "dayjs": "^1.11.10",
-    "esbuild-register": "^3.5.0",
     "fast-xml-parser": "^4.3.2",
     "feed": "^4.2.2",
     "googleapis": "^144.0.0",
@@ -60,6 +60,7 @@
     "rss-parser": "^3.12.0",
     "secretlint": "^8.3.0",
     "sharp-ico": "^0.1.5",
+    "tsx": "^4.19.1",
     "typescript": "^5.2.2",
     "vitest": "^2.0.0"
   },

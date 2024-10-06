@@ -1,3 +1,3 @@
-const constants = require('../../common/constants');
+import constants from '../../common/constants.js';
 
-module.exports = constants;
+export default constants;
