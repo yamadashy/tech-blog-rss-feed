@@ -1,0 +1,4 @@
+[files]
+extend-exclude = [
+  "src/resources/feed-info-list.ts"
+]

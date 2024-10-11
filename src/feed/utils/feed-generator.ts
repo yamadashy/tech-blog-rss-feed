@@ -1,6 +1,6 @@
 import { Feed, type FeedOptions } from 'feed';
 import constants from '../../common/constants.js';
-import { escapeTextForXml, textToMd5Hash, textTruncate } from './common-util';
+import { textToMd5Hash, textTruncate } from './common-util';
 import type { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
 import { logger } from './logger';
 
@@ -14,6 +14,13 @@ export interface GenerateFeedResult {
   aggregatedFeed: Feed;
   feedDistributionSet: FeedDistributionSet;
 }
+const escapeTextForXml = (text: string) => {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+};
+
+const escapeAmpersand = (text: string) => {
+  return text.replace(/&/g, '&amp;');
+};
 
 export class FeedGenerator {
   public generateFeeds(
@@ -35,8 +42,8 @@ export class FeedGenerator {
       aggregatedFeed,
       feedDistributionSet: {
         // 出力されているXMLで & がエスケープされていないのでパッチ対応
-        atom: escapeTextForXml(aggregatedFeed.atom1()),
-        rss: escapeTextForXml(aggregatedFeed.rss2()),
+        atom: escapeAmpersand(aggregatedFeed.atom1()),
+        rss: escapeAmpersand(aggregatedFeed.rss2()),
         json: aggregatedFeed.json1(),
       },
     };
@@ -70,8 +77,11 @@ export class FeedGenerator {
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
 
       const ogObject = feedItemOgObjectMap.get(feedItem.link);
-      // 配列になっているが2つ目以降を使う理由もないので0を使う
       const ogImage = ogObject?.customOgImage;
+
+      if (ogImage?.alt) {
+        ogImage.alt = escapeTextForXml(ogImage.alt);
+      }
 
       // 日付がないものは入れない
       if (!feedItem.isoDate) {
@@ -83,20 +93,20 @@ export class FeedGenerator {
         id: feedItemId,
         guid: feedItemId,
         // 「記事タイトル | ブログ名」の形にする。タイトルだけでどの企業かわかるように
-        title: `${feedItem.title} | ${feedItem.blogTitle}`,
-        description: textTruncate(feedItemContent, maxFeedDescriptionLength),
-        content: textTruncate(feedItemContent, maxFeedContentLength),
+        title: escapeTextForXml(`${feedItem.title} | ${feedItem.blogTitle}`),
+        description: escapeTextForXml(textTruncate(feedItemContent, maxFeedDescriptionLength)),
+        content: escapeTextForXml(textTruncate(feedItemContent, maxFeedContentLength)),
         link: feedItem.link,
         category: (feedItem.categories || []).map((category) => {
           return {
-            name: category,
+            name: escapeTextForXml(category),
           };
         }),
         author:
           feedItem.creator && typeof feedItem.creator === 'string'
             ? [
                 {
-                  name: feedItem.creator,
+                  name: escapeTextForXml(feedItem.creator),
                 },
               ]
             : undefined,
@@ -108,8 +118,8 @@ export class FeedGenerator {
             name: '_custom',
             objects: {
               hatenaCount: allFeedItemHatenaCountMap.get(feedItem.link) || 0,
-              originalTitle: feedItem.title,
-              blogTitle: feedItem.blogTitle,
+              originalTitle: escapeTextForXml(feedItem.title ?? ''),
+              blogTitle: escapeTextForXml(feedItem.blogTitle),
               blogLink: feedItem.blogLink,
               blogLinkMd5Hash: textToMd5Hash(feedItem.blogLink),
               favicon: ogObject?.favicon,

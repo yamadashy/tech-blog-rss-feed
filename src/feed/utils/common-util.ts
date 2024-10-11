@@ -32,16 +32,6 @@ export const removeInvalidUnicode = (text: string) => {
   return text.replace(/[\x00-\x1F\x7F-\x9F]/g, '');
 };
 
-export const escapeTextForXml = (text: string) => {
-  let escapedText = text;
-
-  if (text.includes('&')) {
-    escapedText = text.replace(/&/g, '&amp;');
-  }
-
-  return escapedText;
-};
-
 export const isValidHttpUrl = (url: string) => {
   let urlObject: URL;
 

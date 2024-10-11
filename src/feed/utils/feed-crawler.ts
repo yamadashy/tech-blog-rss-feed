@@ -15,6 +15,7 @@ import {
   removeInvalidUnicode,
   urlRemoveQueryParams,
 } from './common-util';
+import { FeedValidator } from './feed-validator';
 import { logger } from './logger';
 
 export type CustomOgObject = OgObject & {
@@ -44,6 +45,7 @@ export interface ClawlFeedsResult {
 
 export class FeedCrawler {
   private rssParser;
+  private feedValidator;
 
   constructor() {
     this.rssParser = new RssParser({
@@ -53,6 +55,7 @@ export class FeedCrawler {
         'user-agent': constants.requestUserAgent,
       },
     });
+    this.feedValidator = new FeedValidator();
   }
 
   public async crawlFeeds(
@@ -113,6 +116,10 @@ export class FeedCrawler {
             }
 
             const feedData = await response.text();
+
+            // バリデーション
+            await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
+
             return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
           }),
         );

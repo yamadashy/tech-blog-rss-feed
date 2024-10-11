@@ -1,5 +1,4 @@
 import { google } from 'googleapis';
-import * as request from 'request';
 import constants from '../common/constants';
 import { sleep } from './utils/common-util';
 import type { BlogFeed } from './utils/feed-storer';
@@ -45,30 +44,29 @@ jwtClient.authorize(async (err, tokens) => {
   }
 
   for (const indexTargetUrl of indexTargetUrls) {
-    const options: request.CoreOptions = {
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${tokens.access_token || ''}`,
       },
-      auth: { bearer: tokens.access_token || '' },
-      json: {
+      body: JSON.stringify({
         url: indexTargetUrl,
         type: 'URL_UPDATED',
-      },
+      }),
     };
 
-    await request.post(GOOGLE_INDEXING_API_END_POINT, options, async (error, response, body) => {
-      if (error) {
-        console.error(error);
-        return;
+    try {
+      const response = await fetch(GOOGLE_INDEXING_API_END_POINT, options);
+      if (!response.ok) {
+        console.error(response.status, await response.text());
+        continue;
       }
-      if (response.statusCode !== 200) {
-        console.error(response.statusCode, body);
-        return;
-      }
-
+      const body = await response.json();
       console.log(`[index api] success! url: ${body.urlNotificationMetadata.url}`);
-    });
+    } catch (error) {
+      console.error(error);
+    }
 
     await sleep(1000);
   }
