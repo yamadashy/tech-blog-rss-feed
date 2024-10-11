@@ -9,7 +9,10 @@
     "register-index": "tsx src/feed/register-index-command.ts",
     "site-build": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "site-serve": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
-    "lint": "biome check --write && tsc --noEmit && secretlint '**/*'",
+    "lint": "yarn lint-biome && yarn lint-ts && yarn lint-secretlint",
+    "lint-biome": "biome check --write",
+    "lint-ts": "tsc --noEmit",
+    "lint-secretlint": "secretlint '**/*'",
     "test": "vitest run",
     "test-coverage": "vitest run --coverage",
     "renovate-validate": "renovate-config-validator"
