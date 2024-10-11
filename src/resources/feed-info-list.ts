@@ -564,7 +564,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['バスキュール', 'https://blog.bascule.co.jp/feed'],
   ['バトンズ', 'https://batonz-tech.hatenablog.com/feed'],
   ['バレットグループ', 'https://blog.bltinc.co.jp/feed'],
-  ['パトコア', 'https://tech.patcore.com/feed'],
   ['パーソルキャリア', 'https://techtekt.persol-career.co.jp/feed'],
   ['パーソルプロセス＆テクノロジー', 'https://note.com/ppt_hr/m/md77242321979/rss'],
   ['パーソンリンク', 'https://zenn.dev/person_link/feed'],
@@ -756,6 +755,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['ホクソエム', 'https://blog.hoxo-m.com/feed'],
  * ['メンテモ', 'https://engineering.mentemo.com/feed'],
  * ['ダンクハーツ', 'https://dhe.dank-hearts.net/m/m18705e344ee6/rss'],
+ * ['パトコア', 'https://tech.patcore.com/feed'],
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
