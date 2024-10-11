@@ -12,66 +12,92 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  lint-biome:
+    name: Lint Biome
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup node
-      uses: actions/setup-node@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
         cache: yarn
+    - run: yarn install
+    - run: yarn lint-biome && git diff --exit-code
 
-    - name: Install dependencies
-      run: yarn install
+  lint-ts:
+    name: Lint TypeScript
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: .tool-versions
+        cache: yarn
+    - run: yarn install
+    - run: yarn lint-ts
 
-    - name: Lint
-      run: yarn lint && git diff --exit-code
+  lint-secretlint:
+    name: Lint Secretlint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: .tool-versions
+        cache: yarn
+    - run: yarn install
+    - run: yarn lint-secretlint
+
+  lint-renovate-config:
+    name: Lint Renovate config
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: .tool-versions
+    - name: Validate Renovate config
+      run: npx --yes --package renovate -- renovate-config-validator --strict
+
+  check-typo:
+    name: Check typos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crate-ci/typos@v1.25.0
 
   test:
+    name: Test
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup node
-      uses: actions/setup-node@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
         cache: yarn
-
-    - name: Install dependencies
-      run: yarn install
-
-    - name: Test
-      run: yarn test-coverage
+    - run: yarn install
+    - run: yarn test-coverage
 
   generate:
+    name: Generate feed and site
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup node
-      uses: actions/setup-node@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
         cache: yarn
-
-    - name: Install dependencies
-      run: yarn install
-
+    - run: yarn install
     - name: Generate feed
       run: yarn feed-generate
-
     - name: Generate site
       run: yarn site-build
-
     - name: Archive feed
       uses: actions/upload-artifact@v4
       with:

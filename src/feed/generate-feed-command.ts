@@ -6,6 +6,7 @@ import { FeedGenerator } from './utils/feed-generator';
 import { ImagePrecacher as FeedImagePrecacher } from './utils/feed-image-precacher';
 import { FeedStorer } from './utils/feed-storer';
 import { FeedValidator } from './utils/feed-validator';
+import { logger } from './utils/logger';
 
 const dirName = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -43,19 +44,6 @@ const feedImagePrecacher = new FeedImagePrecacher();
     MAX_FEED_CONTENT_LENGTH,
   );
 
-  // まとめフィードのバリデーション。エラーならすぐに終了する
-  try {
-    await feedValidator.assertFeed(generateFeedsResult.aggregatedFeed);
-    await feedValidator.assertXmlFeed('atom', generateFeedsResult.feedDistributionSet.atom);
-    await feedValidator.assertXmlFeed('rss', generateFeedsResult.feedDistributionSet.rss);
-  } catch (e) {
-    const error = new Error('Failed to validate feed', {
-      cause: e,
-    });
-    console.error(error);
-    throw error;
-  }
-
   // ファイル出力
   try {
     await feedStorer.storeFeeds(
@@ -84,6 +72,23 @@ const feedImagePrecacher = new FeedImagePrecacher();
     );
   } catch (e) {
     const error = new Error('Failed to cache feed images', {
+      cause: e,
+    });
+    console.error(error);
+    throw error;
+  }
+
+  // 最後にまとめフィードのバリデーション
+  try {
+    logger.info('フィードのバリデーション開始');
+
+    await feedValidator.assertFeed(generateFeedsResult.aggregatedFeed);
+    await feedValidator.assertXmlFeed('atom', generateFeedsResult.feedDistributionSet.atom);
+    await feedValidator.assertXmlFeed('rss', generateFeedsResult.feedDistributionSet.rss);
+
+    logger.info('フィードのバリデーション完了');
+  } catch (e) {
+    const error = new Error('Failed to validate feed', {
       cause: e,
     });
     console.error(error);

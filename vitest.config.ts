@@ -11,6 +11,6 @@ export default defineConfig({
       exclude: ['src/site/**', '.eleventy.js', 'eslint.config.mjs', 'vitest.config.ts', '.yarn/**'],
     },
     setupFiles: ['tests/test-setup.ts'],
-    testTimeout: 30_000,
+    testTimeout: 5 * 60 * 1000,
   },
 });

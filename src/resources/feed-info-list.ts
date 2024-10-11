@@ -267,7 +267,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['SmartHR', 'https://tech.smarthr.jp/feed'],
   ['SmartNews', 'https://developer.smartnews.com/blog/feed'],
   ['SmartNewsメディア担当チーム', 'https://www.mediatechnology.jp/feed'],
-  ['Snowlfake', 'https://zenn.dev/p/dataheroes/feed'],
+  ['Snowflake', 'https://zenn.dev/p/dataheroes/feed'],
   ['Social Databank', 'https://zenn.dev/p/sdb_blog/feed'],
   ['Speee', 'https://tech.speee.jp/feed'],
   ['Spiral.AI', 'https://zenn.dev/p/spiralai/feed'],
