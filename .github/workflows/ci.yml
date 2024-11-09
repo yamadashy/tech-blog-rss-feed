@@ -63,6 +63,15 @@ jobs:
     - name: Validate Renovate config
       run: npx --yes --package renovate -- renovate-config-validator --strict
 
+  lint-action:
+    name: Lint GitHub Actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker://rhysd/actionlint:latest
+        with:
+          args: "-color"
+
   check-typo:
     name: Check typos
     runs-on: ubuntu-latest
