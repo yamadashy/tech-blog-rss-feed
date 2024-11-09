@@ -97,7 +97,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['FLINTERS', 'https://blog.flinters.co.jp/feed'],
   ['FLYWHEEL', 'https://www.flywheel.jp/topics-tag/tech/feed/'],
   ['FiNC', 'https://medium.com/feed/finc-engineering'],
-  ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
   ['Finatext', 'https://medium.com/feed/finatext'],
   ['Findy', 'https://tech.findy.co.jp/feed'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
@@ -273,7 +272,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Spiral.AI', 'https://zenn.dev/p/spiralai/feed'],
   ['Stockmark', 'https://stockmark-tech.hatenablog.com/feed'],
   ['Studyplus', 'https://tech.studyplus.co.jp/feed'],
-  ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
   ['Synamon', 'https://synamon.hatenablog.com/feed'],
   ['Sysdig', 'https://www.scsk.jp/sp/sysdig/rss.xml'],
   ['TANP', 'https://www.tanp-blog.com/feed'],
@@ -645,7 +643,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ラボル', 'https://blog.labol.co.jp/feed'],
   ['ランサーズ', 'https://engineer.blog.lancers.jp/feed/'],
   ['リクルートコミュニケーションズ', 'https://blog.recruit.co.jp/rco/feed.xml'],
-  ['リクルートテクノロジーズ', 'https://techblog.recruit.co.jp/rss.xml'],
   ['リサーチ・アンド・イノベーション', 'https://rni-dev.hatenablog.com/feed'],
   ['リゾーム', 'https://tech.rhizome-e.com/feed'],
   ['リンカーズ', 'https://linkers.hatenablog.com/feed'],
@@ -730,6 +727,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['UnReact', 'https://zenn.dev/unreact/feed'],
  * ['Zeals', 'https://tech.zeals.co.jp/feed'],
  * ['hokan', 'https://medium.com/feed/@hokan_dev'],
+ * ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
+ * ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
  *
  * unable to verify the first certificate
  * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
@@ -775,6 +774,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['QualiArts', 'https://technote.qualiarts.jp/rss.xml'],
  * https://securesky-plus.com/engineerblog/
  * https://www.monolithsoft.co.jp/techblog/
+ * ['リクルートテクノロジーズ', 'https://techblog.recruit.co.jp/rss.xml'],
  *
  * 日本語以外
  * https://medium.com/feed/mcdonalds-technical-blog
