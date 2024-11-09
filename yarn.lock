@@ -3017,48 +3017,48 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@secretlint/config-creator@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/config-creator@npm:8.5.0"
+"@secretlint/config-creator@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/config-creator@npm:9.0.0"
   dependencies:
-    "@secretlint/types": "npm:^8.5.0"
-  checksum: 10/265ca4b1873efadf16d2e9a8bd2e97d9dd776b4d09a01f7801b1fefd848732e83208e200522c15ada848943def17645dc51c4ec4243a93b638d728bc93c44263
+    "@secretlint/types": "npm:^9.0.0"
+  checksum: 10/4f11a1a02ee4ae1e90d803254144489b5e79a878091eb50b573489f57d1f9092e70eb72c66e8e1b7a713004cddd3c4ea13a732b2f29b8584f4d0057c585c210f
   languageName: node
   linkType: hard
 
-"@secretlint/config-loader@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/config-loader@npm:8.5.0"
+"@secretlint/config-loader@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/config-loader@npm:9.0.0"
   dependencies:
-    "@secretlint/profiler": "npm:^8.5.0"
-    "@secretlint/resolver": "npm:^8.5.0"
-    "@secretlint/types": "npm:^8.5.0"
+    "@secretlint/profiler": "npm:^9.0.0"
+    "@secretlint/resolver": "npm:^9.0.0"
+    "@secretlint/types": "npm:^9.0.0"
     ajv: "npm:^8.17.1"
     debug: "npm:^4.3.7"
     rc-config-loader: "npm:^4.1.3"
     try-resolve: "npm:^1.0.1"
-  checksum: 10/bed2bfacac75581f9da8de868f605b0dc1457d1f39abba6450a3961f0d5c0882a3e0dbd4fca80e6cb04ecdd44157de27e6a09c258b18375692bf245bceb05d1a
+  checksum: 10/8de7855d5aaf207b7f2c6b9f211cf51fa0f8901cd8d81f067646780d907d2c32660876e3f2afdd3b682fb80913dfe5893369aede01924d2f4a0be1e3ce5c8a24
   languageName: node
   linkType: hard
 
-"@secretlint/core@npm:^8.3.0, @secretlint/core@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/core@npm:8.5.0"
+"@secretlint/core@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/core@npm:9.0.0"
   dependencies:
-    "@secretlint/profiler": "npm:^8.5.0"
-    "@secretlint/types": "npm:^8.5.0"
+    "@secretlint/profiler": "npm:^9.0.0"
+    "@secretlint/types": "npm:^9.0.0"
     debug: "npm:^4.3.7"
     structured-source: "npm:^4.0.0"
-  checksum: 10/03b5f034c8b973b54ec3a2b3693b2146c2b904c469a304074e926ca57e3863b25f7fadf6061c9887c04276a3e36c38a95c1e18398c644e3593812ed8592e39dd
+  checksum: 10/92834c9ef790e7ce55872c5a8b47e21f2249763d0ab8e2c176606a3d658197ec432686c182937d017e7834bc47c4fe98de0e88763e13b4606e304c5b499b3e98
   languageName: node
   linkType: hard
 
-"@secretlint/formatter@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/formatter@npm:8.5.0"
+"@secretlint/formatter@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/formatter@npm:9.0.0"
   dependencies:
-    "@secretlint/resolver": "npm:^8.5.0"
-    "@secretlint/types": "npm:^8.5.0"
+    "@secretlint/resolver": "npm:^9.0.0"
+    "@secretlint/types": "npm:^9.0.0"
     "@textlint/linter-formatter": "npm:^14.2.1"
     "@textlint/module-interop": "npm:^14.2.1"
     "@textlint/types": "npm:^14.2.1"
@@ -3069,61 +3069,61 @@ __metadata:
     table: "npm:^6.8.2"
     terminal-link: "npm:^2.1.1"
     try-resolve: "npm:^1.0.1"
-  checksum: 10/1a3637cffaf20b35f13f0fecb5f51e473756e585d6523faea3a48f2c3b569d327cf51cc6ab6d8d73fff366cba464699ffffb9135c75dd8435798a623b6eeac75
+  checksum: 10/c244c39b52d0bb8360d95725a474adba6c2af5062eee6983409f691aa195d39151da86751c67048eedab7e35623368dc875754691da63795ab0ef07feb4fcf73
   languageName: node
   linkType: hard
 
-"@secretlint/node@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/node@npm:8.5.0"
+"@secretlint/node@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/node@npm:9.0.0"
   dependencies:
-    "@secretlint/config-loader": "npm:^8.5.0"
-    "@secretlint/core": "npm:^8.5.0"
-    "@secretlint/formatter": "npm:^8.5.0"
-    "@secretlint/profiler": "npm:^8.5.0"
-    "@secretlint/source-creator": "npm:^8.5.0"
-    "@secretlint/types": "npm:^8.5.0"
+    "@secretlint/config-loader": "npm:^9.0.0"
+    "@secretlint/core": "npm:^9.0.0"
+    "@secretlint/formatter": "npm:^9.0.0"
+    "@secretlint/profiler": "npm:^9.0.0"
+    "@secretlint/source-creator": "npm:^9.0.0"
+    "@secretlint/types": "npm:^9.0.0"
     debug: "npm:^4.3.7"
     p-map: "npm:^4.0.0"
-  checksum: 10/be8627057561d42fe4882b81b3c25f5aeca6f3171abc11193730ee20d6fc2509393b76a2c5b57c92d351ae3674e69ceb94f48c5616df8193fdff1efbe3b8f1d9
+  checksum: 10/949cf876295fc239b3418d18d3ac553e899c81a76868eb90afed23c5e6ed0ad2eb44c6bde6786af319f216a8973a8733974630af3d77a2e468e861465618e156
   languageName: node
   linkType: hard
 
-"@secretlint/profiler@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/profiler@npm:8.5.0"
-  checksum: 10/f25a970e58caf3921f6fa40929da1a321573150a8755da4681882a967e33477b3a0f53dd98badbf8aabe2a2041d11731b108eb5355ec2b7f9f26410109c8a363
+"@secretlint/profiler@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/profiler@npm:9.0.0"
+  checksum: 10/24418686189d387cd7e226fd72dc475f7c1f0ab2b1e37134c1c2b6f754a9a0451369f4da15242006587056eb2ff498548a525cc56fd6930f33e6ab3594d1e70a
   languageName: node
   linkType: hard
 
-"@secretlint/resolver@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/resolver@npm:8.5.0"
-  checksum: 10/c79be44946f70acc35f94110b06415724930e0485df0a03fca6f65440f8624e54d28f19f65cdc43625c44b755ac143981cb5b00ff459d6c4b343577d8b02a39e
+"@secretlint/resolver@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/resolver@npm:9.0.0"
+  checksum: 10/a829524eba1c4e268c73851f596b58ff0410d8797256b8023bf0e6737c579ec00bbf681fd455846dc5339608a982f391f4e325987825da026c8ec307694917f4
   languageName: node
   linkType: hard
 
-"@secretlint/secretlint-rule-preset-recommend@npm:^8.3.0":
-  version: 8.5.0
-  resolution: "@secretlint/secretlint-rule-preset-recommend@npm:8.5.0"
-  checksum: 10/44eccd64facb4a8432cb961835e59faa4fe7e2a28c7b02059ce89c5656fe27b2d26f7f35a4a1a5134467fdca514dd3942f6454d10af6ece47066e2e1c28bc6d0
+"@secretlint/secretlint-rule-preset-recommend@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/secretlint-rule-preset-recommend@npm:9.0.0"
+  checksum: 10/45d1ca9d1420df387b310b77cf35f599d44f640c2e4acfdb6b5704c5ed14d8da6d56bbe744f66a0e0a0e18347182852213d85e4f42ab9dfaed891aea9a8d4cce
   languageName: node
   linkType: hard
 
-"@secretlint/source-creator@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/source-creator@npm:8.5.0"
+"@secretlint/source-creator@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/source-creator@npm:9.0.0"
   dependencies:
-    "@secretlint/types": "npm:^8.5.0"
+    "@secretlint/types": "npm:^9.0.0"
     istextorbinary: "npm:^6.0.0"
-  checksum: 10/034756d5da7fe578f7498351ba90cc022f3da86c4a7d028bedcb5a3b67fb4183f417cdc1c5b01417547bcac295a26491834fe9f7f2e6d185b763bdf2f02d8fe2
+  checksum: 10/9a50cb529a2717e8a784155b717044f6f8da5a9167ca8227fc0bb8a89d62341ef98cc9eb17e08c6993bd0c5d0b7d0c9fa8e61b0ecb1d32da5342efaef6540aba
   languageName: node
   linkType: hard
 
-"@secretlint/types@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "@secretlint/types@npm:8.5.0"
-  checksum: 10/12a6b502beff71ffbfe2b95f718fe32134ca0f557fbe38b4ab6c31ebc93344fd7f6867c9edb973c76cfa4d100e674a645175544e3498ed0d0957558b03d8ebb4
+"@secretlint/types@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@secretlint/types@npm:9.0.0"
+  checksum: 10/40bb885b9d96700c95723007f45275ac3cdb425e3c4110337c5ff1338c170bda5bbf1107bc893df259350f336ae4488f86b3751fe5bbedb73721632c511e2034
   languageName: node
   linkType: hard
 
@@ -3995,21 +3995,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^22.0.0":
   version: 22.9.0
   resolution: "@types/node@npm:22.9.0"
   dependencies:
     undici-types: "npm:~6.19.8"
   checksum: 10/a7df3426891868b0f5fb03e46aeddd8446178233521c624a44531c92a040cf08a82d8235f7e1e02af731fd16984665d4d71f3418caf9c2788313b10f040d615d
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.10.4":
-  version: 20.17.6
-  resolution: "@types/node@npm:20.17.6"
-  dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: 10/714b8b54951950cee662ce80492831ebc51f914a9adf88583cea777ea4d55b88827b2505ff2f53d2bb7753691aaab1b06c027a7b5c63eb153ad4acee1239690c
   languageName: node
   linkType: hard
 
@@ -10955,21 +10946,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"secretlint@npm:^8.3.0":
-  version: 8.5.0
-  resolution: "secretlint@npm:8.5.0"
+"secretlint@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "secretlint@npm:9.0.0"
   dependencies:
-    "@secretlint/config-creator": "npm:^8.5.0"
-    "@secretlint/formatter": "npm:^8.5.0"
-    "@secretlint/node": "npm:^8.5.0"
-    "@secretlint/profiler": "npm:^8.5.0"
+    "@secretlint/config-creator": "npm:^9.0.0"
+    "@secretlint/formatter": "npm:^9.0.0"
+    "@secretlint/node": "npm:^9.0.0"
+    "@secretlint/profiler": "npm:^9.0.0"
     debug: "npm:^4.3.7"
     globby: "npm:^14.0.2"
     meow: "npm:^12.1.1"
     read-pkg: "npm:^8.1.0"
   bin:
     secretlint: bin/secretlint.js
-  checksum: 10/535a85651ddfd2a0e2bf7cfa9e3c164c31b9d00941fe925626318b84862145da3208ec0df34dc9f979c49bf714656bfb08d85a267c1e51ae629bed97d5fb0791
+  checksum: 10/2d2b2321afc24e28dc2558fd44f3c4232a0455e250fff65d623e0e5474728da4d60e9289e11593aff62d969d05dd41ffd7eb57db57d06ba94e18c942d7285bbc
   languageName: node
   linkType: hard
 
@@ -11914,15 +11905,15 @@ __metadata:
     "@11ty/eleventy-fetch": "npm:^4.0.1"
     "@11ty/eleventy-img": "npm:^5.0.0"
     "@biomejs/biome": "npm:^1.9.3"
-    "@secretlint/core": "npm:^8.3.0"
-    "@secretlint/secretlint-rule-preset-recommend": "npm:^8.3.0"
+    "@secretlint/core": "npm:^9.0.0"
+    "@secretlint/secretlint-rule-preset-recommend": "npm:^9.0.0"
     "@supercharge/promise-pool": "npm:^3.1.0"
     "@types/11ty__eleventy-img": "npm:^4.0.0"
     "@types/async-retry": "npm:^1.4.3"
     "@types/clean-css": "npm:^4.2.11"
     "@types/html-minifier-terser": "npm:^7.0.2"
     "@types/http-server": "npm:^0.12.1"
-    "@types/node": "npm:^20.10.4"
+    "@types/node": "npm:^22.0.0"
     "@types/open-graph-scraper": "npm:^4.8.1"
     "@vitest/coverage-v8": "npm:^2.0.3"
     async-retry: "npm:^1.3.3"
@@ -11940,7 +11931,7 @@ __metadata:
     open-graph-scraper: "npm:^6.5.1"
     renovate: "npm:^37.253.1"
     rss-parser: "npm:^3.12.0"
-    secretlint: "npm:^8.3.0"
+    secretlint: "npm:^9.0.0"
     sharp-ico: "npm:^0.1.5"
     tsx: "npm:^4.19.1"
     typescript: "npm:^5.2.2"
@@ -12467,13 +12458,6 @@ __metadata:
   version: 1.13.6
   resolution: "underscore@npm:1.13.6"
   checksum: 10/58cf5dc42cb0ac99c146ae4064792c0a2cc84f3a3c4ad88f5082e79057dfdff3371d896d1ec20379e9ece2450d94fa78f2ef5bfefc199ba320653e32c009bd66
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.19.2":
-  version: 6.19.6
-  resolution: "undici-types@npm:6.19.6"
-  checksum: 10/0ea9bc25762a86597d095b3772f6cec0bcabb796c339f7dfa2bd601c745a480289eb2939848dc285a56d4f94f50c475868160d8d6d3f54e823f1faf7ea9e9468
   languageName: node
   linkType: hard
 

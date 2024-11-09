@@ -4,7 +4,6 @@
     "include": [
       "./src/**",
       "./tests/**",
-      "package.json",
       "biome.json",
       ".secretlintrc.json",
       "tsconfig.json",
