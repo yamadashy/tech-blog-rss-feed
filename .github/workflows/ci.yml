@@ -5,16 +5,12 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  schedule:
-    # NOTE: UTCなので9時間引く
-    # 毎週土曜日の午前9時に実行
-    - cron: 0 0 * * 6
   workflow_dispatch:
 
 jobs:
   lint-biome:
     name: Lint Biome
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
@@ -27,7 +23,7 @@ jobs:
 
   lint-ts:
     name: Lint TypeScript
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
@@ -40,7 +36,7 @@ jobs:
 
   lint-secretlint:
     name: Lint Secretlint
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
@@ -53,7 +49,7 @@ jobs:
 
   lint-renovate-config:
     name: Lint Renovate config
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
@@ -81,7 +77,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
@@ -94,7 +90,7 @@ jobs:
 
   generate:
     name: Generate feed and site
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
     - uses: actions/checkout@v4

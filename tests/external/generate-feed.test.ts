@@ -14,9 +14,9 @@ const feedGenerator = new FeedGenerator();
 
 describe('フィード生成', async () => {
   it('フィードを正しく生成できるか', async () => {
-    // 10個適当に取得
+    // 30個ランダムに取得
     const shuffledFeedInfoList = FEED_INFO_LIST.sort(() => 0.5 - Math.random());
-    const feedInfoList = shuffledFeedInfoList.slice(0, 10);
+    const feedInfoList = shuffledFeedInfoList.slice(0, 30);
 
     // フィード取得
     const crawlFeedsResult = await feedCrawler.crawlFeeds(

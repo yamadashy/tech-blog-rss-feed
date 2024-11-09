@@ -14,7 +14,9 @@
     "lint-ts": "tsc --noEmit",
     "lint-secretlint": "secretlint '**/*'",
     "test": "vitest run",
-    "test-coverage": "vitest run --coverage",
+    "test-coverage": "vitest run --coverage --exclude 'tests/external/**/*'",
+    "test-external": "vitest run -c ./vitest.external.config.ts",
+    "test-internal": "vitest run --exclude 'tests/external/**/*'",
     "renovate-validate": "renovate-config-validator"
   },
   "repository": {

@@ -1,0 +1,27 @@
+name: External Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # NOTE: UTCなので9時間引く
+    # 毎週土曜日の午前9時に実行
+    - cron: 0 0 * * 6
+  workflow_dispatch:
+
+jobs:
+  test-external:
+    name: Run External Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          cache: yarn
+      - run: yarn install
+      - name: Run External Tests
+        run: yarn test-external
