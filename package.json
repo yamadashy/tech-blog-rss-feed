@@ -29,7 +29,15 @@
   "type": "module",
   "author": "yamadashy",
   "license": "MIT",
-  "keywords": ["blog", "tech blog", "engineer blog", "engineering blog", "feed", "rss", "atom"],
+  "keywords": [
+    "blog",
+    "tech blog",
+    "engineer blog",
+    "engineering blog",
+    "feed",
+    "rss",
+    "atom"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
