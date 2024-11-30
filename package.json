@@ -40,7 +40,7 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy-fetch": "^5.0.0",
     "@11ty/eleventy-img": "^5.0.0",
     "@biomejs/biome": "^1.9.3",
     "@secretlint/core": "^9.0.0",
