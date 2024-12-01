@@ -61,6 +61,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@11ty/eleventy-fetch@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "@11ty/eleventy-fetch@npm:5.0.1"
+  dependencies:
+    "@rgrove/parse-xml": "npm:^4.2.0"
+    debug: "npm:^4.3.7"
+    flat-cache: "npm:^6.1.1"
+    graceful-fs: "npm:^4.2.11"
+    p-queue: "npm:6.6.2"
+  checksum: 10/203a15677202f2e201535d68e8f4aad5b8336cdfcd0894ac0c1d49d628657d9f0ec5088c437c0e60cb7161f09ceadc272dfce60a9370f667e5250ce2c5b62fe2
+  languageName: node
+  linkType: hard
+
 "@11ty/eleventy-img@npm:^5.0.0":
   version: 5.0.0
   resolution: "@11ty/eleventy-img@npm:5.0.0"
@@ -2232,6 +2245,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@keyv/serialize@npm:*":
+  version: 1.0.1
+  resolution: "@keyv/serialize@npm:1.0.1"
+  dependencies:
+    buffer: "npm:^6.0.3"
+  checksum: 10/b47418bed4fb17e16e136d1071f71d12de6f566bbf4d484a611a2d7063e0e79aedb3164b51153054101b6b7eb2a2b349469d438f70a5fbac22a68f136a535ec4
+  languageName: node
+  linkType: hard
+
 "@kwsites/file-exists@npm:^1.1.1":
   version: 1.1.1
   resolution: "@kwsites/file-exists@npm:1.1.1"
@@ -2891,6 +2913,13 @@ __metadata:
   version: 3.0.23
   resolution: "@renovatebot/ruby-semver@npm:3.0.23"
   checksum: 10/52fd0b6e50548ed990292a901f9b92177fd1d5c0317b9a785ec74d613b3ccfcef7db50ab747422196aa28ee0b23737941e4099d1d5b12bc436a77a11cd1d5a58
+  languageName: node
+  linkType: hard
+
+"@rgrove/parse-xml@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@rgrove/parse-xml@npm:4.2.0"
+  checksum: 10/f82e128090026e37ad4b72ed2b9496dfcecf2f1d7daf86d78d393485beea990a86d0f3fc9b19673d4bba392cbe84c925a0092d3ca7f894205d6e2dd4ad77eafc
   languageName: node
   linkType: hard
 
@@ -4943,6 +4972,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "buffer@npm:6.0.3"
+  dependencies:
+    base64-js: "npm:^1.3.1"
+    ieee754: "npm:^1.2.1"
+  checksum: 10/b6bc68237ebf29bdacae48ce60e5e28fc53ae886301f2ad9496618efac49427ed79096750033e7eab1897a4f26ae374ace49106a5758f38fb70c78c9fda2c3b1
+  languageName: node
+  linkType: hard
+
 "builtins@npm:^5.0.0":
   version: 5.0.1
   resolution: "builtins@npm:5.0.1"
@@ -5048,6 +5087,16 @@ __metadata:
     normalize-url: "npm:^6.0.1"
     responselike: "npm:^2.0.0"
   checksum: 10/0f4f2001260ecca78b9f64fc8245e6b5a5dcde24ea53006daab71f5e0e1338095aa1512ec099c4f9895a9e5acfac9da423cb7c079e131485891e9214aca46c41
+  languageName: node
+  linkType: hard
+
+"cacheable@npm:^1.8.5":
+  version: 1.8.5
+  resolution: "cacheable@npm:1.8.5"
+  dependencies:
+    hookified: "npm:^1.5.0"
+    keyv: "npm:^5.2.1"
+  checksum: 10/95d189b9d23a5e6ae4d8e815af9d70224dde4c748f6231a86accdd8b4d94e0c4822214a335edbb592fc5ad2214ec24eabd20497ae96285f6fe92d660aeda76e0
   languageName: node
   linkType: hard
 
@@ -6767,10 +6816,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flat-cache@npm:^6.1.1":
+  version: 6.1.3
+  resolution: "flat-cache@npm:6.1.3"
+  dependencies:
+    cacheable: "npm:^1.8.5"
+    flatted: "npm:^3.3.2"
+    hookified: "npm:^1.5.1"
+  checksum: 10/61fb7fd2a9f7190dc27bc86a5d8e426317f3e148b33e4a0895f29a67a43bb66b4b511bed661fb96e5ea622ce6ef7b63939a9477b383498822dcad263e1fa131d
+  languageName: node
+  linkType: hard
+
 "flatted@npm:^3.2.7, flatted@npm:^3.2.9":
   version: 3.2.9
   resolution: "flatted@npm:3.2.9"
   checksum: 10/dc2b89e46a2ebde487199de5a4fcb79e8c46f984043fea5c41dbf4661eb881fefac1c939b5bdcd8a09d7f960ec364f516970c7ec44e58ff451239c07fd3d419b
+  languageName: node
+  linkType: hard
+
+"flatted@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "flatted@npm:3.3.2"
+  checksum: 10/ac3c159742e01d0e860a861164bcfd35bb567ccbebb8a0dd041e61cf3c64a435b917dd1e7ed1c380c2ebca85735fb16644485ec33665bc6aafc3b316aa1eed44
   languageName: node
   linkType: hard
 
@@ -7476,6 +7543,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hookified@npm:^1.5.0, hookified@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "hookified@npm:1.5.1"
+  checksum: 10/c641738c15cf7da907eb2eaf0ab817822ce92b745c130f5814bc86b05b1173afbf6439ce52e32fb87a5570aa7d6bab2f70b9770a57db26d69cf5b0d351f6d46f
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.9
   resolution: "hosted-git-info@npm:2.8.9"
@@ -7723,7 +7797,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.13":
+"ieee754@npm:^1.1.13, ieee754@npm:^1.2.1":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 10/d9f2557a59036f16c282aaeb107832dc957a93d73397d89bbad4eb1130560560eb695060145e8e6b3b498b15ab95510226649a0b8f52ae06583575419fe10fc4
@@ -8560,6 +8634,15 @@ __metadata:
   dependencies:
     json-buffer: "npm:3.0.1"
   checksum: 10/167eb6ef64cc84b6fa0780ee50c9de456b422a1e18802209234f7c2cf7eae648c7741f32e50d7e24ccb22b24c13154070b01563d642755b156c357431a191e75
+  languageName: node
+  linkType: hard
+
+"keyv@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "keyv@npm:5.2.1"
+  dependencies:
+    "@keyv/serialize": "npm:*"
+  checksum: 10/2eade1f67820eb0ea849554faa82fedc7ff8beec13daccc0a8cc0fa6c496dcb33dafabc44b7a26997844af1b83cab86f7ed753dd1a014fdd8fc08eb3ed60e712
   languageName: node
   linkType: hard
 
@@ -11953,7 +12036,7 @@ __metadata:
   resolution: "tech-blog-rss-feed@workspace:."
   dependencies:
     "@11ty/eleventy": "npm:^3.0.0"
-    "@11ty/eleventy-fetch": "npm:^4.0.1"
+    "@11ty/eleventy-fetch": "npm:^5.0.0"
     "@11ty/eleventy-img": "npm:^5.0.0"
     "@biomejs/biome": "npm:^1.9.3"
     "@secretlint/core": "npm:^9.0.0"
