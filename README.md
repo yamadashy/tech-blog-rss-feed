@@ -64,25 +64,25 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 
 パッケージのインストール
 ```bash
-$ yarn
+$ npm install
 ```
 
 フィード生成とサイト立ち上げ
 ```bash
 $ # フィードを取得して作成
-$ yarn feed-generate
+$ npm run feed-generate
 
 $ # localhost:8080 で確認
-$ yarn site-serve
+$ npm run site-serve
 ```
 
 コードのチェック
 ```bash
 $ # eslint, tsc --noEmit
-$ yarn lint
+$ npm run lint
 
 $ # テスト
-$ yarn test
+$ npm run test
 ```
 
 ## ライセンス

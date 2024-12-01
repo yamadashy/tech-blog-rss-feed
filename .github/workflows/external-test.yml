@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .tool-versions
-          cache: yarn
-      - run: yarn install
+          cache: npm
+      - run: npm ci
       - name: Run External Tests
-        run: yarn test-external
+        run: npm run test-external
