@@ -28,10 +28,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .tool-versions
-          cache: yarn
+          cache: npm
 
       - name: Install node packages
-        run: yarn install
+        run: npm ci
 
       - name: Get date
         id: get-date
@@ -46,10 +46,10 @@ jobs:
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
 
       - name: Generate feed
-        run: yarn feed-generate
+        run: npm run feed-generate
 
       - name: Generate site
-        run: yarn site-build
+        run: npm run site-build
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

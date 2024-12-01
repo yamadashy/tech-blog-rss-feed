@@ -17,9 +17,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
-        cache: yarn
-    - run: yarn install
-    - run: yarn lint-biome && git diff --exit-code
+        cache: npm
+    - run: npm ci
+    - run: npm run lint-biome && git diff --exit-code
 
   lint-ts:
     name: Lint TypeScript
@@ -30,9 +30,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
-        cache: yarn
-    - run: yarn install
-    - run: yarn lint-ts
+        cache: npm
+    - run: npm ci
+    - run: npm run lint-ts
 
   lint-secretlint:
     name: Lint Secretlint
@@ -43,9 +43,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
-        cache: yarn
-    - run: yarn install
-    - run: yarn lint-secretlint
+        cache: npm
+    - run: npm ci
+    - run: npm run lint-secretlint
 
   lint-renovate-config:
     name: Lint Renovate config
@@ -84,9 +84,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
-        cache: yarn
-    - run: yarn install
-    - run: yarn test-coverage
+        cache: npm
+    - run: npm ci
+    - run: npm run test-coverage
 
   generate:
     name: Generate feed and site
@@ -97,12 +97,12 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
-        cache: yarn
-    - run: yarn install
+        cache: npm
+    - run: npm ci
     - name: Generate feed
-      run: yarn feed-generate
+      run: npm run feed-generate
     - name: Generate site
-      run: yarn site-build
+      run: npm run site-build
     - name: Archive feed
       uses: actions/upload-artifact@v4
       with:

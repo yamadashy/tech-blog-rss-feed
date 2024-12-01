@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "build": "yarn feed-generate && yarn site-build",
+    "build": "npm run feed-generate && npm run site-build",
     "feed-generate": "tsx src/feed/generate-feed-command.ts",
     "register-index": "tsx src/feed/register-index-command.ts",
     "site-build": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "site-serve": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
-    "lint": "yarn lint-biome && yarn lint-ts && yarn lint-secretlint",
+    "lint": "npm run lint-biome && npm run lint-ts && npm run lint-secretlint",
     "lint-biome": "biome check --write",
     "lint-ts": "tsc --noEmit",
     "lint-secretlint": "secretlint '**/*'",
@@ -76,8 +76,6 @@
     "vitest": "^2.0.0"
   },
   "engines": {
-    "node": ">=20",
-    "yarn": ">=3.7.0"
-  },
-  "packageManager": "yarn@4.5.3"
+    "node": ">=20"
+  }
 }
