@@ -68,9 +68,14 @@
                     <img src="{{ page.url | relativeUrl }}images/icon.png" alt='サイトロゴ' loading="eager" width='96' height='96' />
                     <span class='ui-section-header__title'>{{ constants.siteTitle }}</span>
                 </a>
-                <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#">
-                    <img src='{{ page.url | relativeUrl }}images/github-mark.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
-                </a>
+                <div class="ui-section-header__links">
+                    <a href="{{ constants.gitHubRepositoryUrl }}" role="link" aria-label="#">
+                        <img src='{{ page.url | relativeUrl }}images/icon-github.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
+                    </a>
+                    <a href="{{ constants.xUserUrl }}" role="link" aria-label="#">
+                        <img src='{{ page.url | relativeUrl }}images/icon-x.png' alt='Xロゴ' loading="eager" width='96' height='96' />
+                    </a>
+                </div>
             </div>
         </div>
     </header>
