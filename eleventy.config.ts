@@ -41,12 +41,18 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = ''
   try {
     metadata = await EleventyImage(src, {
       widths: [150, 450],
-      formats: ['webp', 'jpeg'],
+      formats: ['avif', 'webp', 'jpeg'],
       outputDir: 'public/images/feed-thumbnails',
       urlPath: `${pathPrefix}images/feed-thumbnails/`,
       cacheOptions: imageCacheOptions,
+      sharpAvifOptions: {
+        quality: 50,
+        effort: 5,
+      },
       sharpWebpOptions: {
         quality: 50,
+        effort: 5,
+        smartSubsample: true,
       },
       sharpJpegOptions: {
         quality: 70,
