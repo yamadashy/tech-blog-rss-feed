@@ -97,6 +97,27 @@ img {
   color: var(--base-color);
 }
 
+.ui-section-header__layout .ui-section-header__links {
+  display: flex;
+  justify-content: center;
+}
+.ui-section-header__layout .ui-section-header__links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity .5s;
+}
+.ui-section-header__layout .ui-section-header__links a:hover {
+  opacity: 1;
+}
+.ui-section-header__layout .ui-section-header__links a img {
+  width: 20px;
+  height: 20px;
+}
+
 /*
  * トップ
  */

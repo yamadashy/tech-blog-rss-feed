@@ -21,10 +21,11 @@ export default {
     json: `${siteUrl}feeds/feed.json`,
   },
 
-  // GitHub
+  // リンク
   author: 'yamadashy',
   gitHubUserUrl: 'https://github.com/yamadashy/',
   gitHubRepositoryUrl: 'https://github.com/yamadashy/tech-blog-rss-feed/',
+  xUserUrl: 'https://x.com/yamadashy',
 
   // Google Analytics系。フォークして使う際は値を空にするか書き換えてください
   googleSiteVerification: 'GPLvXv8kYtLMW912ZS54DKFEZL6ruOrjOFLdHVTo37o',
