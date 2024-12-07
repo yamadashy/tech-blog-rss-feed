@@ -47,7 +47,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = ''
       cacheOptions: imageCacheOptions,
       sharpAvifOptions: {
         quality: 35,
-        effort: 5,
+        effort: 4,
       },
       sharpJpegOptions: {
         quality: 70,
