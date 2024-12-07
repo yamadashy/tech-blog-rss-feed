@@ -17,6 +17,11 @@ eleventyComputed:
             <h3 class='ui-section-content__feed-date-heading'>{{ dateString }}</h3>
             <div class="ui-section-content--feature ui-layout-grid ui-layout-grid-3 ui-container-feed">
                 {% asyncEach feedItem in feedItems %}
+                    {% if loop.index <= 8 %}
+                        {% set imageLoading = 'eager' %}
+                    {% else %}
+                        {% set imageLoading = 'lazy' %}
+                    {% endif %}
                     {% include 'layouts/partials/feed-item.njk' %}
                 {% endeach %}
             </div>

@@ -28,7 +28,7 @@ const minifyHtmlTransform = (content: string, outputPath: string) => {
   return content;
 };
 
-const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = '') => {
+const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = '', imageLoading = 'lazy') => {
   // 取れなければ代替画像
   const alternativeImageTag = `<img src='${pathPrefix}images/alternate-feed-image.png' alt='${alt}' loading='lazy' width='256' height='256'>`;
 
@@ -62,12 +62,11 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = ''
   return EleventyImage.generateHTML(metadata, {
     alt,
     sizes: '100vw',
-    loading: 'lazy',
-    decoding: 'async',
+    loading: imageLoading,
   });
 };
 
-const imageIconShortcode = async (src: string, alt: string, pathPrefix = '') => {
+const imageIconShortcode = async (src: string, alt: string, pathPrefix = '', imageLoading = 'lazy') => {
   // 取れなければ画像なし
   const alternativeImageTag = '';
 
@@ -122,8 +121,7 @@ const imageIconShortcode = async (src: string, alt: string, pathPrefix = '') => 
 
   return EleventyImage.generateHTML(metadata, {
     alt,
-    loading: 'lazy',
-    decoding: 'async',
+    loading: imageLoading,
   });
 };
 
