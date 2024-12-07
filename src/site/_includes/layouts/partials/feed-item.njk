@@ -3,14 +3,14 @@
         {% if feedItem.image %}
             {% imageThumbnail feedItem.image.url, '記事のアイキャッチ画像', page.url | relativeUrl, imageLoading %}
         {% else %}
-            <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="eager" alt='記事のアイキャッチ画像' width='256' height='256'>
+            <img src='{{ page.url | relativeUrl }}images/alternate-feed-image.png' loading="{{ imageLoading }}" alt='記事のアイキャッチ画像' width='256' height='256'>
         {% endif %}
     </a>
     <div class='ui-feed-item__content'>
         <a class='ui-feed-item__title' href='{{ feedItem.url }}'>{{ feedItem._custom.originalTitle }}</a>
         {% if feedItem._custom.hatenaCount > 0 %}
             <div class='ui-feed-item__hatena-count' title='はてなブックマーク数'>
-                <img src='{{ page.url | relativeUrl }}images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="eager" width='16' height='16'>
+                <img src='{{ page.url | relativeUrl }}images/hatenabookmark-icon.png' alt='はてなブックマークアイコン' loading="{{ imageLoading }}" width='16' height='16'>
                 <span>{{ feedItem._custom.hatenaCount }}</span>
             </div>
         {% endif %}
