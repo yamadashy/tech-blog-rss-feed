@@ -41,6 +41,22 @@
 
     <link rel="stylesheet" type="text/css" href="{{ page.url | relativeUrl }}styles/bundle.css" />
 
+    {% if constants.globalSiteTagKey %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ constants.globalSiteTagKey }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', '{{ constants.globalSiteTagKey }}');
+        </script>
+    {% endif %}
+
     <title>{{ pageTitle }}</title>
 </head>
 <body>
@@ -94,22 +110,6 @@
             </div>
         </div>
     </footer>
-
-    {% if constants.globalSiteTagKey %}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ constants.globalSiteTagKey }}"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-
-          gtag('js', new Date());
-
-          gtag('config', '{{ constants.globalSiteTagKey }}');
-        </script>
-    {% endif %}
 
 </body>
 </html>
