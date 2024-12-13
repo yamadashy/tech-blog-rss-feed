@@ -154,7 +154,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['KLab DSAS', 'http://dsas.blog.klab.org/index.rdf'],
   ['KLab', 'https://www.klab.com/jp/assets/rss/rss_tech.xml'],
   ['Kyash', 'https://blog.kyash.co/feed'],
-  ['LAPRAS', 'https://ai-lab.lapras.com/feed/'],
+  ['LAPRAS', 'https://zenn.dev/p/lapras_inc/feed'],
   ['LCL', 'https://techblog.lclco.com/feed'],
   ['LIFULL', 'https://www.lifull.blog/feed'],
   ['LIG', 'https://liginc.co.jp/technology/feed'],
@@ -302,7 +302,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Voicy(Zenn Publication)', 'https://zenn.dev/p/voicy/feed'],
   ['WESEEK', 'https://weseek.co.jp/tech/feed/'],
   ['Wantedly', 'https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml'],
-  ['Wiz', 'https://tech.012grp.co.jp/feed'],
   ['X Mile', 'https://zenn.dev/p/xmile/feed'],
   ['YAZ', 'https://www.yaz.co.jp/feed'],
   ['YOJO Technologies', 'https://note.com/yojo_engineering/m/m59a0657d21e2/rss'],
@@ -335,7 +334,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['iimon', 'https://tech.iimon.co.jp/feed'],
-  ['intage', 'https://www.intage-ts.com/feed'],
   ['ispec', 'https://zenn.dev/ispec/feed'],
   ['jig.jp', 'https://note.com/jigjp_engineer/rss'],
   ['justInCaseTechnologies', 'https://jict.hatenablog.com/feed'],
@@ -483,7 +481,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['シー・エス・エス', 'https://blog.css-net.co.jp/feed'],
   ['ジェイテックジャパン', 'https://zenn.dev/jtechjapan/feed'],
   ['ジモティー', 'https://jmty-tech.hatenablog.com/feed'],
-  ['ジークレスト', 'https://blog.gcrest.com/feed'],
   ['スイッチサイエンス', 'https://tech.144lab.com/feed'],
   ['スタイル・エッジ', 'https://techblog.styleedge.co.jp/feed'],
   ['スタジオブロス', 'https://tech.bros.studio/feed'],
@@ -730,17 +727,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['hokan', 'https://medium.com/feed/@hokan_dev'],
  * ['Filot', 'https://filot-nextd2.hatenablog.com/feed'],
  * ['Supership', 'https://www.wantedly.com/stories/s/Supership/rss.xml'],
- *
- * unable to verify the first certificate
- * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
- *
- * certificate has expired
- * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
- *
- * pubDate なし
- * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
- *
- * 削除された？
+ * ['Wiz', 'https://tech.012grp.co.jp/feed'],
+ * ['intage', 'https://www.intage-ts.com/feed'],
  * ['NAXA', 'https://blog.naxa.co.jp/feed'],
  * ['Reigle', 'https://www.reigle.info/feed'],
  * ['HiTTO', 'https://product-blog.hitto.co.jp/feed'],
@@ -756,6 +744,16 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['メンテモ', 'https://engineering.mentemo.com/feed'],
  * ['ダンクハーツ', 'https://dhe.dank-hearts.net/m/m18705e344ee6/rss'],
  * ['パトコア', 'https://tech.patcore.com/feed'],
+ * ['ジークレスト', 'https://blog.gcrest.com/feed'],
+ *
+ * unable to verify the first certificate
+ * ['エムアールピー', 'https://mrp-net.co.jp/tech_blog/feed'],
+ *
+ * certificate has expired
+ * ['キャスレーコンサルティング', 'https://www.casleyconsulting.co.jp/blog/engineer/feed/'],
+ *
+ * pubDate なし
+ * ['リクルート', 'https://engineers.recruit-jinji.jp/techblog/feed/']
  *
  * フィードなし。スクレイピング？
  * https://lab.mo-t.com/blog
