@@ -44,9 +44,18 @@ export const isValidHttpUrl = (url: string) => {
   return urlObject.protocol === 'http:' || urlObject.protocol === 'https:';
 };
 
-export const exponentialBackoff = async <A>(retrier: (attemptCount: number) => Promise<A>, retries = 3) => {
+export const exponentialBackoff = async <A>(
+  retrier: (attemptCount: number) => Promise<A>,
+  baseWaitMs = 1000,
+  retries = 3,
+) => {
   let attemptLimitReached = false;
   let attemptCount = 0;
+
+  // 引数ミス防止
+  if (retries > 10) {
+    throw new Error('retries が 10 を超えています');
+  }
 
   while (!attemptLimitReached) {
     const [error, result] = await to(retrier(attemptCount));
@@ -57,7 +66,7 @@ export const exponentialBackoff = async <A>(retrier: (attemptCount: number) => P
       if (attemptLimitReached) {
         throw error;
       }
-      const waitTime = 2 ** attemptCount * 1000;
+      const waitTime = 2 ** attemptCount * baseWaitMs;
       await sleep(waitTime);
     } else {
       return result;
