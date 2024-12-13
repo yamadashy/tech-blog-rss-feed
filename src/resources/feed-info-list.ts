@@ -226,6 +226,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Progate', 'https://tech.prog-8.com/feed'],
   ['Qiita', 'https://zine.qiita.com/feed/'],
   ['R&D', 'https://zenn.dev/randd/feed'],
+  ['Re:Earth', 'https://reearth.engineering/tags/Japanese/rss.xml'],
   ['READYFOR', 'https://tech.readyfor.jp/feed'],
   ['READYFOR(Zenn Publication)', 'https://zenn.dev/p/readyfor_blog/feed'],
   ['REVISIO', 'https://tech.revisio.co.jp/feed'],
