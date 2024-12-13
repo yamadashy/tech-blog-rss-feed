@@ -50,9 +50,7 @@ export class FeedValidator {
     // biome-ignore lint/suspicious/noControlCharactersInRegex: この正規表現は制御文字を検出するために使用しています
     const invalidControlCharsRegex = /[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F-\x9F]/g;
     if (invalidControlCharsRegex.test(feedXml)) {
-      throw new Error(
-        `フィードに不正な制御文字が含まれています。 label: ${label}`,
-      );
+      throw new Error(`フィードに不正な制御文字が含まれています。 label: ${label}`);
     }
   }
 }
