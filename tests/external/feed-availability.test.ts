@@ -14,9 +14,13 @@ describe('フィードが取得可能', () => {
     it.concurrent(
       testTitle,
       async () => {
-        const feed = await exponentialBackoff(async () => {
-          return rssParser.parseURL(feedInfo.url);
-        });
+        const feed = await exponentialBackoff(
+          async () => {
+            return rssParser.parseURL(feedInfo.url);
+          },
+          3000,
+          5,
+        );
         expect(feed.items.length).toBeGreaterThanOrEqual(0);
       },
       180 * 1000,
