@@ -1,7 +1,6 @@
 import { to } from 'await-to-js';
 import { XMLValidator } from 'fast-xml-parser';
 import type { Feed } from 'feed';
-import libxmljs from 'libxmljs';
 import RssParser from 'rss-parser';
 
 /**
@@ -47,18 +46,13 @@ export class FeedValidator {
       );
     }
 
-    // libxmljs でバリデーション
-    try {
-      libxmljs.parseXml(feedXml);
-    } catch (libxmljsError) {
-      if (libxmljsError instanceof Error) {
-        throw new Error(
-          `libxmljsによるフィードのバリデーションエラーです。 label: ${label}, error: ${libxmljsError.message}`,
-          {
-            cause: libxmljsError,
-          },
-        );
-      }
+    // 不正な制御文字のチェック（改行・タブ・スペース以外の制御文字）
+    // biome-ignore lint/suspicious/noControlCharactersInRegex: この正規表現は制御文字を検出するために使用しています
+    const invalidControlCharsRegex = /[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F-\x9F]/g;
+    if (invalidControlCharsRegex.test(feedXml)) {
+      throw new Error(
+        `フィードに不正な制御文字が含まれています。 label: ${label}`,
+      );
     }
   }
 }
