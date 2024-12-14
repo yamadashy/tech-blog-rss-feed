@@ -2,6 +2,7 @@ import { URL } from 'node:url';
 import { PromisePool } from '@supercharge/promise-pool';
 import { to } from 'await-to-js';
 import dayjs from 'dayjs';
+import { create as flatCacheCreate } from 'flat-cache';
 import { default as ogs } from 'open-graph-scraper';
 import type { ImageObject, OgObject, OpenGraphScraperOptions } from 'open-graph-scraper/types/lib/types';
 import RssParser from 'rss-parser';
@@ -13,6 +14,7 @@ import {
   isValidHttpUrl,
   objectDeepCopy,
   removeInvalidUnicode,
+  textToMd5Hash,
   urlRemoveQueryParams,
 } from './common-util';
 import { FeedValidator } from './feed-validator';
@@ -110,15 +112,30 @@ export class FeedCrawler {
               logger.warn(`[fetch-feed] retry ${feedInfo.url}`);
             }
 
-            const response = await fetch(feedInfo.url);
-            if (!response.ok) {
-              throw new Error(`HTTP Error: ${response.status}`);
+            const feedCacheKey = `feed-${textToMd5Hash(feedInfo.url)}`;
+            const feedCache = flatCacheCreate({
+              cacheId: feedCacheKey,
+              ttl: constants.fetchedFeedCacheDurationInHours * 60 * 60 * 1000,
+            });
+            const cachedData = feedCache.get<string>(feedCacheKey);
+            let feedData: string;
+
+            if (cachedData) {
+              logger.trace('[fetch-feed] cache hit', feedInfo.label, feedInfo.url);
+              feedData = cachedData;
+            } else {
+              const response = await fetch(feedInfo.url);
+              if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status}`);
+              }
+              feedData = await response.text();
+
+              // バリデーション
+              await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
+
+              feedCache.set(feedCacheKey, feedData);
+              feedCache.save();
             }
-
-            const feedData = await response.text();
-
-            // バリデーション
-            await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
 
             return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
           }),
@@ -369,25 +386,42 @@ export class FeedCrawler {
   }
 
   private static async fetchOgObject(url: string): Promise<CustomOgObject> {
-    const options: OpenGraphScraperOptions = {
-      url: url,
-      timeout: 10 * 1000,
-      fetchOptions: {
-        headers: {
-          'user-agent': constants.requestUserAgent,
+    const ogObjectCacheKey = `og-object-${textToMd5Hash(url)}`;
+    const ogObjectCache = flatCacheCreate({
+      cacheId: ogObjectCacheKey,
+      ttl: constants.fetchedOgCacheDurationInHours * 60 * 60 * 1000,
+    });
+    const cachedData = ogObjectCache.get<string>(ogObjectCacheKey);
+    let ogObject: OgObject;
+
+    if (cachedData) {
+      logger.trace('[fetch-og] cache hit', url);
+      ogObject = JSON.parse(cachedData);
+    } else {
+      const options: OpenGraphScraperOptions = {
+        url: url,
+        timeout: 10 * 1000,
+        fetchOptions: {
+          headers: {
+            'user-agent': constants.requestUserAgent,
+          },
         },
-      },
-    };
-    const [error, ogsResponse] = await to<{ result: OgObject }>(ogs(options));
-    if (error) {
-      return Promise.reject(
-        new Error(`OGの取得に失敗しました。 url: ${url}`, {
-          cause: error,
-        }),
-      );
+      };
+      const [error, ogsResponse] = await to<{ result: OgObject }>(ogs(options));
+      if (error) {
+        return Promise.reject(
+          new Error(`OGの取得に失敗しました。 url: ${url}`, {
+            cause: error,
+          }),
+        );
+      }
+
+      ogObject = ogsResponse.result;
+
+      ogObjectCache.set(ogObjectCacheKey, JSON.stringify(ogObject));
+      ogObjectCache.save();
     }
 
-    const ogObject = ogsResponse.result;
     const ogImages = ogObject?.ogImage;
 
     const validOgImages: ImageObject[] = [];

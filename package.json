@@ -62,6 +62,7 @@
     "dayjs": "^1.11.10",
     "fast-xml-parser": "^4.3.2",
     "feed": "^4.2.2",
+    "flat-cache": "^6.1.4",
     "googleapis": "^144.0.0",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
