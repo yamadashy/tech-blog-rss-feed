@@ -1,5 +1,5 @@
 import { Feed, type FeedOptions } from 'feed';
-import constants from '../../common/constants.js';
+import constants from '../common/constants.js';
 import { textToMd5Hash, textTruncate } from './common-util';
 import type { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
 import { logger } from './logger';
