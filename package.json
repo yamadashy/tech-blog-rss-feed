@@ -5,8 +5,9 @@
   "main": "",
   "scripts": {
     "build": "npm run feed-generate && npm run site-build",
-    "feed-generate": "tsx src/feed/generate-feed-command.ts",
-    "register-index": "tsx src/feed/register-index-command.ts",
+    "feed-generate": "tsx src/cli/generate-feed-command.ts",
+    "register-index": "tsx src/cli/register-index-command.ts",
+    "site-prepare": "tsx src/cli/prepare-site-command.ts",
     "site-build": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "site-serve": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
     "lint": "npm run lint-biome && npm run lint-ts && npm run lint-secretlint",

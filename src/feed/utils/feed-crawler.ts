@@ -62,11 +62,11 @@ export class FeedCrawler {
     feedInfoList: FeedInfo[],
     feedFetchConcurrency: number,
     feedOgFetchConcurrency: number,
-    filterArticleDate: Date,
+    aggregateFeedStartAt: Date,
   ): Promise<ClawlFeedsResult> {
     // フィード取得してまとめる
     const feeds = await this.fetchFeedsAsync(feedInfoList, feedFetchConcurrency);
-    const allFeedItems = this.aggregateFeeds(feeds, filterArticleDate);
+    const allFeedItems = this.aggregateFeeds(feeds, aggregateFeedStartAt);
 
     // OGPなどの情報取得
     const [errorFetchFeedData, results] = await to(
@@ -257,10 +257,10 @@ export class FeedCrawler {
     return customFeed;
   }
 
-  private aggregateFeeds(feeds: CustomRssParserFeed[], filterArticleDate: Date) {
+  private aggregateFeeds(feeds: CustomRssParserFeed[], aggregateFeedStartAt: Date) {
     let allFeedItems: CustomRssParserItem[] = [];
     const copiedFeeds: CustomRssParserFeed[] = objectDeepCopy(feeds);
-    const filterIsoDate = filterArticleDate.toISOString();
+    const aggregateFeedStartAtIsoDate = aggregateFeedStartAt.toISOString();
     const currentIsoDate = new Date().toISOString();
 
     for (const feed of copiedFeeds) {
@@ -270,7 +270,7 @@ export class FeedCrawler {
           return false;
         }
 
-        return feedItem.isoDate >= filterIsoDate;
+        return feedItem.isoDate >= aggregateFeedStartAtIsoDate;
       });
 
       // 現在時刻より未来のものはフィルタ。UTC表記で日本時間設定しているブログがあるので。

@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 import constants from '../common/constants';
-import { sleep } from './utils/common-util';
-import type { BlogFeed } from './utils/feed-storer';
+import { sleep } from '../feed/utils/common-util';
+import type { BlogFeed } from '../feed/utils/feed-storer';
 const key = require('../../storage/service_account.json');
 let blogFeeds: BlogFeed[] = require('../site/blog-feeds/blog-feeds.json');
 
