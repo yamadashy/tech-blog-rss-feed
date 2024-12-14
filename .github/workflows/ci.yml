@@ -93,20 +93,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version-file: .tool-versions
-        cache: npm
-    - run: npm ci
-    - name: Generate feed
-      run: npm run feed-generate
-    - name: Prepare Site
-      run: npm run site-prepare
-    - name: Generate site
-      run: npm run site-build
-    - name: Archive feed
-      uses: actions/upload-artifact@v4
-      with:
-        name: feed-generate-results
-        path: public/feeds
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          cache: npm
+      - run: npm ci
+      - name: Restore feed images cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache
+            public/images/feed-thumbnails
+            public/images/feed-icons
+          key: ${{ runner.os }}-feed-images-${{ hashFiles('src/resources/feed-info-list.ts') }}
+          restore-keys: |
+            ${{ runner.os }}-feed-images-
+      - run: npm run feed-generate
+      - run: npm run site-prepare
+      - run: npm run site-build
+      - name: Save feed images cache
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache
+            public/images/feed-thumbnails
+            public/images/feed-icons
+          key: ${{ runner.os }}-feed-images-${{ hashFiles('src/resources/feed-info-list.ts') }}
