@@ -46,4 +46,6 @@ export default {
   maxFeedContentLength: 500, // フィードのcontentの最大文字数
   processImageConcurrency: 50, // 画像の処理の並列数。画像取得と変換
   eleventyFetchConcurrency: 50, // Eleventyの画像取得の並列数
+  fetchedFeedCacheDurationInHours: 1, // フィードのキャッシュの有効時間
+  fetchedOgCacheDurationInHours: 24, // OG情報のキャッシュの有効時間
 };
