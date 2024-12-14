@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { FeedCrawler } from '../src/feed/utils/feed-crawler';
+import { FeedCrawler } from '../src/feed/feed-crawler';
 import { FEED_INFO_LIST } from '../src/resources/feed-info-list';
 
 // 設定のテスト

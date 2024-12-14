@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { removeInvalidUnicode } from '../src/feed/utils/common-util';
+import { removeInvalidUnicode } from '../src/feed/common-util';
 
 describe('removeInvalidUnicode', () => {
   it('不正なUnicode文字を除去', () => {

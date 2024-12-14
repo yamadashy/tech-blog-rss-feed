@@ -1,11 +1,11 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import constants from '../common/constants';
-import { FeedCrawler } from '../feed/utils/feed-crawler';
-import { FeedGenerator } from '../feed/utils/feed-generator';
-import { FeedStorer } from '../feed/utils/feed-storer';
-import { FeedValidator } from '../feed/utils/feed-validator';
-import { logger } from '../feed/utils/logger';
+import { FeedCrawler } from '../feed/feed-crawler';
+import { FeedGenerator } from '../feed/feed-generator';
+import { FeedStorer } from '../feed/feed-storer';
+import { FeedValidator } from '../feed/feed-validator';
+import { logger } from '../feed/logger';
 import { FEED_INFO_LIST } from '../resources/feed-info-list';
 
 const dirName = url.fileURLToPath(new URL('.', import.meta.url));

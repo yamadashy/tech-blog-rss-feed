@@ -1,7 +1,7 @@
 import RssParser from 'rss-parser';
 // フィード取得テスト
 import { describe, expect, it } from 'vitest';
-import { exponentialBackoff } from '../../src/feed/utils/common-util';
+import { exponentialBackoff } from '../../src/feed/common-util';
 import { FEED_INFO_LIST, type FeedInfo } from '../../src/resources/feed-info-list';
 
 const rssParser = new RssParser({

@@ -5,8 +5,8 @@ import dayjs from 'dayjs';
 import { default as ogs } from 'open-graph-scraper';
 import type { ImageObject, OgObject, OpenGraphScraperOptions } from 'open-graph-scraper/types/lib/types';
 import RssParser from 'rss-parser';
-import constants from '../../common/constants';
-import type { FeedInfo } from '../../resources/feed-info-list';
+import constants from '../common/constants';
+import type { FeedInfo } from '../resources/feed-info-list';
 import {
   exponentialBackoff,
   fetchHatenaCountMap,

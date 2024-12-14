@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { FeedCrawler } from '../../src/feed/utils/feed-crawler';
-import { FeedGenerator } from '../../src/feed/utils/feed-generator';
+import { FeedCrawler } from '../../src/feed/feed-crawler';
+import { FeedGenerator } from '../../src/feed/feed-generator';
 import { FEED_INFO_LIST } from '../../src/resources/feed-info-list';
 
 const FEED_FETCH_CONCURRENCY = 50;

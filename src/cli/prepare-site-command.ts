@@ -2,8 +2,8 @@ import { PromisePool } from '@supercharge/promise-pool';
 import { to } from 'await-to-js';
 import constants from '../common/constants';
 import { imageThumbnailShortcode } from '../common/eleventy-utils';
-import type { BlogFeed } from '../feed/utils/feed-storer';
-import { logger } from '../feed/utils/logger';
+import type { BlogFeed } from '../feed/feed-storer';
+import { logger } from '../feed/logger';
 import blogFeeds from '../site/blog-feeds/blog-feeds.json' assert { type: 'json' };
 
 const typedBlogFeeds: BlogFeed[] = blogFeeds as BlogFeed[];
