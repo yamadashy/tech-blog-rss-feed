@@ -4,6 +4,7 @@ import constants from '../common/constants';
 import { imageThumbnailShortcode } from '../common/eleventy-utils';
 import type { BlogFeed } from '../feed/feed-storer';
 import { logger } from '../feed/logger';
+// @ts-ignore
 import blogFeeds from '../site/blog-feeds/blog-feeds.json' assert { type: 'json' };
 
 const typedBlogFeeds: BlogFeed[] = blogFeeds as BlogFeed[];
