@@ -23,5 +23,4 @@ jobs:
           node-version-file: .tool-versions
           cache: npm
       - run: npm ci
-      - name: Run External Tests
-        run: npm run test-external
+      - run: npm run test-external
