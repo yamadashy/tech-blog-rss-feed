@@ -40,7 +40,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = ''
 
   try {
     metadata = await EleventyImage(src, {
-      widths: [150, 450],
+      widths: [256, 512],
       formats: ['avif', 'jpeg'],
       outputDir: 'public/images/feed-thumbnails',
       urlPath: `${pathPrefix}images/feed-thumbnails/`,
@@ -61,7 +61,7 @@ const imageThumbnailShortcode = async (src: string, alt: string, pathPrefix = ''
 
   return EleventyImage.generateHTML(metadata, {
     alt,
-    sizes: '100vw',
+    sizes: '(min-width: 75rem) 16rem, (min-width: 64rem) 19rem, (min-width: 48rem) 19rem, 8rem',
     loading: imageLoading,
   });
 };

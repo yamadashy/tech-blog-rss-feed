@@ -213,7 +213,7 @@ img {
 .ui-feed-item {
   display: grid;
   color: var(--base-color);
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 8rem 1fr;
   align-content: start;
   grid-gap: 0 0.5em;
 }
