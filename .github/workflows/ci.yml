@@ -99,24 +99,24 @@ jobs:
           node-version-file: .tool-versions
           cache: npm
       - run: npm ci
-      - name: Restore feed images cache
-        uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v4
         with:
           path: |
             .cache
             public/images/feed-thumbnails
             public/images/feed-icons
-          key: ${{ runner.os }}-feed-images-${{ hashFiles('src/resources/feed-info-list.ts') }}
+          # キャッシュのキーは毎回変えて保存。restore-keys によって最新が使われる
+          # see: https://github.com/actions/cache/issues/342#issuecomment-673371329
+          key: ${{ runner.os }}-feed-images-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-feed-images-
       - run: npm run feed-generate
       - run: npm run site-prepare
       - run: npm run site-build
-      - name: Save feed images cache
-        uses: actions/cache/save@v4
+      - uses: actions/cache/save@v4
         with:
           path: |
             .cache
             public/images/feed-thumbnails
             public/images/feed-icons
-          key: ${{ runner.os }}-feed-images-${{ hashFiles('src/resources/feed-info-list.ts') }}
+          key: ${{ runner.os }}-feed-images-${{ github.run_id }}
