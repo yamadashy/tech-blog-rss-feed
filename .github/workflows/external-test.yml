@@ -23,4 +23,6 @@ jobs:
           node-version-file: .tool-versions
           cache: npm
       - run: npm ci
+      - uses: ./.github/actions/restore-feed-cache
       - run: npm run test-external
+      - uses: ./.github/actions/save-feed-cache
