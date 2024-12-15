@@ -1,0 +1,14 @@
+name: 'Save Feed Cache'
+description: 'Composite action to save feed cache'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Save feed cache
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          .cache
+          public/images/feed-thumbnails
+          public/images/feed-icons
+        key: ${{ runner.os }}-feed-${{ github.run_id }}

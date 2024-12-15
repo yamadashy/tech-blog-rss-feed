@@ -1,0 +1,18 @@
+name: 'Restore Feed Cache'
+description: 'Composite action to restore feed cache'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Restore feed cache
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          .cache
+          public/images/feed-thumbnails
+          public/images/feed-icons
+        # キャッシュのキーは毎回変えて保存。restore-keys によって最新が使われる
+        # see: https://github.com/actions/cache/issues/342#issuecomment-673371329
+        key: ${{ runner.os }}-feed-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-feed-
