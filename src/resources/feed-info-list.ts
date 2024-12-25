@@ -279,6 +279,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TENTIAL', 'https://tech.tential.jp/feed'],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
   ['TOWN', 'https://town.biz/tag/engineer/feed'],
+  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'],
   ['TURING', 'https://zenn.dev/turing/feed'],
   ['TURING(Zenn Publication)', 'https://zenn.dev/p/turing_motors/feed'],
   ['TVer Technologies', 'https://techblog.tver-tech.co.jp/feed'],
