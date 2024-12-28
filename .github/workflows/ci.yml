@@ -56,6 +56,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
+        cache: npm
     - name: Validate Renovate config
       run: npx --yes --package renovate -- renovate-config-validator --strict
 
