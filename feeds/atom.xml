@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
+    <title>企業テックブログRSS</title>
+    <updated>2025-01-04T03:08:09.957Z</updated>
+    <generator>yamadashy/tech-blog-rss-feed</generator>
+    <link rel="alternate" href="https://yamadashy.github.io/tech-blog-rss-feed/"/>
+    <link rel="self" href="https://yamadashy.github.io/tech-blog-rss-feed/feeds/atom.xml"/>
+    <subtitle>企業のテックブログの更新をまとめたRSSフィード</subtitle>
+    <logo>https://yamadashy.github.io/tech-blog-rss-feed/images/icon.png</logo>
+    <icon>https://yamadashy.github.io/tech-blog-rss-feed/images/favicon.ico</icon>
+    <rights>yamadashy/tech-blog-rss-feed</rights>
+    <entry>
+        <title type="html"><![CDATA[Leveragesで働くってどんな感じ？内定者インターンをした感想を綴る。 | Leverages Tech Blog]]></title>
+        <id>https://tech.leverages.jp/entry/2025/01/04/090000</id>
+        <link href="https://tech.leverages.jp/entry/2025/01/04/090000"/>
+        <updated>2025-01-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは。 25卒でLeveragesに新卒エンジニアとして入社予定の、いつきと申します。 エンジニアとして内定をいただいたものの、元々はマーケ職志望で、プログラミング経験は皆無です。 そのため、今は内定者インターンで、同期に先んじてエンジニアのイロハを叩き込まれているところです。 この記事は、そんな私から、今Leveragesを候補に入れて就活を頑張っている方に向けて送る記事になって]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは。 25卒でLeveragesに新卒エンジニアとして入社予定の、いつきと申します。 エンジニアとして内定をいただいたものの、元々はマーケ職志望で、プログラミング経験は皆無です。 そのため、今は内定者インターンで、同期に先んじてエンジニアのイロハを叩き込まれているところです。 この記事は、そんな私から、今Leveragesを候補に入れて就活を頑張っている方に向けて送る記事になっています。 こんな方は読んでほしい Leveragesを候補に入れて就活中の方 今までエンジニア職という選択肢を考えたことがない方 何を考えて就活していたのか マーケ職希望なのになぜエンジニアになったの…]]></content>
+        <published>2025-01-04T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[オープンソースプラットフォーム「Dify」のススメ | ちゅらデータ株式会社のフィード]]></title>
+        <id>https://zenn.dev/churadata/articles/9b4006a3ac6c30</id>
+        <link href="https://zenn.dev/churadata/articles/9b4006a3ac6c30"/>
+        <updated>2025-01-03T15:09:24.000Z</updated>
+        <summary type="html"><![CDATA[概要この記事の対象者:AI アプリの開発や運用に興味のあるエンジニアやビジネス担当の方この記事の内容:Dify ってなに？ どう使うの？ 雑学も交えながらサクッと紹介！この記事を読んで分かること:Dify を使ったジェネレーティブ AI アプリの開発や運用のやり方がイメージできる 序説この数年、チャットGPTの人気やオープンソースの大規模言語モデル（LLM）の進化で、AI を使ったアプリ開発がすご]]></summary>
+        <content type="html"><![CDATA[概要この記事の対象者:AI アプリの開発や運用に興味のあるエンジニアやビジネス担当の方この記事の内容:Dify ってなに？ どう使うの？ 雑学も交えながらサクッと紹介！この記事を読んで分かること:Dify を使ったジェネレーティブ AI アプリの開発や運用のやり方がイメージできる 序説この数年、チャットGPTの人気やオープンソースの大規模言語モデル（LLM）の進化で、AI を使ったアプリ開発がすごいスピードで進んでいます。でもいざ作ろうと思うと、「どのモデルを選ぶ？」「プロンプトはどう管理する？」「バックエンドは？」といった感じで、地味にやることが多いんですよね。...]]></content>
+        <author>
+            <name>kei忍者</name>
+        </author>
+        <published>2025-01-03T15:09:24.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[git tagのpushは明示的にtagnameを指定しよう | NCDCエンジニアブログのフィード]]></title>
+        <id>https://zenn.dev/ncdc/articles/introduction-git-tag</id>
+        <link href="https://zenn.dev/ncdc/articles/introduction-git-tag"/>
+        <updated>2025-01-03T07:58:58.000Z</updated>
+        <summary type="html"><![CDATA[TL;DRgit tagをremoteにpushするときはgit push origin [tagname] で明示的にタグを指定しましょう。 はじめにgitのtag付けはリリース管理に有用です。タグ付けはgit tag -a [tagname]で簡単に行うことができます。コマンドを実行すると、メッセージを入力して、現在のコミットにタグ付けがなされます。これをremoteにpushしようとして、g]]></summary>
+        <content type="html"><![CDATA[TL;DRgit tagをremoteにpushするときはgit push origin [tagname] で明示的にタグを指定しましょう。 はじめにgitのtag付けはリリース管理に有用です。タグ付けはgit tag -a [tagname]で簡単に行うことができます。コマンドを実行すると、メッセージを入力して、現在のコミットにタグ付けがなされます。これをremoteにpushしようとして、git push origin HEADを行っても、originにはtagが同期されません。 どうすればよいか？先述の通り、通常のgit pushコマンドではタグは同期され...]]></content>
+        <author>
+            <name>ratmie</name>
+        </author>
+        <published>2025-01-03T07:58:58.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ポリモーフィズムが1種類しかないと思ってたエンジニアの備忘録 | 株式会社ログラス テックブログのフィード]]></title>
+        <id>https://zenn.dev/loglass/articles/3883eb1fa6607e</id>
+        <link href="https://zenn.dev/loglass/articles/3883eb1fa6607e"/>
+        <updated>2025-01-03T04:07:27.000Z</updated>
+        <summary type="html"><![CDATA[!この記事は毎週必ず記事がでるテックブログ Loglass Tech Blog Sprint の72週目の記事です！2年間連続達成まで残り34週となりました！ はじめにソフトウェアエンジニアの福土（@ryoya_cre8or）です。ふと社内のSlackで「ポリモーフィズムを使っているときに、冗長になるコードをジェネリクスを使うことで綺麗にまとめる事ができる」と呟いたところ、「ジェネリクスもポリモー]]></summary>
+        <content type="html"><![CDATA[!この記事は毎週必ず記事がでるテックブログ Loglass Tech Blog Sprint の72週目の記事です！2年間連続達成まで残り34週となりました！ はじめにソフトウェアエンジニアの福土（@ryoya_cre8or）です。ふと社内のSlackで「ポリモーフィズムを使っているときに、冗長になるコードをジェネリクスを使うことで綺麗にまとめる事ができる」と呟いたところ、「ジェネリクスもポリモーフィズムの1種だよ」とツッコミをいただき、それを機にポリモーフィズムの概念について整理したいと思っていたので、年末年始にオリャっとまとめちゃいます。実は共変性・反変性の概念を理解...]]></content>
+        <author>
+            <name>Ryoya</name>
+        </author>
+        <published>2025-01-03T04:07:27.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[レバレジーズ システム本部（開発部）の人事戦略チームの発足 | Leverages Tech Blog]]></title>
+        <id>https://tech.leverages.jp/entry/2025/01/03/090000</id>
+        <link href="https://tech.leverages.jp/entry/2025/01/03/090000"/>
+        <updated>2025-01-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは、レバレジーズ システム本部のVPoEの田中です。 この度、エンジニア組織をエンハンスすることを目的とした人事戦略チームを発足しました。 今回は、エンジニアの採用・教育・評価や組織のエンジニアリングに興味を持つ皆さんに向けて、私たちの取り組みやミッションについてお伝えさせてください。 ミッション エンジニア特化の人事戦略チームのミッションは、「 エンジニアが顧客への価値提供・価]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは、レバレジーズ システム本部のVPoEの田中です。 この度、エンジニア組織をエンハンスすることを目的とした人事戦略チームを発足しました。 今回は、エンジニアの採用・教育・評価や組織のエンジニアリングに興味を持つ皆さんに向けて、私たちの取り組みやミッションについてお伝えさせてください。 ミッション エンジニア特化の人事戦略チームのミッションは、「 エンジニアが顧客への価値提供・価値創出に集中できるようにする 」ことです。 私たちは、エンジニア一人ひとりが最大限のパフォーマンスを発揮できるよう、人材開発、組織開発、制度・環境の整備に邁進しています。 上記ミッションに基づいて、エ…]]></content>
+        <published>2025-01-03T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[宇宙の起源をLLMで探る　4大LLM×最新強化モデルを徹底比較してみた | ちゅらデータ株式会社のフィード]]></title>
+        <id>https://zenn.dev/churadata/articles/953c63ca13f987</id>
+        <link href="https://zenn.dev/churadata/articles/953c63ca13f987"/>
+        <updated>2025-01-02T11:59:56.000Z</updated>
+        <summary type="html"><![CDATA[概要この記事の対象者:LLMの精度比較や回答の特徴に興味があり、宇宙の起源やビッグバン以前の話題に関心はあるが専門的なことは知らない方この記事の内容:GPT4-o, o1, Claude3.5, Gemini2.0-flashの4モデルに同じ質問を投げ、それぞれの回答や強み・個性を比較し整理するこの記事を読んで分かること:4つのモデルの特徴や使い分けのポイントが理解でき、どのテーマにどのモデルが適]]></summary>
+        <content type="html"><![CDATA[概要この記事の対象者:LLMの精度比較や回答の特徴に興味があり、宇宙の起源やビッグバン以前の話題に関心はあるが専門的なことは知らない方この記事の内容:GPT4-o, o1, Claude3.5, Gemini2.0-flashの4モデルに同じ質問を投げ、それぞれの回答や強み・個性を比較し整理するこの記事を読んで分かること:4つのモデルの特徴や使い分けのポイントが理解でき、どのテーマにどのモデルが適しているかが分かる 序説先日、OpenAIから新しいモデルとして o1-pro が発表されました。名前からして強化版を想起させるこのモデル、なにやらすごそうなのですが、...]]></content>
+        <author>
+            <name>kei忍者</name>
+        </author>
+        <published>2025-01-02T11:59:56.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SageMaker AI での非同期推論エンドポイントの作成方法 | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/sagemaker-async-inference-demo</id>
+        <link href="https://blog.serverworks.co.jp/sagemaker-async-inference-demo"/>
+        <updated>2025-01-02T11:45:22.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 非同期推論とは 主な特徴 非同期推論の仕組み 非同期推論エンドポイント 前提条件 1. モデルのアップロード 2. 推論用のコンテナの作成 3. ECRへのコンテナのアップロード 4. SageMakerにモデルの作成 5. エンドポイント設定の作成 6. エンドポイントの作成 7. スケーリング設定 8. エンドポイントの呼び出し まとめ はじめに こんにちは、アプリケーションサービス]]></summary>
+        <content type="html"><![CDATA[はじめに 非同期推論とは 主な特徴 非同期推論の仕組み 非同期推論エンドポイント 前提条件 1. モデルのアップロード 2. 推論用のコンテナの作成 3. ECRへのコンテナのアップロード 4. SageMakerにモデルの作成 5. エンドポイント設定の作成 6. エンドポイントの作成 7. スケーリング設定 8. エンドポイントの呼び出し まとめ はじめに こんにちは、アプリケーションサービス部 ディベロップメントサービス１課の北出です。 今回は、SageMaker AI の非同期推論の紹介と、非同期推論エンドポイントの作成方法、非同期推論エンドポイントのオートスケーリング設定について記述…]]></content>
+        <published>2025-01-02T11:45:22.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bicepで新しい関数 deployer()  が追加されました | APC 技術ブログ]]></title>
+        <id>https://techblog.ap-com.co.jp/entry/2025/01/02/183000</id>
+        <link href="https://techblog.ap-com.co.jp/entry/2025/01/02/183000"/>
+        <updated>2025-01-02T09:30:00.000Z</updated>
+        <summary type="html"><![CDATA[みなさんこんにちは。ACS事業部の亀崎です。 2024年12月に公開されたAzure Bicep v0.32で、便利な関数がひとつ追加されました。それが deployer() です。 learn.microsoft.com 通常BicepでAzure Resourceをデプロイする際は、作成・更新権限を持っていると思います。このためリソースオーナーなどの指定は必要ないことが多いです。しかし、それら]]></summary>
+        <content type="html"><![CDATA[みなさんこんにちは。ACS事業部の亀崎です。 2024年12月に公開されたAzure Bicep v0.32で、便利な関数がひとつ追加されました。それが deployer() です。 learn.microsoft.com 通常BicepでAzure Resourceをデプロイする際は、作成・更新権限を持っていると思います。このためリソースオーナーなどの指定は必要ないことが多いです。しかし、それらのリソースの中のデータ（たとえばBlob Storageに配置するデータそのものの参照・更新権や、Keyvaultのシークレットそのものへのアクセス権）に対しては権限が付与されていません。このため、明…]]></content>
+        <published>2025-01-02T09:30:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[console.logについて理解していますか？ | NCDCエンジニアブログのフィード]]></title>
+        <id>https://zenn.dev/ncdc/articles/you-dont-know-console-log</id>
+        <link href="https://zenn.dev/ncdc/articles/you-dont-know-console-log"/>
+        <updated>2025-01-02T09:00:08.000Z</updated>
+        <summary type="html"><![CDATA[はじめにconsole.log()を使っていますか？コンソールデバッグをしない派の人もまったく使わないことはないでしょう。https://developer.mozilla.org/ja/docs/Web/API/console/log_static// 文字列を渡すと表示されるconsole.log("Hello, world!"); // Hello, worldわかりやすいですね。// オブ]]></summary>
+        <content type="html"><![CDATA[はじめにconsole.log()を使っていますか？コンソールデバッグをしない派の人もまったく使わないことはないでしょう。https://developer.mozilla.org/ja/docs/Web/API/console/log_static// 文字列を渡すと表示されるconsole.log("Hello, world!"); // Hello, worldわかりやすいですね。// オブジェクトも表示するconsole.log({ name: "Taro" }); // { name: 'Taro' }オブジェクトも表示します。では、これはどう表示される...]]></content>
+        <author>
+            <name>ratmie</name>
+        </author>
+        <published>2025-01-02T09:00:08.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【個人開発者向け】iOSアプリを4年間で5万本インストールした話 | 合同会社zoome（ズーム）のフィード]]></title>
+        <id>https://zenn.dev/zoome/articles/b66b4bc0806a71</id>
+        <link href="https://zenn.dev/zoome/articles/b66b4bc0806a71"/>
+        <updated>2025-01-02T01:28:34.000Z</updated>
+        <summary type="html"><![CDATA[2020年〜2023年の4年間に日本で出たiOSアプリのほとんど全部（ゲーム、日本語に非対応のものを除く）、計5万1350本をインストールし終えました。一台のiPhoneに全部入れるのは無理なので、バックアップを取って後からインストール可能にしてあります。（アプリ名が見えると怒られそうなのでモザイク入り）また、集計したついでに各フレームワークの使用割合をリポジトリーにまとめてあります。中にあるap]]></summary>
+        <content type="html"><![CDATA[2020年〜2023年の4年間に日本で出たiOSアプリのほとんど全部（ゲーム、日本語に非対応のものを除く）、計5万1350本をインストールし終えました。一台のiPhoneに全部入れるのは無理なので、バックアップを取って後からインストール可能にしてあります。（アプリ名が見えると怒られそうなのでモザイク入り）また、集計したついでに各フレームワークの使用割合をリポジトリーにまとめてあります。中にあるapps.jsonというファイルにインストールしたアプリのAppIDを並べてあるので、毎年せっせとインストールしたんだなーというのが雰囲気で伝わると幸いです。https://github...]]></content>
+        <author>
+            <name>aq</name>
+        </author>
+        <published>2025-01-02T01:28:34.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[.NET 6から.NET 8へバージョンアップしました | ROBOT PAYMENT TECH-BLOG]]></title>
+        <id>https://tech.robotpayment.co.jp/entry/2025/01/02/070000</id>
+        <link href="https://tech.robotpayment.co.jp/entry/2025/01/02/070000"/>
+        <updated>2025-01-01T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。決済システムでエンジニアをやっております hoshino33 です。 今回は、.NET 6から.NET 8にバージョンアップした際に対応した内容を記載しようと思います。 はじめに 決済システムでは.NETを利用して開発を行っております。 .NET 6は2024年11月12日を持ってサポート終了となるためバージョンアップしなければいけません。 サポート状況については「.NET および .]]></summary>
+        <content type="html"><![CDATA[こんにちは。決済システムでエンジニアをやっております hoshino33 です。 今回は、.NET 6から.NET 8にバージョンアップした際に対応した内容を記載しようと思います。 はじめに 決済システムでは.NETを利用して開発を行っております。 .NET 6は2024年11月12日を持ってサポート終了となるためバージョンアップしなければいけません。 サポート状況については「.NET および .NET Core サポート ポリシー」をご確認ください。 今回は「新しい .NET バージョンにアップグレードする」を行う上で他で対応が必要だった内容を記載したいと思います。 対応内容 その前に決済シ…]]></content>
+        <published>2025-01-01T22:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[クラウド代ゼロ円！？LocalStackで爆速テスト環境を手に入れる方法 | ちゅらデータ株式会社のフィード]]></title>
+        <id>https://zenn.dev/churadata/articles/ca2f61b28cf89e</id>
+        <link href="https://zenn.dev/churadata/articles/ca2f61b28cf89e"/>
+        <updated>2025-01-01T13:43:06.000Z</updated>
+        <summary type="html"><![CDATA[概要この記事を読む対象者:「AWSを使って開発したいけど、コストや設定が気になる…」と悩んでいるエンジニアこの記事の内容:LocalStackの概要や歴史、インストールから基本操作まで、手を動かしながら学べる実践ガイドをお届けしますこの記事を読んで分かること:LocalStackを活用してAWSサービスをローカルでエミュレーションし、コスト抑え効率よくテスト環境を構築する方法が身につきます！ 序説]]></summary>
+        <content type="html"><![CDATA[概要この記事を読む対象者:「AWSを使って開発したいけど、コストや設定が気になる…」と悩んでいるエンジニアこの記事の内容:LocalStackの概要や歴史、インストールから基本操作まで、手を動かしながら学べる実践ガイドをお届けしますこの記事を読んで分かること:LocalStackを活用してAWSサービスをローカルでエミュレーションし、コスト抑え効率よくテスト環境を構築する方法が身につきます！ 序説「AWSは便利だけど、テストするだけなのにお金がかかるのはちょっと…」そんな経験、ありませんか？本番環境でいきなり試すのはリスクが高く、設定ミスで予算オーバーになることも...]]></content>
+        <author>
+            <name>kei忍者</name>
+        </author>
+        <published>2025-01-01T13:43:06.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Backstageのアップデートを楽にするyarn pluginのご紹介 | APC 技術ブログ]]></title>
+        <id>https://techblog.ap-com.co.jp/entry/2025/01/01/215958</id>
+        <link href="https://techblog.ap-com.co.jp/entry/2025/01/01/215958"/>
+        <updated>2025-01-01T12:59:58.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 新年あけましておめでとうございます。ACS事業部 亀崎です。 2025年最初の投稿も「Backstage」関連情報をお届けします。 Backstageとは まず最初に「Backstage」とはから振り返りましょう。実は本ブログで最初に取り上げたのが2023年の3月でした。 techblog.ap-com.co.jp Backstageは、Spotify社が開発し、現在はCNCFに寄贈され]]></summary>
+        <content type="html"><![CDATA[はじめに 新年あけましておめでとうございます。ACS事業部 亀崎です。 2025年最初の投稿も「Backstage」関連情報をお届けします。 Backstageとは まず最初に「Backstage」とはから振り返りましょう。実は本ブログで最初に取り上げたのが2023年の3月でした。 techblog.ap-com.co.jp Backstageは、Spotify社が開発し、現在はCNCFに寄贈された Internal Developer Portalを実現するツールです。 backstage.io Backstageは完成されたツールではありません。皆さん自身で実行する Typesccript…]]></content>
+        <published>2025-01-01T12:59:58.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AWS re:Invent 2024】セッションレポート：COP304 | Monitor end user experience with Amazon CloudWatch | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/2025/01/01/155849</id>
+        <link href="https://blog.serverworks.co.jp/2025/01/01/155849"/>
+        <updated>2025-01-01T06:58:49.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。マネージドサービス部の谷内です。 本ブログでは、以下 Builders' Session についてまとめます。 COP304 | Monitor end user experience with Amazon CloudWatch By extending application performance monitoring to end users as well as fronte]]></summary>
+        <content type="html"><![CDATA[こんにちは。マネージドサービス部の谷内です。 本ブログでは、以下 Builders' Session についてまとめます。 COP304 | Monitor end user experience with Amazon CloudWatch By extending application performance monitoring to end users as well as frontend experiences, AWS digital experience monitoring enhances customer experiences with an outside-in p…]]></content>
+        <published>2025-01-01T06:58:49.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[UE5] Editor Utility Widgetを使って背景をいい感じに配置編集しよう | historia Inc – 株式会社ヒストリア]]></title>
+        <id>https://historia.co.jp/?p=46881</id>
+        <link href="https://historia.co.jp/archives/46881/"/>
+        <updated>2025-01-01T06:00:20.000Z</updated>
+        <summary type="html"><![CDATA[執筆バージョン: Unreal Engine 5.5 皆さんこんにちは！ 突然ですが、自然に見える背景の配置を行えていますか？ 以前Patternツールでスタティックメッシュアクターを様々なパターンでいい感じに配置できる […]The post [UE5] Editor Utility Widgetを使って背景をいい感じに配置編集しよう first appeared on historia Inc]]></summary>
+        <content type="html"><![CDATA[執筆バージョン: Unreal Engine 5.5 皆さんこんにちは！ 突然ですが、自然に見える背景の配置を行えていますか？ 以前Patternツールでスタティックメッシュアクターを様々なパターンでいい感じに配置できる […]The post [UE5] Editor Utility Widgetを使って背景をいい感じに配置編集しよう first appeared on historia Inc - 株式会社ヒストリア.]]></content>
+        <author>
+            <name>KurodaRyuichi</name>
+        </author>
+        <category label="UE"/>
+        <category label="初心者向け"/>
+        <category label="Blueprint"/>
+        <published>2025-01-01T06:00:20.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Azure】-Bing Searchを触ってみる | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/771612c0c6989c</id>
+        <link href="https://zenn.dev/headwaters/articles/771612c0c6989c"/>
+        <updated>2025-01-01T04:00:01.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2025/1/1 やることAzure AI Agent Serviceを触っている時に出会ったBing Search.初めましてだったので、勉強したことをまとめようかなと。 Bing Searchとは？MicrosoftのBing Search APIを使用して、アプリケーションやサービスに高度な検索機能を統合するためのサービスです。Web検索、画像検索、ニュース検索など、Bingの強力な検]]></summary>
+        <content type="html"><![CDATA[執筆日2025/1/1 やることAzure AI Agent Serviceを触っている時に出会ったBing Search.初めましてだったので、勉強したことをまとめようかなと。 Bing Searchとは？MicrosoftのBing Search APIを使用して、アプリケーションやサービスに高度な検索機能を統合するためのサービスです。Web検索、画像検索、ニュース検索など、Bingの強力な検索エンジンを活用した検索機能をAPIで使える。 Bing SearchでできることBing Web SearchBing Image SearchBing New...]]></content>
+        <author>
+            <name>takekawa tomoki</name>
+        </author>
+        <published>2025-01-01T04:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LACP関連コマンドの復習 | シナプス技術者ブログ]]></title>
+        <id>https://tech.synapse.jp/entry/2025/01/01/100000</id>
+        <link href="https://tech.synapse.jp/entry/2025/01/01/100000"/>
+        <updated>2025-01-01T01:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。ネットワーク課の若松です。 シナプスではデータセンタ内の機器間や、データセンタ間の接続にLAGという技術/機能を使っております。 今回このLAGを複数のメーカのルータやスイッチに設定しましたので、そのコマンド等を紹介させていただきます。 LAGとは LAGの特徴 LAGの種類 LAGの挙動の種類 LAGのプロトコルの種類 LAG導入の必須条件 検証環境 検証で使用した機器 検証前提 ネ]]></summary>
+        <content type="html"><![CDATA[こんにちは。ネットワーク課の若松です。 シナプスではデータセンタ内の機器間や、データセンタ間の接続にLAGという技術/機能を使っております。 今回このLAGを複数のメーカのルータやスイッチに設定しましたので、そのコマンド等を紹介させていただきます。 LAGとは LAGの特徴 LAGの種類 LAGの挙動の種類 LAGのプロトコルの種類 LAG導入の必須条件 検証環境 検証で使用した機器 検証前提 ネットワーク構成 各機器の設定 NCS55A1の設定 Cat9500の設定 ACX7100の設定 各機器の動作確認 NCS55A1の確認 論理インターフェースの確認 LACPの状態確認 Cat9500の…]]></content>
+        <published>2025-01-01T01:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[あけましておめでとうございます | MONEX ENGINEER BLOG │マネックス エンジニアブログ]]></title>
+        <id>https://blog.tech-monex.com/entry/2025/01/01/090000</id>
+        <link href="https://blog.tech-monex.com/entry/2025/01/01/090000"/>
+        <updated>2025-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[始まりました、2025年 今年は2025年。21世紀になってもう4分の1になるのですね。20世紀は戦争の世紀なんて言われていましたけど、21世紀はどんな世紀として後世に語り継がれていくのでしょうか。20世紀と同じく、なんて言われないことを祈るばかりです。 去年はこんなことがありました、今年もきっと盛りだくさんです 2024年もさまざまなシステム開発を行ってきました。書き始めるときりがないので主だっ]]></summary>
+        <content type="html"><![CDATA[始まりました、2025年 今年は2025年。21世紀になってもう4分の1になるのですね。20世紀は戦争の世紀なんて言われていましたけど、21世紀はどんな世紀として後世に語り継がれていくのでしょうか。20世紀と同じく、なんて言われないことを祈るばかりです。 去年はこんなことがありました、今年もきっと盛りだくさんです 2024年もさまざまなシステム開発を行ってきました。書き始めるときりがないので主だったものを少しだけご紹介。NTTドコモとの提携を受け、様々なシステム開発を行っています。提携から少し時間がかかってしまいましたが、本格的にサービス展開を始められた年でした。 また、法令や制度への対応とい…]]></content>
+        <published>2025-01-01T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Findyのエンジニアおみくじの舞台裏を大公開！ | Findy Tech Blog]]></title>
+        <id>https://tech.findy.co.jp/entry/2025/01/01/070000</id>
+        <link href="https://tech.findy.co.jp/entry/2025/01/01/070000"/>
+        <updated>2024-12-31T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[新年、明けましておめでとうございます。 ファインディ株式会社でフロントエンドのリードをしている新福(@puku0x)です。 今年も「エンジニアおみくじ」の季節がやって参りました 🎉 企画の詳細につきましては↓の記事をご参照ください。 findy-code.io 今回はエンジニアおみくじ開発の舞台裏をお話ししようと思います。 エンジニアおみくじとは 舞台裏① 企画からエンジニアが関わる 舞台裏② お]]></summary>
+        <content type="html"><![CDATA[新年、明けましておめでとうございます。 ファインディ株式会社でフロントエンドのリードをしている新福(@puku0x)です。 今年も「エンジニアおみくじ」の季節がやって参りました 🎉 企画の詳細につきましては↓の記事をご参照ください。 findy-code.io 今回はエンジニアおみくじ開発の舞台裏をお話ししようと思います。 エンジニアおみくじとは 舞台裏① 企画からエンジニアが関わる 舞台裏② おみくじパターンは18万通り以上 まとめ エンジニアおみくじとは エンジニアおみくじは Findy で毎年1月に開催しているイベントです。 期間中にFindyへログインし、引いたおみくじをシェアすると抽…]]></content>
+        <published>2024-12-31T22:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ChatGPTで悩みを整理！ユニークな人生相談を分析して解決策を考える | APC 技術ブログ]]></title>
+        <id>https://techblog.ap-com.co.jp/entry/2025/01/01/070000</id>
+        <link href="https://techblog.ap-com.co.jp/entry/2025/01/01/070000"/>
+        <updated>2024-12-31T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[悩みを視覚化する方法として、ChatGPTとの対話を通じて具体的な解決案を模索した体験を紹介します。架空のユニークな人生相談を題材に、SWOT分析をはじめとしたツールを活用し、悩みを整理しながら現実的で建設的な解決策を導きました。]]></summary>
+        <content type="html"><![CDATA[悩みを視覚化する方法として、ChatGPTとの対話を通じて具体的な解決案を模索した体験を紹介します。架空のユニークな人生相談を題材に、SWOT分析をはじめとしたツールを活用し、悩みを整理しながら現実的で建設的な解決策を導きました。]]></content>
+        <published>2024-12-31T22:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWSの t4g.small EC2インスタンスを2025年も無料で使おう | SIOS Tech. Lab]]></title>
+        <id>https://tech-lab.sios.jp/?p=45347</id>
+        <link href="https://tech-lab.sios.jp/t4g.small-free-tier-2025"/>
+        <updated>2024-12-31T15:13:02.000Z</updated>
+        <summary type="html"><![CDATA[結論 AWS EC2 t4g.small インスタンスは東京リージョンで2025年も引き続き1台分無料で利用できそうです。 説明 昨年の記事にも書いたのですが、AWSで提供されている「AWS 無料利用枠」に ...AWSの t4g.small EC2インスタンスを2025年も無料で使おう first appeared on SIOS Tech. Lab.]]></summary>
+        <content type="html"><![CDATA[結論 AWS EC2 t4g.small インスタンスは東京リージョンで2025年も引き続き1台分無料で利用できそうです。 説明 昨年の記事にも書いたのですが、AWSで提供されている「AWS 無料利用枠」に ...AWSの t4g.small EC2インスタンスを2025年も無料で使おう first appeared on SIOS Tech. Lab.]]></content>
+        <author>
+            <name>Hideki Yamane</name>
+        </author>
+        <category label="クラウド"/>
+        <published>2024-12-31T15:13:02.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[新年のご挨拶 2025年 | historia Inc – 株式会社ヒストリア]]></title>
+        <id>https://historia.co.jp/?p=47281</id>
+        <link href="https://historia.co.jp/archives/47281/"/>
+        <updated>2024-12-31T15:00:15.000Z</updated>
+        <summary type="html"><![CDATA[新年、あけましておめでとうございます！ 代表の佐々木です。旧年は取引先の皆様、そしてコミュニティの皆様には、本当にお世話になりました。本年もよろしくお願いいたします。今年の年賀状は、ゲーム系はFaaast […]The post 新年のご挨拶 2025年 first appeared on historia Inc - 株式会社ヒストリア.]]></summary>
+        <content type="html"><![CDATA[新年、あけましておめでとうございます！ 代表の佐々木です。旧年は取引先の皆様、そしてコミュニティの皆様には、本当にお世話になりました。本年もよろしくお願いいたします。今年の年賀状は、ゲーム系はFaaast […]The post 新年のご挨拶 2025年 first appeared on historia Inc - 株式会社ヒストリア.]]></content>
+        <author>
+            <name>SasakiShun</name>
+        </author>
+        <category label="お知らせ"/>
+        <published>2024-12-31T15:00:15.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ 2024年のはてなスタッフのアウトプットまとめ  | Hatena Developer Blog]]></title>
+        <id>https://developer.hatenastaff.com/entry/2024/12/31/233000</id>
+        <link href="https://developer.hatenastaff.com/entry/2024/12/31/233000"/>
+        <updated>2024-12-31T14:30:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、id:onk です。 去年 に引き続き、はてなスタッフの登壇まとめをします。去年は 88 件でしたが、今年は 119 件あるようです。実に 1.3 倍ですね。いや素朴に凄いな。発表の場が増えたのもあるし、発表しようと動いたのもあるなー、とまとめていて思いました。 それでは見ていきましょー。 1/12 ToKyoto.js #02 - Kyoto.js in Tokyo 1/26 Nex]]></summary>
+        <content type="html"><![CDATA[こんにちは、id:onk です。 去年 に引き続き、はてなスタッフの登壇まとめをします。去年は 88 件でしたが、今年は 119 件あるようです。実に 1.3 倍ですね。いや素朴に凄いな。発表の場が増えたのもあるし、発表しようと動いたのもあるなー、とまとめていて思いました。 それでは見ていきましょー。 1/12 ToKyoto.js #02 - Kyoto.js in Tokyo 1/26 Nextbeat Tech Bar：第五回関数型プログラミング（仮）の会 1/30 Hatena Engineer Seminar #28 個人開発編 1/30 Mackerel Drink UP #14 …]]></content>
+        <published>2024-12-31T14:30:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[読みやすい改行のための軽量な分かち書き器をPHPで | pixivのフィード]]></title>
+        <id>https://zenn.dev/pixiv/articles/f434bdff2e4543</id>
+        <link href="https://zenn.dev/pixiv/articles/f434bdff2e4543"/>
+        <updated>2024-12-31T14:24:37.000Z</updated>
+        <summary type="html"><![CDATA[BudouXという汎用の日本語分かち書きライブラリがあります。https://developers-jp.googleblog.com/2023/09/budoux-adobe.html以前これのJava版実装をPHPに移植したことがありました。https://zenn.dev/tadsan/articles/50c0c2b9fd443eアルゴリズムがとても簡単なのでPHPでも簡単に動かせるので便]]></summary>
+        <content type="html"><![CDATA[BudouXという汎用の日本語分かち書きライブラリがあります。https://developers-jp.googleblog.com/2023/09/budoux-adobe.html以前これのJava版実装をPHPに移植したことがありました。https://zenn.dev/tadsan/articles/50c0c2b9fd443eアルゴリズムがとても簡単なのでPHPでも簡単に動かせるので便利です。ところで、先述のGoogle社のブログにはこんなことが書いてあります。 今後の展開現在 BudouX は ICU (International Components f...]]></content>
+        <author>
+            <name>にゃんだーすわん</name>
+        </author>
+        <published>2024-12-31T14:24:37.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Go】テーブル駆動テストのエラーチェックは関数パターンがおすすめ | KAYAC Engineers' Blog]]></title>
+        <id>https://techblog.kayac.com/go-tdt-error-check</id>
+        <link href="https://techblog.kayac.com/go-tdt-error-check"/>
+        <updated>2024-12-31T14:02:38.000Z</updated>
+        <summary type="html"><![CDATA[記事公開時点ではSREの市川です。 というのも2024年の大晦日を以て退職となるのですが、実は【カヤック】面白法人グループ Advent Calendar 2024の7日目の記事をすっぽかしていたので、Go におけるテストの話を書いて置き土産といたします。 ケーススタディ 以下のようなSUT(テスト対象)があるとします。 package foo func DoSomething(input str]]></summary>
+        <content type="html"><![CDATA[記事公開時点ではSREの市川です。 というのも2024年の大晦日を以て退職となるのですが、実は【カヤック】面白法人グループ Advent Calendar 2024の7日目の記事をすっぽかしていたので、Go におけるテストの話を書いて置き土産といたします。 ケーススタディ 以下のようなSUT(テスト対象)があるとします。 package foo func DoSomething(input string) int { // 何かしらの処理 } この限りでは、SUTがエラーを返さないのでエラーチェックの必要はありません。つまり、以下のようなテストコードを書くことができます。 package fo…]]></content>
+        <published>2024-12-31T14:02:38.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Let's Encrypt 証明書発行でつまずいたこと② | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/48e34c0b8d0e82</id>
+        <link href="https://zenn.dev/headwaters/articles/48e34c0b8d0e82"/>
+        <updated>2024-12-31T13:30:52.000Z</updated>
+        <summary type="html"><![CDATA[環境AWS EC2Ubuntu22.04WebサーバーはApacheDNSサービスはRoute53 何が起きたか旧サーバーから新規サーバーへの移行にあたり、改めてLet's Encryptの証明書を発行をしようとしました。ドメイン名は同じにしていたがグローバルIPアドレスが変更となる仕様でした。ただ、Route53でDNS切り替え（IPアドレスの変更）をしておらず、Let's Encryptの証明]]></summary>
+        <content type="html"><![CDATA[環境AWS EC2Ubuntu22.04WebサーバーはApacheDNSサービスはRoute53 何が起きたか旧サーバーから新規サーバーへの移行にあたり、改めてLet's Encryptの証明書を発行をしようとしました。ドメイン名は同じにしていたがグローバルIPアドレスが変更となる仕様でした。ただ、Route53でDNS切り替え（IPアドレスの変更）をしておらず、Let's Encryptの証明書を発行出来ませんでした。 構成簡易構成移行構成（CentOSは既にサポート終了） 初めに試したコマンドLinux環境でLet's Encr...]]></content>
+        <author>
+            <name>jemiya</name>
+        </author>
+        <published>2024-12-31T13:30:52.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Let's Encrypt 証明書発行でつまずいたこと① | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/9ada013c58bc1a</id>
+        <link href="https://zenn.dev/headwaters/articles/9ada013c58bc1a"/>
+        <updated>2024-12-31T13:25:05.000Z</updated>
+        <summary type="html"><![CDATA[環境AWS EC2Ubuntu22.04WebサーバーはApache 注意点WebサーバーがApacheでない場合は今回の記事は参考になることはないと思います。Apacheは必ず起動しておくこと。 概要 初めに試したコマンドLinux環境でLet's Encrypt証明書を発行しようとしました。検証で下記のコマンドを実施しました。certbot certonly --agree-tos --apa]]></summary>
+        <content type="html"><![CDATA[環境AWS EC2Ubuntu22.04WebサーバーはApache 注意点WebサーバーがApacheでない場合は今回の記事は参考になることはないと思います。Apacheは必ず起動しておくこと。 概要 初めに試したコマンドLinux環境でLet's Encrypt証明書を発行しようとしました。検証で下記のコマンドを実施しました。certbot certonly --agree-tos --apache -w /var/www/html/example -d example.com結果、下記のように失敗するのですが。Some challe...]]></content>
+        <author>
+            <name>jemiya</name>
+        </author>
+        <published>2024-12-31T13:25:05.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GitHub Copilot無料版登場！Chat in GitHubはGA！｜Productivity Weekly(2024-12-25) | サイボウズ 生産性向上チーム 💪のフィード]]></title>
+        <id>https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241225</id>
+        <link href="https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241225"/>
+        <updated>2024-12-31T12:49:38.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 202]]></summary>
+        <content type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 2024-12-25 単独号です。今回が第 173 回目です。過去の記事はこちら。!2023-05-10 号から、生産性向上チームの他メンバーにいくつかのトピックを紹介していただくことに...]]></content>
+        <author>
+            <name>Futa Hirakoba</name>
+        </author>
+        <published>2024-12-31T12:49:38.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CodeQLの対象にActions追加、bun.lock登場など｜Productivity Weekly(2024-12-18) | サイボウズ 生産性向上チーム 💪のフィード]]></title>
+        <id>https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241218</id>
+        <link href="https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241218"/>
+        <updated>2024-12-31T12:36:31.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 202]]></summary>
+        <content type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 2024-12-18 単独号です。今回が第 172 回目です。過去の記事はこちら。!2023-05-10 号から、生産性向上チームの他メンバーにいくつかのトピックを紹介していただくことに...]]></content>
+        <author>
+            <name>Futa Hirakoba</name>
+        </author>
+        <published>2024-12-31T12:36:31.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DockerのENTRYPOINTとCMD | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/b363ba0491ccde</id>
+        <link href="https://zenn.dev/headwaters/articles/b363ba0491ccde"/>
+        <updated>2024-12-31T11:24:50.000Z</updated>
+        <summary type="html"><![CDATA[ENTRYPOINTとは？ENTRYPOINTは、コンテナが起動されたときに実行されるデフォルトのコマンドを指定します。ENTRYPOINTに指定されたコマンドは、コンテナが起動されるたびに必ず実行されます。 CMDとは？CMDは、デフォルトのコマンドおよび引数を指定します。CMDはENTRYPOINTと組み合わせて使われることが多く、ENTRYPOINTに指定されたコマンドのデフォルトの引数を提]]></summary>
+        <content type="html"><![CDATA[ENTRYPOINTとは？ENTRYPOINTは、コンテナが起動されたときに実行されるデフォルトのコマンドを指定します。ENTRYPOINTに指定されたコマンドは、コンテナが起動されるたびに必ず実行されます。 CMDとは？CMDは、デフォルトのコマンドおよび引数を指定します。CMDはENTRYPOINTと組み合わせて使われることが多く、ENTRYPOINTに指定されたコマンドのデフォルトの引数を提供します。ENTRYPOINTとCMDは、Dockerコンテナの起動時に実行されるコマンドを制御するための強力なツールです。ENTRYPOINTは必ず実行されるコマンドを指定し、C...]]></content>
+        <author>
+            <name>onoda_shun</name>
+        </author>
+        <published>2024-12-31T11:24:50.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Azure AI Agent Service】- Tracing機能を試す | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/3388ee420973c6</id>
+        <link href="https://zenn.dev/headwaters/articles/3388ee420973c6"/>
+        <updated>2024-12-31T11:20:33.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2024/12/31 やることAzure AI Agent Serviceには、Tracing機能がある。Tracing機能とは、特定のエージェント実行に関係する各プリミティブの入力と出力を、それが呼び出された順序で明確に確認できる。https://learn.microsoft.com/ja-jp/azure/ai-services/agents/concepts/tracingちょっとよ]]></summary>
+        <content type="html"><![CDATA[執筆日2024/12/31 やることAzure AI Agent Serviceには、Tracing機能がある。Tracing機能とは、特定のエージェント実行に関係する各プリミティブの入力と出力を、それが呼び出された順序で明確に確認できる。https://learn.microsoft.com/ja-jp/azure/ai-services/agents/concepts/tracingちょっとよくわからないので触ってみる 参考資料https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/ai/az...]]></content>
+        <author>
+            <name>takekawa tomoki</name>
+        </author>
+        <published>2024-12-31T11:20:33.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Azure AI Agent Service】- Azure AI Agent ServiceでAI Agentを作成してみる① | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/5c6edb44e40147</id>
+        <link href="https://zenn.dev/headwaters/articles/5c6edb44e40147"/>
+        <updated>2024-12-31T11:18:36.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2024/12/31 やることAzure AI Agent ServiceがAzure AI Foundryで利用可能になりましたー！AI Agentについて理解が浅いので、実際に触りながら学習しようと思います。Bing Searchをナレッジにしようかなと。※プレビュー版のため、挙動が不安定です... 流れAzure環境準備AIエージェント作成プレイグラウンドで実装コードで実装 Azure]]></summary>
+        <content type="html"><![CDATA[執筆日2024/12/31 やることAzure AI Agent ServiceがAzure AI Foundryで利用可能になりましたー！AI Agentについて理解が浅いので、実際に触りながら学習しようと思います。Bing Searchをナレッジにしようかなと。※プレビュー版のため、挙動が不安定です... 流れAzure環境準備AIエージェント作成プレイグラウンドで実装コードで実装 Azure環境準備必要なリソースは以下です。Azure OpenAIAzure AI Servicesプロジェクト/hubGrounding with Bi...]]></content>
+        <author>
+            <name>takekawa tomoki</name>
+        </author>
+        <published>2024-12-31T11:18:36.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Azure/powershell】- 環境変数追加、削除方法手順 | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/bfaf87d202f9a6</id>
+        <link href="https://zenn.dev/headwaters/articles/bfaf87d202f9a6"/>
+        <updated>2024-12-31T11:13:34.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2024/12/31 概要Azure AI Agent Serviceを使用して検証を行っていた際に、認証の設定に問題が発生しました。具体的には、以下のPythonコードを使用して認証を試みたところ、誤ったサブスクリプションにアクセスしてしまうというエラーが発生しました。project_client = AIProjectClient.from_connection_string( cred]]></summary>
+        <content type="html"><![CDATA[執筆日2024/12/31 概要Azure AI Agent Serviceを使用して検証を行っていた際に、認証の設定に問題が発生しました。具体的には、以下のPythonコードを使用して認証を試みたところ、誤ったサブスクリプションにアクセスしてしまうというエラーが発生しました。project_client = AIProjectClient.from_connection_string( credential=DefaultAzureCredential(), conn_str=os.environ["PROJECT_CONNECTION_STRING"],...]]></content>
+        <author>
+            <name>takekawa tomoki</name>
+        </author>
+        <published>2024-12-31T11:13:34.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Azure】- Azure Communication ServiceとAzure Functionsの連携方法 | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/9e1dd0c8ffafe8</id>
+        <link href="https://zenn.dev/headwaters/articles/9e1dd0c8ffafe8"/>
+        <updated>2024-12-31T11:11:57.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2024/12/31 構成図 手順Azure Communication Serviceを構築/電話番号を発行Event GridトリガーのAzure FunctionsをデプロイEventGrid を構築テスト Azure Communication Serviceを構築/電話番号を発行Azure Communication Serviceを作成し、電話番号を発行※詳細な手順については、以]]></summary>
+        <content type="html"><![CDATA[執筆日2024/12/31 構成図 手順Azure Communication Serviceを構築/電話番号を発行Event GridトリガーのAzure FunctionsをデプロイEventGrid を構築テスト Azure Communication Serviceを構築/電話番号を発行Azure Communication Serviceを作成し、電話番号を発行※詳細な手順については、以下の記事を参考にしてくださいhttps://zenn.dev/headwaters/articles/7f954f2bef8eb8 Event Gr...]]></content>
+        <author>
+            <name>takekawa tomoki</name>
+        </author>
+        <published>2024-12-31T11:11:57.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PHPカンファレンス2024で参加＆登壇をしました！ | NE株式会社の開発ブログのフィード]]></title>
+        <id>https://zenn.dev/neinc_tech/articles/833a04da13b0f8</id>
+        <link href="https://zenn.dev/neinc_tech/articles/833a04da13b0f8"/>
+        <updated>2024-12-31T10:47:43.000Z</updated>
+        <summary type="html"><![CDATA[!この記事はNE Advent Calender 2024 24日目の予定だった記事ですこんにちは〜！NE株式会社のまきまき（@_mkmk884）です🦒先日PHPカンファレンス2024に参加＆登壇＆スポンサーしました！年越しまで数時間と、ぎりぎり2024というタイミングですが、当日をふりかえろうと思います💨 登壇【「とりあえず動く」コードはよい、「読みやすい」コードはもっとよい】というタイトルで、]]></summary>
+        <content type="html"><![CDATA[!この記事はNE Advent Calender 2024 24日目の予定だった記事ですこんにちは〜！NE株式会社のまきまき（@_mkmk884）です🦒先日PHPカンファレンス2024に参加＆登壇＆スポンサーしました！年越しまで数時間と、ぎりぎり2024というタイミングですが、当日をふりかえろうと思います💨 登壇【「とりあえず動く」コードはよい、「読みやすい」コードはもっとよい】というタイトルで、LT登壇をしました！🎤今まで登壇した中では一番参加者がいたため、始まる前は1日中ソワソワしていたのですが、発表直前と発表中は今までで一番緊張が解けてました🙌今年、いろい...]]></content>
+        <author>
+            <name>はやしまき</name>
+        </author>
+        <published>2024-12-31T10:47:43.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CastingONE開発振り返り2024 | CastingONE Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/castingone_dev/articles/casone_retro_2024</id>
+        <link href="https://zenn.dev/castingone_dev/articles/casone_retro_2024"/>
+        <updated>2024-12-31T10:26:31.000Z</updated>
+        <summary type="html"><![CDATA[はじめにこんにちは、CastingONE岡崎です。2024年は会社としてもプロダクトとしても難しい意思決定が多い1年でしたが、今年の開発チームの1年を振り返ってみようと思います。 プロダクトCastingONEは非正規雇用の採用を行う企業向けのSaaSプロダクトです。非正規雇用の採用担当者が手間なく人材を採用できる世界を目指しており、現在特に力を入れているのが派遣会社の採用担当者が過去の派遣スタッ]]></summary>
+        <content type="html"><![CDATA[はじめにこんにちは、CastingONE岡崎です。2024年は会社としてもプロダクトとしても難しい意思決定が多い1年でしたが、今年の開発チームの1年を振り返ってみようと思います。 プロダクトCastingONEは非正規雇用の採用を行う企業向けのSaaSプロダクトです。非正規雇用の採用担当者が手間なく人材を採用できる世界を目指しており、現在特に力を入れているのが派遣会社の採用担当者が過去の派遣スタッフや応募者の中から効率よく掘り起こし応募を獲得するための機能群です。プロダクトとして今年も多くの意思決定をしてきましたが、その中でも1つ特に大きなものとして「ATS(採用管理)機...]]></content>
+        <author>
+            <name>CastingONE Tech Blog</name>
+        </author>
+        <published>2024-12-31T10:26:31.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ゼスト開発組織の2024年の振り返り | ゼスト Tech Blog]]></title>
+        <id>https://techblog.zest.jp/entry/2024/12/31/190406</id>
+        <link href="https://techblog.zest.jp/entry/2024/12/31/190406"/>
+        <updated>2024-12-31T10:04:06.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 「護りたい。その想いを護る。」株式会社ゼスト CTOの豊島です。 年末なので、2024年度の取り組みについて振り返りをしたいと思います。 1. 会社について 引っ越し 社員数の拡大に合わせ、「WeWork 日比谷パークフロント」から、新宿にある「VORT新宿御苑」へ1月に引っ越しました。 大型スクリーンができたことで、勉強会などがしやすくなりました。 資金調達 シリーズBとなる資金調達を]]></summary>
+        <content type="html"><![CDATA[はじめに 「護りたい。その想いを護る。」株式会社ゼスト CTOの豊島です。 年末なので、2024年度の取り組みについて振り返りをしたいと思います。 1. 会社について 引っ越し 社員数の拡大に合わせ、「WeWork 日比谷パークフロント」から、新宿にある「VORT新宿御苑」へ1月に引っ越しました。 大型スクリーンができたことで、勉強会などがしやすくなりました。 資金調達 シリーズBとなる資金調達を行いました。 引き続き革新的なプロダクトの開発を加速させたいと考えています💪 prtimes.jp 2. 事業について フルリニューアルリリース なんといっても今年は、3月に訪問スケジュールクラウド「…]]></content>
+        <published>2024-12-31T10:04:06.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git のコミット作成手順の取り消し方 | APC 技術ブログ]]></title>
+        <id>https://techblog.ap-com.co.jp/entry/2024/12/31/182017</id>
+        <link href="https://techblog.ap-com.co.jp/entry/2024/12/31/182017"/>
+        <updated>2024-12-31T09:20:17.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは。クラウド事業部の野本です。 プロジェクトのコードを Git でバージョン管理する際は、基本的に ファイル編集 → git add → git commit を繰り返してファイルを更新・保存していきます。ただ、たまに操作を間違えてしまい、これらの手順を取り消したくなることがあります。 本記事では、これらの操作について Git の仕組みを交えて整理したうえで、その逆を行う方法につ]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは。クラウド事業部の野本です。 プロジェクトのコードを Git でバージョン管理する際は、基本的に ファイル編集 → git add → git commit を繰り返してファイルを更新・保存していきます。ただ、たまに操作を間違えてしまい、これらの手順を取り消したくなることがあります。 本記事では、これらの操作について Git の仕組みを交えて整理したうえで、その逆を行う方法についてまとめます。 （確認した Git バージョン： 2.47.1 ） 図によるまとめ 先に、本記事の内容を詰め込んだ図を示します。 コミット作成と取り消しの流れ 四角で囲った縦列は、各操作時点での G…]]></content>
+        <published>2024-12-31T09:20:17.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[利用終了したドメイン名の終活に向けて 〜利用終了ドメイン名のログを分析した話〜 | NTT Communications Engineers' Blog]]></title>
+        <id>https://engineers.ntt.com/entry/202412-enddomain-log/entry</id>
+        <link href="https://engineers.ntt.com/entry/202412-enddomain-log/entry"/>
+        <updated>2024-12-31T08:47:07.000Z</updated>
+        <summary type="html"><![CDATA[この記事は、 NTT Communications Advent Calendar 2024 の記事です。 みなさんこんにちは、イノベーションセンターの冨樫です。Network Analytics for Security1 (以下、NA4Sec)プロジェクトのメンバーとして活動しています。この記事では「利用終了したドメイン名の終活に向けて 〜観測環境を作った話〜」で紹介した観測環境から収集したロ]]></summary>
+        <content type="html"><![CDATA[この記事は、 NTT Communications Advent Calendar 2024 の記事です。 みなさんこんにちは、イノベーションセンターの冨樫です。Network Analytics for Security1 (以下、NA4Sec)プロジェクトのメンバーとして活動しています。この記事では「利用終了したドメイン名の終活に向けて 〜観測環境を作った話〜」で紹介した観測環境から収集したログの分析結果について説明します。また、この分析の過程で利用終了ドメイン名を管理するにあたり有効なアクションを発見したので、それらについても一部紹介したいと思います。 ログの分析 DNSクエリの分析 W…]]></content>
+        <published>2024-12-31T08:47:07.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024年の技術動画からオススメをまとめるぜ | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/techtalk-recommend-2024</id>
+        <link href="https://www.m3tech.blog/entry/techtalk-recommend-2024"/>
+        <updated>2024-12-31T06:31:38.000Z</updated>
+        <summary type="html"><![CDATA[年末にこんにちは、こんばんは。VPoEの河合(@vaaaaanquish)です。 声優の小林裕介さん、内山夕実さんが、ご結婚されたとの事で、最近リゼロ最新話まで追いついた私も喜びを隠せません。嬉しい！ さて、本記事では2024年も終わるこの日に年末年始を楽しく過ごせる技術LT動画をいくつか紹介して、皆様によい年末を提供出来ればと思い筆を取っています。 年の暮まで技術技術でやっていきましょう！ エム]]></summary>
+        <content type="html"><![CDATA[年末にこんにちは、こんばんは。VPoEの河合(@vaaaaanquish)です。 声優の小林裕介さん、内山夕実さんが、ご結婚されたとの事で、最近リゼロ最新話まで追いついた私も喜びを隠せません。嬉しい！ さて、本記事では2024年も終わるこの日に年末年始を楽しく過ごせる技術LT動画をいくつか紹介して、皆様によい年末を提供出来ればと思い筆を取っています。 年の暮まで技術技術でやっていきましょう！ エムスリーテックトークとは TEX嫌い大学生の闘い Firebase De Akka Actor版人狼アプリリメイク フラクタル図形をうろ覚えの式から描いてみた PlaywrightでVRT環境を整備…]]></content>
+        <published>2024-12-31T06:31:38.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AWS re:Invent 2024】宣言型ポリシー（Declarative Policies）の適用方法とSCPとの違いについて | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/2024/12/31/144843</id>
+        <link href="https://blog.serverworks.co.jp/2024/12/31/144843"/>
+        <updated>2024-12-31T05:48:43.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！エンタープライズ部クラウドコンサルティング課の山永です。 AWS re:Invent 2024において、AWS Organizationsで利用できる新しい管理ポリシー「宣言型ポリシー（Declarative Policies）」が発表されました。 本記事では実際に宣言型ポリシーを試してみて、その適用方法とSCPとの違いについて解説いたします。 宣言型ポリシーとは 宣言型ポリシーで制御]]></summary>
+        <content type="html"><![CDATA[こんにちは！エンタープライズ部クラウドコンサルティング課の山永です。 AWS re:Invent 2024において、AWS Organizationsで利用できる新しい管理ポリシー「宣言型ポリシー（Declarative Policies）」が発表されました。 本記事では実際に宣言型ポリシーを試してみて、その適用方法とSCPとの違いについて解説いたします。 宣言型ポリシーとは 宣言型ポリシーで制御可能な項目 参考記事 宣言型ポリシーの適用 宣言型ポリシーの有効化 ポリシーの作成とOUへのアタッチ ビジュアルエディタでのポリシー作成 カスタムエラーメッセージの設定 OUへのアタッチ ポリシー適用…]]></content>
+        <published>2024-12-31T05:48:43.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Streamlitで画像生成アプリを作る | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/e8115d52e4a1d1</id>
+        <link href="https://zenn.dev/headwaters/articles/e8115d52e4a1d1"/>
+        <updated>2024-12-31T04:35:19.000Z</updated>
+        <summary type="html"><![CDATA[はじめにStreamlitで参考画像から新しい画像を作成するアプリを作ってみたいと思います。 streamlitとはhttps://zenn.dev/headwaters/articles/893d8604f35198https://zenn.dev/headwaters/articles/34caea66e66470 画像生成アプリを作る上で、こちらを参考にStreamlitに書き直します。ht]]></summary>
+        <content type="html"><![CDATA[はじめにStreamlitで参考画像から新しい画像を作成するアプリを作ってみたいと思います。 streamlitとはhttps://zenn.dev/headwaters/articles/893d8604f35198https://zenn.dev/headwaters/articles/34caea66e66470 画像生成アプリを作る上で、こちらを参考にStreamlitに書き直します。https://zenn.dev/headwaters/articles/4b7554dc743196app.pyimport streamlit as stimport ...]]></content>
+        <author>
+            <name>onoda_shun</name>
+        </author>
+        <published>2024-12-31T04:35:19.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024年の振り返り ~フルスタックエンジニアへの道のり~ | エックスポイントワン技術ブログのフィード]]></title>
+        <id>https://zenn.dev/x_point_1/articles/550777679833a1</id>
+        <link href="https://zenn.dev/x_point_1/articles/550777679833a1"/>
+        <updated>2024-12-31T04:00:01.000Z</updated>
+        <summary type="html"><![CDATA[はじめに2024年は、フロントエンド以外の開発経験がない状態から、フルスタックに様々なチャレンジをさせていただきました😀弊社では、全エンジニアがフルスタック開発に取り組んでいます。詳細については、以下の記事をご覧ください。https://zenn.dev/x_point_1/articles/8e982be93ca26fこの記事では、僕の2024年の1年間の取り組みを振り返ります。 技術面※詳細を]]></summary>
+        <content type="html"><![CDATA[はじめに2024年は、フロントエンド以外の開発経験がない状態から、フルスタックに様々なチャレンジをさせていただきました😀弊社では、全エンジニアがフルスタック開発に取り組んでいます。詳細については、以下の記事をご覧ください。https://zenn.dev/x_point_1/articles/8e982be93ca26fこの記事では、僕の2024年の1年間の取り組みを振り返ります。 技術面※詳細を省き、簡潔にやったことを紹介します。 フロントエンド (React, TypeScript)ReactとTypeScriptを用いて、APIの繋ぎ込みやUI作成を行いま...]]></content>
+        <author>
+            <name>Yoshiyuki Sato</name>
+        </author>
+        <published>2024-12-31T04:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Software Design 2024年12月号 連載「レガシーシステム攻略のプロセス」最終回 フロントエンドエンジニアから見るZOZOTOWNリプレイスとまとめ・今後の展望 | ZOZO TECH BLOG]]></title>
+        <id>https://techblog.zozo.com/entry/software-design-202412</id>
+        <link href="https://techblog.zozo.com/entry/software-design-202412"/>
+        <updated>2024-12-31T02:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 技術評論社様より発刊されているSoftware Designの2024年5月号より「レガシーシステム攻略のプロセス」と題した全8回の連載が始まりました。 これまでの連載で、ZOZOTOWNリプレイスプロジェクトの始まりから各部門の取り組みなどを紹介してきました。最終回となる今回は、フロントエンドの取り組みを取り上げ、これまでのまとめを行います。]]></summary>
+        <content type="html"><![CDATA[はじめに 技術評論社様より発刊されているSoftware Designの2024年5月号より「レガシーシステム攻略のプロセス」と題した全8回の連載が始まりました。 これまでの連載で、ZOZOTOWNリプレイスプロジェクトの始まりから各部門の取り組みなどを紹介してきました。最終回となる今回は、フロントエンドの取り組みを取り上げ、これまでのまとめを行います。]]></content>
+        <published>2024-12-31T02:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[エムスリーのAI・機械学習チームって何やってるの？2024年1年間で作ってきた28個のプロダクトを大公開 | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/ai_team_2024</id>
+        <link href="https://www.m3tech.blog/entry/ai_team_2024"/>
+        <updated>2024-12-31T01:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。エンジニアリンググループゼネラルマネジャー &amp;amp; 機械学習エンジニアの大垣です。 さて、私が機械学習エンジニアとして仕事をしているAI・機械学習チームでは、今年一年で28個のプロダクトをリリースしました。月に2つくらいは新規プロダクトが出てる計算ですね。なかなか高速にリリースできているのではないでしょうか。 なお、この1年で5名のメンバーが新規に加わり、チームが12人から17人になったの]]></summary>
+        <content type="html"><![CDATA[こんにちは。エンジニアリンググループゼネラルマネジャー &amp;amp; 機械学習エンジニアの大垣です。 さて、私が機械学習エンジニアとして仕事をしているAI・機械学習チームでは、今年一年で28個のプロダクトをリリースしました。月に2つくらいは新規プロダクトが出てる計算ですね。なかなか高速にリリースできているのではないでしょうか。 なお、この1年で5名のメンバーが新規に加わり、チームが12人から17人になったので、来年は更に加速していきたいです！*1 これらのプロダクトを簡単にお見せしつつ、エムスリーという医療xWebの企業でMLのチームはどういう仕事をしているのか、というのをお届けできればと思います！ 多…]]></content>
+        <published>2024-12-31T01:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Azure Functions (.NET 9 Isolated) でSemantic Kernelを使用する | Alternative Architecture DOJO]]></title>
+        <id>https://aadojo.alterbooth.com/entry/2024/12/31/090000</id>
+        <link href="https://aadojo.alterbooth.com/entry/2024/12/31/090000"/>
+        <updated>2024-12-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Azure Functions (.NET 9 Isolated) でSemantic Kernelを使用する方法を紹介します]]></summary>
+        <content type="html"><![CDATA[Azure Functions (.NET 9 Isolated) でSemantic Kernelを使用する方法を紹介します]]></content>
+        <published>2024-12-31T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Amebaデザインシステム Spindleの2024年を振り返る | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ]]></title>
+        <id>https://developers.cyberagent.co.jp/blog/?p=54021</id>
+        <link href="https://developers.cyberagent.co.jp/blog/archives/54021/"/>
+        <updated>2024-12-30T23:30:36.000Z</updated>
+        <summary type="html"><![CDATA[2024年も終わりに近づき、Amebaのデザインシステム「Spindle」に関する様々な取り組みを振 ...]]></summary>
+        <content type="html"><![CDATA[2024年も終わりに近づき、Amebaのデザインシステム「Spindle」に関する様々な取り組みを振 ...]]></content>
+        <author>
+            <name>Yasuda Shin</name>
+        </author>
+        <category label="エンジニア"/>
+        <category label="クリエイター"/>
+        <category label="Ameba"/>
+        <category label="cadc2024"/>
+        <category label="figma"/>
+        <category label="Spindle"/>
+        <category label="デザインシステム"/>
+        <category label="共著"/>
+        <published>2024-12-30T23:30:36.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[プライベートなEC2(Windows)に対してRDP接続する方法 | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/rdp-connect-to-private-ec2</id>
+        <link href="https://blog.serverworks.co.jp/rdp-connect-to-private-ec2"/>
+        <updated>2024-12-30T23:30:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 大前提 プライベート環境下のEC2(windows)へRDP接続するための主な方法 【やってみた】EC2 Instance Connect Endpointを使ったRDP接続方法 構成図 手順 Instance Connect Endpoint用セキュリティグループ設定 接続先EC2のセキュリティグループ設定 Instance Connect Endpoint作成 AWS CLIのインス]]></summary>
+        <content type="html"><![CDATA[はじめに 大前提 プライベート環境下のEC2(windows)へRDP接続するための主な方法 【やってみた】EC2 Instance Connect Endpointを使ったRDP接続方法 構成図 手順 Instance Connect Endpoint用セキュリティグループ設定 接続先EC2のセキュリティグループ設定 Instance Connect Endpoint作成 AWS CLIのインストール 接続してみる おわりに はじめに こんにちは。SA1課の阿部です。 2024年も残りあとわずかとなりました。 １年は本当にあっという間ですね。 突然ですが、皆さんはプライベート環境下のEC2イ…]]></content>
+        <published>2024-12-30T23:30:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bolt.new を使ってタスク管理ツールを作る | READYFORテックブログのフィード]]></title>
+        <id>https://zenn.dev/readyfor_blog/articles/187807080e61ec</id>
+        <link href="https://zenn.dev/readyfor_blog/articles/187807080e61ec"/>
+        <updated>2024-12-30T21:58:57.000Z</updated>
+        <summary type="html"><![CDATA[AI を使ったアプリケーション開発ツールを試したのでその記録。Bolt は StackBlitz 社が開発したツール。プロンプトを使って対話形式でアプリケーションを作成することができる。自分が PM 兼テスターになった感覚で使うことができた。https://bolt.new/https://x.com/s_runoa/status/1873853575031644661 関連同様のツールは他にも複]]></summary>
+        <content type="html"><![CDATA[AI を使ったアプリケーション開発ツールを試したのでその記録。Bolt は StackBlitz 社が開発したツール。プロンプトを使って対話形式でアプリケーションを作成することができる。自分が PM 兼テスターになった感覚で使うことができた。https://bolt.new/https://x.com/s_runoa/status/1873853575031644661 関連同様のツールは他にも複数あるため、今後試してみる予定。v0Vercel のサービスNext.js を開発している会社https://v0.dev/Github SparkGithu...]]></content>
+        <author>
+            <name>Shohei Urano</name>
+        </author>
+        <published>2024-12-30T21:58:57.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Agent ArchitectureとMicrosoft 365 Agents SDK | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/58f2b18c71d83d</id>
+        <link href="https://zenn.dev/headwaters/articles/58f2b18c71d83d"/>
+        <updated>2024-12-30T20:06:04.000Z</updated>
+        <summary type="html"><![CDATA[やりたいことIgnite 2024の「Developers guide to building your own agents」のスライドでエージェントのアーキテクチャとMicrosoft 365 Agents SDKについて紹介があったのでメモします。https://ignite.microsoft.com/en-US/sessions/BRK167?wt.mc_ID=Ignite2024_es]]></summary>
+        <content type="html"><![CDATA[やりたいことIgnite 2024の「Developers guide to building your own agents」のスライドでエージェントのアーキテクチャとMicrosoft 365 Agents SDKについて紹介があったのでメモします。https://ignite.microsoft.com/en-US/sessions/BRK167?wt.mc_ID=Ignite2024_esc_corp_bl_oo_bl_BONまず、エージェントのアーキテクチャから下記の要素があるようです。オーケストレーターはFundation modelsを使いながら、知識の取...]]></content>
+        <author>
+            <name>koki takeishi</name>
+        </author>
+        <published>2024-12-30T20:06:04.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[dbtで作成したアドホックなモデルをGitHubからもSnowflakeからも全部消す 〜Snowflake Notebooksを使って〜 | Snowflake Data Heroesのフィード]]></title>
+        <id>https://zenn.dev/dataheroes/articles/65d2e7cbe5a566</id>
+        <link href="https://zenn.dev/dataheroes/articles/65d2e7cbe5a566"/>
+        <updated>2024-12-30T19:19:54.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。harry(@gappy50)です。みなさんは、dbtで作成した不要になったモデルをどのように削除していますか？自分で作ったモデルを誰が使ってもらえなくなって、いきなり消してしまったら問題になった問題にならないように調整するだけで数日溶けたそれが面倒なので削除しなかったら、いつの間にかめちゃくちゃ大事な意思決定に使われ始めていて嫌な予感がしたそもそも諦めたなどなど。今後、私の組織ではあ]]></summary>
+        <content type="html"><![CDATA[こんにちは。harry(@gappy50)です。みなさんは、dbtで作成した不要になったモデルをどのように削除していますか？自分で作ったモデルを誰が使ってもらえなくなって、いきなり消してしまったら問題になった問題にならないように調整するだけで数日溶けたそれが面倒なので削除しなかったら、いつの間にかめちゃくちゃ大事な意思決定に使われ始めていて嫌な予感がしたそもそも諦めたなどなど。今後、私の組織ではある程度事業側にオーナーシップをもってもらうことでアジリティを確保しながら、正しくお掃除ができるようなDevOpsを考えています。https://zenn.dev/dely_j...]]></content>
+        <author>
+            <name>harry</name>
+        </author>
+        <published>2024-12-30T19:19:54.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Phi-4の試し方と注意点 | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/f5bafd21f1b85d</id>
+        <link href="https://zenn.dev/headwaters/articles/f5bafd21f1b85d"/>
+        <updated>2024-12-30T18:01:01.000Z</updated>
+        <summary type="html"><![CDATA[Phi-4をAI Foundryのプレイグラウンドで試すことはとても簡単です。モデルとエンドポイントで、Phi-4を選択してポチポチしていくだけです。ただ、VMを使用するみたいです。で、このA100のVMですが1時間4.78ドルくらいらしいので、一日放置していたら、100ドルくらいになります。当たり前すぎる注意点ですが、他のAOAIのモデルのように使った分だけの従量課金ではない（リソースで見ると使]]></summary>
+        <content type="html"><![CDATA[Phi-4をAI Foundryのプレイグラウンドで試すことはとても簡単です。モデルとエンドポイントで、Phi-4を選択してポチポチしていくだけです。ただ、VMを使用するみたいです。で、このA100のVMですが1時間4.78ドルくらいらしいので、一日放置していたら、100ドルくらいになります。当たり前すぎる注意点ですが、他のAOAIのモデルのように使った分だけの従量課金ではない（リソースで見ると使った分だけなのですが。。）のでご注意を。。ちなみに、Phi-3.5-MoE-instructだと、サーバーレスAPIとPhi-4と同様にVMを選択することができます。VMの設定を...]]></content>
+        <author>
+            <name>koki takeishi</name>
+        </author>
+        <published>2024-12-30T18:01:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[重要っぽいメールだけteamsに通知させる - PowerAutomate - | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/67a38bbb4d4518</id>
+        <link href="https://zenn.dev/headwaters/articles/67a38bbb4d4518"/>
+        <updated>2024-12-30T17:06:21.000Z</updated>
+        <summary type="html"><![CDATA[やりたいことCopilot Studioのエージェントのユースケースを考えていたら、重要っぽいメールをいい感じに選別してteamsにチャットしてもらいたいなと。ただ、これはGPT使わなくても問題ないなーと思ったので、PowerAutomateの利用例になります。 処理の流れteamsのファイルに通知して欲しいドメインを記載したExcelファイルを作成PowerAutomateでフローを作成3. 新]]></summary>
+        <content type="html"><![CDATA[やりたいことCopilot Studioのエージェントのユースケースを考えていたら、重要っぽいメールをいい感じに選別してteamsにチャットしてもらいたいなと。ただ、これはGPT使わなくても問題ないなーと思ったので、PowerAutomateの利用例になります。 処理の流れteamsのファイルに通知して欲しいドメインを記載したExcelファイルを作成PowerAutomateでフローを作成3. 新着メールのトリガー追加4. SharePointのExcelファイルの一覧を取得5. 新着メールの送信者のドメインがファイル一覧にあり、メール本文に「竹石」と記載があれば...]]></content>
+        <author>
+            <name>koki takeishi</name>
+        </author>
+        <published>2024-12-30T17:06:21.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[1人Intl Advent Calendar を完走しました | サイボウズ フロントエンドのフィード]]></title>
+        <id>https://zenn.dev/cybozu_frontend/articles/intl-advent-calendar-24-recap</id>
+        <link href="https://zenn.dev/cybozu_frontend/articles/intl-advent-calendar-24-recap"/>
+        <updated>2024-12-30T10:43:54.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！サイボウズ株式会社フロントエンドエキスパートチームの@sajikixです。 1 人 Intl Advent Calendar を書きました今年(2024 年)の 12 月 1 日から 25 日まで、「1 人 Intl Advent Calendar」と題して Intl に関わる技術ブログを 25 日連続で執筆しました。https://adventar.org/calendars/105]]></summary>
+        <content type="html"><![CDATA[こんにちは！サイボウズ株式会社フロントエンドエキスパートチームの@sajikixです。 1 人 Intl Advent Calendar を書きました今年(2024 年)の 12 月 1 日から 25 日まで、「1 人 Intl Advent Calendar」と題して Intl に関わる技術ブログを 25 日連続で執筆しました。https://adventar.org/calendars/10555この記事ではその振り返りと個人的なおすすめの記事・読み方などを紹介します。 なんで Intl で 1 人 Advent Calendar を書いたの？そもそも、Intl につ...]]></content>
+        <author>
+            <name>Saji</name>
+        </author>
+        <published>2024-12-30T10:43:54.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AIチームGoogle Kubernetes Engineオンボーディングチュートリアル | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/2024/12/30/170000</id>
+        <link href="https://www.m3tech.blog/entry/2024/12/30/170000"/>
+        <updated>2024-12-30T08:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。AI・機械学習チーム（以下AIチーム）チームリーダー、兼、エンジニアリンググループゼネラルマネージャーの横本(@yokomotod)です。 AIチームでは開発したMLプロダクトの実行基盤としてGoogle Kubernetes Engine（以下GKE）を採用しています。デプロイ関連コードのテンプレートも整備され、新しいプロダクトをスタートさせるときはGKE初心者でも簡単にデプロイまで]]></summary>
+        <content type="html"><![CDATA[こんにちは。AI・機械学習チーム（以下AIチーム）チームリーダー、兼、エンジニアリンググループゼネラルマネージャーの横本(@yokomotod)です。 AIチームでは開発したMLプロダクトの実行基盤としてGoogle Kubernetes Engine（以下GKE）を採用しています。デプロイ関連コードのテンプレートも整備され、新しいプロダクトをスタートさせるときはGKE初心者でも簡単にデプロイまで持っていけるようになっています。 しかし自動生成は一方で、なにがどうなってデプロイされているのかブラックボックスのままになってしまいがちという問題もあります。 そこで今回は、チームメンバーへのオンボー…]]></content>
+        <published>2024-12-30T08:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[最強のドッグフーディング「代行作業」で、機能が「使える状態」になかったことに気づいた話 | CastingONE Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/castingone_dev/articles/ca44abe7405eda</id>
+        <link href="https://zenn.dev/castingone_dev/articles/ca44abe7405eda"/>
+        <updated>2024-12-30T06:34:17.000Z</updated>
+        <summary type="html"><![CDATA[はじめにこんにちは！株式会社CastingONEでHR領域のSaaSのPdM兼エンジニアをやっている@hiroakiです。今回のお話はドッグフーディング。ドッグフーディングとは、自社プロダクトを自分たちで使ってみることで、ユーザー視点で改善点や課題を見つけ出す取り組みのことをいいます。しかし、単に「使ってみる」だけでは見えてこない部分も多いもの。本当にユーザーの視点に立つって想像以上に難しいもので]]></summary>
+        <content type="html"><![CDATA[はじめにこんにちは！株式会社CastingONEでHR領域のSaaSのPdM兼エンジニアをやっている@hiroakiです。今回のお話はドッグフーディング。ドッグフーディングとは、自社プロダクトを自分たちで使ってみることで、ユーザー視点で改善点や課題を見つけ出す取り組みのことをいいます。しかし、単に「使ってみる」だけでは見えてこない部分も多いもの。本当にユーザーの視点に立つって想像以上に難しいものですよね。今回社内のPdMで実施した「代行作業」、これは想像以上にユーザー視点でドッグフーディングできるものでした。この記事では、代行作業をやることになった背景や、その取り組みを通じて得ら...]]></content>
+        <author>
+            <name>hiroaki</name>
+        </author>
+        <published>2024-12-30T06:34:17.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024年の学び | インゲージ開発者ブログ]]></title>
+        <id>https://blog.ingage.jp/entry/2024/12/30/123904</id>
+        <link href="https://blog.ingage.jp/entry/2024/12/30/123904"/>
+        <updated>2024-12-30T03:39:04.000Z</updated>
+        <summary type="html"><![CDATA[どうも @shutooike です。 2024年もチームと個人の学びを雑に残しておきます。 来年の自分忘れんなよ^_^ 今年の挑戦 採用へのコミット 1つのプロダクトへの長期間のコミット コミュニティへの会場提供 チームの学び ストーリーポイントが不要になった まあ大体こんなもんでしょうで見積もれるように 1.5年ぐらい同じチームでやった経験から来るもの あと多少ストレッチな目標でも立ち向かいやす]]></summary>
+        <content type="html"><![CDATA[どうも @shutooike です。 2024年もチームと個人の学びを雑に残しておきます。 来年の自分忘れんなよ^_^ 今年の挑戦 採用へのコミット 1つのプロダクトへの長期間のコミット コミュニティへの会場提供 チームの学び ストーリーポイントが不要になった まあ大体こんなもんでしょうで見積もれるように 1.5年ぐらい同じチームでやった経験から来るもの あと多少ストレッチな目標でも立ち向かいやすくなった 数値になっていると最初から無理だと決めつけてしまう 優秀な2-3人の開発者が最強 3人までだと互いの手を握れる人数（コミュニケーションパス3） 4人以上になると途端に把握するための工数、管理…]]></content>
+        <published>2024-12-30T03:39:04.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【小ネタ集】AWS IoT SiteWiseのEdgeゲートウェイのバージョンアップと暗号化！！ | DENET 技術ブログ]]></title>
+        <id>https://blog.denet.co.jp/?p=16830</id>
+        <link href="https://blog.denet.co.jp/aws-iot-sitewise-update-and-encrypt/"/>
+        <updated>2024-12-30T02:00:02.000Z</updated>
+        <summary type="html"><![CDATA[投稿 【小ネタ集】AWS IoT SiteWiseのEdgeゲートウェイのバージョンアップと暗号化！！ は DENET 技術ブログ に最初に表示されました。]]></summary>
+        <content type="html"><![CDATA[投稿 【小ネタ集】AWS IoT SiteWiseのEdgeゲートウェイのバージョンアップと暗号化！！ は DENET 技術ブログ に最初に表示されました。]]></content>
+        <author>
+            <name>omk</name>
+        </author>
+        <category label="aws"/>
+        <category label="AWS IoT SiteWise"/>
+        <published>2024-12-30T02:00:02.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Action Mailerに学ぶ闇の魔術と闇の魔術に対する防衛術 | STORES Product Blog]]></title>
+        <id>https://product.st.inc/entry/2024/12/30/110000</id>
+        <link href="https://product.st.inc/entry/2024/12/30/110000"/>
+        <updated>2024-12-30T02:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに STORES 予約でエンジニアをやっている@ucksです。 大体年内にやりたかったタスクが捌けてきたので空いた時間でブログを書いています。 Railsからのメール送信でお世話になるAction Mailer。 インスタンスメソッドを定義しているのにクラスメソッドから呼び出しをしています。 どの様な仕組みになっているのか不思議に思ったことはないでしょうか。 様々な方法で、OSSのソースコー]]></summary>
+        <content type="html"><![CDATA[はじめに STORES 予約でエンジニアをやっている@ucksです。 大体年内にやりたかったタスクが捌けてきたので空いた時間でブログを書いています。 Railsからのメール送信でお世話になるAction Mailer。 インスタンスメソッドを定義しているのにクラスメソッドから呼び出しをしています。 どの様な仕組みになっているのか不思議に思ったことはないでしょうか。 様々な方法で、OSSのソースコードを追うことがあると思いますが、今回は追い方の一例として、実際のAction Mailerのロジックを追いながら、どの様な仕組みになっているのか、参考になるロジックはあるのかを、探索したり、拡張できな…]]></content>
+        <published>2024-12-30T02:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024年も終わりなので、来年の目標達成のための計画を作ってくれるMulti-Agentの仕組みを作ってみました。 | CCCMKホールディングス TECH LABの Tech Blog]]></title>
+        <id>https://techblog.cccmkhd.co.jp/entry/2024/12/30/101527</id>
+        <link href="https://techblog.cccmkhd.co.jp/entry/2024/12/30/101527"/>
+        <updated>2024-12-30T01:15:27.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、CCCMKホールディングスTECH LABの三浦です。 今年ももう終わりですね。この時期は「今年こんなことあったなぁ」と振り返りつつ、「来年こんなことが出来るようになりたいなぁ」と考える時期だと思います。今年、AI領域ではLLMの活用として"Agent"という単語を目にすることが多かったです。さらに複数のAgentを組み合わせた"Multi-Agent"というシステムについても様々な事]]></summary>
+        <content type="html"><![CDATA[こんにちは、CCCMKホールディングスTECH LABの三浦です。 今年ももう終わりですね。この時期は「今年こんなことあったなぁ」と振り返りつつ、「来年こんなことが出来るようになりたいなぁ」と考える時期だと思います。今年、AI領域ではLLMの活用として"Agent"という単語を目にすることが多かったです。さらに複数のAgentを組み合わせた"Multi-Agent"というシステムについても様々な事例を目にしました。 そんな2024年の締めくくりとして、今回来年の目標と現在の自身のステータスを入力すると、実現するまでのプランと体験内容を考えてくれる仕組みをMulti-Agentで作ってみましたの…]]></content>
+        <published>2024-12-30T01:15:27.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Actionsの破壊的変更予告やGitHubのガバナンス強化など｜Productivity Weekly(2024-12-11) | サイボウズ 生産性向上チーム 💪のフィード]]></title>
+        <id>https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241211</id>
+        <link href="https://zenn.dev/cybozu_ept/articles/productivity-weekly-20241211"/>
+        <updated>2024-12-30T01:00:01.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 202]]></summary>
+        <content type="html"><![CDATA[こんにちは。サイボウズ株式会社 生産性向上チームの平木場です。僕たち生産性向上チームは毎週水曜日に Productivity Weekly という「1 週間の間に発見された開発者の生産性向上に関するネタを共有する会」を社内で開催しています。本記事はその時のネタをまとめたものです。2023-01-25 号から、基本的に隔週で連載することとしました。たまに単独でも投稿するかもしれません。今週は 2024-12-11 号です。今回が第 171 回目です。過去の記事はこちら。!2023-05-10 号から、生産性向上チームの他メンバーにいくつかのトピックを紹介していただくことにして...]]></content>
+        <author>
+            <name>Futa Hirakoba</name>
+        </author>
+        <published>2024-12-30T01:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[視線推定手法 Gaze-LLE の論文を読んだ | Fusic 技術ブログのフィード]]></title>
+        <id>https://zenn.dev/fusic/articles/paper-reading-gazelle</id>
+        <link href="https://zenn.dev/fusic/articles/paper-reading-gazelle"/>
+        <updated>2024-12-29T16:34:27.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、初めましての方は初めまして。2024 年も終わりに近づいてきましたが、やり残したことが引っきりなしに頭に浮かびあがってきて年の瀬だということを信じたくない今日この頃です。まあそんなことを言ったところで 2024 年が延びることもないので、やり残したことを踏まえて 2025 年は何をするかの計画を今から立てています（「来年の事を言えば鬼が笑う」なんて言いますが、鬼でももうさすがに来年のこ]]></summary>
+        <content type="html"><![CDATA[こんにちは、初めましての方は初めまして。2024 年も終わりに近づいてきましたが、やり残したことが引っきりなしに頭に浮かびあがってきて年の瀬だということを信じたくない今日この頃です。まあそんなことを言ったところで 2024 年が延びることもないので、やり残したことを踏まえて 2025 年は何をするかの計画を今から立てています（「来年の事を言えば鬼が笑う」なんて言いますが、鬼でももうさすがに来年のことを考えてしまうのは仕方ないと思ってくれるはず…）来年はより満足のいく一年に出来ればと思います。この記事では視線推定手法 Gaze-LLE: Gaze Target Estimation vi...]]></content>
+        <author>
+            <name>かわら</name>
+        </author>
+        <published>2024-12-29T16:34:27.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AWS re:Invent 2024】セッションレポート：COP340 | Supercharging security &amp;amp; observability with Amazon CloudWatch | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/2024/12/29/231020</id>
+        <link href="https://blog.serverworks.co.jp/2024/12/29/231020"/>
+        <updated>2024-12-29T14:10:20.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。マネージドサービス部の谷内です。 本ブログでは、以下 Workshop についてまとめます。 COP340 | Supercharging security &amp;amp; observability with Amazon CloudWatch In the dynamic, evolving cloud landscape effective security observability is]]></summary>
+        <content type="html"><![CDATA[こんにちは。マネージドサービス部の谷内です。 本ブログでは、以下 Workshop についてまとめます。 COP340 | Supercharging security &amp;amp; observability with Amazon CloudWatch In the dynamic, evolving cloud landscape effective security observability is crucial to rapidly detecting, investigating, and responding to threats. Learn how Amazon CloudWatch…]]></content>
+        <published>2024-12-29T14:10:20.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[12 Days of OpenAI の対抗馬となる Google からの発表まとめ | Algomatic Tech Blog]]></title>
+        <id>https://tech.algomatic.jp/entry/2024/12/29/154654</id>
+        <link href="https://tech.algomatic.jp/entry/2024/12/29/154654"/>
+        <updated>2024-12-29T06:46:54.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。NEO(x) の宮脇（@catshun_）です。 先日 OpenAI から 12 Days of OpenAI がありましたが、同時に Google のリリースも注目されていたのでこちらにまとめます。 Gemini 2.0 1. パフォーマンスの大幅な改善 2. マルチモーダル I/O の対応 3. ネイティブツールの呼び出し 4. Gemini 2.0 Flash Thinking ]]></summary>
+        <content type="html"><![CDATA[こんにちは。NEO(x) の宮脇（@catshun_）です。 先日 OpenAI から 12 Days of OpenAI がありましたが、同時に Google のリリースも注目されていたのでこちらにまとめます。 Gemini 2.0 1. パフォーマンスの大幅な改善 2. マルチモーダル I/O の対応 3. ネイティブツールの呼び出し 4. Gemini 2.0 Flash Thinking Exp モデルのリリース Gemini 2.0 を使用するプロジェクト例 1. Project Astra 2. Project Mariner 3. Jules 4. Data Science Ag…]]></content>
+        <published>2024-12-29T06:46:54.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AI活用】VRoid Studio・copainter・CLIP STUDIOを使ってコミック制作してみた | エキサイト TechBlog.]]></title>
+        <id>https://tech.excite.co.jp/entry/2024/12/29/122102</id>
+        <link href="https://tech.excite.co.jp/entry/2024/12/29/122102"/>
+        <updated>2024-12-29T03:21:02.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは、エキサイト株式会社デザイナーの山﨑です。 エキサイトホールディングス Advent Calendar 2024 18日目は、山﨑が担当させていただきます。 qiita.com 今回は、VRoid Studio・copainter・CLIP STUDIO PAINTを用いてのコミック制作ついて、記して行きたいと思います。 AIを用いたコミック制作にチャレンジするまでの経緯 エキ]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは、エキサイト株式会社デザイナーの山﨑です。 エキサイトホールディングス Advent Calendar 2024 18日目は、山﨑が担当させていただきます。 qiita.com 今回は、VRoid Studio・copainter・CLIP STUDIO PAINTを用いてのコミック制作ついて、記して行きたいと思います。 AIを用いたコミック制作にチャレンジするまでの経緯 エキサイトでは、ウーマンエキサイトをはじめ、多くのコミックコンテンツを発信しています。 しかし、コミック制作には手作業が多く、時間やコストがかかるという課題がありました。 そこで、「AIツールを活用すれば…]]></content>
+        <published>2024-12-29T03:21:02.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQLのオンラインDDLを活用して安全に稼働中のデータベースを変更する話 | High Link テックブログ]]></title>
+        <id>https://tech.high-link.co.jp/entry/MySQL-onlineDDL-change-database</id>
+        <link href="https://tech.high-link.co.jp/entry/MySQL-onlineDDL-change-database"/>
+        <updated>2024-12-29T03:12:35.000Z</updated>
+        <summary type="html"><![CDATA[株式会社High Linkの大崎（https://x.com/kantarow2813）です。 プロダクトの開発と運用を同時に継続していく環境では、既存のテーブルに対してインデックスやカラムを追加したいというケースに遭遇することがあります。そのようなケースではデータベースの負荷上昇や同時実行性の低下など考慮するべきことが多く、経験が浅い自分は腰が重くなりがちです。 幸いなことに、弊社が利用している]]></summary>
+        <content type="html"><![CDATA[株式会社High Linkの大崎（https://x.com/kantarow2813）です。 プロダクトの開発と運用を同時に継続していく環境では、既存のテーブルに対してインデックスやカラムを追加したいというケースに遭遇することがあります。そのようなケースではデータベースの負荷上昇や同時実行性の低下など考慮するべきことが多く、経験が浅い自分は腰が重くなりがちです。 幸いなことに、弊社が利用しているMySQLではオンラインDDL機能が提供されています。オンラインDDLは稼働中のデータベースのテーブルに対する変更をサポートするもので、同時実行性とスループットを維持しながらDDLを実行できます。 本…]]></content>
+        <published>2024-12-29T03:12:35.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年間の運用で学んだDatastream導入の勘所 | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/datastream-tips</id>
+        <link href="https://www.m3tech.blog/entry/datastream-tips"/>
+        <updated>2024-12-29T03:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、エンジニアリンググループデータ基盤チームの木田です。先日公開されたCTO兼VPoP山崎の記事にある通りゼネラルマネージャーを拝命しまして、データ活用の観点だけではなくそれ以外の側面でも組織全体を支える立場となりました。クリスマスが過ぎ、すっかり街は年末モードになりましたね。毎年この変わり身の速さに驚くとともに、新年の足音を感じる時期でもあります。 門松とクリスマス飾りが同居する年末らし]]></summary>
+        <content type="html"><![CDATA[こんにちは、エンジニアリンググループデータ基盤チームの木田です。先日公開されたCTO兼VPoP山崎の記事にある通りゼネラルマネージャーを拝命しまして、データ活用の観点だけではなくそれ以外の側面でも組織全体を支える立場となりました。クリスマスが過ぎ、すっかり街は年末モードになりましたね。毎年この変わり身の速さに驚くとともに、新年の足音を感じる時期でもあります。 門松とクリスマス飾りが同居する年末らしい光景。エムスリー赤坂オフィスから徒歩15分の距離にある麻布台ヒルズマーケットの一角にて エムスリーのデータ基盤利用者は今年も順調に増えまして、システム (サービスアカウント)も含めると倍々で増加して…]]></content>
+        <published>2024-12-29T03:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS IoT SiteWiseでデータの連携時にLambdaを実行！！ | DENET 技術ブログ]]></title>
+        <id>https://blog.denet.co.jp/?p=16400</id>
+        <link href="https://blog.denet.co.jp/aws-iot-sitewise-lambda/"/>
+        <updated>2024-12-29T02:00:40.000Z</updated>
+        <summary type="html"><![CDATA[投稿 AWS IoT SiteWiseでデータの連携時にLambdaを実行！！ は DENET 技術ブログ に最初に表示されました。]]></summary>
+        <content type="html"><![CDATA[投稿 AWS IoT SiteWiseでデータの連携時にLambdaを実行！！ は DENET 技術ブログ に最初に表示されました。]]></content>
+        <author>
+            <name>omk</name>
+        </author>
+        <category label="aws"/>
+        <category label="AWS IoT SiteWise"/>
+        <published>2024-12-29T02:00:40.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Asana × ChatGPT（With make）でタスク分解を自動化してみた | CloudNative Inc. BLOGs]]></title>
+        <id>https://blog.cloudnative.co.jp/?p=26188</id>
+        <link href="https://blog.cloudnative.co.jp/26188/"/>
+        <updated>2024-12-28T10:18:55.000Z</updated>
+        <summary type="html"><![CDATA[この記事は「Asana コミュニティ Advent Calendar 2024」8日目の記事です。なんか枠が空いたままだったので、いただき男子しました。いただき男子ばるちゃんです。 はじめに どーもばるすです。 今回は、 […]]]></summary>
+        <content type="html"><![CDATA[この記事は「Asana コミュニティ Advent Calendar 2024」8日目の記事です。なんか枠が空いたままだったので、いただき男子しました。いただき男子ばるちゃんです。 はじめに どーもばるすです。 今回は、 […]]]></content>
+        <author>
+            <name>ばるす</name>
+        </author>
+        <category label="AI"/>
+        <category label="make"/>
+        <category label="SaaS"/>
+        <published>2024-12-28T10:18:55.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[エムスリーの全員 QA 作戦 | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/qubota_ep1</id>
+        <link href="https://www.m3tech.blog/entry/qubota_ep1"/>
+        <updated>2024-12-28T07:00:00.000Z</updated>
+        <summary type="html"><![CDATA[皆さんこんにちは。エンジニアリンググループゼネラルマネージャー兼 QA チームリーダーの窪田です。 1年が経つのは非常に早く、やりたかったことをやれたのかと振り返る年末になりました。 本日は私が GM になる前から力を入れてきた活動「全員QA体制への移行*1」についてお話をします。 本内容は、12/24 に取締役CTO兼VPoPの山崎がブログで話題に挙げていた「組織的ステップチェンジ」の1つでもあ]]></summary>
+        <content type="html"><![CDATA[皆さんこんにちは。エンジニアリンググループゼネラルマネージャー兼 QA チームリーダーの窪田です。 1年が経つのは非常に早く、やりたかったことをやれたのかと振り返る年末になりました。 本日は私が GM になる前から力を入れてきた活動「全員QA体制への移行*1」についてお話をします。 本内容は、12/24 に取締役CTO兼VPoPの山崎がブログで話題に挙げていた「組織的ステップチェンジ」の1つでもあり、組織的なインパクトも大きな活動です。 www.m3tech.blog はじめに 現状の開発フロー 全員 QA 体制への移行 決起集会（エンジニアリンググループミーティング） 方針・目標設定と周知 …]]></content>
+        <published>2024-12-28T07:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SenseCAP WatcherのHTTP Push Notificationを試してみた | Seeed K.K. エンジニアブログ]]></title>
+        <id>https://lab.seeed.co.jp/entry/2024/12/28/120000</id>
+        <link href="https://lab.seeed.co.jp/entry/2024/12/28/120000"/>
+        <updated>2024-12-28T03:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Seeed K.K.の中井です。 最近の展示会やイベントなどでSenseCAP Watcherを展示してきましたが、皆さんの反応は良く、AIを手軽に使えるデバイスということに興味を持っていただけているのかなぁと感じています。 そんなSenseCAP Watcherですが、様々な状況を判断し登録したタスクにマッチした状況となればスマホに通知が出来るのですが、専用のアプリ(SenseCraft APP]]></summary>
+        <content type="html"><![CDATA[Seeed K.K.の中井です。 最近の展示会やイベントなどでSenseCAP Watcherを展示してきましたが、皆さんの反応は良く、AIを手軽に使えるデバイスということに興味を持っていただけているのかなぁと感じています。 そんなSenseCAP Watcherですが、様々な状況を判断し登録したタスクにマッチした状況となればスマホに通知が出来るのですが、専用のアプリ(SenseCraft APP)だけではなく任意のSNSやサービスにもイベントを通知することもできるようです。 私も実際に他のSNSやサービスに通知したことがなかったので、試してみましたよという記事になります。(デバイスを直接制御…]]></content>
+        <published>2024-12-28T03:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[pillowを使って画像ファイル(png, jpg)にメタデータを保存する | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/441d3c181987fd</id>
+        <link href="https://zenn.dev/headwaters/articles/441d3c181987fd"/>
+        <updated>2024-12-28T02:17:21.000Z</updated>
+        <summary type="html"><![CDATA[執筆日2024/12/27 概要画像のキャプションをあらかじめファイルにメタデータとして保存しておきたいときに、pillowライブラリで簡単に対応する形式のメタデータ保存できることを知ったのでメモ書きです。画像の説明を生成AIなどで作ったときに、そのキャプションを検索対象にするサービスを実装するのであればデータベースで管理するのがいいですが、そこまでリッチな構成が必要ない、画像とキャプションが同じ]]></summary>
+        <content type="html"><![CDATA[執筆日2024/12/27 概要画像のキャプションをあらかじめファイルにメタデータとして保存しておきたいときに、pillowライブラリで簡単に対応する形式のメタデータ保存できることを知ったのでメモ書きです。画像の説明を生成AIなどで作ったときに、そのキャプションを検索対象にするサービスを実装するのであればデータベースで管理するのがいいですが、そこまでリッチな構成が必要ない、画像とキャプションが同じところにあればいいなというときに使えそうです。（GUIアプリで画像クリックorホバーでキャプションが表示されるとか） 依存ライブラリインストールpip install pill...]]></content>
+        <author>
+            <name>kodani takushi</name>
+        </author>
+        <published>2024-12-28T02:17:21.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS IoT SiteWise Monitorのダッシュボードでアラームを可視化！！（後） | DENET 技術ブログ]]></title>
+        <id>https://blog.denet.co.jp/?p=16511</id>
+        <link href="https://blog.denet.co.jp/aws-iot-sitewise-monitor-dashborad2/"/>
+        <updated>2024-12-28T02:00:34.000Z</updated>
+        <summary type="html"><![CDATA[投稿 AWS IoT SiteWise Monitorのダッシュボードでアラームを可視化！！（後） は DENET 技術ブログ に最初に表示されました。]]></summary>
+        <content type="html"><![CDATA[投稿 AWS IoT SiteWise Monitorのダッシュボードでアラームを可視化！！（後） は DENET 技術ブログ に最初に表示されました。]]></content>
+        <author>
+            <name>omk</name>
+        </author>
+        <category label="aws"/>
+        <category label="AWS IoT SiteWise"/>
+        <published>2024-12-28T02:00:34.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ジオコーディングとGeolocation APIを用いて店舗と現在地との距離を計算する | STORES Product Blog]]></title>
+        <id>https://product.st.inc/entry/2024/12/28/100000</id>
+        <link href="https://product.st.inc/entry/2024/12/28/100000"/>
+        <updated>2024-12-28T01:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに 初めまして、STORES でエンジニアをしているhiromu617です。この度、STORES では、STORES モバイルオーダーというサービスをリリースしました。 www.st.inc 今回は、STORES モバイルオーダー内に現在地から店舗までの距離を表示してみようと思います。 なお、モバイルオーダーを開発する上での取り組みについて、wanijiさんが紹介されているのでこちらも合わせ]]></summary>
+        <content type="html"><![CDATA[はじめに 初めまして、STORES でエンジニアをしているhiromu617です。この度、STORES では、STORES モバイルオーダーというサービスをリリースしました。 www.st.inc 今回は、STORES モバイルオーダー内に現在地から店舗までの距離を表示してみようと思います。 なお、モバイルオーダーを開発する上での取り組みについて、wanijiさんが紹介されているのでこちらも合わせて閲覧していただけると幸いです。 product.st.inc やりたいこと STORES モバイルオーダーには、注文する店舗を選択するための店舗一覧画面が存在します。 モバイルオーダーの店舗一覧画面…]]></content>
+        <published>2024-12-28T01:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Copilot StudioでPDF検索エージェント作成 | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/6837a198db9f3d</id>
+        <link href="https://zenn.dev/headwaters/articles/6837a198db9f3d"/>
+        <updated>2024-12-28T00:00:01.000Z</updated>
+        <summary type="html"><![CDATA[やりたいことIBIS2024にメンバーが参加した際にポスターを社内共有してもらいました。ただ、ポスター自体1日100個以上あるので、とても見きれませんし、探せません。ファイル名に情報がないので、PDFの中身をキーワード検索したいと思いました。Copilot Studioを使うとTeamsから社内の人がキーワード検索できるアプリを3分くらいで作れたのでご紹介します。 Copilot Studioにつ]]></summary>
+        <content type="html"><![CDATA[やりたいことIBIS2024にメンバーが参加した際にポスターを社内共有してもらいました。ただ、ポスター自体1日100個以上あるので、とても見きれませんし、探せません。ファイル名に情報がないので、PDFの中身をキーワード検索したいと思いました。Copilot Studioを使うとTeamsから社内の人がキーワード検索できるアプリを3分くらいで作れたのでご紹介します。 Copilot StudioについてCopilot StudioはTeamsやSharePointなどMicrosoft365などとの連携が可能で、簡単にエージェントを作成できるツールです。様々なレイヤー...]]></content>
+        <author>
+            <name>koki takeishi</name>
+        </author>
+        <published>2024-12-28T00:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Phi-4をサラッと紹介 | ヘッドウォータースのフィード]]></title>
+        <id>https://zenn.dev/headwaters/articles/22f7fdca68329b</id>
+        <link href="https://zenn.dev/headwaters/articles/22f7fdca68329b"/>
+        <updated>2024-12-27T14:37:35.000Z</updated>
+        <summary type="html"><![CDATA[この記事の対象時間がないので、Phi-4について、論文の内容をサラッと知りたい方SLM（小規模言語モデル）に興味がある方https://arxiv.org/abs/2412.08905 Phi-4とは？12月13日(米国現地時間)に発表されたSLMパラメータ数は14B（140億）で、Phi-3 mediumと同じPhi-4のライセンスは『Microsoft Research License Agr]]></summary>
+        <content type="html"><![CDATA[この記事の対象時間がないので、Phi-4について、論文の内容をサラッと知りたい方SLM（小規模言語モデル）に興味がある方https://arxiv.org/abs/2412.08905 Phi-4とは？12月13日(米国現地時間)に発表されたSLMパラメータ数は14B（140億）で、Phi-3 mediumと同じPhi-4のライセンスは『Microsoft Research License Agreement』で商用利用不可※Phi-3はMITライセンスで無料で商用利用可能STEM分野のQ&amp;amp;Aタスクに優れていおり、GPQA(大学院レベルのSTEM問題)や...]]></content>
+        <author>
+            <name>yu shimohama</name>
+        </author>
+        <published>2024-12-27T14:37:35.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[共通UIライブラリを開発の振り返りや今後の展望 | Money Forward Developersのフィード]]></title>
+        <id>https://zenn.dev/moneyforward/articles/6dd560c678679d</id>
+        <link href="https://zenn.dev/moneyforward/articles/6dd560c678679d"/>
+        <updated>2024-12-27T14:08:44.000Z</updated>
+        <summary type="html"><![CDATA[2024 年もあと少しとなりました。早すぎる…。この 1 年は、ひたすらデザインシステムの UI ライブラリの開発に専念した一年でした。私が所属する会社には約 40 のプロダクトが存在し、技術スタックも多岐にわたります。このように多様な環境のなかでデザインの統一性を保つため、デザインスタンダードを基盤とした UI ライブラリの開発を進めてきました。2023 年から PoC フェーズとして調査を進め]]></summary>
+        <content type="html"><![CDATA[2024 年もあと少しとなりました。早すぎる…。この 1 年は、ひたすらデザインシステムの UI ライブラリの開発に専念した一年でした。私が所属する会社には約 40 のプロダクトが存在し、技術スタックも多岐にわたります。このように多様な環境のなかでデザインの統一性を保つため、デザインスタンダードを基盤とした UI ライブラリの開発を進めてきました。2023 年から PoC フェーズとして調査を進め、今年の 2 月ごろから本格的に始動したプロジェクトは、12 月についにメジャーバージョンリリースを迎えることができました。この記事では、UI ライブラリの開発を振り返り、やってよかったこ...]]></content>
+        <author>
+            <name>とんがり</name>
+        </author>
+        <published>2024-12-27T14:08:44.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[年末の大掃除にdotfilesをつくろう | クラウドエース株式会社さんのフィード]]></title>
+        <id>https://zenn.dev/cloud_ace/articles/1d57617f83cd74</id>
+        <link href="https://zenn.dev/cloud_ace/articles/1d57617f83cd74"/>
+        <updated>2024-12-27T12:16:56.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、クラウドエースの妹尾です。今回は趣向を変えて開発環境のお話をしたいと思います。この記事の執筆が2024年末なことを前提に見ていただければ幸いです。!前提として、僕の開発環境は以下です。Windows 11WSL2 + Ubuntu LTSなるべく多くの環境に沿うように記載していますが、一部の説明は WSL2 に依存している箇所があります。また、性質上 Windows を利用していても ]]></summary>
+        <content type="html"><![CDATA[こんにちは、クラウドエースの妹尾です。今回は趣向を変えて開発環境のお話をしたいと思います。この記事の執筆が2024年末なことを前提に見ていただければ幸いです。!前提として、僕の開発環境は以下です。Windows 11WSL2 + Ubuntu LTSなるべく多くの環境に沿うように記載していますが、一部の説明は WSL2 に依存している箇所があります。また、性質上 Windows を利用していても WSL2 を利用していないユーザの方の場合、この記事の内容を再現できないことがあります。ご了承ください。 はじめに(ここからの話は dotfiles とはちょ...]]></content>
+        <author>
+            <name>クラウドエース株式会社</name>
+        </author>
+        <published>2024-12-27T12:16:56.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Server Sent Eventsの色んな実装パターンを考える | クラウドエース株式会社さんのフィード]]></title>
+        <id>https://zenn.dev/cloud_ace/articles/5c4b77d570007a</id>
+        <link href="https://zenn.dev/cloud_ace/articles/5c4b77d570007a"/>
+        <updated>2024-12-27T12:08:08.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、クラウドエースの三原と申します。今回は Server Sent Events に関して紹介させていただければと思います。 Server Sent EventsとはServer-Sent Events は簡潔に言うとサーバーからクライアントへ一方通行且つリアルタイムにイベントデータを配信する技術です。アプリケーションのリアルタイム性を求められた際の選択肢の一つとして挙げられます。(他に要]]></summary>
+        <content type="html"><![CDATA[こんにちは、クラウドエースの三原と申します。今回は Server Sent Events に関して紹介させていただければと思います。 Server Sent EventsとはServer-Sent Events は簡潔に言うとサーバーからクライアントへ一方通行且つリアルタイムにイベントデータを配信する技術です。アプリケーションのリアルタイム性を求められた際の選択肢の一つとして挙げられます。(他に要求を満たす技術として WebSocket、ポーリング等があります。)例として株価の監視やチャットツール等の他、代表例で言うと ChatGPT でモデルからの生成結果をユーザーに逐次...]]></content>
+        <author>
+            <name>クラウドエース株式会社</name>
+        </author>
+        <published>2024-12-27T12:08:08.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“夏休みの宿題は最終日”な俺がマニャーナの法則と出会ってしまった件 | CloudNative Inc. BLOGs]]></title>
+        <id>https://blog.cloudnative.co.jp/?p=26154</id>
+        <link href="https://blog.cloudnative.co.jp/26154/"/>
+        <updated>2024-12-27T11:59:45.000Z</updated>
+        <summary type="html"><![CDATA[この記事は「Asana コミュニティ Advent Calendar 2024」7日目の記事です。なんか枠が空いたままだったので、いただき男子しました。いただき男子ばるちゃんです。 はじめに どーも、ばるすです。すっかり […]]]></summary>
+        <content type="html"><![CDATA[この記事は「Asana コミュニティ Advent Calendar 2024」7日目の記事です。なんか枠が空いたままだったので、いただき男子しました。いただき男子ばるちゃんです。 はじめに どーも、ばるすです。すっかり […]]]></content>
+        <author>
+            <name>ばるす</name>
+        </author>
+        <category label="Asana"/>
+        <category label="SaaS"/>
+        <published>2024-12-27T11:59:45.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Qiita Bash】アドベントカレンダーお疲れ様会、開催！会場スポンサーとして参加しました！ | SmartHR Tech Blog]]></title>
+        <id>https://tech.smarthr.jp/entry/2024/12/27/202040</id>
+        <link href="https://tech.smarthr.jp/entry/2024/12/27/202040"/>
+        <updated>2024-12-27T11:20:40.000Z</updated>
+        <summary type="html"><![CDATA[みなさま、アドベントカレンダーお疲れさまでした！！ 今年も各企業・個人のブログが面白くうっかり時間が溶けていきました。 そういえばブログリレーとしてのアドベントカレンダーの起源は一体？と思ったところ、さすがQiitaさん。記事を公開されていたので引用させていただきます。 エンジニア文化としての発端 調べた限りでは Perl Advent Calendar 2000 がその発端のよう。 日本では Q]]></summary>
+        <content type="html"><![CDATA[みなさま、アドベントカレンダーお疲れさまでした！！ 今年も各企業・個人のブログが面白くうっかり時間が溶けていきました。 そういえばブログリレーとしてのアドベントカレンダーの起源は一体？と思ったところ、さすがQiitaさん。記事を公開されていたので引用させていただきます。 エンジニア文化としての発端 調べた限りでは Perl Advent Calendar 2000 がその発端のよう。 日本では Qiita Advent Calendar と Adventar が Advent Calendar 2大プラットフォームとして君臨。 他方、海外では各企業のオウンドメディアを主体として開催していたり、…]]></content>
+        <published>2024-12-27T11:20:40.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【分析屋】2024年最も読まれた記事ベスト10 | 分析屋]]></title>
+        <id>https://note.com/bunsekiya_tech/n/n5c7d08262144</id>
+        <link href="https://note.com/bunsekiya_tech/n/n5c7d08262144"/>
+        <updated>2024-12-27T11:05:07.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは分析屋広報の榎本です。昨年に引き続き2024年も分析屋技術ブログをご覧いただき、たくさんの「スキ」やコメントをありがとうございました。続きをみる]]></summary>
+        <content type="html"><![CDATA[こんにちは分析屋広報の榎本です。昨年に引き続き2024年も分析屋技術ブログをご覧いただき、たくさんの「スキ」やコメントをありがとうございました。続きをみる]]></content>
+        <published>2024-12-27T11:05:07.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【初心者向け】ウェブパフォーマンスチューニングで役立つツールのご紹介 | サーバーワークスエンジニアブログ]]></title>
+        <id>https://blog.serverworks.co.jp/2024/12/27/195153</id>
+        <link href="https://blog.serverworks.co.jp/2024/12/27/195153"/>
+        <updated>2024-12-27T10:51:53.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。アプリケーションサービス部の渡辺です。 2024/12/8 に ISUCON14 に参加しました。ISUCON への参加は初めてです。事前勉強をしたのですが、初めて使うツールが色々ありましたのでご紹介させていただきます。 CPU の使用率を確認したい メモリの使用率を確認したい アクセスログを解析したい クエリを分析したい まとめ CPU の使用率を確認したい top コマンド を使う]]></summary>
+        <content type="html"><![CDATA[こんにちは。アプリケーションサービス部の渡辺です。 2024/12/8 に ISUCON14 に参加しました。ISUCON への参加は初めてです。事前勉強をしたのですが、初めて使うツールが色々ありましたのでご紹介させていただきます。 CPU の使用率を確認したい メモリの使用率を確認したい アクセスログを解析したい クエリを分析したい まとめ CPU の使用率を確認したい top コマンド を使うことでCPU の使用率を確認できます。 top コマンドの出力例 メモリの使用率を確認したい free コマンドを使うことでメモリの使用率を確認できます。 free コマンドの出力例 アクセスログを解…]]></content>
+        <published>2024-12-27T10:51:53.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[トドケールのエンジニアチーム方針 | トドケールテックブログのフィード]]></title>
+        <id>https://zenn.dev/todoker_blog/articles/db0371ba60ead2</id>
+        <link href="https://zenn.dev/todoker_blog/articles/db0371ba60ead2"/>
+        <updated>2024-12-27T10:20:06.000Z</updated>
+        <summary type="html"><![CDATA[はじめに弊社に興味をお持ちいただいた方に向けて、弊社エンジニアチームで掲げているチーム方針についてご紹介します。採用している技術や組織的な取り組みについては、以下の記事をご覧ください。https://zenn.dev/todoker_blog/articles/7dec2e6cb8a5a7 チーム方針トドケールで掲げているチーム方針は 5 つです。それぞれどういった意図があるのかも含めてご紹介しま]]></summary>
+        <content type="html"><![CDATA[はじめに弊社に興味をお持ちいただいた方に向けて、弊社エンジニアチームで掲げているチーム方針についてご紹介します。採用している技術や組織的な取り組みについては、以下の記事をご覧ください。https://zenn.dev/todoker_blog/articles/7dec2e6cb8a5a7 チーム方針トドケールで掲げているチーム方針は 5 つです。それぞれどういった意図があるのかも含めてご紹介します。 社内外注ではなく社内共創プロダクト開発を主導していると自負するために、各々が当事者意思を持ち主体性を発揮できる体制にする常に成果を発信して他チームへ存在感を発揮...]]></content>
+        <author>
+            <name>てんかわ</name>
+        </author>
+        <published>2024-12-27T10:20:06.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2025年はRAGの次にAIエージェントが来る | MIXI DEVELOPERSのフィード]]></title>
+        <id>https://zenn.dev/mixi/articles/c18f4c5e2d84c5</id>
+        <link href="https://zenn.dev/mixi/articles/c18f4c5e2d84c5"/>
+        <updated>2024-12-27T10:14:23.000Z</updated>
+        <summary type="html"><![CDATA[はじめに2024年のAI界隈では「RAG」が一巡し、その可能性と限界が明確になってきました。最も顕著な点は「RAGは魔法の杖ではない」という認識の広がりではないでしょうか？RAGは確かに、既存の文書やデータを活用したAIの応答精度向上に貢献してきました。しかし、単純な質問応答を超えた複雑なタスクの実行や、動的な状況への適応には限界があることも明らかになっています。この限界を超えるための次のステップ]]></summary>
+        <content type="html"><![CDATA[はじめに2024年のAI界隈では「RAG」が一巡し、その可能性と限界が明確になってきました。最も顕著な点は「RAGは魔法の杖ではない」という認識の広がりではないでしょうか？RAGは確かに、既存の文書やデータを活用したAIの応答精度向上に貢献してきました。しかし、単純な質問応答を超えた複雑なタスクの実行や、動的な状況への適応には限界があることも明らかになっています。この限界を超えるための次のステップとして注目を集めているのが「AIエージェント」です。OpenAIのCEOであるサム・アルトマンが「次のブレークスルーはエージェントだ」と発言していたりhttps://www.red...]]></content>
+        <author>
+            <name>shirochan</name>
+        </author>
+        <published>2024-12-27T10:14:23.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spring Bootにおいて、Controllerで全てのリクエストを受け取る方法 | エキサイト TechBlog.]]></title>
+        <id>https://tech.excite.co.jp/entry/2024/12/27/185729</id>
+        <link href="https://tech.excite.co.jp/entry/2024/12/27/185729"/>
+        <updated>2024-12-27T09:57:29.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは、新卒2年目の岡崎です。 エキサイトホールディングス Advent Calendar 2024の20日目を担当します。 他の記事はこちらから！ qiita.com 今回はSpring Bootにおいて、Controllerで全てのリクエストを受け取る方法を紹介します。 環境 gradle ---------------------------------------------]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは、新卒2年目の岡崎です。 エキサイトホールディングス Advent Calendar 2024の20日目を担当します。 他の記事はこちらから！ qiita.com 今回はSpring Bootにおいて、Controllerで全てのリクエストを受け取る方法を紹介します。 環境 gradle ------------------------------------------------------------ Gradle 8.11.1 ------------------------------------------------------------ Build tim…]]></content>
+        <published>2024-12-27T09:57:29.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker を使った Redis Cluster 開発環境を構築し Rails などのアプリから接続する方法 | PLAY DEVELOPERS BLOG]]></title>
+        <id>https://developers.play.jp/entry/2024/12/27/184241</id>
+        <link href="https://developers.play.jp/entry/2024/12/27/184241"/>
+        <updated>2024-12-27T09:42:41.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、OTTサービス技術部 開発第2グループの榊です。 今回は、当社でRuby on RailsでのRedisクライアントのクラスターモード対応を行った際の事例についてお話しします。 私が担当しているプロジェクトでは、これまでAmazon ElastiCache with Redis OSS compatibility（以下、ElastiCache (Redis OSS) と記載します）をク]]></summary>
+        <content type="html"><![CDATA[こんにちは、OTTサービス技術部 開発第2グループの榊です。 今回は、当社でRuby on RailsでのRedisクライアントのクラスターモード対応を行った際の事例についてお話しします。 私が担当しているプロジェクトでは、これまでAmazon ElastiCache with Redis OSS compatibility（以下、ElastiCache (Redis OSS) と記載します）をクラスターモード無効の状態で運用しており、この設定ではシャード1のリードレプリカが最大5つまでと制限があります。徐々にデータ量が増加してきて今回ノード数の増強が必要になったため、クラスターモードを有効に…]]></content>
+        <published>2024-12-27T09:42:41.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Chrome 拡張機能をPlasmoで作ってみた | Safie Engineers' Blog!]]></title>
+        <id>https://engineers.safie.link/entry/chrome-extention-plasmo</id>
+        <link href="https://engineers.safie.link/entry/chrome-extention-plasmo"/>
+        <updated>2024-12-27T09:00:00.000Z</updated>
+        <summary type="html"><![CDATA[「Google Chrome 拡張機能をPlasmoで作ってみた」という記事を執筆しました！]]></summary>
+        <content type="html"><![CDATA[「Google Chrome 拡張機能をPlasmoで作ってみた」という記事を執筆しました！]]></content>
+        <published>2024-12-27T09:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【イベントレポート】「AWS re:Invent 2024 Recap in ZOZO」を開催しました！ | ZOZO TECH BLOG]]></title>
+        <id>https://techblog.zozo.com/entry/20241217-aws-reinvent-recap</id>
+        <link href="https://techblog.zozo.com/entry/20241217-aws-reinvent-recap"/>
+        <updated>2024-12-27T09:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは。Developer Engagementブロックの@wirohaです。12月17日に「AWS re:Invent 2024 Recap in ZOZO」を開催しました。12/2〜6日の5日間に渡ってラスベガスで開催されたAWS re:Invent 2024を振り返るRecapイベントです。]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは。Developer Engagementブロックの@wirohaです。12月17日に「AWS re:Invent 2024 Recap in ZOZO」を開催しました。12/2〜6日の5日間に渡ってラスベガスで開催されたAWS re:Invent 2024を振り返るRecapイベントです。]]></content>
+        <published>2024-12-27T09:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[初心者がPythonで競技プログラミングを始めるときに役立つ練習問題サイト6選 | ]]></title>
+        <id>https://paiza.hatenablog.com/entry/2024/12/27/180000</id>
+        <link href="https://paiza.hatenablog.com/entry/2024/12/27/180000"/>
+        <updated>2024-12-27T09:00:00.000Z</updated>
+        <summary type="html"><![CDATA[みなさんは「競技プログラミング」について知っていますか。競技プログラミング（競プロ）とは、簡単に言うと出題されたプログラミング問題を制限時間内に解いて競い合う競技のことで、プログラミングコンテスト（プロコン）と呼ばれることもあります。競技やコンテストというと大げさに聞こえるかもしれませんが、初心者向けの練習問題を公開しているサイトなどもあり、プログラミングを勉強中の方でも気軽に挑戦できます。プログ]]></summary>
+        <content type="html"><![CDATA[みなさんは「競技プログラミング」について知っていますか。競技プログラミング（競プロ）とは、簡単に言うと出題されたプログラミング問題を制限時間内に解いて競い合う競技のことで、プログラミングコンテスト（プロコン）と呼ばれることもあります。競技やコンテストというと大げさに聞こえるかもしれませんが、初心者向けの練習問題を公開しているサイトなどもあり、プログラミングを勉強中の方でも気軽に挑戦できます。プログラミングを習得するには、自分の手を動かしてコードを書くことが重要です。ただ独学で勉強をしていると、どのようなコードを書けばよいのかわからなかったり、モチベーションが保てなくなることもあるでしょう。競技…]]></content>
+        <published>2024-12-27T09:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mir.を見て考えた事 | vicc blog]]></title>
+        <id>https://blog.vicc.jp/entry/mir-seminar</id>
+        <link href="https://blog.vicc.jp/entry/mir-seminar"/>
+        <updated>2024-12-27T09:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2024年11⽉25日に開催されたMir.の特別セミナーに参加したVIZチームそれぞれの感想をまとめました。]]></summary>
+        <content type="html"><![CDATA[2024年11⽉25日に開催されたMir.の特別セミナーに参加したVIZチームそれぞれの感想をまとめました。]]></content>
+        <published>2024-12-27T09:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[今週の新着ブログ(2024.12.20~12.26)_アジャイル_1on1_執筆術_SQLite3_nanoKVM_salesforce_IPA資格_CAT_モブプロ | SHIFT Group 技術ブログ]]></title>
+        <id>https://note.shiftinc.jp/n/n18c04267d2b6</id>
+        <link href="https://note.shiftinc.jp/n/n18c04267d2b6"/>
+        <updated>2024-12-27T08:56:47.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！「SHIFTグループ技術ブログ」編集部です。本ブログは、IT技術だけでなくSHIFTグループのあらゆる知見やノウハウを広義の“技術”とし、入社歴や部署の垣根を超えて従業員が公式ブロガーとして記事を執筆しています。この記事では、日々発信される約400名（2024年12月時点）の公式ブロガーによるブログを、要約をつけて一週間単位でまとめてご紹介していきます。お仕事に関するインプットや、ミー]]></summary>
+        <content type="html"><![CDATA[こんにちは！「SHIFTグループ技術ブログ」編集部です。本ブログは、IT技術だけでなくSHIFTグループのあらゆる知見やノウハウを広義の“技術”とし、入社歴や部署の垣根を超えて従業員が公式ブロガーとして記事を執筆しています。この記事では、日々発信される約400名（2024年12月時点）の公式ブロガーによるブログを、要約をつけて一週間単位でまとめてご紹介していきます。お仕事に関するインプットや、ミーティングの話のネタ集めとして、資格試験の情報収集など、あらゆる情報源として広くご活用いただけたら嬉しいです！続きをみる]]></content>
+        <published>2024-12-27T08:56:47.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS re:Invent から影響を受けまくった 2024 年を振り返る | NHN テコラス Tech Blog | AWS、Google Cloudなどのインフラ技術ブログ]]></title>
+        <id>https://techblog.nhn-techorus.com/?p=38413</id>
+        <link href="https://techblog.nhn-techorus.com/archives/38413"/>
+        <updated>2024-12-27T08:38:11.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは、フクナガです。 昨年（2023 年）、AWS re:Invent に参加させていただいたのですが、個人的に「かなり影響を受けたな」と感じています。 帰ってきたタイミングでは、「良い刺激になったな」と思ったくらいでしたが...続きを読むAWS re:Invent から影響を受けまくった 2024 年を振り返る first appeared on NHN テコラス Tech Bl]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは、フクナガです。 昨年（2023 年）、AWS re:Invent に参加させていただいたのですが、個人的に「かなり影響を受けたな」と感じています。 帰ってきたタイミングでは、「良い刺激になったな」と思ったくらいでしたが...続きを読むAWS re:Invent から影響を受けまくった 2024 年を振り返る first appeared on NHN テコラス Tech Blog | AWS、Google Cloudなどのインフラ技術ブログ.]]></content>
+        <author>
+            <name>フクナガ</name>
+        </author>
+        <category label="Column"/>
+        <published>2024-12-27T08:38:11.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[集計テーブルの設計で「◯◯しておいて良かった😄」と「◯◯しておけば良かった😢」点を振り返る | CastingONE Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/castingone_dev/articles/6f791ce571d1fb</id>
+        <link href="https://zenn.dev/castingone_dev/articles/6f791ce571d1fb"/>
+        <updated>2024-12-27T08:34:59.000Z</updated>
+        <summary type="html"><![CDATA[はじめに株式会社CastingONEでバックエンドエンジニアをしている村上です。弊社では派遣会社向けのCRMを開発しており、求職者の情報を管理したり、メールやLINEで求人の紹介ができる配信機能を提供しています。先日、この配信機能の効果を測る「アナリティクス」という機能を追加することになり、それに必要な集計テーブルを設計しました。今回は、そのときのことを振り返って「◯◯しておいて良かった」と「◯◯]]></summary>
+        <content type="html"><![CDATA[はじめに株式会社CastingONEでバックエンドエンジニアをしている村上です。弊社では派遣会社向けのCRMを開発しており、求職者の情報を管理したり、メールやLINEで求人の紹介ができる配信機能を提供しています。先日、この配信機能の効果を測る「アナリティクス」という機能を追加することになり、それに必要な集計テーブルを設計しました。今回は、そのときのことを振り返って「◯◯しておいて良かった」と「◯◯しておけば良かった」点をまとめます。 作った機能の概要一例として、アナリティクスでは下記のようなことを分析できます。何人に求人紹介のメールを配信したか何人がそのメールを開...]]></content>
+        <author>
+            <name>yjmrkm</name>
+        </author>
+        <published>2024-12-27T08:34:59.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小さなデザイナーチームで実践！レビュー依頼のワークフローを設計した話 | エキサイト TechBlog.]]></title>
+        <id>https://tech.excite.co.jp/entry/2024/12/27/173253</id>
+        <link href="https://tech.excite.co.jp/entry/2024/12/27/173253"/>
+        <updated>2024-12-27T08:32:53.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！SaaS・DX事業部デザイナーの鍜治本です。 前回、ブランチ機能を駆使してUIファイル管理している記事を書きました。 tech.excite.co.jp 事業部デザインチームでのUI更新方法が型化され、日々の作業が少し楽になった一方で、新たな課題が見えてきました。 それはレビュー依頼のやりとりです。この記事では、スラックのワークフロー機能を活用し、レビュー依頼を効率化した方法をご紹介し]]></summary>
+        <content type="html"><![CDATA[こんにちは！SaaS・DX事業部デザイナーの鍜治本です。 前回、ブランチ機能を駆使してUIファイル管理している記事を書きました。 tech.excite.co.jp 事業部デザインチームでのUI更新方法が型化され、日々の作業が少し楽になった一方で、新たな課題が見えてきました。 それはレビュー依頼のやりとりです。この記事では、スラックのワークフロー機能を活用し、レビュー依頼を効率化した方法をご紹介します。 背景：レビュー依頼の課題 チームでUI更新の作業が分担できるようになった中、作業内容をレビューしてもらうにあたり課題が浮かび上がりました。 メンバーそれぞれのレビュー依頼 アナウンス手段が統一…]]></content>
+        <published>2024-12-27T08:32:53.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[フィッシングキットの詳細分析に挑戦！（インターンシップ体験記） | NTT Communications Engineers' Blog]]></title>
+        <id>https://engineers.ntt.com/entry/202410-summer-internship-phishing/entry</id>
+        <link href="https://engineers.ntt.com/entry/202410-summer-internship-phishing/entry"/>
+        <updated>2024-12-27T08:30:41.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは！NTTコミュニケーションズの2024年夏の現場受け入れ型インターンシップに参加させていただきました、大学院1年生の山本です。 現在はフィッシングサイトの検出をテーマに研究活動を行っています。 本記事では、インターンシップを通して体験させていただいた業務内容のうち、特にフィッシングキットの分析について紹介させていただきます！ はじめに 参加チームについて（NA4Sec） インタ]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは！NTTコミュニケーションズの2024年夏の現場受け入れ型インターンシップに参加させていただきました、大学院1年生の山本です。 現在はフィッシングサイトの検出をテーマに研究活動を行っています。 本記事では、インターンシップを通して体験させていただいた業務内容のうち、特にフィッシングキットの分析について紹介させていただきます！ はじめに 参加チームについて（NA4Sec） インターンシップに参加した経緯 体験内容の概観 フィッシングキットの詳細分析 構成ファイル 分析方法 騙っているブランドについて どんな情報を窃取しようとしているのか どのような処理があるのか 検知に活⽤で…]]></content>
+        <published>2024-12-27T08:30:41.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ありがとうを、実装で | KAYAC Engineers' Blog]]></title>
+        <id>https://techblog.kayac.com/bokupoke-profilecard</id>
+        <link href="https://techblog.kayac.com/bokupoke-profilecard"/>
+        <updated>2024-12-27T08:30:32.000Z</updated>
+        <summary type="html"><![CDATA[この記事はTech KAYAC Advent Calendar 2024の10日目の記事です。 皆さん、2024も終わりますね。メリークリスマス。良いお年を！ 「ぼくらの甲子園！ポケット 高校野球ゲーム」はご存知でしょうか？ 略して「ぼくポケ」は、株式会社カヤックのソシャールゲームのオリジナルIPです。 来年をもってサービス終了させていただきますが、運営開始するからなんと長い10年間もサービスを提]]></summary>
+        <content type="html"><![CDATA[この記事はTech KAYAC Advent Calendar 2024の10日目の記事です。 皆さん、2024も終わりますね。メリークリスマス。良いお年を！ 「ぼくらの甲子園！ポケット 高校野球ゲーム」はご存知でしょうか？ 略して「ぼくポケ」は、株式会社カヤックのソシャールゲームのオリジナルIPです。 来年をもってサービス終了させていただきますが、運営開始するからなんと長い10年間もサービスを提供しております。 その長い10年間の5分の1、ゲームの終盤に、私ikkakukuku、Unityエンジニアーとして勤めさせていただきました。 優秀な先輩たちから色々優しく教えていただいて、その短い間の…]]></content>
+        <published>2024-12-27T08:30:32.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rails: スムーズなライブリロードを実現するHotwire Sparkをリリースしました（翻訳） | TechRacho]]></title>
+        <id>https://techracho.bpsinc.jp/?p=147613</id>
+        <link href="https://techracho.bpsinc.jp/hachi8833/2024_12_27/147613"/>
+        <updated>2024-12-27T08:30:17.000Z</updated>
+        <summary type="html"><![CDATA[概要 元サイトの許諾を得て翻訳・公開いたします。 英語記事: 37signals Dev — Announcing Hotwire Spark: live reloading for Rails applications 原文公開日: 2024/12/18 原著者: Jorge Manrubia -- 37signalsの首席エンジニアです 日本語タイトルは内容に即したものにしました。 Rails]]></summary>
+        <content type="html"><![CDATA[概要 元サイトの許諾を得て翻訳・公開いたします。 英語記事: 37signals Dev — Announcing Hotwire Spark: live reloading for Rails applications 原文公開日: 2024/12/18 原著者: Jorge Manrubia -- 37signalsの首席エンジニアです 日本語タイトルは内容に即したものにしました。 Rails: スムーズなライブリロードを実現するHotwire Sparkをリリースしました（翻訳） 本日、私たちはHotwire SparkというRailsアプリケーション開発用のライブリロードシステムをリリースしました。 開発 […]The post Rails: スムーズなライブリロードを実現するHotwire Sparkをリリースしました（翻訳） first appeared on TechRacho.]]></content>
+        <author>
+            <name>hachi8833</name>
+        </author>
+        <category label="Ruby / Rails関連"/>
+        <category label="Hotwire"/>
+        <category label="Ruby on Rails"/>
+        <category label="Stimulus.js"/>
+        <category label="翻訳記事"/>
+        <published>2024-12-27T08:30:17.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ピクシブにおける「ビジョン」の取り扱われ方 | pixiv inside]]></title>
+        <id>https://inside.pixiv.blog/2024/12/27/173000</id>
+        <link href="https://inside.pixiv.blog/2024/12/27/173000"/>
+        <updated>2024-12-27T08:30:00.000Z</updated>
+        <summary type="html"><![CDATA[プロダクト開発イネーブルメント部マネージャーのminamitaryです。 PIXIV DEV MEETUP 2024では、ピクシブにおける「ビジョン」の取り扱われ方 というタイトルでメインセッションを担当しました。 スライドはイベント当日に公開されていますが、スライドだけでは伝わりづらい部分も多くなっています。 本記事では、時間の関係でカットせざるを得なかった内容を補足しつつ、セッション内容を紹介]]></summary>
+        <content type="html"><![CDATA[プロダクト開発イネーブルメント部マネージャーのminamitaryです。 PIXIV DEV MEETUP 2024では、ピクシブにおける「ビジョン」の取り扱われ方 というタイトルでメインセッションを担当しました。 スライドはイベント当日に公開されていますが、スライドだけでは伝わりづらい部分も多くなっています。 本記事では、時間の関係でカットせざるを得なかった内容を補足しつつ、セッション内容を紹介していきます。 2020: プロジェクトシェルパ まず背景として、2020年のピクシブでは「社員数の増加」「プロダクトの増加・多角化」「個々のプロダクト規模拡大」といったことが同時進行していました。そ…]]></content>
+        <published>2024-12-27T08:30:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[microCMSのサンプルコードからNext.jsを学ぶの巻 | スペースマーケット Engineer Blogのフィード]]></title>
+        <id>https://zenn.dev/spacemarket/articles/060e9625d1ab69</id>
+        <link href="https://zenn.dev/spacemarket/articles/060e9625d1ab69"/>
+        <updated>2024-12-27T08:18:09.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、Spacemarketのフロントエンドエンジニアの8zkです。前回はmicroCMSの導入について触れましたが、肝心なNext.jsのtemplateのコードについては全く触れていなかったので、それについて学びつつアウトプットしたいと思い、ブログを書いています。 使用ライブラリではさっそくですが シンプルなブログ で使われているライブラリがこちらです。"dependencies": {]]></summary>
+        <content type="html"><![CDATA[こんにちは、Spacemarketのフロントエンドエンジニアの8zkです。前回はmicroCMSの導入について触れましたが、肝心なNext.jsのtemplateのコードについては全く触れていなかったので、それについて学びつつアウトプットしたいと思い、ブログを書いています。 使用ライブラリではさっそくですが シンプルなブログ で使われているライブラリがこちらです。"dependencies": { "@types/cheerio": "^0.22.31", "@types/node": "18.15.3", "@types/react": "18.0.2...]]></content>
+        <author>
+            <name>8zk</name>
+        </author>
+        <published>2024-12-27T08:18:09.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[フロントエンドには最適なCMSかも？microCMSのすゝめ | スペースマーケット Engineer Blogのフィード]]></title>
+        <id>https://zenn.dev/spacemarket/articles/93b123bff256a5</id>
+        <link href="https://zenn.dev/spacemarket/articles/93b123bff256a5"/>
+        <updated>2024-12-27T08:17:31.000Z</updated>
+        <summary type="html"><![CDATA[みなさん、こんにちは。Spacemarketのフロントエンドエンジニアの8zkです。エンジニアたるもの日々のアウトプットは欠かせないものですが、会社のブログ以外にも自分のブログにしょうもないこと書きたいな〜という時ありませんか？そんなこともあり個人ブログを作ろうと思ったのですが、今どきWordPressを使ってブログを書くのもフロントエンドエンジニアとしてはイマイチだし、かといってWordPres]]></summary>
+        <content type="html"><![CDATA[みなさん、こんにちは。Spacemarketのフロントエンドエンジニアの8zkです。エンジニアたるもの日々のアウトプットは欠かせないものですが、会社のブログ以外にも自分のブログにしょうもないこと書きたいな〜という時ありませんか？そんなこともあり個人ブログを作ろうと思ったのですが、今どきWordPressを使ってブログを書くのもフロントエンドエンジニアとしてはイマイチだし、かといってWordPressのようなリッチな管理画面を作るのも面倒だし・・・ということで色々と思い悩んでいたのですが、ついに良いものを見つけました！ それがmicroCMSです！https://microcm...]]></content>
+        <author>
+            <name>8zk</name>
+        </author>
+        <published>2024-12-27T08:17:31.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[AWS re:Invent 2024] Generative AI for security in the real world (SEC403) | NHN テコラス Tech Blog | AWS、Google Cloudなどのインフラ技術ブログ]]></title>
+        <id>https://techblog.nhn-techorus.com/?p=39025</id>
+        <link href="https://techblog.nhn-techorus.com/archives/39025"/>
+        <updated>2024-12-27T08:16:07.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは、Jineerです。 この度、AWS re:Invent 2024に参加させていただきました。 今回は、現地で参加したセキュリティ業界における生成AIのユースケースに関するセッション内容を共有しようと思います。 セッショ...続きを読む[AWS re:Invent 2024] Generative AI for security in the real world (SEC40]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは、Jineerです。 この度、AWS re:Invent 2024に参加させていただきました。 今回は、現地で参加したセキュリティ業界における生成AIのユースケースに関するセッション内容を共有しようと思います。 セッショ...続きを読む[AWS re:Invent 2024] Generative AI for security in the real world (SEC403) first appeared on NHN テコラス Tech Blog | AWS、Google Cloudなどのインフラ技術ブログ.]]></content>
+        <author>
+            <name>Jineer</name>
+        </author>
+        <category label="AWS"/>
+        <category label="re:Invent 2024"/>
+        <category label="AWS re:Invent"/>
+        <published>2024-12-27T08:16:07.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AWS Update】AWS Control Towerのランディングゾーン機能にAWS Backupが追加されました | SHIFT Group 技術ブログ]]></title>
+        <id>https://note.shiftinc.jp/n/n6eea53dc1bac</id>
+        <link href="https://note.shiftinc.jp/n/n6eea53dc1bac"/>
+        <updated>2024-12-27T08:16:01.000Z</updated>
+        <summary type="html"><![CDATA[1．はじめに続きをみる]]></summary>
+        <content type="html"><![CDATA[1．はじめに続きをみる]]></content>
+        <published>2024-12-27T08:16:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[テスト自動化の落とし穴]テストシナリオ実装は2段階ある！ | SODA Engineering Blogのフィード]]></title>
+        <id>https://zenn.dev/team_soda/articles/925f01dd859123</id>
+        <link href="https://zenn.dev/team_soda/articles/925f01dd859123"/>
+        <updated>2024-12-27T08:13:01.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。SODAでクオリティエンジニアをやっているokauchiです。今回は、テスト自動化でのハマりポイント、ステークホルダーとのコミュニケーションでの落とし穴を紹介します！ テストシナリオ作成完了=運用開始可能？E2Eテスト自動化の仕組みの導入が進み、作成すべきテストシナリオも抽出が出来、「よーし、ここからはひたすらにテストシナリオを作っていくぞ」というところまで進みました。ノウハウや共通処]]></summary>
+        <content type="html"><![CDATA[こんにちは。SODAでクオリティエンジニアをやっているokauchiです。今回は、テスト自動化でのハマりポイント、ステークホルダーとのコミュニケーションでの落とし穴を紹介します！ テストシナリオ作成完了=運用開始可能？E2Eテスト自動化の仕組みの導入が進み、作成すべきテストシナリオも抽出が出来、「よーし、ここからはひたすらにテストシナリオを作っていくぞ」というところまで進みました。ノウハウや共通処理がない中でも自分達が手動でやっていくものが自動化されていく様はなかなかに爽快です。ちょっと長めのテストシナリオを作ったら誰かに自慢したくなったり、５つぐらいテストシナリオを作ったら、こ...]]></content>
+        <author>
+            <name>オカウチワニ</name>
+        </author>
+        <published>2024-12-27T08:13:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小規模開発のフロントエンド技術選定 | スペースマーケット Engineer Blogのフィード]]></title>
+        <id>https://zenn.dev/spacemarket/articles/793f1fd0952273</id>
+        <link href="https://zenn.dev/spacemarket/articles/793f1fd0952273"/>
+        <updated>2024-12-27T08:08:50.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。Spacemarketのエンジニアの8zkです。クリスマスツリーを買えないままクリスマスを過ごしました。寂しい。来年こそは買えるよう頑張ります！ 前提今回作成したアプリケーションは下記の通りです。9画面ほどの小規模開発フォーム検索ユーザー情報 etc...技術選定を行なうタイミングがBEの技術選定の前（プロジェクトに入るタイミングがフロントエンドの方が早かった）追加開発を行う想定 採用]]></summary>
+        <content type="html"><![CDATA[こんにちは。Spacemarketのエンジニアの8zkです。クリスマスツリーを買えないままクリスマスを過ごしました。寂しい。来年こそは買えるよう頑張ります！ 前提今回作成したアプリケーションは下記の通りです。9画面ほどの小規模開発フォーム検索ユーザー情報 etc...技術選定を行なうタイミングがBEの技術選定の前（プロジェクトに入るタイミングがフロントエンドの方が早かった）追加開発を行う想定 採用ライブラリ採用したライブラリはこちらです。{ "dependencies": { "@chakra-ui/icons": "^2.1.1",...]]></content>
+        <author>
+            <name>8zk</name>
+        </author>
+        <published>2024-12-27T08:08:50.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PHP Conference Japan 2024 に登壇させていただきました | TechTrainテックブログのフィード]]></title>
+        <id>https://zenn.dev/techtrain_blog/articles/cb977bd7d773d7</id>
+        <link href="https://zenn.dev/techtrain_blog/articles/cb977bd7d773d7"/>
+        <updated>2024-12-27T08:05:46.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！TechBowlでProduct Engineerをやっている梶川(@kajitack)です。仕事では主にTechTrainの開発を担当しています。来年の目標はエンジニアとしてコードを書きつつ、トライアスリートとしてアイアンマンレース完走です！この記事は、2024年12月に開催されたPHP Conference Japan 2024の参加レポートです。 PHP Conference J]]></summary>
+        <content type="html"><![CDATA[こんにちは！TechBowlでProduct Engineerをやっている梶川(@kajitack)です。仕事では主にTechTrainの開発を担当しています。来年の目標はエンジニアとしてコードを書きつつ、トライアスリートとしてアイアンマンレース完走です！この記事は、2024年12月に開催されたPHP Conference Japan 2024の参加レポートです。 PHP Conference Japan 2024https://phpcon.php.gr.jp/2024PHPカンファレンスは、PHP関連の技術を主とした技術者カンファレンスです。2000年に日本のユーザ会...]]></content>
+        <author>
+            <name>梶川 琢馬 / Kajikawa Takuma</name>
+        </author>
+        <published>2024-12-27T08:05:46.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CursorをBoltやv0のように使う | Aidemy Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/aidemy/articles/cursor-as-bolt</id>
+        <link href="https://zenn.dev/aidemy/articles/cursor-as-bolt"/>
+        <updated>2024-12-27T08:00:23.000Z</updated>
+        <summary type="html"><![CDATA[はじめに世は大生成AI時代。みなさんも開発に大なり小なりAIを使っていると思います。その中でも、Boltやv0は強烈なツールです。このように指示を出すと即座にアプリが作成され、触ってみて意図と違う部分やブラッシュアップしたい部分を指示するとどんどんアプリが完成していきます。0-1でアプリを作成する場合には非常に強力なツールとなります。しかし、1日にたくさん出力するにはもちろん課金が必要ですが、普段]]></summary>
+        <content type="html"><![CDATA[はじめに世は大生成AI時代。みなさんも開発に大なり小なりAIを使っていると思います。その中でも、Boltやv0は強烈なツールです。このように指示を出すと即座にアプリが作成され、触ってみて意図と違う部分やブラッシュアップしたい部分を指示するとどんどんアプリが完成していきます。0-1でアプリを作成する場合には非常に強力なツールとなります。しかし、1日にたくさん出力するにはもちろん課金が必要ですが、普段開発に使用しているCursorに加えてBoltやv0にも課金するとなるとお財布が気になってしまいます。また、ライブラリの選定など自分で細かい制御を効かせたいときや、AIが把握...]]></content>
+        <author>
+            <name>mosh</name>
+        </author>
+        <published>2024-12-27T08:00:23.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【イベントレポート】「GitHub Universe 2024 Recap in ZOZO」を開催しました！ | ZOZO TECH BLOG]]></title>
+        <id>https://techblog.zozo.com/entry/20241216-github-universe-recap</id>
+        <link href="https://techblog.zozo.com/entry/20241216-github-universe-recap"/>
+        <updated>2024-12-27T08:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はじめに こんにちは。Developer Engagementブロックの@wirohaです。12月16日に「GitHub Universe 2024 Recap in ZOZO」を開催しました。10/29-30日の2日間に渡ってサンフランシスコで開催されたGitHub Universe 2024を振り返るRecapイベントです。]]></summary>
+        <content type="html"><![CDATA[はじめに こんにちは。Developer Engagementブロックの@wirohaです。12月16日に「GitHub Universe 2024 Recap in ZOZO」を開催しました。10/29-30日の2日間に渡ってサンフランシスコで開催されたGitHub Universe 2024を振り返るRecapイベントです。]]></content>
+        <published>2024-12-27T08:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【2024年12月】講座アップデート紹介 | JavaScript・HTML/CSS・Linuxの入門講座を追加 | ]]></title>
+        <id>https://paiza.hatenablog.com/entry/2024/12/27/170000</id>
+        <link href="https://paiza.hatenablog.com/entry/2024/12/27/170000"/>
+        <updated>2024-12-27T08:00:00.000Z</updated>
+        <summary type="html"><![CDATA[今月はpaizaラーニングに以下の講座が追加されました。 新・HTML/CSS入門編2: コンテンツの書き方を理解しよう 新・JavaScript入門編1: JavaScriptをはじめよう 新・Linux入門編10(LinuC対策版): システム管理 この記事では、新たに追加された講座の内容をご紹介します。paizaラーニングについて詳しくはこちら 【目次】 新・HTML/CSS入門編2: コン]]></summary>
+        <content type="html"><![CDATA[今月はpaizaラーニングに以下の講座が追加されました。 新・HTML/CSS入門編2: コンテンツの書き方を理解しよう 新・JavaScript入門編1: JavaScriptをはじめよう 新・Linux入門編10(LinuC対策版): システム管理 この記事では、新たに追加された講座の内容をご紹介します。paizaラーニングについて詳しくはこちら 【目次】 新・HTML/CSS入門編2: コンテンツの書き方を理解しよう 01:bodyとは 02:Hello worldを表示 03:日本語の文章を表示 新・JavaScript入門編1: JavaScriptをはじめよう 01:Hello J…]]></content>
+        <published>2024-12-27T08:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[はてなのポッドキャスト Backyard Hatena #41 - 社長とふりかえる2024年（id:chris4403） #byhatena | Hatena Developer Blog]]></title>
+        <id>https://developer.hatenastaff.com/entry/2024/12/27/170000</id>
+        <link href="https://developer.hatenastaff.com/entry/2024/12/27/170000"/>
+        <updated>2024-12-27T08:00:00.000Z</updated>
+        <summary type="html"><![CDATA[はてな「技術グループ」によるポッドキャスト「Backyard Hatena」を更新。今回のゲストは社長の id:chris4403 です。年末恒例の社長ゲスト回。はてなの1年を振り返りました。]]></summary>
+        <content type="html"><![CDATA[はてな「技術グループ」によるポッドキャスト「Backyard Hatena」を更新。今回のゲストは社長の id:chris4403 です。年末恒例の社長ゲスト回。はてなの1年を振り返りました。]]></content>
+        <published>2024-12-27T08:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024年 MIXI DEVELOPERS の活動を振り返り | MIXI DEVELOPERS - Medium]]></title>
+        <id>https://medium.com/p/53fae7c1d8b1</id>
+        <link href="https://mixi-developers.mixi.co.jp/2024-in-review-of-mixi-developers-activity-53fae7c1d8b1"/>
+        <updated>2024-12-27T07:56:03.000Z</updated>
+        <author>
+            <name>MIXI DEVELOPERS / Enablement Group</name>
+        </author>
+        <published>2024-12-27T07:56:03.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SSHのポートフォワーディングについて理解する | レコチョクのエンジニアブログ]]></title>
+        <id>https://techblog.recochoku.jp/11634</id>
+        <link href="https://techblog.recochoku.jp/11634"/>
+        <updated>2024-12-27T07:26:57.000Z</updated>
+        <summary type="html"><![CDATA[&amp;lt;p&amp;gt;&amp;lt;img width="200" height="200" src="https://techblog.recochoku.jp/wp-content/uploads/2018/04/aws_logo-200x200.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;h2&amp;gt;はじめに&amp;lt;/h2]]></summary>
+        <content type="html"><![CDATA[&amp;lt;p&amp;gt;&amp;lt;img width="200" height="200" src="https://techblog.recochoku.jp/wp-content/uploads/2018/04/aws_logo-200x200.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;h2&amp;gt;はじめに&amp;lt;/h2&amp;gt;はじめまして！バックエンドエンジニアの本多です。最近、環境構築でローカルからAWS上のRedshiftに接続する際に、SSHのポートフォワーディングが必要になりました。その際に学習した内容をなるべく初心者でもわかりやすいようにまとめてみたので、参考になれば幸いです。&amp;lt;h2&amp;gt;実行環境&amp;lt;/h2&amp;gt;この記事で説明する内容は、以下の環境を前提としています。&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;クライアント環境&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;OS：macOS&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;SSHクライアント（OpenSSH）がインストール済み&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;データベースクライアントツール（SQL Workbench/J）&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;]]></content>
+        <published>2024-12-27T07:26:57.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Oktaでデバイストラスト環境を構築してみた話 | VISASQ Dev Blog]]></title>
+        <id>https://tech.visasq.com/okta-devicetrust</id>
+        <link href="https://tech.visasq.com/okta-devicetrust"/>
+        <updated>2024-12-27T07:23:40.000Z</updated>
+        <summary type="html"><![CDATA[Oktaでデバイストラスト環境を構築してみた話 はじめに こんにちは、ITチームのオーライです！ 【Oktaを使ったデバイストラスト環境構築】についての経験談をまとめています。 実施したこと、振り返り、これからデバイストラストを導入する方に向けて押さえるべきポイントをお話しします。 対象読者 Oktaをこれから導入・運用しようとしている方 Oktaのデバイストラストや認証ポリシーに興味のある方 認]]></summary>
+        <content type="html"><![CDATA[Oktaでデバイストラスト環境を構築してみた話 はじめに こんにちは、ITチームのオーライです！ 【Oktaを使ったデバイストラスト環境構築】についての経験談をまとめています。 実施したこと、振り返り、これからデバイストラストを導入する方に向けて押さえるべきポイントをお話しします。 対象読者 Oktaをこれから導入・運用しようとしている方 Oktaのデバイストラストや認証ポリシーに興味のある方 認証ポリシーをどのように構築するか知りたい方 前提知識 この記事では以下の知識を前提としています: Okta: シングルサインオン（SSO）や多要素認証（MFA）を提供し、ユーザーやデバイスへの安全かつ…]]></content>
+        <published>2024-12-27T07:23:40.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[作ってみた事例：自作Reacji Channeler | CloudNative Inc. BLOGs]]></title>
+        <id>https://blog.cloudnative.co.jp/?p=26128</id>
+        <link href="https://blog.cloudnative.co.jp/26128/"/>
+        <updated>2024-12-27T07:16:04.000Z</updated>
+        <summary type="html"><![CDATA[この記事は「make Advent Calendar 2024」22日目の記事です。 このアドベントカレンダーについて このアドベントカレンダーは25日間でIPaaS製品の「make」について使い方や、実践を学べる連続ブ […]]]></summary>
+        <content type="html"><![CDATA[この記事は「make Advent Calendar 2024」22日目の記事です。 このアドベントカレンダーについて このアドベントカレンダーは25日間でIPaaS製品の「make」について使い方や、実践を学べる連続ブ […]]]></content>
+        <author>
+            <name>たにあん</name>
+        </author>
+        <category label="make"/>
+        <category label="SaaS"/>
+        <published>2024-12-27T07:16:04.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[より信用できる効果検証のためにA/BテストとDIDの仕組みづくりをした話 | Timee Product Team Blog]]></title>
+        <id>https://tech.timee.co.jp/entry/2024/12/27/161313</id>
+        <link href="https://tech.timee.co.jp/entry/2024/12/27/161313"/>
+        <updated>2024-12-27T07:13:13.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。タイミーのデータアナリティクス部でデータアナリストをしている亀山です。担当業務としては、主に営業部門のデータ分析を行っています。 今日はA/Bテストと※DIDの効果検証がより信用できるように仕組みづくりをした話を紹介したいと思います。 ※DID（Difference in Differences、差分の差分法）は、ある施策の実施前後で、影響を受けたグループ（比較群）と影響を受けなかった]]></summary>
+        <content type="html"><![CDATA[こんにちは。タイミーのデータアナリティクス部でデータアナリストをしている亀山です。担当業務としては、主に営業部門のデータ分析を行っています。 今日はA/Bテストと※DIDの効果検証がより信用できるように仕組みづくりをした話を紹介したいと思います。 ※DID（Difference in Differences、差分の差分法）は、ある施策の実施前後で、影響を受けたグループ（比較群）と影響を受けなかったグループ（対照群）の変化を比較することで、介入の効果を推定する手法です。 取り組んだ背景 以前同じ部署の夏目さんがブログで取り上げている通り、データアナリティクス部では過去に、効果検証の事前設計と結果…]]></content>
+        <published>2024-12-27T07:13:13.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[見逃さないために今からチェック！行きたい展示会2025 | エキサイト TechBlog.]]></title>
+        <id>https://tech.excite.co.jp/entry/2024/12/27/161100</id>
+        <link href="https://tech.excite.co.jp/entry/2024/12/27/161100"/>
+        <updated>2024-12-27T07:11:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！SaaS事業部デザイナーの澤田です！ エキサイトホールディングス Advent Calendar 2024 の22日目を担当します。 エキサイトホールディングスの各社に所属するエンジニア・デザイナーが力を合わせてブログのバトンを回しているので、ぜひ他の記事も覗いてみてください😊 qiita.com 今回は来年見逃さないために絶対に行きたい展示会をご紹介します...! デザインあ展neo]]></summary>
+        <content type="html"><![CDATA[こんにちは！SaaS事業部デザイナーの澤田です！ エキサイトホールディングス Advent Calendar 2024 の22日目を担当します。 エキサイトホールディングスの各社に所属するエンジニア・デザイナーが力を合わせてブログのバトンを回しているので、ぜひ他の記事も覗いてみてください😊 qiita.com 今回は来年見逃さないために絶対に行きたい展示会をご紹介します...! デザインあ展neo 累計116万人を動員した「デザインあ展」が、装いも新たに「デザインあ展neo」として虎ノ門ヒルズ TOKYO NODEに登場します！ 2025年4月18日から9月23日まで、歴代最長の会期で開催され…]]></content>
+        <published>2024-12-27T07:11:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mackerel Advent Calendar 2024 完走！参加エントリーと感想を一挙公開 | Mackerel ブログ #mackerelio]]></title>
+        <id>https://mackerel.io/ja/blog/entry/tech/mackerel-advent-calendar-2024-summary</id>
+        <link href="https://mackerel.io/ja/blog/entry/tech/mackerel-advent-calendar-2024-summary"/>
+        <updated>2024-12-27T07:10:27.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは！Mackerel CREチーム プランナー 兼 2024年アドベントカレンダー担当のid:meymao です。12月1日から始まったMackerel Advent Calendar 2024、たくさんの方にご参加いただき、無事完走しました！記事をご投稿いただいた皆さま、読んでくださった皆さま、ありがとうございました！ 今年もMackerelチームのメンバーだけでなく、はてな社内で利用し]]></summary>
+        <content type="html"><![CDATA[こんにちは！Mackerel CREチーム プランナー 兼 2024年アドベントカレンダー担当のid:meymao です。12月1日から始まったMackerel Advent Calendar 2024、たくさんの方にご参加いただき、無事完走しました！記事をご投稿いただいた皆さま、読んでくださった皆さま、ありがとうございました！ 今年もMackerelチームのメンバーだけでなく、はてな社内で利用しているスタッフ、そしてユーザーの皆さまからもご参加いただき、毎日エントリーを楽しみにする素敵な期間を過ごすことができました。 本記事では、Mackerel CREチームのid:missasan, id…]]></content>
+        <published>2024-12-27T07:10:27.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JotaiプロジェクトをZustandで作り直した話 | 株式会社ゆめみのフィード]]></title>
+        <id>https://zenn.dev/yumemi_inc/articles/26ff46875f3cd0</id>
+        <link href="https://zenn.dev/yumemi_inc/articles/26ff46875f3cd0"/>
+        <updated>2024-12-27T07:03:19.000Z</updated>
+        <summary type="html"><![CDATA[ゆめみでフロントエンドエンジニアをしているゆーけんです🐈新卒一発目でアサインされた案件で、Jotaiで状態管理されているプロジェクトをZustandで作り直すというパワー系リファクタを経験したので記事に書きます。 開発したプロダクト一覧画面新規作成画面編集画面がある以下の画像のような管理画面を、先輩と2人で0から開発しました。一覧画面新規作成画面詳細画面フォームの値をリアルタイムでプレビューに表示]]></summary>
+        <content type="html"><![CDATA[ゆめみでフロントエンドエンジニアをしているゆーけんです🐈新卒一発目でアサインされた案件で、Jotaiで状態管理されているプロジェクトをZustandで作り直すというパワー系リファクタを経験したので記事に書きます。 開発したプロダクト一覧画面新規作成画面編集画面がある以下の画像のような管理画面を、先輩と2人で0から開発しました。一覧画面新規作成画面詳細画面フォームの値をリアルタイムでプレビューに表示するため、フォームの値をJavaScriptで管理する必要があります。コンテンツの値を状態管理したいコンテンツは新規作成、削除されるコンテンツのプロパティ...]]></content>
+        <author>
+            <name>ゆーけん</name>
+        </author>
+        <published>2024-12-27T07:03:19.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Studyplus Engineering Podcast #29 学生と社会人のコードの違い | Studyplus Engineering Blog]]></title>
+        <id>https://tech.studyplus.co.jp/entry/2024/12/27/160000</id>
+        <link href="https://tech.studyplus.co.jp/entry/2024/12/27/160000"/>
+        <updated>2024-12-27T07:00:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、VPoEの大石です。 スタディプラスのエンジニアが配信するポッドキャスト「Studyplus Engineering Podcast」の新しいエピソードを公開しました。「Studyplus Engineering Podcast」は、主にスタディプラスのエンジニアが、業務で関わった技術的なことや気になっている技術などについて雑談をするPodcastです。 今回は「学生として書いていたコ]]></summary>
+        <content type="html"><![CDATA[こんにちは、VPoEの大石です。 スタディプラスのエンジニアが配信するポッドキャスト「Studyplus Engineering Podcast」の新しいエピソードを公開しました。「Studyplus Engineering Podcast」は、主にスタディプラスのエンジニアが、業務で関わった技術的なことや気になっている技術などについて雑談をするPodcastです。 今回は「学生として書いていたコードと業務のコードの違い」というテーマで内定者インターンをしている25卒のお二人である岸本さんと外囿さんをお呼びしてお話を伺いました。当社の新卒エンジニア採用にご興味がある方は聞いていただけると嬉しい…]]></content>
+        <published>2024-12-27T07:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Elecom WRC-X3200GST3 に OpenWrtをいれて、IPoE + PPPoEでつなぐ | noteエンジニアチーム 公式マガジン]]></title>
+        <id>https://wtr.io/n/n6350fce6ba8d</id>
+        <link href="https://wtr.io/n/n6350fce6ba8d"/>
+        <updated>2024-12-27T07:00:00.000Z</updated>
+        <summary type="html"><![CDATA[おはようございます。watura です。 先日、note アプリチームで年末の技術投資Daysと題して，業務とは関係のない技術投資を行なう2日間を実施しました。アプリとは違うこと、かつ、興味があることを2日間やる。よし！ルーターにOpenWrtをいれるぞ！ということでやってみました。なお、ルーターにOpenWrtなんで？流れはこのマガジンに記事を追加していくつもりです。続きをみる]]></summary>
+        <content type="html"><![CDATA[おはようございます。watura です。 先日、note アプリチームで年末の技術投資Daysと題して，業務とは関係のない技術投資を行なう2日間を実施しました。アプリとは違うこと、かつ、興味があることを2日間やる。よし！ルーターにOpenWrtをいれるぞ！ということでやってみました。なお、ルーターにOpenWrtなんで？流れはこのマガジンに記事を追加していくつもりです。続きをみる]]></content>
+        <published>2024-12-27T07:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[エムスリー学生エンジニア向け情報まとめ | エムスリーテックブログ]]></title>
+        <id>https://www.m3tech.blog/entry/new-graduates-engineer</id>
+        <link href="https://www.m3tech.blog/entry/new-graduates-engineer"/>
+        <updated>2024-12-27T06:56:59.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、最近Re:ゼロを人生で初めて見ましたVPoEの河合(@vaaaaanquish)です。もっと早く知りたかったです。 さて、エムスリーエンジニアリンググループでは、長らく新卒エンジニア採用を小さい規模で進めておりました。 2024年からは、その規模を少し拡大し、様々なイベントに出たりインターンを受け入れるなどしています。 本記事は、学生エンジニアの皆様から聞かれる事も多い内容をまとめ、エ]]></summary>
+        <content type="html"><![CDATA[こんにちは、最近Re:ゼロを人生で初めて見ましたVPoEの河合(@vaaaaanquish)です。もっと早く知りたかったです。 さて、エムスリーエンジニアリンググループでは、長らく新卒エンジニア採用を小さい規模で進めておりました。 2024年からは、その規模を少し拡大し、様々なイベントに出たりインターンを受け入れるなどしています。 本記事は、学生エンジニアの皆様から聞かれる事も多い内容をまとめ、エムスリーのエンジニア組織を知って頂く事を目的とするものです。 エムスリーのエンジニアインターン Rust/Go/k8sを全て触ってBatchをリリースした事例 実プロダクトのKotlinバックエンドを…]]></content>
+        <published>2024-12-27T06:56:59.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[テックカンファレンス2024「SYNERGY PROJECT」開催レポート | GMO Research &amp;amp; AI Tech Blog]]></title>
+        <id>https://gmor-sys.com/?p=4480</id>
+        <link href="https://gmor-sys.com/2024/12/27/synergy-project2024_report/"/>
+        <updated>2024-12-27T06:49:07.000Z</updated>
+        <summary type="html"><![CDATA[みなさんこんにちは！鈴木です。GMOリサ […]]]></summary>
+        <content type="html"><![CDATA[みなさんこんにちは！鈴木です。GMOリサ […]]]></content>
+        <author>
+            <name>スズキ</name>
+        </author>
+        <category label="技術"/>
+        <category label="カルチャー"/>
+        <category label="イベント"/>
+        <category label="テックカンファレンス"/>
+        <published>2024-12-27T06:49:07.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[マルチアカウント・マルチリージョンにおけるAmazon Inspectorの集約 | JBS Tech Blog]]></title>
+        <id>https://blog.jbs.co.jp/entry/2024/12/27/154831</id>
+        <link href="https://blog.jbs.co.jp/entry/2024/12/27/154831"/>
+        <updated>2024-12-27T06:48:31.000Z</updated>
+        <summary type="html"><![CDATA[Amazon Inspectorは、EC2インスタンスやECRコンテナイメージ、Lambda関数を対象に、ソフトウェアの脆弱性や意図しないネットワーク露出の自動検出を行うAWSのサービスです。 今回は、マルチアカウントかつマルチリージョン環境で利用されるAmazon Inspectorにおける検出結果の集約方法について紹介します。 本記事では、以下サービス名は次のように記載いたします。 Amazo]]></summary>
+        <content type="html"><![CDATA[Amazon Inspectorは、EC2インスタンスやECRコンテナイメージ、Lambda関数を対象に、ソフトウェアの脆弱性や意図しないネットワーク露出の自動検出を行うAWSのサービスです。 今回は、マルチアカウントかつマルチリージョン環境で利用されるAmazon Inspectorにおける検出結果の集約方法について紹介します。 本記事では、以下サービス名は次のように記載いたします。 Amazon Inspector：Inpsector AWS Security Hub：Security Hub AWS Organizations：Organizations 検出結果の集約とAWS Secu…]]></content>
+        <published>2024-12-27T06:48:31.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[生成AI週報（11/04~11/10） | Finatext Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/finatext/articles/weekly-ai-news-1104-1110</id>
+        <link href="https://zenn.dev/finatext/articles/weekly-ai-news-1104-1110"/>
+        <updated>2024-12-27T06:37:45.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、ナウキャストでLLMエンジニアをしているRyotaroです。11/04~11/10で収集した生成AIに関連する情報をまとめています。※注意事項内容としては自分が前の週に収集した生成AIの記事やXでの投稿・論文が中心になるのと、自分のアンテナに引っかかった順なので、多少古い日付のものを紹介する場合がありますそれでは行きましょう ひとことかなり遅れての週報ですが、この年末年始で追いつくので]]></summary>
+        <content type="html"><![CDATA[こんにちは、ナウキャストでLLMエンジニアをしているRyotaroです。11/04~11/10で収集した生成AIに関連する情報をまとめています。※注意事項内容としては自分が前の週に収集した生成AIの記事やXでの投稿・論文が中心になるのと、自分のアンテナに引っかかった順なので、多少古い日付のものを紹介する場合がありますそれでは行きましょう ひとことかなり遅れての週報ですが、この年末年始で追いつくのでご容赦ください笑!2024/12/25時点での情報です！生成AI関連の情報は update が早いので適宜最新情報をチェックするようにお願いします！ Docling1...]]></content>
+        <author>
+            <name>Ryotaro</name>
+        </author>
+        <published>2024-12-27T06:37:45.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[pmconf2024に参加してきました | Timee Product Team Blog]]></title>
+        <id>https://tech.timee.co.jp/entry/2024/12/27/153345</id>
+        <link href="https://tech.timee.co.jp/entry/2024/12/27/153345"/>
+        <updated>2024-12-27T06:33:45.000Z</updated>
+        <summary type="html"><![CDATA[タイミーのプロダクトマネージャー（以下、PM）の 柿谷（@_kacky）、 高石（@tktktks10）、吉池、大歳 です。 今回は、タイミーの「Kaigi Pass」制度を利用し、12/6にオンサイト開催されたプロダクトマネージャーカンファレンス（以下pmconf）のDAY2に参加してきました。 この制度を通じて、非常に有意義な学びを得ることができましたので、その内容を共有します。 2024.p]]></summary>
+        <content type="html"><![CDATA[タイミーのプロダクトマネージャー（以下、PM）の 柿谷（@_kacky）、 高石（@tktktks10）、吉池、大歳 です。 今回は、タイミーの「Kaigi Pass」制度を利用し、12/6にオンサイト開催されたプロダクトマネージャーカンファレンス（以下pmconf）のDAY2に参加してきました。 この制度を通じて、非常に有意義な学びを得ることができましたので、その内容を共有します。 2024.pmconf.jp productpr.timee.co.jp プログラム概要 パネルディスカッション テーマ：「プロダクトマネージャーと仮説/戦略」 登壇者：FoundX 馬田さん、Zen and C…]]></content>
+        <published>2024-12-27T06:33:45.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Storage Browser for Amazon S3 でアクセス可能なバケットを Amazon Cognito グループ単位で動的に変更する [後編] | TechHarmony]]></title>
+        <id>https://blog.usize-tech.com/?p=30490</id>
+        <link href="https://blog.usize-tech.com/storage-browser-for-amazon-s3-bucket-per-cognitogroup-2/"/>
+        <updated>2024-12-27T06:20:54.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、広野です。 本記事は、以下の続編記事です。 Storage Browser for Amazon S3 でアクセス可能なバケットを Amazon Cognito グループ単位で動的に変更する [前編]前編では […]]]></summary>
+        <content type="html"><![CDATA[こんにちは、広野です。 本記事は、以下の続編記事です。 Storage Browser for Amazon S3 でアクセス可能なバケットを Amazon Cognito グループ単位で動的に変更する [前編]前編では […]]]></content>
+        <author>
+            <name>広野 祐司</name>
+        </author>
+        <category label="AWS"/>
+        <category label="アプリケーション開発"/>
+        <category label="クラウド"/>
+        <category label="ソリューション"/>
+        <category label="Amazon S3"/>
+        <category label="React"/>
+        <category label="Storage Browser for Amazon S3"/>
+        <published>2024-12-27T06:20:54.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[複数フィールドのバリデーションエラーを集約して表示するVeeValidate v4の活用法 | ContractS開発者ブログ]]></title>
+        <id>https://tech.contracts.co.jp/entry/2024/12/27/150659</id>
+        <link href="https://tech.contracts.co.jp/entry/2024/12/27/150659"/>
+        <updated>2024-12-27T06:06:59.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。ContractSでフロントエンドエンジニアをしている北原です。 弊社では、UIのバリデーションとしてVeeValidate v4を採用しています。 この記事では、複数のインプットを1つのバリデーションフィールドとして扱う方法について解決策を提示したいと思います。 目次 目次 前提知識 VeeValidateとは？ VeeValidate v4 の Composition関数 1. u]]></summary>
+        <content type="html"><![CDATA[こんにちは。ContractSでフロントエンドエンジニアをしている北原です。 弊社では、UIのバリデーションとしてVeeValidate v4を採用しています。 この記事では、複数のインプットを1つのバリデーションフィールドとして扱う方法について解決策を提示したいと思います。 目次 目次 前提知識 VeeValidateとは？ VeeValidate v4 の Composition関数 1. useField 2. useForm なぜ必要なのか？ TL;DR やってみる 参考 実装例 1. ラッパーコンポーネントの作成 script template 2. フィールドコンポーネントから関数…]]></content>
+        <published>2024-12-27T06:06:59.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[第9回SmartHR LT大会を開催しました ── 参加者過去最多！ 年末の1周年記念！ | SmartHR Tech Blog]]></title>
+        <id>https://tech.smarthr.jp/entry/lt9</id>
+        <link href="https://tech.smarthr.jp/entry/lt9"/>
+        <updated>2024-12-27T06:00:24.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは!SmartHRでプロダクト横断基盤開発チームにて開発をしている rock_san です。 2024/12/20に開催された第9回SmartHR LT大会の様子を、スキル管理・学習管理の開発をしているtnagatomiさんと共にお伝えしたいと思います！ 今回は忘年会も兼ねており、昨年12/15に第1回が開催されてから記念すべき1周年の回でもありました。 ちなみに過去のLT大会についてはL]]></summary>
+        <content type="html"><![CDATA[こんにちは!SmartHRでプロダクト横断基盤開発チームにて開発をしている rock_san です。 2024/12/20に開催された第9回SmartHR LT大会の様子を、スキル管理・学習管理の開発をしているtnagatomiさんと共にお伝えしたいと思います！ 今回は忘年会も兼ねており、昨年12/15に第1回が開催されてから記念すべき1周年の回でもありました。 ちなみに過去のLT大会についてはLTカテゴリーからたどれるので、よかったらご覧になってください。 SmartHR LT大会について SmartHR LT大会は有志のプロダクトエンジニアがDevRelとともに企画・運営している社内イベン…]]></content>
+        <published>2024-12-27T06:00:24.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GitHubProjectを使用して便利だった設定の紹介 | Happy Elementsのフィード]]></title>
+        <id>https://zenn.dev/happy_elements/articles/hekk_article_202412</id>
+        <link href="https://zenn.dev/happy_elements/articles/hekk_article_202412"/>
+        <updated>2024-12-27T06:00:01.000Z</updated>
+        <summary type="html"><![CDATA[GitHubProjectを使用して便利だった設定を紹介したいと思います。 Workflowsの活用GitHub上のPRやIssueを自動的にProjectに紐づける（または、アーカイブする）設定が可能です。GitHubProjectの設定画面より「Workflows」を開きます。Issueが作られた時にProjectに紐づけるいつ：boys2_issues に Issue が Open したとき]]></summary>
+        <content type="html"><![CDATA[GitHubProjectを使用して便利だった設定を紹介したいと思います。 Workflowsの活用GitHub上のPRやIssueを自動的にProjectに紐づける（または、アーカイブする）設定が可能です。GitHubProjectの設定画面より「Workflows」を開きます。Issueが作られた時にProjectに紐づけるいつ：boys2_issues に Issue が Open したときにどうする：Project項目を追加する（Add the item to the project）Issueが閉じられてn日間経過後にProject項目をアーカイブ...]]></content>
+        <author>
+            <name>Happy Elements カカリアスタジオ</name>
+        </author>
+        <published>2024-12-27T06:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【資料公開】コアテクLT会 - 忙しい人のためのUnity6重要機能紹介 | CORETECH ENGINEER BLOG]]></title>
+        <id>https://blog.sge-coretech.com/entry/2024/12/27/144333</id>
+        <link href="https://blog.sge-coretech.com/entry/2024/12/27/144333"/>
+        <updated>2024-12-27T05:43:33.000Z</updated>
+        <summary type="html"><![CDATA[はじめに スライド ブログ記事 ブログ記事にない内容 はじめに こんにちは、SGEコア技術本部（コアテク）の矢野です。 コアテクでは、社内向けに「コアテクLT会」という勉強会を開催しています。 社内の誰でも参加可能なオープンなLT会で、先日第20回目を迎えました。 誰でも参加できるので、版権に関する情報など、プロジェクト外に公開できない情報は扱いません。 それゆえ社外に出せる内容もあるので、それら]]></summary>
+        <content type="html"><![CDATA[はじめに スライド ブログ記事 ブログ記事にない内容 はじめに こんにちは、SGEコア技術本部（コアテク）の矢野です。 コアテクでは、社内向けに「コアテクLT会」という勉強会を開催しています。 社内の誰でも参加可能なオープンなLT会で、先日第20回目を迎えました。 誰でも参加できるので、版権に関する情報など、プロジェクト外に公開できない情報は扱いません。 それゆえ社外に出せる内容もあるので、それらについてはできる限り公開して、多少なり業界貢献に繋げられればと考えています。 今回はその取り組みの第一弾として、前日私が発表したUnity6に関するLTのスライドを公開します。 スライド 本LTは、日…]]></content>
+        <published>2024-12-27T05:43:33.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[APIファーストで契約管理システムの連携力を高める | ContractS開発者ブログ]]></title>
+        <id>https://tech.contracts.co.jp/entry/2024/12/27/143859</id>
+        <link href="https://tech.contracts.co.jp/entry/2024/12/27/143859"/>
+        <updated>2024-12-27T05:38:59.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。ContractSでバックエンドエンジニアをしている毛見です。 弊社がAPIファースト開発を取り入れた背景や利点、実際のアプローチを整理してブログにしました。 契約ライフサイクル管理 (CLM: Contract Lifecycle Management) は、単なる電子契約、契約書の保管という枠を超え、営業、法務、財務、購買などの多様な業務との連携によって業務の統制や効率化を図ります]]></summary>
+        <content type="html"><![CDATA[こんにちは。ContractSでバックエンドエンジニアをしている毛見です。 弊社がAPIファースト開発を取り入れた背景や利点、実際のアプローチを整理してブログにしました。 契約ライフサイクル管理 (CLM: Contract Lifecycle Management) は、単なる電子契約、契約書の保管という枠を超え、営業、法務、財務、購買などの多様な業務との連携によって業務の統制や効率化を図ります。昨今の企業では、業務ごとに専用のSaaSや基幹システムを導入しており、これらのシステムとシームレスに連携することがCLMに求められています。 私たちは、この連携を柔軟に実現するために APIファース…]]></content>
+        <published>2024-12-27T05:38:59.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[バーチャルプロダクションとカラーマネジメント：カラーキャリブレーションの事前知識 | スタジオブロス TECH BLOG]]></title>
+        <id>https://tech.bros.studio/entry/2024/12/27/143046</id>
+        <link href="https://tech.bros.studio/entry/2024/12/27/143046"/>
+        <updated>2024-12-27T05:30:46.000Z</updated>
+        <summary type="html"><![CDATA[前回の復習 前回は、ソニー株式会社が公開しているVirtual Production Tool SetとNetflixが公開しているOpenVPCalの違いを簡単にご紹介しました。 tech.bros.studio カラーキャリブレーションを行うための事前知識 連載第2回目は、カラーキャリブレーションを行うための事前知識を解説します。 LEDボリュームで表示する際に、自分が何をキャリブレーション作]]></summary>
+        <content type="html"><![CDATA[前回の復習 前回は、ソニー株式会社が公開しているVirtual Production Tool SetとNetflixが公開しているOpenVPCalの違いを簡単にご紹介しました。 tech.bros.studio カラーキャリブレーションを行うための事前知識 連載第2回目は、カラーキャリブレーションを行うための事前知識を解説します。 LEDボリュームで表示する際に、自分が何をキャリブレーション作業しているかを理解することに繋がります。 LEDウォールで撮影した映像の色について理解する LEDウォールは自然光下の環境と異なり、LEDウォールそのものが発光しています。通常、我々が目で物を見るとき…]]></content>
+        <published>2024-12-27T05:30:46.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ChatGPTを活用したシステム開発の期間見積もり | Aidemy Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/aidemy/articles/40ac1193c28800</id>
+        <link href="https://zenn.dev/aidemy/articles/40ac1193c28800"/>
+        <updated>2024-12-27T05:17:41.000Z</updated>
+        <summary type="html"><![CDATA[!この記事はAidemy Advent Calendar 2024の25日目の記事です。 はじめに受託開発の提案を行なっていると、「このプロジェクトはどれぐらいの期間がかかるのか」「この日に開始したらいつ終わるのか」なども考慮しながらアサインを決定しています。こういう案件の提案では、工数から期間を算出することもあれば、開始終了日が決まっていてどれぐらい人を入れるのか。という時もあります。今回は、「]]></summary>
+        <content type="html"><![CDATA[!この記事はAidemy Advent Calendar 2024の25日目の記事です。 はじめに受託開発の提案を行なっていると、「このプロジェクトはどれぐらいの期間がかかるのか」「この日に開始したらいつ終わるのか」なども考慮しながらアサインを決定しています。こういう案件の提案では、工数から期間を算出することもあれば、開始終了日が決まっていてどれぐらい人を入れるのか。という時もあります。今回は、「工数から期間を算出する」を楽にしたい・・・と思い、ChatGPTを使いながら迅速な見積もりを出せるようにしていきます。 今回解決したいこと工数が決まった状態での期間の算出...]]></content>
+        <author>
+            <name>K.B</name>
+        </author>
+        <published>2024-12-27T05:17:41.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[教え上手の第一歩: 相手の心に響く教え方 | 株式会社ココナラさんのフィード]]></title>
+        <id>https://zenn.dev/coconala/articles/teaching-learning</id>
+        <link href="https://zenn.dev/coconala/articles/teaching-learning"/>
+        <updated>2024-12-27T05:11:29.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。株式会社ココナラに所属しているKです。「教え方を教えて欲しい。」ときどき、そんな質問を受けることがあります。みなさんも「教えようとしたが、うまく伝えられなかった」、「相手が腹落ちしてくれなかった」という、もどかしさを感じた経験があるのではないでしょうか。本記事では、そのようなもどかしさを少しでも解消できるように、私が教える際に心がけていることを紹介したいと思います。 記事の構成本記事は]]></summary>
+        <content type="html"><![CDATA[こんにちは。株式会社ココナラに所属しているKです。「教え方を教えて欲しい。」ときどき、そんな質問を受けることがあります。みなさんも「教えようとしたが、うまく伝えられなかった」、「相手が腹落ちしてくれなかった」という、もどかしさを感じた経験があるのではないでしょうか。本記事では、そのようなもどかしさを少しでも解消できるように、私が教える際に心がけていることを紹介したいと思います。 記事の構成本記事は、大きく前半と後半の2つの構成になっています。前半教える際にありがちな失敗例を挙げます。後半私が教える際に心がけていることを説明します。前半で失敗例を取...]]></content>
+        <author>
+            <name>株式会社ココナラ</name>
+        </author>
+        <published>2024-12-27T05:11:29.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[効率的なIT運用管理の鍵！AIOpsで業務を一段と進化させる方法 | Blogical]]></title>
+        <id>https://blog.logical.co.jp/entry/2024/12/27/140719</id>
+        <link href="https://blog.logical.co.jp/entry/2024/12/27/140719"/>
+        <updated>2024-12-27T05:07:19.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、ロジカル・アーツの眞泉です。 IT運用における効率化と高品質なサービス提供は、企業にとって大きな課題です。複雑化するクラウド環境に加えて、膨大なデータの中から異常を検知し、迅速な対応を求められる現場では、人力だけでは対応しきれないケースが増えています。 そこで注目を集めているのが「AIOps」です。人工知能（AI）を活用したIT運用管理技術で、従来の運用フローを根本から変える力を持って]]></summary>
+        <content type="html"><![CDATA[こんにちは、ロジカル・アーツの眞泉です。 IT運用における効率化と高品質なサービス提供は、企業にとって大きな課題です。複雑化するクラウド環境に加えて、膨大なデータの中から異常を検知し、迅速な対応を求められる現場では、人力だけでは対応しきれないケースが増えています。 そこで注目を集めているのが「AIOps」です。人工知能（AI）を活用したIT運用管理技術で、従来の運用フローを根本から変える力を持っています。この記事では、AIOpsの基礎から具体的な活用方法、成功事例までを解説し、IT運用を効率化するためのヒントをお届けします。最後には、AIOpsに役立つツールのご紹介しますので、ぜひ最後までお読…]]></content>
+        <published>2024-12-27T05:07:19.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spring Frameworkの入門書の販売を開始しました！ | サイゼントの技術ブログ]]></title>
+        <id>https://cyzennt.co.jp/blog/?p=2121</id>
+        <link href="https://cyzennt.co.jp/blog/2024/12/27/spring-framework%e3%81%ae%e5%85%a5%e9%96%80%e6%9b%b8%e3%81%ae%e8%b2%a9%e5%a3%b2%e3%82%92%e9%96%8b%e5%a7%8b%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81/"/>
+        <updated>2024-12-27T05:02:43.000Z</updated>
+        <summary type="html"><![CDATA[以前に、株式会社サイゼントから、Javaの入門書「絶対にJavaプログラマーになりたい人へ」を発行しました。その別冊として、この度、新たに「絶対にJavaプログラマーになりたい人へ Spring Framework別冊」 […]]]></summary>
+        <content type="html"><![CDATA[以前に、株式会社サイゼントから、Javaの入門書「絶対にJavaプログラマーになりたい人へ」を発行しました。その別冊として、この度、新たに「絶対にJavaプログラマーになりたい人へ Spring Framework別冊」 […]]]></content>
+        <author>
+            <name>伊東 輝</name>
+        </author>
+        <category label="未分類"/>
+        <published>2024-12-27T05:02:43.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[bugsnag gem のコードからクロージャを使った Rails における実践的な遅延実行の実装をマスターする | SocialPLUS Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/socialplus/articles/5068a9723cd5cf</id>
+        <link href="https://zenn.dev/socialplus/articles/5068a9723cd5cf"/>
+        <updated>2024-12-27T05:00:05.000Z</updated>
+        <summary type="html"><![CDATA[masaki です。弊社では Ruby on Rails を使ったアプリケーションを開発し、バグ検知サービスに BugSnag を利用しています。今日は、Ruby のライブラリである bugsnag gem の before_bugsnag_notify がどのように動作しているか、実装を読み解きながらご紹介します。before_bugsnag_notify の内部には「クロージャを使った遅延実行]]></summary>
+        <content type="html"><![CDATA[masaki です。弊社では Ruby on Rails を使ったアプリケーションを開発し、バグ検知サービスに BugSnag を利用しています。今日は、Ruby のライブラリである bugsnag gem の before_bugsnag_notify がどのように動作しているか、実装を読み解きながらご紹介します。before_bugsnag_notify の内部には「クロージャを使った遅延実行」が取り入れられており、実践的な実装テクニックを学ぶことができます。ぜひ最後までお読みください。 このブログの対象者Rails アプリケーションを開発している方遅延実行の実践的な実...]]></content>
+        <author>
+            <name>masaki</name>
+        </author>
+        <published>2024-12-27T05:00:05.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MigrationWizのテナント作成手順 | JBS Tech Blog]]></title>
+        <id>https://blog.jbs.co.jp/entry/2024/12/27/133437</id>
+        <link href="https://blog.jbs.co.jp/entry/2024/12/27/133437"/>
+        <updated>2024-12-27T04:34:37.000Z</updated>
+        <summary type="html"><![CDATA[Google WorkspaceからMicrosoft 365へのデータ移行を、BitTitanのSaaS 型のデータ移行ツールであるMigrationWizで行う機会がありました。 MigrationWizを利用する際、まず最初にアカウントを作成する必要があります。アカウントを作成することで、テナントを作成することができます。 本記事では、テナント作成手順についてご紹介します。 アカウント作成 ]]></summary>
+        <content type="html"><![CDATA[Google WorkspaceからMicrosoft 365へのデータ移行を、BitTitanのSaaS 型のデータ移行ツールであるMigrationWizで行う機会がありました。 MigrationWizを利用する際、まず最初にアカウントを作成する必要があります。アカウントを作成することで、テナントを作成することができます。 本記事では、テナント作成手順についてご紹介します。 アカウント作成 パスワード設定 ログイン おわりに アカウント作成 以下のURLを開く。 https://www.bittitan.com/account/login 以下の画面で「Register for free…]]></content>
+        <published>2024-12-27T04:34:37.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[モノレポでのVSCode Dev Container | STORES Product Blog]]></title>
+        <id>https://product.st.inc/entry/2024/12/27/133252</id>
+        <link href="https://product.st.inc/entry/2024/12/27/133252"/>
+        <updated>2024-12-27T04:32:52.000Z</updated>
+        <summary type="html"><![CDATA[STORES 予約 でエンジニアをしている水野です。VSCode Dev Containerを利用すると開発環境のセットアップが迅速化されたり必要なライブラリ、ツールをコード化できたりとメリットが多いため導入している現場も多いかと思います。 STORES 予約 でもVSCode Dev Containerを利用しています。しかし今後モノレポな環境に携わる機会が見えたとき、そういえばモノレポでもVS]]></summary>
+        <content type="html"><![CDATA[STORES 予約 でエンジニアをしている水野です。VSCode Dev Containerを利用すると開発環境のセットアップが迅速化されたり必要なライブラリ、ツールをコード化できたりとメリットが多いため導入している現場も多いかと思います。 STORES 予約 でもVSCode Dev Containerを利用しています。しかし今後モノレポな環境に携わる機会が見えたとき、そういえばモノレポでもVSCode Dev Containerって使えるんだっけ？となったので調べてみました。 Multiple containers モノレポの場合は公式で紹介されているMultiple containers…]]></content>
+        <published>2024-12-27T04:32:52.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[レンダリングを効率化してAIを6倍速にした話 | Cluster Tech Blog]]></title>
+        <id>hatenablog://entry/6802418398314759164</id>
+        <link href="https://tech-blog.cluster.mu/entry/2024/12/27"/>
+        <updated>2024-12-27T04:30:00.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、クラスター株式会社 メタバース研究所でリサーチエンジニアをしているElizaです。ワールドの素敵な景色を見つけるAI「PanoTree」とは？ワールドサムネイル提案システム「WorldPano 」αテスト中ですなぜAIにワールドの魅力を理解させたいのか？PanoTreeの仕組み全体の流れPanoTreeを構成するモジュールレンダリングサーバー: スクリーンショットを撮影するモジュールS]]></summary>
+        <content type="html"><![CDATA[こんにちは、クラスター株式会社 メタバース研究所でリサーチエンジニアをしているElizaです。ワールドの素敵な景色を見つけるAI「PanoTree」とは？ワールドサムネイル提案システム「WorldPano 」αテスト中ですなぜAIにワールドの魅力を理解させたいのか？PanoTreeの仕組み全体の流れPanoTreeを構成するモジュールレンダリングサーバー: スクリーンショットを撮影するモジュールScoringNet: 景色の魅力を判断するモジュールHOO: ワールドの探索方法を指示するモジュールどれくらいの処理量？レンダリングサーバーの実装従来手法改善手法改善手法の実装① GPUに優しくないバージョン改善手法の実装② GPUに優しいバージョンどれくらい早くなるの？まとめワールドの素敵な景色を見つけるAI「PanoTree」とは？PanoTreeは撮影スポット自動探索AIの名称で、オープンソースソフトウェアとして公開されています。ワールドサムネイル提案システム「WorldPano 」αテスト中です現在、PanoTreeを活用したサムネイル提案システム「WorldPano」のαテストを行な]]></content>
+        <category label="メタバース研究所"/>
+        <published>2024-12-27T04:30:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rustの並列処理で安全にログ出力する | FORCIA Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/forcia_tech/articles/202412_rust_concurrency_logging_sawada</id>
+        <link href="https://zenn.dev/forcia_tech/articles/202412_rust_concurrency_logging_sawada"/>
+        <updated>2024-12-27T04:00:01.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、エンジニアの澤田です。昨年は Rust の quick-xml というライブラリを使ってみた記事 を書きましたが、Rust の勉強を兼ねて、今回は並列処理をやってみようと思います。普段の業務で、外部のAPIへ並列でリクエストを送り、その際に受け取ったエラーメッセージなどをログに書き込む処理を行っていますが、並列処理でのログ出力を Rust でやってみようと思います！※rustc と c]]></summary>
+        <content type="html"><![CDATA[こんにちは、エンジニアの澤田です。昨年は Rust の quick-xml というライブラリを使ってみた記事 を書きましたが、Rust の勉強を兼ねて、今回は並列処理をやってみようと思います。普段の業務で、外部のAPIへ並列でリクエストを送り、その際に受け取ったエラーメッセージなどをログに書き込む処理を行っていますが、並列処理でのログ出力を Rust でやってみようと思います！※rustc と cargo はバージョン 1.83.0 を使用しています。 並列処理でログ出力を安全に行う複数のスレッドが単一のリソースを変更する場合に、安全に変更する方法は大きく以下の2つがあります...]]></content>
+        <author>
+            <name>FORCIA Tech Blog 運営チーム</name>
+        </author>
+        <published>2024-12-27T04:00:01.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fragment Colocation導入に向けたXcodeカスタムテンプレートの作成 | スペースマーケット Engineer Blogのフィード]]></title>
+        <id>https://zenn.dev/spacemarket/articles/xcode-xctemplate</id>
+        <link href="https://zenn.dev/spacemarket/articles/xcode-xctemplate"/>
+        <updated>2024-12-27T03:55:09.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは、スペースマーケットモバイルエンジニアの村田です。以前書いた記事（[スペマiOS]ログイン/新規登録リニューアル）で触れた通り、弊社のiOSプロジェクトではデザインリニューアルや新規画面の作成時に、UIKitではなく積極的にSwiftUIを選択しています。SwiftUIへの移行を進める上でPresentaion層の設計を見直し、GraphQLの「Fragment Colocation」と]]></summary>
+        <content type="html"><![CDATA[こんにちは、スペースマーケットモバイルエンジニアの村田です。以前書いた記事（[スペマiOS]ログイン/新規登録リニューアル）で触れた通り、弊社のiOSプロジェクトではデザインリニューアルや新規画面の作成時に、UIKitではなく積極的にSwiftUIを選択しています。SwiftUIへの移行を進める上でPresentaion層の設計を見直し、GraphQLの「Fragment Colocation」というデザインパターンを導入しました。導入にあたり、1つのコンポーネントに関与する要素が増えることにより、コンポーネント追加時に必要となるボイラープレートコードの記述が手間になってきました。そ...]]></content>
+        <author>
+            <name>nmurata</name>
+        </author>
+        <published>2024-12-27T03:55:09.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dataflow ストリーミング ジョブのステータスを監視してみた | クラウドエース株式会社さんのフィード]]></title>
+        <id>https://zenn.dev/cloud_ace/articles/f011feb7910be1</id>
+        <link href="https://zenn.dev/cloud_ace/articles/f011feb7910be1"/>
+        <updated>2024-12-27T03:53:18.000Z</updated>
+        <summary type="html"><![CDATA[こんにちは。クラウドエース第三開発部の濵田です。さて、皆さんは、Dataflow ストリーミング ジョブのステータスを監視する際に、Canceled と Drained も監視したいと思ったことはありませんか。ジョブの指標では、Failed は提供されていますが、Canceled と Drained は提供されていません。そこで本記事では、ログベースの指標を用いて Dataflow ストリーミング]]></summary>
+        <content type="html"><![CDATA[こんにちは。クラウドエース第三開発部の濵田です。さて、皆さんは、Dataflow ストリーミング ジョブのステータスを監視する際に、Canceled と Drained も監視したいと思ったことはありませんか。ジョブの指標では、Failed は提供されていますが、Canceled と Drained は提供されていません。そこで本記事では、ログベースの指標を用いて Dataflow ストリーミング ジョブのステータス(Failed、Canceled、Drained)を監視する方法について解説します。 はじめになぜ、このような記事を書こうと思ったのか。それは、弊社のサポート窓...]]></content>
+        <author>
+            <name>クラウドエース株式会社</name>
+        </author>
+        <published>2024-12-27T03:53:18.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AlloyDBを業務システムのバックエンドとして利用するためのアイデア | STORES Product Blog]]></title>
+        <id>https://product.st.inc/entry/2024/12/27/124856</id>
+        <link href="https://product.st.inc/entry/2024/12/27/124856"/>
+        <updated>2024-12-27T03:48:56.000Z</updated>
+        <summary type="html"><![CDATA[はじめに fujiuです。この記事ではGoogle CloudのフルマネージドPostgreSQL互換データベースであるAlloyDBについて、業務システムのバックエンドとして利用する方法を紹介します。 AlloyDBはPostgreSQL互換なインターフェースを備えているためOLTPのユースケースにおいて高速にクエリすることができます。 さらに、AlloyDBはカラムナエンジンという仕組みを備え]]></summary>
+        <content type="html"><![CDATA[はじめに fujiuです。この記事ではGoogle CloudのフルマネージドPostgreSQL互換データベースであるAlloyDBについて、業務システムのバックエンドとして利用する方法を紹介します。 AlloyDBはPostgreSQL互換なインターフェースを備えているためOLTPのユースケースにおいて高速にクエリすることができます。 さらに、AlloyDBはカラムナエンジンという仕組みを備えており、これをうまく扱えるようなSQLでクエリすることで、OLAPのユースケースでも使えるようなパフォーマンスを発揮します。 STORES において顧客データを集約し活用することは、事業者さまのビジネ…]]></content>
+        <published>2024-12-27T03:48:56.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[アプリのパフォーマンス改善でライブラリの実装の理解が役立った話 | Aidemy Tech Blogのフィード]]></title>
+        <id>https://zenn.dev/aidemy/articles/understanding-library-impl-helped-app-perf</id>
+        <link href="https://zenn.dev/aidemy/articles/understanding-library-impl-helped-app-perf"/>
+        <updated>2024-12-27T03:38:53.000Z</updated>
+        <summary type="html"><![CDATA[はじめに技術で開発上の問題を突破できると嬉しいですよね。しかもバックエンドで学んだことがフロントエンドで活用できると面白いですよね。そこでGraphQLサーバーの開発でDataLoaderの実装を勉強したことが、フロントエンドのパフォーマンス改善で役に立った話を紹介します。[1]（DataLoaderを知らなくても読めるようにこの記事は書いています！！！） パフォーマンス問題ReactでExcel]]></summary>
+        <content type="html"><![CDATA[はじめに技術で開発上の問題を突破できると嬉しいですよね。しかもバックエンドで学んだことがフロントエンドで活用できると面白いですよね。そこでGraphQLサーバーの開発でDataLoaderの実装を勉強したことが、フロントエンドのパフォーマンス改善で役に立った話を紹介します。[1]（DataLoaderを知らなくても読めるようにこの記事は書いています！！！） パフォーマンス問題ReactでExcelのようなテーブルを持ったアプリを開発していました。アプリには変更のあった行の色が変わる機能がありました。画面の雰囲気:ある日、データ件数が大きいときにペーストを行うと非...]]></content>
+        <author>
+            <name>mosh</name>
+        </author>
+        <published>2024-12-27T03:38:53.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AvePoint Cloud Governance（ACG）を利用した申請フローの利活用提案 | JBS Tech Blog]]></title>
+        <id>https://blog.jbs.co.jp/entry/2024/12/27/122612</id>
+        <link href="https://blog.jbs.co.jp/entry/2024/12/27/122612"/>
+        <updated>2024-12-27T03:26:12.000Z</updated>
+        <summary type="html"><![CDATA[AvePoint Cloud Governance（以下、ACG）を導入済みのお客さまで、ワークフローの利活用に課題を感じている方はいませんか？ チームやサイトのガバナンス強化のワークフロー整備が一段落して以降、新規ワークフローの作成検討をしていないのはもったいないと感じます。 申請者がサービス申請をし、承認者に通知が飛び判断を行うフローの特性を活かし、独自の申請をカスタマイズすることができます。]]></summary>
+        <content type="html"><![CDATA[AvePoint Cloud Governance（以下、ACG）を導入済みのお客さまで、ワークフローの利活用に課題を感じている方はいませんか？ チームやサイトのガバナンス強化のワークフロー整備が一段落して以降、新規ワークフローの作成検討をしていないのはもったいないと感じます。 申請者がサービス申請をし、承認者に通知が飛び判断を行うフローの特性を活かし、独自の申請をカスタマイズすることができます。 Microsoft 365ライセンスだけで利用できるMicrosoft FormsやPower Automateを併用して同じようなシステムを作ることもできますが、時間と労力がかかります。 ACGの…]]></content>
+        <published>2024-12-27T03:26:12.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Makefileの基礎的な活用方法 | コラボスタイル Developersのフィード]]></title>
+        <id>https://zenn.dev/collabostyle/articles/e0ec4f27f56d6c</id>
+        <link href="https://zenn.dev/collabostyle/articles/e0ec4f27f56d6c"/>
+        <updated>2024-12-27T03:10:06.000Z</updated>
+        <summary type="html"><![CDATA[導入Makefileって聞くとどんなイメージをもちますか？c,c++のビルドツールというイメージを持ってる人も多いですよね。そのようなイメージを持たれがちなMakefileですが、実はシェルスクリプトを束ねた便利ツールとして使うこともできます。特に何が便利かというと、所定コマンド実行の前提で必要なコマンド群を定義して、シーケンス制御がさくっとできる点です。今回は、Makefileの基本的な使い方や]]></summary>
+        <content type="html"><![CDATA[導入Makefileって聞くとどんなイメージをもちますか？c,c++のビルドツールというイメージを持ってる人も多いですよね。そのようなイメージを持たれがちなMakefileですが、実はシェルスクリプトを束ねた便利ツールとして使うこともできます。特に何が便利かというと、所定コマンド実行の前提で必要なコマンド群を定義して、シーケンス制御がさくっとできる点です。今回は、Makefileの基本的な使い方や、シーケンス制御のやり方を紹介しようと思います。 基本的な使い方 基本構造Makefileを使うときは、ターゲット名と依存ターゲットを書いて、その中で実行したいシェルス...]]></content>
+        <author>
+            <name>yushi-s</name>
+        </author>
+        <published>2024-12-27T03:10:06.000Z</published>
+    </entry>
+</feed>
