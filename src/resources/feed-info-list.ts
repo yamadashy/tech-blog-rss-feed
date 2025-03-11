@@ -345,7 +345,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['mofmof', 'https://www.mof-mof.co.jp/tech-blog/feed'],
   ['mofmof (Zenn)', 'https://zenn.dev/p/mofmof_inc/feed'],
   ['moze', 'https://zenn.dev/p/moze_ai/feed'],
-  ['mutex', 'https://zenn.dev/mutex/feed'],
+  ['mutex', 'https://zenn.dev/p/mutex_inc/feed'],
   ['nana music', 'https://tech.nana-music.com/feed'],
   ['newmo', 'https://tech.newmo.me/feed'],
   ['no plan', 'https://zenn.dev/no_plan/feed'],
