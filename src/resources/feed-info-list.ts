@@ -82,6 +82,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CyberZ', 'https://note.com/cyberz_cto/rss'],
   ['D2C', 'https://zenn.dev/p/d2c_mtech_blog/feed'],
   ['DATAFLUCT', 'https://tech.datafluct.com/feed'],
+  ['DressCode', 'https://zenn.dev/p/dress_code/feed'],
   ['DROBE', 'https://tech.drobe.co.jp/feed'],
   ['DTダイナミクス', 'https://techblog.dt-dynamics.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
