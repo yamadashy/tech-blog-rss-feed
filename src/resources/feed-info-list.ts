@@ -90,7 +90,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['DeNA(Zenn Publication)', 'https://zenn.dev/p/dena/feed'],
   ['Dentsu Digital', 'https://note.com/dd_techblog/rss'],
   ['Diverse', 'https://developer.diverse-inc.com/feed'],
-  ['DMM', 'https://developersblog.dmm.com/feed'],  
+  ['DMM', 'https://developersblog.dmm.com/feed'],
   ['ELYZA', 'https://elyza-inc.hatenablog.com/feed'],
   ['ENECHANGE', 'https://tech.enechange.co.jp/feed'],
   ['ENECHANGE(Zenn Publication)', 'https://zenn.dev/p/enechange_blog/feed'],
