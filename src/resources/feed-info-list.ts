@@ -21,7 +21,7 @@ const createFeedInfoList = (feedInfoTuples: FeedInfoTuple[]) => {
 };
 
 /**
- * フィード情報一覧。アルファベット順
+ * フィード情報一覧。追加順
  * ラベルが被るとバリデーションエラーになるので別のラベルを設定してください
  */
 // prettier-ignore
@@ -691,6 +691,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['食べチョク', 'https://tech.tabechoku.com/feed'],
   ['食べログ', 'https://tech-blog.tabelog.com/feed'],
   ['ＦＦＲＩセキュリティ', 'https://engineers.ffri.jp/feed'],
+  ['DIGGLE', 'https://diggle.engineer/feed'],
+  ['ELW', 'https://techblog.elw.co.jp/feed'],
+  ['ブックリスタ', 'https://techblog.booklista.co.jp/feed'],
+  ['ヘンリー', 'https://dev.henry.jp/feed'],
+  ['HENNGE', 'https://blog.smtps.jp/feed'],
+  ['ミツカリ', 'https://tech-blog.mitsucari.com/feed'],
+  ['ヤポドゥ', 'https://blog.yapodu.co.jp/feed'],
 ]);
 
 /**
