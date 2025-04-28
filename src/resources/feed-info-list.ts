@@ -698,6 +698,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['HENNGE', 'https://blog.smtps.jp/feed'],
   ['ミツカリ', 'https://tech-blog.mitsucari.com/feed'],
   ['ヤポドゥ', 'https://blog.yapodu.co.jp/feed'],
+  ['Honda Tech Blog', 'https://honda-techblog.hatenablog.com/feed'],
 ]);
 
 /**
