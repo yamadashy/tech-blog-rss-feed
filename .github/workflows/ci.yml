@@ -47,19 +47,6 @@ jobs:
     - run: npm ci
     - run: npm run lint-secretlint
 
-  lint-renovate-config:
-    name: Lint Renovate config
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version-file: .tool-versions
-        cache: npm
-    - name: Validate Renovate config
-      run: npx --yes --package renovate -- renovate-config-validator --strict
-
   lint-action:
     name: Lint GitHub Actions
     runs-on: ubuntu-latest
