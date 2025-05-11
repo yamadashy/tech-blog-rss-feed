@@ -699,6 +699,11 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ミツカリ', 'https://tech-blog.mitsucari.com/feed'],
   ['ヤポドゥ', 'https://blog.yapodu.co.jp/feed'],
   ['Honda Tech Blog', 'https://honda-techblog.hatenablog.com/feed'],
+  ['NTT DATA TECH', 'https://zenn.dev/p/nttdata_tech/feed'],
+  ['ドリーム・アーツ テックブログ', 'https://zenn.dev/p/dreamarts/feed'],
+  ['younap Tech Blog', 'https://zenn.dev/p/younap/feed'],
+  ['HapInS Developers Blog', 'https://blog.hapins.net/feed'],
+  ['ハッピーコンピューター', 'https://blog.hapicom.jp/feed'],
 ]);
 
 /**
