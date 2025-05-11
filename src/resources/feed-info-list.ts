@@ -702,8 +702,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['NTT DATA TECH', 'https://zenn.dev/p/nttdata_tech/feed'],
   ['ドリーム・アーツ テックブログ', 'https://zenn.dev/p/dreamarts/feed'],
   ['younap Tech Blog', 'https://zenn.dev/p/younap/feed'],
-  ['HapInS Developers Blog', 'https://blog.hapins.net/feed'],
-  ['ハッピーコンピューター', 'https://blog.hapicom.jp/feed'],
+  [
+    'HapInS Developers Blog',
+    'https://blog.hapins.net/feed/category/%E3%83%86%E3%83%83%E3%82%AF%E3%83%96%E3%83%AD%E3%82%B0',
+  ],
 ]);
 
 /**
