@@ -107,13 +107,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Fusic (Zenn)', 'https://zenn.dev/p/fusic/feed'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
   ['GIBJapan', 'https://zenn.dev/p/gibjapan/feed'],
-  ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
+  // ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'], // Moved to commented section due to timeout in external tests
   ['GMOインターネット', 'https://developers.gmo.jp/feed/'],
   ['GMOグループ研究開発本部', 'https://recruit.gmo.jp/engineer/jisedai/blog/feed/'],
   ['GMOグローバルサイン・ホールディングス', 'https://tech.gmogshd.com/feed/'],
   ['GMOペパボ', 'https://tech.pepabo.com/feed.xml'],
   ['GMOメイクショップ', 'https://tech.makeshop.co.jp/feed'],
-  ['GMOリサーチ', 'https://gmor-sys.com/feed/'],
+  // ['GMOリサーチ', 'https://gmor-sys.com/feed/'], // Moved to commented section due to timeout in external tests
   ['GO', 'https://techblog.goinc.jp/feed'],
   ['GREE', 'https://labs.gree.jp/blog/feed/'],
   ['GRIPHONE', 'https://tech.griphone.co.jp/feed/'],
@@ -281,7 +281,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TENTIAL', 'https://tech.tential.jp/feed'],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
   ['TOWN', 'https://town.biz/tag/engineer/feed'],
-  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'],
+  // ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'], // Moved to commented section due to timeout in external tests
   ['TURING', 'https://zenn.dev/turing/feed'],
   ['TURING(Zenn Publication)', 'https://zenn.dev/p/turing_motors/feed'],
   ['TVer Technologies', 'https://techblog.tver-tech.co.jp/feed'],
@@ -318,8 +318,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Zenn', 'https://zenn.dev/p/team_zenn/feed'],
   ['atama plus', 'https://zenn.dev/atamaplus_dev/feed'],
   ['atama plus (Zenn Publication)', 'https://zenn.dev/p/atamaplus/feed'],
-  ['aumo', 'https://techblog.aumo.co.jp/feed'],
-  ['auカブコム証券', 'https://engineering.kabu.com/feed'],
+  // ['aumo', 'https://techblog.aumo.co.jp/feed'], // Moved to commented section due to timeout in external tests
+  // ['auカブコム証券', 'https://engineering.kabu.com/feed'], // Moved to commented section due to timeout in external tests
   ['auコマース＆ライフ', 'https://kcf-developers.hatenablog.jp/feed'],
   ['cloud.config', 'https://tech-blog.cloud-config.jp/feed/'],
   ['dely', 'https://tech.dely.jp/feed'],
@@ -334,7 +334,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['hacomono', 'https://techblog.hacomono.jp/feed'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['i-plug', 'https://iplug-tech.hatenablog.com/feed'],
-  ['iCARE', 'https://dev.icare.jpn.com/feed/'],
+  // ['iCARE', 'https://dev.icare.jpn.com/feed/'], // Moved to commented section due to timeout in external tests
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['iimon', 'https://tech.iimon.co.jp/feed'],
   ['ispec', 'https://zenn.dev/ispec/feed'],
@@ -359,7 +359,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['vivit', 'https://vivit.hatenablog.com/feed'],
   ['wywy', 'https://wywy.jp/feed.xml'],
   ['x garden', 'https://x-garde-creation.hatenablog.com/feed'],
-  ['zoome', 'https://zenn.dev/p/zoome/feed'],
+  // ['zoome', 'https://zenn.dev/p/zoome/feed'], // Moved to commented section due to timeout in external tests
   ['あした', 'https://engineer.ashita-team.com/feed'],
   ['あすけん', 'https://tech.asken.inc/feed'],
   ['おてつたび', 'https://zenn.dev/otetsutabi_tech/feed'],
@@ -424,7 +424,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['エージェントグロー', 'https://zenn.dev/p/agent_grow/feed'],
   ['エーピーコミュニケーションズ', 'https://techblog.ap-com.co.jp/feed'],
   ['オイシックス・ラ・大地', 'https://creators.oisixradaichi.co.jp/feed'],
-  ['オプトテクノロジーズ', 'https://tech-magazine.opt.ne.jp/feed'],
+  // ['オプトテクノロジーズ', 'https://tech-magazine.opt.ne.jp/feed'], // Moved to commented section due to timeout in external tests
   ['オルターブース', 'https://aadojo.alterbooth.com/feed'],
   ['オールアバウト', 'https://allabout-tech.hatenablog.com/feed'],
   ['カイユウ', 'https://kai-you-tech.hatenablog.com/feed'],
@@ -532,7 +532,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トライト', 'https://tryt-group.hatenablog.com/feed'],
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
-  ['トラーナ', 'https://tech.torana.co.jp/feed'],
+  // ['トラーナ', 'https://tech.torana.co.jp/feed'], // Moved to commented section due to timeout in external tests
   ['トレタ', 'https://tech.toreta.in/feed'],
   [
     'ドクターズプライム',
@@ -620,7 +620,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['メディアドゥ', 'https://techdo.mediado.jp/feed'],
   ['メドピア', 'https://tech.medpeer.co.jp/feed'],
   ['メドレー', 'https://developer.medley.jp/rss.xml'],
-  ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml'],
+  // ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml'], // Moved to commented section due to timeout in external tests
   ['モニクル', 'https://zenn.dev/p/monicle/feed'],
   ['モノグサ', 'https://tech.monoxer.com/feed'],
   ['モノタロウ', 'https://tech-blog.monotaro.com/feed'],
@@ -710,6 +710,18 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
 
 /**
  * その他候補
+ *
+ * タイムアウトのため除外
+ * ['GMOアドパートナーズ', 'https://techblog.gmo-ap.jp/feed/'],
+ * ['GMOリサーチ', 'https://gmor-sys.com/feed/'],
+ * ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'],
+ * ['aumo', 'https://techblog.aumo.co.jp/feed'],
+ * ['auカブコム証券', 'https://engineering.kabu.com/feed'],
+ * ['iCARE', 'https://dev.icare.jpn.com/feed/'],
+ * ['zoome', 'https://zenn.dev/p/zoome/feed'],
+ * ['オプトテクノロジーズ', 'https://tech-magazine.opt.ne.jp/feed'],
+ * ['トラーナ', 'https://tech.torana.co.jp/feed'],
+ * ['メルカリ', 'https://engineering.mercari.com/blog/feed.xml'],
  *
  * RSSがなくなった。復活したら入れたい
  * https://blog.gmo.media/
