@@ -18,7 +18,8 @@
     "test-coverage": "vitest run --coverage --exclude 'tests/external/**/*'",
     "test-external": "vitest run -c ./vitest.external.config.ts",
     "test-internal": "vitest run --exclude 'tests/external/**/*'",
-    "renovate-validate": "renovate-config-validator"
+    "renovate-validate": "renovate-config-validator",
+    "type-coverage": "type-coverage --detail --ignore-files 'src/site/**'"
   },
   "repository": {
     "type": "git",
@@ -72,6 +73,7 @@
     "secretlint": "^9.0.0",
     "sharp-ico": "^0.1.5",
     "tsx": "^4.19.1",
+    "type-coverage": "^2.27.1",
     "typescript": "^5.2.2",
     "vitest": "^3.1.1"
   },
