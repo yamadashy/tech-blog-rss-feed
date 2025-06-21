@@ -15,19 +15,19 @@ on:
 jobs:
   generate-feed:
     name: Generate Feed
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04  # ubuntu-20.04 → ubuntu-22.04 に変更
     timeout-minutes: 30
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # v2 → v4 に更新
         with:
           ref: main
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4  # v2 → v4 に更新
         with:
-          node-version: 14.20.0
+          node-version: 18.20.0  # 14.20.0 → 18.20.0 に更新 (LTSバージョン)
           cache: yarn
 
       - name: Install node packages
@@ -36,11 +36,11 @@ jobs:
       - name: Get date
         id: get-date
         run: |
-          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+          echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT  # 古い構文を更新
         shell: bash
 
       - name: Cache feed images
-        uses: actions/cache@v2
+        uses: actions/cache@v4  # v2 → v4 に更新
         with:
           path: .cache
           key: ${{ runner.os }}-feed-images-${{ steps.get-date.outputs.date }}
@@ -52,11 +52,11 @@ jobs:
         run: yarn site-build
 
       - name: Push to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # v3 → v4 に更新
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           # NOTE: 変更履歴が必要な場合は false に変更
           force_orphan: true
           user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_email: 'github-actions[bot]@users.noreply.github.com' 
