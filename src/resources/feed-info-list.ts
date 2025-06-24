@@ -36,6 +36,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['AI inside', 'https://note.com/aiinside_tech/rss'],
   ['AIREV', 'https://zenn.dev/airev/feed'],
   ['ANDPAD', 'https://tech.andpad.co.jp/feed'],
+  ['Aokumo', 'https://aokumo.io/jp/rss.xml'],
   ['ARIGATOBANK', 'https://medium.com/feed/arigatobank-tech-blog'],
   ['ARMテックブログ', 'https://zenn.dev/p/arm_techblog/feed'],
   ['Acroquest Technology', 'https://acro-engineer.hatenablog.com/feed'],
