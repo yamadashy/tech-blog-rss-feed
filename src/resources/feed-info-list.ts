@@ -299,6 +299,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Tokyo Otaku Mode', 'https://blog.otakumode.com/atom.xml'],
   ['Ubie', 'https://zenn.dev/p/ubie_dev/feed'],
   ['Unipos', 'https://fringeneer.hatenablog.com/feed'],
+  ['Unipos(Zenn Publication)', 'https://zenn.dev/p/unipos/feed'],
   ['Uzabase', 'https://tech.uzabase.com/feed'],
   ['VA Linux', 'https://valinux.hatenablog.com/feed'],
   ['VirtualCast', 'https://blog.virtualcast.jp/blog/category/tech/feed/'],
