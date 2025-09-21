@@ -29,13 +29,13 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 もしプルリクを送っていただける場合は以下のように作成できます。
 
 1. このリポジトリをフォーク
-2. ブランチ作成  
+2. ブランチ作成
    `git checkout -b new-blog-feed-xxx`
-3. フィードを追加  
+3. フィードを追加
    `src/resources/feed-info-list.ts` の `FEED_INFO_LIST` を更新
-4. コミット  
-   `git commit -am 'add: 新規フィード追加`
-5. プッシュ  
+4. コミット
+   `git commit -am 'chore(feed): <企業名など> 追加`
+5. プッシュ
    `git push origin new-blog-feed-xxx`
 6. プルリクを作成
 
