@@ -1,5 +1,5 @@
 # <img src="src/site/images/icon-transparent.png" height=26> 企業テックブログRSS
-企業のテックブログの更新をまとめたRSSフィードを配信しています。  
+企業のテックブログの更新をまとめたRSSフィードを配信しています。
 記事を読んでその企業の技術・カルチャーを知れることや、質の高い技術情報を得られることを目的としています。
 
 https://yamadashy.github.io/tech-blog-rss-feed/
@@ -8,7 +8,7 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 独自のフィードを作って公開したい場合は自由にフォークしてください。
 
 ## サイト追加の方針
-企業のテックブログ（技術ブログ、エンジニアブログ）であれば、基本的には追加します。  
+企業のテックブログ（技術ブログ、エンジニアブログ）であれば、基本的には追加します。
 ただし、以下に該当するものは検討します。
 
 - その企業の取り組みでないものが多く投稿される可能性があるブログ
@@ -23,7 +23,17 @@ https://yamadashy.github.io/tech-blog-rss-feed/
 - 企業系ブログのテクノロジーカテゴリ
 
 ## サイトの追加方法
-[src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。  
+[src/resources/feed-info-list.ts](https://github.com/yamadashy/tech-blog-rss-feed/blob/main/src/resources/feed-info-list.ts) で管理しており、その一覧にない場合 issue を作っていただければ対応します。
+
+### AIエージェントによるフィードの追加
+
+Claude Code, Cursor, Codex, Copilot Agent などを利用して、フィードの追加からプルリク作成まで自動で行うことができます。
+
+1. このリポジトリをフォーク
+2. 以下のようにAIエージェントに送り、そのまま指示に従ってください。
+  ```
+  フィードを追加したい
+  ```
 
 ### プルリクでの送り方
 もしプルリクを送っていただける場合は以下のように作成できます。
