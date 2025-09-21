@@ -45,6 +45,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Algomatic', 'https://tech.algomatic.jp/feed'],
   ['AppBrew', 'https://tech.appbrew.io/feed'],
   ['AsiaQuest', 'https://techblog.asia-quest.jp/rss.xml'],
+  ['ASSIGN', 'https://zenn.dev/p/assign/feed'],
   ['Assured', 'https://tech.assured.jp/feed'],
   ['Axelspace', 'https://zenn.dev/p/axelspace/feed'],
   ['BABYJOB', 'https://zenn.dev/p/babyjob/feed'],
