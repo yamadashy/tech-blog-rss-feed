@@ -3,30 +3,20 @@
   "extends": [
     "config:recommended",
     "schedule:monthly",
+    'group:allNonMajor'
   ],
   "timezone": "Asia/Tokyo",
+  "rangeStrategy": "bump",
   "dependencyDashboard": false,
-  "automerge": true,
-  "branchConcurrentLimit": 0,
-  "prHourlyLimit": 0,
   "labels": ["dependencies", "renovate"],
+  "automerge": true,
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "minor and patch dependencies",
-      "automerge": true
+      matchDepTypes: ['peerDependencies'],
+      enabled: false,
     },
-    {
-      "matchUpdateTypes": ["major"],
-      "groupName": "major dependencies",
-      "automerge": false
-    },
-    {
-      "matchPackageNames": ["renovate"],
-      "enabled": false
-    }
   ],
   "ignoreDeps": [
-    "node"
+    "node",
   ]
 }
