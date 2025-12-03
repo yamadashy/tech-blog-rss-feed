@@ -43,7 +43,7 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-fetch": "^5.1.1",
     "@11ty/eleventy-img": "^5.0.0",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.3.8",
     "@secretlint/core": "^9.3.4",
     "@secretlint/secretlint-rule-preset-recommend": "^9.3.4",
     "@supercharge/promise-pool": "^3.2.0",
