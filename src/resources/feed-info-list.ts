@@ -281,7 +281,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TENTIAL', 'https://tech.tential.jp/feed'],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
   ['TOWN', 'https://town.biz/tag/engineer/feed'],
-  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'],
+  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer/activities.atom'],
   ['TURING', 'https://zenn.dev/turing/feed'],
   ['TURING(Zenn Publication)', 'https://zenn.dev/p/turing_motors/feed'],
   ['TVer Technologies', 'https://techblog.tver-tech.co.jp/feed'],
@@ -335,7 +335,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['hacomono', 'https://techblog.hacomono.jp/feed'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['i-plug', 'https://iplug-tech.hatenablog.com/feed'],
-  ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['iimon', 'https://tech.iimon.co.jp/feed'],
   ['ispec', 'https://zenn.dev/ispec/feed'],
@@ -348,7 +347,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['mofmof (Zenn)', 'https://zenn.dev/p/mofmof_inc/feed'],
   ['moze', 'https://zenn.dev/p/moze_ai/feed'],
   ['mutex', 'https://zenn.dev/p/mutex_inc/feed'],
-  ['nana music', 'https://tech.nana-music.com/feed'],
+  ['nana music', 'https://nanamusic-tech.hatenablog.com/feed'],
   ['newmo', 'https://tech.newmo.me/feed'],
   ['no plan', 'https://zenn.dev/no_plan/feed'],
   ['note', 'https://engineerteam.note.jp/m/m70da42dac8cf/rss'],
@@ -724,6 +723,9 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
  * ['ロコガイド', 'https://techblog.locoguide.co.jp/feed'],
  * ['トラーナ', 'https://tech.torana.co.jp/feed'],
+ *
+ * サイト終了
+ * ['iCARE', 'https://dev.icare.jpn.com/feed/'],
  *
  * ブログ移行でフィードURLが変更。新フィードURL未確認
  * ['DROBE', 'https://tech.drobe.co.jp/feed'],
