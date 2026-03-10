@@ -544,7 +544,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ナレッジワーク', 'https://note.com/knowledgework/rss'],
   ['ナンバーフォー', 'https://zenn.dev/p/no4_dev/feed'],
   ['ニコシス', 'https://zenn.dev/p/nicosys_pub/feed'],
-  ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
   ['ネクストスケープ', 'https://blog.nextscape.net/feed'],
@@ -555,7 +554,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ハウテレビジョン', 'https://blog.howtelevision.co.jp/feed'],
   ['ハコベル', 'https://zenn.dev/p/hacobell_dev/feed'],
   ['ハロー', 'https://tech.hello.ai/feed'],
-  ['ハンズラボ', 'https://www.hands-lab.com/feed/'],
   ['ハートビーツ', 'https://heartbeats.jp/hbblog/atom.xml'],
   ['バイセル', 'https://tech.buysell-technologies.com/feed'],
   ['バスキュール', 'https://blog.bascule.co.jp/feed'],
@@ -723,6 +721,10 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  * ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
  * ['ロコガイド', 'https://techblog.locoguide.co.jp/feed'],
  * ['トラーナ', 'https://tech.torana.co.jp/feed'],
+ * ['ハンズラボ', 'https://www.hands-lab.com/feed/'],
+ *
+ * ブランド統合でブログ移行
+ * ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
  *
  * サイト終了
  * ['iCARE', 'https://dev.icare.jpn.com/feed/'],
