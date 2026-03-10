@@ -16,6 +16,9 @@ jobs:
     name: Run External Tests
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -24,5 +27,84 @@ jobs:
           cache: npm
       - run: npm ci
       - uses: ./.github/actions/restore-feed-cache
-      - run: npm run test-external
+
+      - name: Run external tests
+        id: external-test
+        continue-on-error: true
+        run: npm run test-external -- --reporter=verbose --reporter=json --outputFile=test-results.json
+
+      - name: Comment test results on PR
+        if: github.event_name == 'pull_request' && !cancelled()
+        uses: actions/github-script@v7
+        env:
+          TEST_OUTCOME: ${{ steps.external-test.outcome }}
+        with:
+          script: |
+            const fs = require('fs');
+
+            let results;
+            try {
+              results = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));
+            } catch (e) {
+              console.log('No test results found');
+              return;
+            }
+
+            const passed = results.numPassedTests || 0;
+            const failed = results.numFailedTests || 0;
+            const total = results.numTotalTests || 0;
+            const icon = failed === 0 ? '✅' : '⚠️';
+
+            let body = `## ${icon} External Test Results\n\n`;
+            body += `| Status | Count |\n`;
+            body += `|--------|-------|\n`;
+            body += `| ✅ Passed | ${passed} |\n`;
+            body += `| ❌ Failed | ${failed} |\n`;
+            body += `| 📊 Total | ${total} |\n\n`;
+
+            if (failed > 0 && results.testResults) {
+              body += `### Failed Tests\n\n`;
+              for (const suite of results.testResults) {
+                for (const test of suite.assertionResults || []) {
+                  if (test.status === 'failed') {
+                    body += `- **${test.ancestorTitles?.join(' > ')}** > ${test.title}\n`;
+                    if (test.failureMessages?.length > 0) {
+                      const msg = test.failureMessages[0].split('\n').slice(0, 3).join('\n');
+                      body += `  \`\`\`\n  ${msg}\n  \`\`\`\n`;
+                    }
+                  }
+                }
+              }
+              body += `\n`;
+            }
+
+            body += `> ℹ️ External tests verify RSS feed availability. Failures indicate external feed issues, not code problems.\n`;
+
+            // 既存のコメントを探して更新、なければ新規作成
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.body?.includes('External Test Results\n\n| Status')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
       - uses: ./.github/actions/save-feed-cache
