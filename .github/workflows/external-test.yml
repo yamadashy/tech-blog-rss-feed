@@ -55,15 +55,15 @@ jobs:
             const total = results.numTotalTests || 0;
             const icon = failed === 0 ? '✅' : '⚠️';
 
-            let body = `## ${icon} External Test Results\n\n`;
-            body += `| Status | Count |\n`;
-            body += `|--------|-------|\n`;
-            body += `| ✅ Passed | ${passed} |\n`;
-            body += `| ❌ Failed | ${failed} |\n`;
-            body += `| 📊 Total | ${total} |\n\n`;
+            let body = `## ${icon} 外部テスト結果\n\n`;
+            body += `| ステータス | 件数 |\n`;
+            body += `|-----------|------|\n`;
+            body += `| ✅ 成功 | ${passed} |\n`;
+            body += `| ❌ 失敗 | ${failed} |\n`;
+            body += `| 📊 合計 | ${total} |\n\n`;
 
             if (failed > 0 && results.testResults) {
-              body += `<details>\n<summary>Failed Tests (${failed})</summary>\n\n`;
+              body += `<details>\n<summary>失敗したテスト (${failed}件)</summary>\n\n`;
               for (const suite of results.testResults) {
                 for (const test of suite.assertionResults || []) {
                   if (test.status === 'failed') {
@@ -78,7 +78,7 @@ jobs:
               body += `\n</details>\n\n`;
             }
 
-            body += `> ℹ️ External tests verify RSS feed availability. Failures indicate external feed issues, not code problems.\n`;
+            body += `> ℹ️ 外部テストはRSSフィードの取得可否を検証しています。失敗はフィード提供元の問題であり、コードの問題ではありません。\n`;
 
             // 既存のコメントを探して更新、なければ新規作成
             const comments = await github.paginate(github.rest.issues.listComments, {
@@ -88,7 +88,7 @@ jobs:
             });
 
             const existing = comments.find(c =>
-              c.body?.includes('External Test Results\n\n| Status')
+              c.body?.includes('外部テスト結果\n\n| ステータス')
             );
 
             if (existing) {
