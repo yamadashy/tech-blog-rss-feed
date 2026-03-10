@@ -36,8 +36,6 @@ jobs:
       - name: Comment test results on PR
         if: github.event_name == 'pull_request' && !cancelled()
         uses: actions/github-script@v7
-        env:
-          TEST_OUTCOME: ${{ steps.external-test.outcome }}
         with:
           script: |
             const fs = require('fs');
