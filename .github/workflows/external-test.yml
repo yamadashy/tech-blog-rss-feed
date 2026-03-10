@@ -63,7 +63,7 @@ jobs:
             body += `| 📊 Total | ${total} |\n\n`;
 
             if (failed > 0 && results.testResults) {
-              body += `### Failed Tests\n\n`;
+              body += `<details>\n<summary>Failed Tests (${failed})</summary>\n\n`;
               for (const suite of results.testResults) {
                 for (const test of suite.assertionResults || []) {
                   if (test.status === 'failed') {
@@ -75,7 +75,7 @@ jobs:
                   }
                 }
               }
-              body += `\n`;
+              body += `\n</details>\n\n`;
             }
 
             body += `> ℹ️ External tests verify RSS feed availability. Failures indicate external feed issues, not code problems.\n`;
