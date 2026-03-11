@@ -86,7 +86,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['D2C', 'https://zenn.dev/p/d2c_mtech_blog/feed'],
   ['DATAFLUCT', 'https://tech.datafluct.com/feed'],
   ['DressCode', 'https://zenn.dev/p/dress_code/feed'],
-  ['DROBE', 'https://tech.drobe.co.jp/feed'],
   ['DTダイナミクス', 'https://techblog.dt-dynamics.com/feed'],
   ['DeNA SWET', 'https://swet.dena.com/feed'],
   ['DeNA', 'https://engineering.dena.com/blog/index.xml'],
@@ -119,7 +118,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['GMOリサーチ', 'https://gmor-sys.com/feed/'],
   ['GO', 'https://techblog.goinc.jp/feed'],
   ['GREE', 'https://labs.gree.jp/blog/feed/'],
-  ['GRIPHONE', 'https://tech.griphone.co.jp/feed/'],
   ['GROOVE X', 'https://tech.groove-x.com/feed'],
   ['GROWTH VERSE', 'https://growth-verse.hatenablog.jp/feed'],
   ['Game Server Services', 'https://gs2.hatenablog.com/feed'],
@@ -143,7 +141,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Happy Elements', 'https://zenn.dev/p/happy_elements/feed'],
   ['HashPort', 'https://tech.hashport.io/feed/'],
   ['HiTalent', 'https://medium.com/feed/@hitalent'],
-  ['HireRoo', 'https://hireroo.io/rss/IJhPN95WMIcPni1r59Tt'],
   ['IDCフロンティア', 'https://blog.idcf.jp/feed'],
   ['IIJ', 'https://eng-blog.iij.ad.jp/feed'],
   ['IVRy', 'https://zenn.dev/p/ivry/feed'],
@@ -223,7 +220,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['PLAY', 'https://developers.play.jp/feed'],
   ['POL', 'https://note.com/pollabbase/m/ma74382b91025/rss'],
   ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
-  ['Pentagon', 'https://blog.pentagon.tokyo/category/engineer/feed/'],
+  // ['Pentagon', 'https://blog.pentagon.tokyo/category/engineering/feed/'],
   ['PharmaX', 'https://zenn.dev/p/pharmax/feed'],
   ['Playground', 'https://tech.playground.style/feed/'],
   ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'],
@@ -284,7 +281,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['TENTIAL', 'https://tech.tential.jp/feed'],
   ['THECOO', 'https://note.com/thecoo_engineer/rss'],
   ['TOWN', 'https://town.biz/tag/engineer/feed'],
-  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer'],
+  ['TRAILBLAZER', 'https://qiita.com/organizations/trail-blazer/activities.atom'],
   ['TURING', 'https://zenn.dev/turing/feed'],
   ['TURING(Zenn Publication)', 'https://zenn.dev/p/turing_motors/feed'],
   ['TVer Technologies', 'https://techblog.tver-tech.co.jp/feed'],
@@ -338,7 +335,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['hacomono', 'https://techblog.hacomono.jp/feed'],
   ['i-Vinci', 'https://www.i-vinci.co.jp/techblog/feed'],
   ['i-plug', 'https://iplug-tech.hatenablog.com/feed'],
-  ['iCARE', 'https://dev.icare.jpn.com/feed/'],
   ['iChain', 'https://ichain.hatenablog.com/feed'],
   ['iimon', 'https://tech.iimon.co.jp/feed'],
   ['ispec', 'https://zenn.dev/ispec/feed'],
@@ -351,7 +347,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['mofmof (Zenn)', 'https://zenn.dev/p/mofmof_inc/feed'],
   ['moze', 'https://zenn.dev/p/moze_ai/feed'],
   ['mutex', 'https://zenn.dev/p/mutex_inc/feed'],
-  ['nana music', 'https://tech.nana-music.com/feed'],
+  ['nana music', 'https://nanamusic-tech.hatenablog.com/feed'],
   ['newmo', 'https://tech.newmo.me/feed'],
   ['no plan', 'https://zenn.dev/no_plan/feed'],
   ['note', 'https://engineerteam.note.jp/m/m70da42dac8cf/rss'],
@@ -529,14 +525,12 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['デザインワン・ジャパン', 'https://tech.designone.jp/feed'],
   ['デザミス', 'https://zenn.dev/u_motion/feed'],
   ['トッカシステムズ', 'https://zenn.dev/p/toccasystems/feed'],
-  ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
   ['トドケール', 'https://zenn.dev/todoker/feed'],
   ['トドケール(Zenn Publication)', 'https://zenn.dev/p/todoker_blog/feed'],
   ['トヨクモ', 'https://tech.toyokumo.co.jp/feed'],
   ['トライト', 'https://tryt-group.hatenablog.com/feed'],
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
-  ['トラーナ', 'https://tech.torana.co.jp/feed'],
   ['トレタ', 'https://tech.toreta.in/feed'],
   [
     'ドクターズプライム',
@@ -550,7 +544,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ナレッジワーク', 'https://note.com/knowledgework/rss'],
   ['ナンバーフォー', 'https://zenn.dev/p/no4_dev/feed'],
   ['ニコシス', 'https://zenn.dev/p/nicosys_pub/feed'],
-  ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
   ['ネクストスケープ', 'https://blog.nextscape.net/feed'],
@@ -561,7 +554,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ハウテレビジョン', 'https://blog.howtelevision.co.jp/feed'],
   ['ハコベル', 'https://zenn.dev/p/hacobell_dev/feed'],
   ['ハロー', 'https://tech.hello.ai/feed'],
-  ['ハンズラボ', 'https://www.hands-lab.com/feed/'],
   ['ハートビーツ', 'https://heartbeats.jp/hbblog/atom.xml'],
   ['バイセル', 'https://tech.buysell-technologies.com/feed'],
   ['バスキュール', 'https://blog.bascule.co.jp/feed'],
@@ -666,7 +658,6 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['レンティオ', 'https://zenn.dev/rentio/feed'],
   ['ログラス', 'https://prd-blog.loglass.co.jp/feed'],
   ['ログラス (Zenn)', 'https://zenn.dev/p/loglass/feed'],
-  ['ロコガイド', 'https://techblog.locoguide.co.jp/feed'],
   ['ロジカルビート', 'https://logicalbeat.jp/blog/feed/'],
   ['ロジカル・アーツ', 'https://blog.logical.co.jp/feed'],
   ['ロジクラ', 'https://blog.logikura.dev/feed'],
@@ -724,6 +715,23 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
  *
  * 技術のカテゴリ切られてないので悩ましい
  * ['Ragate', 'https://www.ragate.co.jp/blog/'],
+ *
+ * 会社解散・合併・倒産
+ * ['GRIPHONE', 'https://tech.griphone.co.jp/feed/'],
+ * ['トップゲート', 'https://www.topgate.co.jp/category/engineer/feed'],
+ * ['ロコガイド', 'https://techblog.locoguide.co.jp/feed'],
+ * ['トラーナ', 'https://tech.torana.co.jp/feed'],
+ * ['ハンズラボ', 'https://www.hands-lab.com/feed/'],
+ *
+ * ブランド統合でブログ移行
+ * ['ニフクラ', 'https://blog.pfs.nifcloud.com/feed'],
+ *
+ * サイト終了
+ * ['iCARE', 'https://dev.icare.jpn.com/feed/'],
+ *
+ * ブログ移行でフィードURLが変更。新フィードURL未確認
+ * ['DROBE', 'https://tech.drobe.co.jp/feed'],
+ * ['HireRoo', 'https://hireroo.io/rss/IJhPN95WMIcPni1r59Tt'],
  *
  * 403 Forbidden
  * ['Cygames', 'https://tech.cygames.co.jp/feed/'],
