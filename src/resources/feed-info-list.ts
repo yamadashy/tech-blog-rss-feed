@@ -544,6 +544,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ナレッジワーク', 'https://note.com/knowledgework/rss'],
   ['ナンバーフォー', 'https://zenn.dev/p/no4_dev/feed'],
   ['ニコシス', 'https://zenn.dev/p/nicosys_pub/feed'],
+  ['ニフティ', 'https://engineering.nifty.co.jp/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
   ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'],
   ['ネクストスケープ', 'https://blog.nextscape.net/feed'],
