@@ -60,7 +60,7 @@
     "axios": "^1.14.0",
     "clean-css": "^5.3.3",
     "dayjs": "^1.11.20",
-    "fast-xml-parser": "^5.5.9",
+    "fast-xml-parser": "^5.7.0",
     "feed": "^5.2.0",
     "flat-cache": "^6.1.22",
     "googleapis": "^171.4.0",
