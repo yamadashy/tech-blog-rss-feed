@@ -219,7 +219,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['PLAID', 'https://tech.plaid.co.jp/rss.xml'],
   ['PLAY', 'https://developers.play.jp/feed'],
   ['POL', 'https://note.com/pollabbase/m/ma74382b91025/rss'],
-  ['PR TIMES', 'https://developers.prtimes.jp/feed/'],
+  ['PR TIMES', 'https://developers.prtimes.com/feed/'],
   // ['Pentagon', 'https://blog.pentagon.tokyo/category/engineering/feed/'],
   ['PharmaX', 'https://zenn.dev/p/pharmax/feed'],
   ['Playground', 'https://tech.playground.style/feed/'],
