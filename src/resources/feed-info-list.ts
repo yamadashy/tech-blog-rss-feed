@@ -702,6 +702,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
     'HapInS Developers Blog',
     'https://blog.hapins.net/feed/category/%E3%83%86%E3%83%83%E3%82%AF%E3%83%96%E3%83%AD%E3%82%B0',
   ],
+  ['豆蔵デベロッパーサイト', 'https://developer.mamezou-tech.com/feed'],
 ]);
 
 /**
