@@ -63,7 +63,7 @@
     "fast-xml-parser": "^5.8.0",
     "feed": "^5.2.1",
     "flat-cache": "^6.1.22",
-    "googleapis": "^171.4.0",
+    "googleapis": "^173.0.0",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
     "log4js": "^6.9.1",
