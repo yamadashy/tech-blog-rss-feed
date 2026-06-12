@@ -78,7 +78,7 @@ export class FeedGenerator {
 
       const ogObject = feedItemOgObjectMap.get(feedItem.link);
       const ogImage = ogObject?.customOgImage;
-      const feedItemImage = ogImage?.url && isValidHttpUrl(ogImage.url) ? ogImage : undefined;
+      const feedItemImage = ogImage?.url && isValidHttpUrl(ogImage.url) ? { ...ogImage } : undefined;
 
       if (feedItemImage?.alt) {
         feedItemImage.alt = escapeTextForXml(feedItemImage.alt);
