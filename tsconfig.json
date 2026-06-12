@@ -4,6 +4,7 @@
     "target": "es2021",
     "module": "esnext",
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "lib": ["dom", "esnext"],
     "types": ["node", "vitest/globals", "open-graph-scraper"],
