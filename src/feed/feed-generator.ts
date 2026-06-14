@@ -1,6 +1,6 @@
 import { Feed, type FeedOptions } from 'feed';
 import constants from '../common/constants.js';
-import { textToMd5Hash, textTruncate } from './common-util';
+import { isValidHttpUrl, textToMd5Hash, textTruncate } from './common-util';
 import type { CustomRssParserItem, FeedItemHatenaCountMap, OgObjectMap } from './feed-crawler';
 import { logger } from './logger';
 
@@ -78,9 +78,10 @@ export class FeedGenerator {
 
       const ogObject = feedItemOgObjectMap.get(feedItem.link);
       const ogImage = ogObject?.customOgImage;
+      const feedItemImage = ogImage?.url && isValidHttpUrl(ogImage.url) ? { ...ogImage } : undefined;
 
-      if (ogImage?.alt) {
-        ogImage.alt = escapeTextForXml(ogImage.alt);
+      if (feedItemImage?.alt) {
+        feedItemImage.alt = escapeTextForXml(feedItemImage.alt);
       }
 
       // 日付がないものは入れない
@@ -110,7 +111,7 @@ export class FeedGenerator {
                 },
               ]
             : undefined,
-        image: ogImage?.url ? ogImage : undefined,
+        image: feedItemImage,
         published: new Date(feedItem.isoDate),
         date: new Date(feedItem.isoDate),
         extensions: [
