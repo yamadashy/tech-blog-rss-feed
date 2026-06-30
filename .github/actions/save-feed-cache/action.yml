@@ -5,7 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Save feed cache
-      uses: actions/cache/save@v5
+      uses: actions/cache/save@v6
       with:
         path: |
           .cache
