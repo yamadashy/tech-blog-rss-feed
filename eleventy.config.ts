@@ -6,7 +6,6 @@ import {
   minifyCssFilter,
   minifyHtmlTransform,
   relativeUrlFilter,
-  supportTypeScriptTemplate,
 } from './src/common/eleventy-utils';
 
 EleventyImage.concurrency = constants.eleventyFetchConcurrency;
@@ -30,8 +29,9 @@ module.exports = (eleventyConfig: any) => {
   // minify css
   eleventyConfig.addFilter('minifyCss', minifyCssFilter);
 
-  // TypeScript
-  supportTypeScriptTemplate(eleventyConfig);
+  // TypeScript テンプレート（*.11ty.ts）を JavaScript テンプレート（11ty.js）として扱う
+  eleventyConfig.addTemplateFormats('11ty.ts');
+  eleventyConfig.addExtension('11ty.ts', { key: '11ty.js' });
 
   // TODO: _data も TypeScript 対応したい
   // @see https://github.com/11ty/eleventy/discussions/1835
