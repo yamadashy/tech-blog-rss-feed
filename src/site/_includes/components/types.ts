@@ -68,7 +68,10 @@ export type SiteBlogFeedItem = BlogFeed['items'][number] & {
  * blog-feeds.json の blog。
  * `BlogFeed` に `_data/blogFeeds.js` で追加されるフィールドを加えたもの。
  */
-export type SiteBlogFeed = Omit<BlogFeed, 'items'> & {
+export type SiteBlogFeed = Omit<BlogFeed, 'items' | 'title'> & {
+  // BlogFeed の型宣言上は string だが、フィード側にタイトルが無い場合
+  // 実データ（blog-feeds.json）では null になる
+  title: string | null;
   items: SiteBlogFeedItem[];
   lastUpdated?: string;
   diffLastUpdatedDateForHuman?: string;

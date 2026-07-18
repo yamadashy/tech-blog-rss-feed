@@ -20,9 +20,9 @@ export const data = {
   },
   permalink: (data: BlogFeedData) => `blogs/${data.blogFeed.linkMd5Hash}/`,
   eleventyComputed: {
-    // Nunjucks 版と同じ二重エスケープを再現する。
-    pageTitle: (data: BlogFeedData) =>
-      `${escapeHtml(data.blogFeed.title)}のフィード｜${escapeHtml(constants.siteTitle)}`,
+    // エスケープはレイアウト側（main.11ty.ts）で行うため、ここでは生の文字列を渡す
+    // title が null のフィードがあるため空文字にフォールバックする
+    pageTitle: (data: BlogFeedData) => `${data.blogFeed.title ?? ''}のフィード｜${constants.siteTitle}`,
     lastUpdated: (data: BlogFeedData) => data.blogFeed.lastUpdatedIso ?? '',
   },
 };

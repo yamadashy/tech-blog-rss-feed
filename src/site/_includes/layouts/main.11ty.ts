@@ -95,15 +95,15 @@ export function render(data: MainLayoutData): string {
     <header role="banner" class="ui-section-header">
         <div class="ui-layout-container">
             <div class="ui-section-header__layout ui-layout-flex">
-                <a href="${escapeHtml(constants.siteUrl)}" role="link" aria-label="#">
+                <a href="${escapeHtml(constants.siteUrl)}" role="link" aria-label="ホーム">
                     <img src="${relativeUrl}images/icon.png" alt='サイトロゴ' loading="eager" width='96' height='96' />
                     <span class='ui-section-header__title'>${escapeHtml(constants.siteTitle)}</span>
                 </a>
                 <div class="ui-section-header__links">
-                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="#" target="_blank">
+                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="GitHub" target="_blank">
                         <img src='${relativeUrl}images/icon-github.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
                     </a>
-                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="#" target="_blank">
+                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="X" target="_blank">
                         <img src='${relativeUrl}images/icon-x.png' alt='Xロゴ' loading="eager" width='96' height='96' />
                     </a>
                 </div>
@@ -131,7 +131,7 @@ export function render(data: MainLayoutData): string {
                 <p class="ui-section-footer--copyright ui-text-note">
                     <a class="ui-text-note" href='${escapeHtml(constants.gitHubUserUrl)}' target="_blank"><small>@${escapeHtml(constants.author)}</small></a>
                 </p>
-                <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="#" class="ui-text-note" target="_blank"><small>GitHub</small></a>
+                <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" class="ui-text-note" target="_blank"><small>GitHub</small></a>
             </div>
         </div>
     </footer>

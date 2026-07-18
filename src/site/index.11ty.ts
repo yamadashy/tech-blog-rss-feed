@@ -16,9 +16,8 @@ export const data = {
   layout: 'layouts/main.11ty.ts',
   date: SITE_PAGE_DATE,
   eleventyComputed: {
-    // Nunjucks 版は front matter の eleventyComputed で一度エスケープされ、
-    // さらに main.njk の `{{ pageTitle }}` で二重エスケープされていたため、それを再現する。
-    pageTitle: () => escapeHtml(constants.siteTitle),
+    // エスケープはレイアウト側（main.11ty.ts）で行うため、ここでは生の文字列を渡す
+    pageTitle: () => constants.siteTitle,
     lastUpdated: (data: { lastModifiedBlogsDate: string }) => data.lastModifiedBlogsDate,
   },
 };

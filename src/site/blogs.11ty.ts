@@ -13,8 +13,8 @@ export const data = {
   layout: 'layouts/main.11ty.ts',
   date: SITE_PAGE_DATE,
   eleventyComputed: {
-    // Nunjucks 版と同じ二重エスケープを再現する。
-    pageTitle: () => `ブログ一覧｜${escapeHtml(constants.siteTitle)}`,
+    // エスケープはレイアウト側（main.11ty.ts）で行うため、ここでは生の文字列を渡す
+    pageTitle: () => `ブログ一覧｜${constants.siteTitle}`,
     lastUpdated: (data: { lastModifiedBlogsDate: string }) => data.lastModifiedBlogsDate,
   },
 };
