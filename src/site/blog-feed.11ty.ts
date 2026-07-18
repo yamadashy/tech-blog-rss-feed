@@ -20,9 +20,9 @@ export const data = {
   },
   permalink: (data: BlogFeedData) => `blogs/${data.blogFeed.linkMd5Hash}/`,
   eleventyComputed: {
-    // Nunjucks 版と同じ二重エスケープを再現する。
-    pageTitle: (data: BlogFeedData) =>
-      `${escapeHtml(data.blogFeed.title)}のフィード｜${escapeHtml(constants.siteTitle)}`,
+    // エスケープはレイアウト側（main.11ty.ts）で行うため、ここでは生の文字列を渡す
+    // title が無いフィードがあるため、ブログの URL にフォールバックする
+    pageTitle: (data: BlogFeedData) => `${data.blogFeed.title || data.blogFeed.link}のフィード｜${constants.siteTitle}`,
     lastUpdated: (data: BlogFeedData) => data.blogFeed.lastUpdatedIso ?? '',
   },
 };
@@ -31,6 +31,8 @@ export async function render(data: BlogFeedData): Promise<string> {
   const { page, blogFeed } = data;
   const rawRelativeUrl = relativeUrlFilter(page.url);
   const relativeUrl = escapeHtml(rawRelativeUrl);
+  // title が無いフィードがあるため、見出しなどが空にならないよう URL にフォールバックする
+  const blogTitle = blogFeed.title || blogFeed.link;
 
   const items = await Promise.all(
     blogFeed.items.map(async (feedItem) => {
@@ -58,7 +60,7 @@ export async function render(data: BlogFeedData): Promise<string> {
                     <div class='ui-feed-item__content'>
                         <a class='ui-feed-item__title' href='${escapeHtml(feedItem.link)}'>${escapeHtml(feedItem.title)}</a>
                         ${hatenaCount}
-                        <div class='ui-feed-item__blog-title'>${escapeHtml(blogFeed.title)}</div>
+                        <div class='ui-feed-item__blog-title'>${escapeHtml(blogTitle)}</div>
                         ${summary}
                         <div class='ui-feed-item__date' title='${escapeHtml(feedItem.pubDateForHuman)}'>${escapeHtml(feedItem.diffDateForHuman)}</div>
                     </div>
@@ -70,7 +72,7 @@ export async function render(data: BlogFeedData): Promise<string> {
 
 <section class="ui-section-content ui-section-feed">
     <div class="ui-layout-container">
-        <h2 class='ui-typography-heading'>${escapeHtml(blogFeed.title)}</h2>
+        <h2 class='ui-typography-heading'>${escapeHtml(blogTitle)}</h2>
         <div class='ui-container-blog-summary'>
             <div class='ui-blog-summary'>
                 <a class='ui-blog-summary__link' href='${escapeHtml(blogFeed.link)}'>${escapeHtml(blogFeed.link)}</a>

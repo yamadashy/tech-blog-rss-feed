@@ -13,8 +13,8 @@ export const data = {
   layout: 'layouts/main.11ty.ts',
   date: SITE_PAGE_DATE,
   eleventyComputed: {
-    // Nunjucks 版と同じ二重エスケープを再現する。
-    pageTitle: () => `ブログ一覧｜${escapeHtml(constants.siteTitle)}`,
+    // エスケープはレイアウト側（main.11ty.ts）で行うため、ここでは生の文字列を渡す
+    pageTitle: () => `ブログ一覧｜${constants.siteTitle}`,
     lastUpdated: (data: { lastModifiedBlogsDate: string }) => data.lastModifiedBlogsDate,
   },
 };
@@ -42,7 +42,7 @@ export async function render(data: BlogsData): Promise<string> {
                         ${ogImage}
                     </a>
                     <div class='ui-blog__content'>
-                        <a class='ui-blog__title' href='./${escapeHtml(blogFeed.linkMd5Hash)}/'>${escapeHtml(blogFeed.title)}</a>
+                        <a class='ui-blog__title' href='./${escapeHtml(blogFeed.linkMd5Hash)}/'>${escapeHtml(blogFeed.title || blogFeed.link)}</a>
                         <a class='ui-blog__link' href='${escapeHtml(blogFeed.link)}'>${escapeHtml(blogFeed.link)}</a>
                         ${description}
                         ${date}
