@@ -20,5 +20,14 @@ export const computeLastModifiedBlogsDate = (feedItems: FeedJsonItem[]): string 
     );
   }
 
-  return new Date(latestFeedItem.date_published as string).toISOString();
+  const datePublished = latestFeedItem.date_published;
+  const date = new Date(datePublished ?? Number.NaN);
+
+  if (datePublished === undefined || Number.isNaN(date.getTime())) {
+    throw new Error(
+      `feed.json の先頭 item の date_published が不正なため lastModifiedBlogsDate を算出できません（値: ${String(datePublished)}）。feed-generate が正常に完了し、feed.json の item に妥当な date_published が含まれているか確認してください。`,
+    );
+  }
+
+  return date.toISOString();
 };
