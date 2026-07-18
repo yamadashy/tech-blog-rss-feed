@@ -16,7 +16,7 @@ export function render(data: MainLayoutData): string {
   const { content, pageTitle, page } = data;
   const relativeUrl = escapeHtml(relativeUrlFilter(page.url));
   const escapedPageTitle = escapeHtml(pageTitle);
-  const canonicalUrl = escapeHtml(`${constants.siteUrl}${page.url.replace(/^\//, '')}`);
+  const canonicalUrl = escapeHtml(`${constants.siteUrlStem}${page.url}`);
 
   const prerender = ['/'].includes(page.url) ? `<link rel="prerender" href="${relativeUrl}hot/">` : '';
 
