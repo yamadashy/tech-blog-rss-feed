@@ -95,7 +95,7 @@ export function render(data: MainLayoutData): string {
     <header role="banner" class="ui-section-header">
         <div class="ui-layout-container">
             <div class="ui-section-header__layout ui-layout-flex">
-                <a href="${escapeHtml(constants.siteUrl)}" role="link" aria-label="ホーム">
+                <a href="${escapeHtml(constants.siteUrl)}" role="link">
                     <img src="${relativeUrl}images/icon.png" alt='サイトロゴ' loading="eager" width='96' height='96' />
                     <span class='ui-section-header__title'>${escapeHtml(constants.siteTitle)}</span>
                 </a>

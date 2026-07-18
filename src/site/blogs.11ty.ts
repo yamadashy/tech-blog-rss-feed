@@ -42,7 +42,7 @@ export async function render(data: BlogsData): Promise<string> {
                         ${ogImage}
                     </a>
                     <div class='ui-blog__content'>
-                        <a class='ui-blog__title' href='./${escapeHtml(blogFeed.linkMd5Hash)}/'>${escapeHtml(blogFeed.title)}</a>
+                        <a class='ui-blog__title' href='./${escapeHtml(blogFeed.linkMd5Hash)}/'>${escapeHtml(blogFeed.title || blogFeed.link)}</a>
                         <a class='ui-blog__link' href='${escapeHtml(blogFeed.link)}'>${escapeHtml(blogFeed.link)}</a>
                         ${description}
                         ${date}
