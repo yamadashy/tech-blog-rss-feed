@@ -33,10 +33,10 @@ export const renderTopSection = (page: EleventyPage): string => {
                     <button type="button" class="ui-component-button ui-component-button-medium ui-component-button-primary feed-url-copy-button">コピー</button>
                 </form>
                 <div class='ui-top-section__subscribe'>
-                    <a href='https://feedly.com/i/subscription/feed/${rssFeedUrl}' target="_blank">
+                    <a href='https://feedly.com/i/subscription/feed/${rssFeedUrl}' target="_blank" rel="noopener noreferrer">
                         <img src='${relativeUrl}images/subscribe-feedly.png' loading="eager" alt='follow us in feedly' width='152' height='56'>
                     </a>
-                    <a href="https://www.inoreader.com?add_feed=${rssFeedUrl}" target="_blank">
+                    <a href="https://www.inoreader.com?add_feed=${rssFeedUrl}" target="_blank" rel="noopener noreferrer">
                         <img src="${relativeUrl}images/subscribe-inoreader.png" loading="eager" alt="follow us in inoreader" width='260' height='72'>
                     </a>
                 </div>
