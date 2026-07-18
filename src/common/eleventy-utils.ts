@@ -5,7 +5,6 @@ import EleventyImage from '@11ty/eleventy-img';
 import CleanCSS from 'clean-css';
 import htmlmin from 'html-minifier-terser';
 import sharpIco, { type ImageData } from 'sharp-ico';
-import ts from 'typescript';
 import constants from './constants';
 import { imageCacheOptions } from './eleventy-cache-option';
 
@@ -130,18 +129,4 @@ export const relativeUrlFilter = (url: string) => {
 
 export const minifyCssFilter = (css: string) => {
   return new CleanCSS({}).minify(css).styles;
-};
-
-// biome-ignore lint/suspicious/noExplicitAny: This is intentional
-export const supportTypeScriptTemplate = (eleventyConfig: any) => {
-  eleventyConfig.addTemplateFormats('ts');
-  eleventyConfig.addExtension('ts', {
-    outputFileExtension: 'js',
-    compile: async (inputContent: string) => {
-      return async () => {
-        const result = ts.transpileModule(inputContent, { compilerOptions: { module: ts.ModuleKind.CommonJS } });
-        return result.outputText;
-      };
-    },
-  });
 };
