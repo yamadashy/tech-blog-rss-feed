@@ -16,6 +16,7 @@ export function render(data: MainLayoutData): string {
   const { content, pageTitle, page } = data;
   const relativeUrl = escapeHtml(relativeUrlFilter(page.url));
   const escapedPageTitle = escapeHtml(pageTitle);
+  const canonicalUrl = escapeHtml(`${constants.siteUrlStem}${page.url}`);
 
   const prerender = ['/'].includes(page.url) ? `<link rel="prerender" href="${relativeUrl}hot/">` : '';
 
@@ -42,7 +43,7 @@ export function render(data: MainLayoutData): string {
   const howToAddSite = constants.howToAddSiteLink
     ? `<p class='ui-text-note'>
                         追加したいブログがある場合は<br>
-                        <a href='${escapeHtml(constants.howToAddSiteLink)}' target="_blank">サイトの追加方法</a>
+                        <a href='${escapeHtml(constants.howToAddSiteLink)}' target="_blank" rel="noopener noreferrer">サイトの追加方法</a>
                         をご参照ください。
                     </p>`
     : '';
@@ -73,6 +74,7 @@ export function render(data: MainLayoutData): string {
 
     <meta name="thumbnail" content="${escapeHtml(constants.siteUrl)}images/og-image.png" />
 
+    <link rel="canonical" href="${canonicalUrl}">
     <link rel="preload" href="${relativeUrl}styles/bundle.css" as="style">
     ${prerender}
 
@@ -100,10 +102,10 @@ export function render(data: MainLayoutData): string {
                     <span class='ui-section-header__title'>${escapeHtml(constants.siteTitle)}</span>
                 </a>
                 <div class="ui-section-header__links">
-                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="GitHub" target="_blank">
+                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                         <img src='${relativeUrl}images/icon-github.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
                     </a>
-                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="X" target="_blank">
+                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="X" target="_blank" rel="noopener noreferrer">
                         <img src='${relativeUrl}images/icon-x.png' alt='Xロゴ' loading="eager" width='96' height='96' />
                     </a>
                 </div>
@@ -129,9 +131,9 @@ export function render(data: MainLayoutData): string {
         <div class="ui-layout-container">
             <div class="ui-section-footer__layout ui-layout-flex">
                 <p class="ui-section-footer--copyright ui-text-note">
-                    <a class="ui-text-note" href='${escapeHtml(constants.gitHubUserUrl)}' target="_blank"><small>@${escapeHtml(constants.author)}</small></a>
+                    <a class="ui-text-note" href='${escapeHtml(constants.gitHubUserUrl)}' target="_blank" rel="noopener noreferrer"><small>@${escapeHtml(constants.author)}</small></a>
                 </p>
-                <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" class="ui-text-note" target="_blank"><small>GitHub</small></a>
+                <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" class="ui-text-note" target="_blank" rel="noopener noreferrer"><small>GitHub</small></a>
             </div>
         </div>
     </footer>
