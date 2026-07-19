@@ -16,6 +16,9 @@ const FEED_ITEM_FILTER_DAY = 7;
 export const computeFeedItemsChunks = (feedItems: FeedJsonItem[], now: Dayjs): FeedItemsChunks => {
   // 直近1週間分
   const filteredFeedItems = feedItems.filter((feedItem) => {
+    if (!feedItem.date_published) {
+      return false;
+    }
     return dayjs(feedItem.date_published) > now.subtract(FEED_ITEM_FILTER_DAY, 'd');
   });
 

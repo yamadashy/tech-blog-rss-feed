@@ -6,8 +6,8 @@ import { type Dayjs, dayjs } from './dayjs-setup';
  * 最終更新日時の降順（更新日時なしは末尾）でソートする。
  *
  * 元の `_data/blogFeeds.js` と同じく、ブログおよびその item を破壊的に変更する。
- * item の `pubDateForHuman` は（`lastUpdatedForHuman` とは異なり）意図的に `.tz()` を付けずに
- * フォーマットしている点に注意（元実装の挙動を維持している）。
+ * item の `pubDateForHuman` は `lastUpdatedForHuman` と同様に `.tz()` でデフォルトタイムゾーンに
+ * 固定してフォーマットする（ビルドマシンのタイムゾーンに依存しないようにするため）。
  *
  * @param blogFeeds blog-feeds.json（この配列と要素は変更される）
  * @param now 現在時刻（`dayjs()` を注入。テスト時は固定値を渡せる）
@@ -26,12 +26,15 @@ export const decorateBlogFeeds = (blogFeeds: SiteBlogFeed[], now: Dayjs): SiteBl
 
     for (const feedItem of blogFeed.items) {
       feedItem.diffDateForHuman = now.to(feedItem.isoDate);
-      feedItem.pubDateForHuman = dayjs(feedItem.isoDate).format('YYYY-MM-DD HH:mm:ss');
+      feedItem.pubDateForHuman = dayjs(feedItem.isoDate).tz().format('YYYY-MM-DD HH:mm:ss');
     }
   }
 
   // ソート
   return blogFeeds.sort((a, b) => {
+    if (!a.lastUpdated && !b.lastUpdated) {
+      return 0;
+    }
     if (!a.lastUpdated) {
       return 1;
     }

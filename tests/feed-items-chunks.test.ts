@@ -43,6 +43,19 @@ describe('computeFeedItemsChunks', () => {
     expect(item.pubDateForHuman).toEqual('2026-07-17 10:00:00');
   });
 
+  it('date_published がない item は除外する', () => {
+    const items = [
+      makeFeedJsonItem('2026-07-18T00:00:00+09:00', 0, { date_published: undefined }),
+      makeFeedJsonItem('2026-07-18T00:00:00+09:00'),
+    ];
+
+    const chunks = computeFeedItemsChunks(items, NOW);
+    const allItems = Object.values(chunks).flat();
+
+    expect(allItems).toHaveLength(1);
+    expect(allItems[0].date_published).toEqual('2026-07-18T00:00:00+09:00');
+  });
+
   it('item が空なら空オブジェクトを返す', () => {
     expect(computeFeedItemsChunks([], NOW)).toEqual({});
   });

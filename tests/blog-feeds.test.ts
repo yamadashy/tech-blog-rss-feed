@@ -40,7 +40,7 @@ describe('decorateBlogFeeds', () => {
     expect(result.lastUpdatedIso).toBeUndefined();
   });
 
-  it('各 item に diffDateForHuman / pubDateForHuman を付与する（pubDateForHuman は tz を付けない）', () => {
+  it('各 item に diffDateForHuman / pubDateForHuman を付与する（pubDateForHuman はデフォルト tz に固定）', () => {
     const iso = '2026-07-18T00:00:00Z';
     const blogFeeds = [makeBlogFeed('blog', [makeBlogFeedItem(iso)])];
 
@@ -48,9 +48,9 @@ describe('decorateBlogFeeds', () => {
     const item = result.items[0];
 
     expect(item.diffDateForHuman).toEqual(NOW.to(iso));
-    // lastUpdatedForHuman は .tz() を使うのに対し、item の pubDateForHuman は
-    // 意図的に .tz() を使わない（元実装のクセを維持）
-    expect(item.pubDateForHuman).toEqual(dayjs(iso).format('YYYY-MM-DD HH:mm:ss'));
+    // lastUpdatedForHuman と同様に、item の pubDateForHuman も .tz() で
+    // デフォルトタイムゾーンに固定する（ビルドマシンの tz に依存しない）
+    expect(item.pubDateForHuman).toEqual(dayjs(iso).tz().format('YYYY-MM-DD HH:mm:ss'));
   });
 
   it('ブログが空なら空配列を返す', () => {

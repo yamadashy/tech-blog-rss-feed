@@ -20,6 +20,9 @@ export const computeFeedItemsHot = (feedItems: FeedJsonItem[], now: Dayjs): Feed
   // 「直近1週間分」かつ「3つ以上はてなブックマークされている」
   const filteredFeedItems = feedItems
     .filter((feedItem) => {
+      if (!feedItem.date_published) {
+        return false;
+      }
       return dayjs(feedItem.date_published) > now.subtract(FEED_ITEM_FILTER_DAY, 'd');
     })
     .filter((feedItem) => {

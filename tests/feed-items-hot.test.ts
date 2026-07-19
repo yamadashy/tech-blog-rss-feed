@@ -46,6 +46,18 @@ describe('computeFeedItemsHot', () => {
     expect(result[0].priorityForSort).toBeCloseTo(10 * 0.05, 10);
   });
 
+  it('date_published がない item は除外する', () => {
+    const items = [
+      makeFeedJsonItem('2026-07-18T00:00:00+09:00', 10, { date_published: undefined }),
+      makeFeedJsonItem('2026-07-18T00:00:00+09:00', 10),
+    ];
+
+    const result = computeFeedItemsHot(items, NOW);
+
+    expect(result).toHaveLength(1);
+    expect(result[0].date_published).toEqual('2026-07-18T00:00:00+09:00');
+  });
+
   it('item が空なら空配列を返す', () => {
     expect(computeFeedItemsHot([], NOW)).toEqual([]);
   });
