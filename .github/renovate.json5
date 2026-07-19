@@ -10,6 +10,8 @@
   "dependencyDashboard": false,
   "labels": ["dependencies", "renovate"],
   "automerge": true,
+  // 公開直後のパッケージは 3 日間の様子見期間を設けてから automerge する
+  "minimumReleaseAge": '3 days',
   "packageRules": [
     {
       matchDepTypes: ['peerDependencies'],

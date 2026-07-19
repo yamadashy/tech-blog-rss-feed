@@ -61,7 +61,7 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 ### フォークして使う場合
 以下を書き換えると独自のサイトが動きます。
 
-- `src/common/constants.js` の URL など
+- `src/common/constants.ts` の URL など
 - `src/resources/feed-info-list.ts` のブログ情報
 
 特定のブログに絞ったり、以下のように全く違ったフィードを作るもの良いと思います。
@@ -70,7 +70,7 @@ GitHub Actions で定期的に更新されており、サイトの生成は [Ele
 
 ### 開発環境とコマンド
 環境
-- Node.js >= 20
+- Node.js >= 24
 
 パッケージのインストール
 ```bash
@@ -88,7 +88,7 @@ $ npm run site-serve
 
 コードのチェック
 ```bash
-$ # eslint, tsc --noEmit
+$ # Biome, tsc --noEmit, secretlint
 $ npm run lint
 
 $ # テスト
