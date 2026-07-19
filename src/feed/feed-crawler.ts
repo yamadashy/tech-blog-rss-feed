@@ -124,7 +124,9 @@ export class FeedCrawler {
               logger.trace('[fetch-feed] cache hit', feedInfo.label, feedInfo.url);
               feedData = cachedData;
             } else {
-              const response = await fetch(feedInfo.url);
+              const response = await fetch(feedInfo.url, {
+                signal: AbortSignal.timeout(1000 * 10),
+              });
               if (!response.ok) {
                 throw new Error(`HTTP Error: ${response.status}`);
               }
@@ -484,7 +486,9 @@ export class FeedCrawler {
       const [error, hatenaCountMap] = await to(fetchHatenaCountMap(feedItemUrls));
 
       if (error) {
-        Promise.reject(new Error('[hatena-count] Fail to get hatena bookmark count', { cause: error }));
+        logger.error('[fetch-feed-item-hatena-count] error');
+        logger.trace(error);
+        continue;
       }
 
       for (const feedItemUrl in hatenaCountMap) {
