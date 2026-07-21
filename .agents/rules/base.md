@@ -19,6 +19,7 @@ README.md を読んで理解してください
    `git checkout -b chore/new-feed-<企業名の英語>`
 3. フィードを追加
    `src/resources/feed-info-list.ts` の `FEED_INFO_LIST` を更新
+   追加後に `npm run sort-feed-info-list` を実行してラベル順に並べ替える
 4. コミット
    `git commit -am 'chore(feed): <企業名など> 追加`
 5. プッシュ
