@@ -64,7 +64,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['CADDi', 'https://caddi.tech/feed'],
   ['CAMPFIRE', 'https://note.com/campfire_dev/rss'],
   ['CARTA', 'https://techblog.cartaholdings.co.jp/feed'],
-  // ['CCCMKホールディングス', 'https://techblog.cccmkhd.co.jp/feed'], // 2026-07 取得エラー継続のため除外: フィードのXMLが不正 (サイトは生存)
+  ['CCCMKホールディングス', 'https://techblog.vpoint.co.jp/rss'],
   ['CData Software', 'https://www.cdatablog.jp/feed'],
   ['CHUGAI DIGITAL', 'https://note.chugai-pharm.co.jp/m/mdaeaf24de472/rss'],
   ['COMPASS', 'https://zenn.dev/p/qubena/feed'],
@@ -104,7 +104,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Finatext', 'https://zenn.dev/p/finatext/feed'],
   ['Findy', 'https://tech.findy.co.jp/feed'],
   ['Flatt Security', 'https://blog.flatt.tech/feed'],
-  // ['Fracton', 'https://tech.fracton.ventures/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  ['Fracton', 'https://contents.fracton.ventures/feed'],
   ['Fusic', 'https://tech.fusic.co.jp/rss.xml'],
   ['Fusic (Zenn)', 'https://zenn.dev/p/fusic/feed'],
   ['G-gen', 'https://blog.g-gen.co.jp/feed'],
@@ -171,7 +171,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Legoliss', 'https://blog.legoliss.co.jp/feed'],
   ['Leverages データ戦略', 'https://analytics.leverages.jp/feed'],
   // ['Libra Studio', 'https://tech.librastudio.co.jp/feed'], // 2026-07 取得エラー継続のため除外: ドメイン消滅(NXDOMAIN)
-  // ['Liquid', 'https://tech.liquid.bio/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  // ['Liquid', 'https://tech.liquid.bio/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可。移設先Zennは「ELEMENTS」でカバー済み
   ['Lisa Technologies', 'https://zenn.dev/lisatech/feed'],
   ['Livesense', 'https://zenn.dev/p/livesense/feed'],
   ['Luup', 'https://zenn.dev/luup/feed'],
@@ -194,13 +194,13 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['NE', 'https://zenn.dev/p/neinc_tech/feed'],
   ['NEMTUS', 'https://zenn.dev/nemtus/feed'],
   ['NHNテコラス', 'https://techblog.nhn-techorus.com/feed'],
-  // ['NRIネットコム', 'https://tech.nri-net.com/feed/category/Technology'], // 2026-07 取得エラー継続のため除外: フィード404
+  ['NRIネットコム', 'https://tech.nri-net.com/feed'],
   ['NTTコミュニケーションズ', 'https://engineers.ntt.com/feed'],
   ['NTTソフトウェアイノベーションセンタ ', 'https://medium.com/feed/nttlabs'],
   ['NTTドコモ', 'https://nttdocomo-developers.jp/feed'],
   ['Nature', 'https://engineering.nature.global/feed'],
   ['Nealle', 'https://nealle-dev.hatenablog.com/feed'],
-  // ['NearMe', 'https://tech.nearme.jp/feed'], // 2026-07 取得エラー継続のため除外: フィード404
+  ['NearMe', 'https://tech.nearme.jp/rss.xml'],
   ['Nextat', 'https://nextat.co.jp/staff/index.rss'],
   ['Nishika', 'https://zenn.dev/p/team_nishika/feed'],
   ['Nota', 'https://blog.notainc.com/feed'],
@@ -223,7 +223,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   // ['Pentagon', 'https://blog.pentagon.tokyo/category/engineering/feed/'],
   ['PharmaX', 'https://zenn.dev/p/pharmax/feed'],
   ['Playground', 'https://tech.playground.style/feed/'],
-  // ['Polestar-ID', 'https://www.psid.co.jp/news/feed/'], // 2026-07 取得エラー継続のため除外: フィード404
+  ['Polestar-ID', 'https://www.psid.co.jp/blog/feed/'],
   ['Preferred Networks', 'https://tech.preferred.jp/ja/blog/llm-plamo/feed/'],
   ['Progate', 'https://tech.prog-8.com/feed'],
   ['Qiita', 'https://zine.qiita.com/feed/'],
@@ -360,7 +360,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['wywy', 'https://wywy.jp/feed.xml'],
   ['x garden', 'https://x-garde-creation.hatenablog.com/feed'],
   // ['zoome', 'https://zenn.dev/p/zoome/feed'], // 2026-07 取得エラー継続のため除外: フィード404
-  // ['あした', 'https://engineer.ashita-team.com/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  ['あした', 'https://zenn.dev/p/ashita_team/feed'],
   ['あすけん', 'https://tech.asken.inc/feed'],
   ['おてつたび', 'https://zenn.dev/otetsutabi_tech/feed'],
   ['くらしのマーケット', 'https://tech.curama.jp/feed'],
@@ -386,17 +386,17 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['アスクル', 'https://tech.askul.co.jp/feed'],
   ['アスタミューゼ', 'https://lab.astamuse.co.jp/feed'],
   ['アソビュー', 'https://tech.asoview.co.jp/feed'],
-  // ['アットホーム', 'https://dblog.athome.co.jp/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  ['アットホーム', 'https://note.athome-inc.jp/m/mc7cb98d764cd/rss'],
   ['アトラエ', 'https://atraetech.hatenablog.com/feed'],
   ['アドグローブ', 'https://blog.adglobe.co.jp/feed'],
   ['アプトポッド', 'https://tech.aptpod.co.jp/feed'],
-  // ['アプリボット', 'https://blog.applibot.co.jp/feed/'], // 2026-07 取得エラー継続のため除外: ドメイン消滅(NXDOMAIN)
+  ['アプリボット', 'https://zenn.dev/p/applibot_tech/feed'],
   ['アメリエフ', 'https://staffblog.amelieff.jp/feed'],
   ['アルサーガパートナーズ', 'https://zenn.dev/p/arsaga/feed'],
   ['アルダグラム', 'https://zenn.dev/aldagram/feed'],
   ['アルダグラム(Zenn Publication)', 'https://zenn.dev/p/aldagram_tech/feed'],
   ['アームズ', 'https://tech.arms-soft.co.jp/feed'],
-  // ['イエソド', 'https://zenn.dev/yesodco/feed'], // 2026-07 取得エラー継続のため除外: フィード404
+  ['イエソド', 'https://zenn.dev/p/yesodco/feed'],
   ['イタンジ', 'https://tech.itandi.co.jp/feed'],
   ['イノベーター・ジャパン', 'https://tech.innovator.jp.net/feed'],
   ['インゲージ', 'https://blog.ingage.jp/feed'],
@@ -410,8 +410,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   // ['ウエディングパーク', 'https://engineers.weddingpark.co.jp/feed/'], // 2026-07 取得エラー継続のため除外: フィードに不正な制御文字 (サイトは生存)
   ['ウォーターセル', 'https://watercelldev.hatenablog.jp/feed'],
   ['エキサイト', 'https://tech.excite.co.jp/feed'],
-  // ['エクサウィザーズ', 'https://techblog.exawizards.com/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
-  // ['エクスプラザ', 'https://tech.explaza.jp/feed'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  ['エクサウィザーズ', 'https://zenn.dev/p/exwzd/feed'],
+  ['エクスプラザ', 'https://zenn.dev/p/explaza/feed'],
   ['エス・エム・エス', 'https://tech.bm-sms.co.jp/feed'],
   ['エックスポイントワン', 'https://zenn.dev/p/x_point_1/feed'],
   ['エニグモ', 'https://tech.enigmo.co.jp/feed'],
@@ -437,7 +437,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['カンムテック', 'https://tech.kanmu.co.jp/feed'],
   ['ガイアックス', 'https://gaiax.hatenablog.com/feed'],
   // ['キカガク', 'https://tech.kikagaku.co.jp/feed'], // 2026-07 取得エラー継続のため除外: ドメイン消滅(NXDOMAIN)
-  // ['キカガク (Zenn)', 'https://www.kikagaku.co.jp/kikagaku-blog/feed/'], // 2026-07 取得エラー継続のため除外: フィード500
+  ['キカガク (Zenn)', 'https://zenn.dev/p/kikagaku/feed'],
   ['キッチハイク', 'https://tech.kitchhike.com/feed'],
   ['キュービック', 'https://cuebic.co.jp/tech-blog/feed'],
   ['クイック', 'https://aimstogeek.hatenablog.com/feed'],
@@ -457,7 +457,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ココナラ', 'https://zenn.dev/coconala/feed'],
   ['コドモン', 'https://tech.codmon.com/feed'],
   ['コネヒト', 'https://tech.connehito.com/feed'],
-  // ['コミューン', 'https://tech.commmune.jp/feed'], // 2026-07 取得エラー継続のため除外: リダイレクトエラー
+  ['コミューン', 'https://zenn.dev/p/dev_commune/feed'],
   ['コラボスタイル', 'https://zenn.dev/p/collabostyle/feed'],
   ['コロプラ', 'https://blog.colopl.dev/feed'],
   ['サイオステクノロジー', 'https://tech-lab.sios.jp/feed'],
@@ -496,7 +496,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ストックマーク', 'https://tech.stockmark.co.jp/index.xml'],
   ['スパイダープラス', 'https://techblog.spiderplus.co.jp/feed'],
   ['スピッカート', 'https://zenn.dev/spicato_inc/feed'],
-  // ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'], // 2026-07 取得エラー継続のため除外: フィードのXMLが不正 (サイトは生存)
+  // ['スペースマーケット', 'https://blog.spacemarket.com/category/code/feed/'], // 2026-07 取得エラー継続のため除外: フィードのXMLが不正。移設先Zennは下の「スペースマーケット (Zenn)」でカバー済み
   ['スペースマーケット (Zenn)', 'https://zenn.dev/p/spacemarket/feed'],
   ['スペースリー', 'https://tech.spacely.co.jp/feed'],
   ['スマートキャンプ', 'https://tech.smartcamp.co.jp/feed'],
@@ -518,7 +518,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['テコテック', 'https://tec.tecotec.co.jp/feed'],
   ['テックタッチ', 'https://techtouch.hatenablog.jp/feed'],
   ['テックドクター', 'https://techblog.technology-doctor.com/feed'],
-  // ['テックファーム', 'https://www.techfirm.co.jp/blog/?feed=rss2'], // 2026-07 取得エラー継続のため除外: フィードのXMLが不正 (サイトは生存)
+  ['テックファーム', 'https://www.techfirm.co.jp/blog-feed.xml'],
   ['テックファーム クラウドインフラグループ', 'https://techblog.techfirm.co.jp/feed'],
   ['テラーノベル', 'https://zenn.dev/p/tellernovel_inc/feed'],
   ['ディーネット', 'https://blog.denet.co.jp/feed/'],
@@ -532,7 +532,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['トラストバンク', 'https://tech.trustbank.co.jp/feed'],
   ['トラベルブック', 'https://tech.travelbook.co.jp/index.xml'],
   ['トレタ', 'https://tech.toreta.in/feed'],
-  // ['ドクターズプライム', 'https://blog.drsprime.com/feed/category/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0'], // 2026-07 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可
+  ['ドクターズプライム', 'https://zenn.dev/p/drsprime/feed'],
   ['ドコカデ', 'https://zenn.dev/dokokade/feed'],
   ['ドリコム', 'https://tech.drecom.co.jp/feed/'],
   ['ドワンゴ', 'https://dwango.github.io/index.xml'],
@@ -543,7 +543,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ニコシス', 'https://zenn.dev/p/nicosys_pub/feed'],
   ['ニフティ', 'https://engineering.nifty.co.jp/feed'],
   ['ニフティライフスタイル', 'https://tech.niftylifestyle.co.jp/feed'],
-  // ['ヌーラボ', 'https://nulab.com/ja/blog/categories/techblog/feed/'], // 2026-07 取得エラー継続のため除外: フィードのXMLが不正 (サイトは生存)
+  ['ヌーラボ', 'https://nulab.com/ja/blog/categories/engineering/feed/'],
   ['ネクストスケープ', 'https://blog.nextscape.net/feed'],
   ['ネクストビート', 'https://medium.com/feed/nextbeat-engineering'],
   ['ネフロック', 'https://blog.nefrock.com/feed'],
@@ -552,7 +552,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['ハウテレビジョン', 'https://blog.howtelevision.co.jp/feed'],
   ['ハコベル', 'https://zenn.dev/p/hacobell_dev/feed'],
   ['ハロー', 'https://tech.hello.ai/feed'],
-  // ['ハートビーツ', 'https://heartbeats.jp/hbblog/atom.xml'], // 2026-07 取得エラー継続のため除外: フィード404
+  ['ハートビーツ', 'https://heartbeats.jp/feed/'],
   ['バイセル', 'https://tech.buysell-technologies.com/feed'],
   ['バスキュール', 'https://blog.bascule.co.jp/feed'],
   ['バトンズ', 'https://batonz-tech.hatenablog.com/feed'],
