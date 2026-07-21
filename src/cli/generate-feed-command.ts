@@ -27,6 +27,9 @@ const feedStorer = new FeedStorer();
     new Date(Date.now() - constants.aggregateFeedDurationInHours * 60 * 60 * 1000),
   );
 
+  // まとめフィード作成 + ファイル出力 + バリデーション
+  const generateStoreValidateStartTime = Date.now();
+
   // まとめフィード作成
   const ogObjectMap = new Map([...crawlFeedsResult.feedItemOgObjectMap, ...crawlFeedsResult.feedBlogOgObjectMap]);
   const generateFeedsResult = feedGenerator.generateFeeds(
@@ -71,4 +74,9 @@ const feedStorer = new FeedStorer();
     console.error(error);
     throw error;
   }
+
+  logger.info(
+    '[phase] generate + store + validate feeds',
+    `${((Date.now() - generateStoreValidateStartTime) / 1000).toFixed(1)}s`,
+  );
 })();

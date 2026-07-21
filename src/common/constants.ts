@@ -48,4 +48,8 @@ export default {
   eleventyFetchConcurrency: 50, // Eleventyの画像取得の並列数
   fetchedFeedCacheDurationInHours: 1, // フィードのキャッシュの有効時間
   fetchedOgCacheDurationInHours: 24, // OG情報のキャッシュの有効時間
+  cachePruneThresholdInDays: 14, // キャッシュ削除の閾値。フィードは1時間、OGPは記事が集計対象期間(8日間)に入っている間24時間おき、
+  // eleventy-fetchのバッファは3日おきに更新されるため、14日以上古いファイルは実質使われていないとみなせる
+  feedFetchRetryCount: 1, // フィード取得のリトライ回数。ワークフローは1時間おきに動くので、失敗しても次回実行時にリトライされる
+  ogFetchRetryCount: 1, // OGP取得のリトライ回数。ワークフローは1時間おきに動くので、失敗しても次回実行時にリトライされる
 };
