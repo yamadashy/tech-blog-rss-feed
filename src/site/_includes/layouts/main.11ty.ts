@@ -1,6 +1,7 @@
 import constants from '../../../common/constants';
 import { relativeUrlFilter } from '../../../common/eleventy-utils';
 import { escapeHtml } from '../components/html-utils';
+import { relativeTimeScript } from '../components/scripts';
 import type { EleventyPage } from '../components/types';
 
 interface MainLayoutData {
@@ -137,6 +138,10 @@ export function render(data: MainLayoutData): string {
             </div>
         </div>
     </footer>
+
+    <script>
+    ${relativeTimeScript}
+    </script>
 
 </body>
 </html>`;

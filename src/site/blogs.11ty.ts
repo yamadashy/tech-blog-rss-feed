@@ -33,8 +33,10 @@ export async function render(data: BlogsData): Promise<string> {
         ? `<div class='ui-blog__description'>${escapeHtml(truncateNunjucks(blogFeed.ogDescription, 200))}</div>`
         : '';
 
+      // data-datetime lets scripts/relative-time.ts recompute the relative date on the client;
+      // the build-time diffLastUpdatedDateForHuman text remains as a no-JS fallback.
       const date = blogFeed.lastUpdated
-        ? `<div class='ui-blog__date' title='${escapeHtml(blogFeed.lastUpdatedForHuman)}'>${escapeHtml(blogFeed.diffLastUpdatedDateForHuman)}</div>`
+        ? `<div class='ui-blog__date' data-datetime='${escapeHtml(blogFeed.lastUpdatedIso)}' title='${escapeHtml(blogFeed.lastUpdatedForHuman)}'>${escapeHtml(blogFeed.diffLastUpdatedDateForHuman)}</div>`
         : `<div class='ui-blog__date' title='更新日時なし'>-</div>`;
 
       return `<div class='ui-blog'>
