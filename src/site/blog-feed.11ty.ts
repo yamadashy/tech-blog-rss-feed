@@ -53,6 +53,10 @@ export async function render(data: BlogFeedData): Promise<string> {
         ? `<div class='ui-feed-item__summary'>${escapeHtml(truncateNunjucks(feedItem.content_html, 1000))}</div>`
         : '';
 
+      // data-datetime lets scripts/relative-time.ts recompute the relative date on the client;
+      // the build-time diffDateForHuman text remains as a no-JS fallback.
+      const dateAttr = feedItem.isoDate ? ` data-datetime='${escapeHtml(feedItem.isoDate)}'` : '';
+
       return `<div class='ui-feed-item'>
                     <a class='ui-feed-item__og-image' href='${escapeHtml(feedItem.link)}'>
                         ${ogImage}
@@ -62,7 +66,7 @@ export async function render(data: BlogFeedData): Promise<string> {
                         ${hatenaCount}
                         <div class='ui-feed-item__blog-title'>${escapeHtml(blogTitle)}</div>
                         ${summary}
-                        <div class='ui-feed-item__date' title='${escapeHtml(feedItem.pubDateForHuman)}'>${escapeHtml(feedItem.diffDateForHuman)}</div>
+                        <div class='ui-feed-item__date'${dateAttr} title='${escapeHtml(feedItem.pubDateForHuman)}'>${escapeHtml(feedItem.diffDateForHuman)}</div>
                     </div>
                 </div>`;
     }),
