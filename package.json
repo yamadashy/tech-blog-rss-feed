@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run feed-generate && npm run site-build",
     "feed-generate": "tsx src/cli/generate-feed-command.ts",
+    "cache-prune": "tsx src/cli/prune-cache-command.ts",
     "register-index": "tsx src/cli/register-index-command.ts",
     "site-prepare": "tsx src/cli/prepare-site-command.ts",
     "site-build": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",

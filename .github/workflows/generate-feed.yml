@@ -36,6 +36,7 @@ jobs:
           cache: npm
       - run: npm ci
       - uses: ./.github/actions/restore-feed-cache
+      - run: npm run cache-prune
       - run: npm run feed-generate
       - run: npm run site-prepare
       - run: npm run site-build

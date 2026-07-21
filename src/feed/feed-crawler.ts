@@ -67,10 +67,13 @@ export class FeedCrawler {
     aggregateFeedStartAt: Date,
   ): Promise<ClawlFeedsResult> {
     // フィード取得してまとめる
+    const fetchFeedsStartTime = Date.now();
     const feeds = await this.fetchFeedsAsync(feedInfoList, feedFetchConcurrency);
     const allFeedItems = this.aggregateFeeds(feeds, aggregateFeedStartAt);
+    logger.info('[phase] fetch feeds', `${((Date.now() - fetchFeedsStartTime) / 1000).toFixed(1)}s`);
 
     // OGPなどの情報取得
+    const fetchOgAndHatenaStartTime = Date.now();
     const [errorFetchFeedData, results] = await to(
       Promise.all([
         this.fetchFeedItemOgObjectMap(allFeedItems, feedOgFetchConcurrency),
@@ -78,6 +81,7 @@ export class FeedCrawler {
         this.fetchFeedBlogOgObjectMap(feeds, feedOgFetchConcurrency),
       ]),
     );
+    logger.info('[phase] fetch og/hatena', `${((Date.now() - fetchOgAndHatenaStartTime) / 1000).toFixed(1)}s`);
     if (errorFetchFeedData) {
       throw new Error('フィード関連データの取得に失敗しました');
     }
@@ -107,40 +111,44 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feedInfo) => {
         const [error, feed] = await to(
-          exponentialBackoff(async (attemptCount: number) => {
-            if (attemptCount > 0) {
-              logger.warn(`[fetch-feed] retry ${feedInfo.url}`);
-            }
-
-            const feedCacheKey = `feed-${textToMd5Hash(feedInfo.url)}`;
-            const feedCache = flatCacheCreate({
-              cacheId: feedCacheKey,
-              ttl: constants.fetchedFeedCacheDurationInHours * 60 * 60 * 1000,
-            });
-            const cachedData = feedCache.get<string>(feedCacheKey);
-            let feedData: string;
-
-            if (cachedData) {
-              logger.trace('[fetch-feed] cache hit', feedInfo.label, feedInfo.url);
-              feedData = cachedData;
-            } else {
-              const response = await fetch(feedInfo.url, {
-                signal: AbortSignal.timeout(1000 * 10),
-              });
-              if (!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+          exponentialBackoff(
+            async (attemptCount: number) => {
+              if (attemptCount > 0) {
+                logger.warn(`[fetch-feed] retry ${feedInfo.url}`);
               }
-              feedData = await response.text();
 
-              // バリデーション
-              await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
+              const feedCacheKey = `feed-${textToMd5Hash(feedInfo.url)}`;
+              const feedCache = flatCacheCreate({
+                cacheId: feedCacheKey,
+                ttl: constants.fetchedFeedCacheDurationInHours * 60 * 60 * 1000,
+              });
+              const cachedData = feedCache.get<string>(feedCacheKey);
+              let feedData: string;
 
-              feedCache.set(feedCacheKey, feedData);
-              feedCache.save();
-            }
+              if (cachedData) {
+                logger.trace('[fetch-feed] cache hit', feedInfo.label, feedInfo.url);
+                feedData = cachedData;
+              } else {
+                const response = await fetch(feedInfo.url, {
+                  signal: AbortSignal.timeout(1000 * 10),
+                });
+                if (!response.ok) {
+                  throw new Error(`HTTP Error: ${response.status}`);
+                }
+                feedData = await response.text();
 
-            return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
-          }),
+                // バリデーション
+                await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
+
+                feedCache.set(feedCacheKey, feedData);
+                feedCache.save();
+              }
+
+              return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
+            },
+            1000,
+            constants.feedFetchRetryCount,
+          ),
         );
         if (error) {
           logger.error(
@@ -327,13 +335,17 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feedItem) => {
         const [error, ogObject] = await to(
-          exponentialBackoff((attemptCount: number) => {
-            if (attemptCount > 0) {
-              logger.warn(`[fetch-feed-item-og] retry ${feedItem.link}`);
-            }
+          exponentialBackoff(
+            (attemptCount: number) => {
+              if (attemptCount > 0) {
+                logger.warn(`[fetch-feed-item-og] retry ${feedItem.link}`);
+              }
 
-            return FeedCrawler.fetchOgObject(feedItem.link);
-          }),
+              return FeedCrawler.fetchOgObject(feedItem.link);
+            },
+            1000,
+            constants.ogFetchRetryCount,
+          ),
         );
         if (error) {
           logger.error(
@@ -364,13 +376,17 @@ export class FeedCrawler {
       .withConcurrency(concurrency)
       .process(async (feed) => {
         const [error, ogObject] = await to(
-          exponentialBackoff((attemptCount: number) => {
-            if (attemptCount > 0) {
-              logger.warn(`[fetch-feed-blog-og] retry ${feed.link}`);
-            }
+          exponentialBackoff(
+            (attemptCount: number) => {
+              if (attemptCount > 0) {
+                logger.warn(`[fetch-feed-blog-og] retry ${feed.link}`);
+              }
 
-            return FeedCrawler.fetchOgObject(feed.link);
-          }),
+              return FeedCrawler.fetchOgObject(feed.link);
+            },
+            1000,
+            constants.ogFetchRetryCount,
+          ),
         );
         if (error) {
           logger.error('[fetch-feed-blog-og] error', `${fetchProcessCounter++}/${feedsLength}`, feed.title, feed.link);
