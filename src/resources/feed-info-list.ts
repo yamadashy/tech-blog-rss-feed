@@ -766,6 +766,8 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['松尾研究所', 'https://zenn.dev/p/mkj/feed'],
   ['エイトハンドレッド', 'https://eight-hundred-800-dev.hatenablog.com/feed'],
   ['燈', 'https://tech.akariinc.co.jp/feed'],
+  ['Autify', 'https://blog.autify.jp/rss.xml']
+  
 ]);
 
 /**
