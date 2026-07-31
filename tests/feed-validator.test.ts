@@ -25,7 +25,7 @@ describe('FeedValidator', () => {
         'test',
         `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
-        <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
+        <id>https://cybozu.github.io/tech-blog-rss-feed/</id>
         <title>サイボウズのTech系ブログRSS</title>
         <updated>2023-10-20T15:11:49.708Z</updated>
         <entry>
@@ -58,7 +58,7 @@ describe('FeedValidator', () => {
         'test',
         `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
-        <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
+        <id>https://cybozu.github.io/tech-blog-rss-feed/</id>
         <title>サイボウズのTech系ブログ\u{0010}RSS</title>
       </feed>`,
       ),
@@ -73,7 +73,7 @@ describe('FeedValidator', () => {
         'test',
         `<?xml version="1.0" encoding="utf-8"?>
       <feed xmlns="http://www.w3.org/2005/Atom">
-        <id>https://yamadashy.github.io/tech-blog-rss-feed/</id>
+        <id>https://cybozu.github.io/tech-blog-rss-feed/</id>
         <title>サイボウズのTech系ブログRSS</title>
         <updated>2023-10-20T15:11:49.708Z</updated>
         <entry>

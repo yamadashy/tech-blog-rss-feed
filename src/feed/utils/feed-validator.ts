@@ -1,9 +1,27 @@
 import RssParser from 'rss-parser';
 import { XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
-import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
 import { Feed } from 'feed';
+
+// XML 1.0 で禁止された制御文字かどうかを判定する
+// 有効文字: #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]
+function containsInvalidXmlChar(str: string): boolean {
+  for (let i = 0; i < str.length; i++) {
+    const code = str.charCodeAt(i);
+    if (
+      (code >= 0x0000 && code <= 0x0008) ||
+      code === 0x000b ||
+      code === 0x000c ||
+      (code >= 0x000e && code <= 0x001f) ||
+      code === 0xfffe ||
+      code === 0xffff
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * フィードのバリデーション
@@ -48,13 +66,9 @@ export class FeedValidator {
       );
     }
 
-    // libxmljs でバリデーション
-    try {
-      libxmljs.parseXml(feedXml);
-    } catch (libxmljsError) {
-      if (libxmljsError instanceof Error) {
-        throw new Error(`libxmljsによるフィードのバリデーションエラーです。 error: ${libxmljsError.message}`);
-      }
+    // XML 1.0 で禁止された制御文字のチェック
+    if (containsInvalidXmlChar(feedXml)) {
+      throw new Error(`フィードにXML 1.0で禁止された文字が含まれています。 label: ${label}`);
     }
 
     logger.info(`[FeedValidator] XMLフィードのバリデーション完了。 label: ${label}`);

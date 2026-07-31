@@ -72,7 +72,6 @@
     "googleapis": "^140.0.0",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
-    "libxmljs": "^1.0.11",
     "log4js": "^6.9.1",
     "open-graph-scraper": "^6.5.1",
     "prettier": "^3.0.3",
