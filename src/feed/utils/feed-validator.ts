@@ -1,7 +1,6 @@
 import RssParser from 'rss-parser';
 import { XMLValidator } from 'fast-xml-parser';
 import { logger } from './logger';
-import libxmljs from 'libxmljs';
 import { to } from 'await-to-js';
 import { Feed } from 'feed';
 
@@ -46,15 +45,6 @@ export class FeedValidator {
       throw new Error(
         `fast-xml-parser XMLValidatorによるフィードのバリデーションエラーです。 label: ${label}, result: ${atomValidateResult}`,
       );
-    }
-
-    // libxmljs でバリデーション
-    try {
-      libxmljs.parseXml(feedXml);
-    } catch (libxmljsError) {
-      if (libxmljsError instanceof Error) {
-        throw new Error(`libxmljsによるフィードのバリデーションエラーです。 error: ${libxmljsError.message}`);
-      }
     }
 
     logger.info(`[FeedValidator] XMLフィードのバリデーション完了。 label: ${label}`);
