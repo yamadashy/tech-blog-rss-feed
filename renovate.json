@@ -10,6 +10,7 @@
   "dependencyDashboard": false,
   "automerge": true,
   "branchConcurrentLimit": 0,
+  "minimumReleaseAge": "3 days",
   "prHourlyLimit": 0,
   "labels": ["dependencies", "renovate"],
   "packageRules": [
