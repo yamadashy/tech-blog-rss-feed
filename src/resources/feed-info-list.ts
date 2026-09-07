@@ -147,7 +147,7 @@ export const FEED_INFO_LIST: FeedInfo[] = createFeedInfoList([
   ['Insight Edge', 'https://techblog.insightedge.jp/feed'],
   ['JCB', 'https://tech.jcblab.jp/feed'],
   ['JMDC', 'https://techblog.jmdc.co.jp/feed'],
-  ['JTP', 'https://tech-blog.jtp.co.jp/feed'],
+  // ['JTP', 'https://tech-blog.jtp.co.jp/feed'],// 2026-09 取得エラー継続のため除外: はてなブログ独自ドメイン解約跡地で接続不可。移行先のRSSフィード提供なし
   ['JX通信社', 'https://tech.jxpress.net/feed'],
   ['KAIZEN PLATFORM', 'https://developer.kaizenplatform.com/feed'],
   ['KARAKURI', 'https://medium.com/feed/karakuri'],
