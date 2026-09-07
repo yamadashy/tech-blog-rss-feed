@@ -73,7 +73,12 @@ export class FeedGenerator {
     for (const feedItem of feedItems) {
       logger.info('[create-feed-item]', feedItem.isoDate, feedItem.title);
 
-      const feedItemId = feedItem.guid || feedItem.link;
+      // AtomのidはURLとして扱われるため、URLでないguidは使わない
+      if (!isValidHttpUrl(feedItem.link)) {
+        logger.warn('[feed-item] フィードのリンクが不正です。', feedItem.link, feedItem.title);
+        continue;
+      }
+      const feedItemId = feedItem.guid && isValidHttpUrl(feedItem.guid) ? feedItem.guid : feedItem.link;
       const feedItemContent = (feedItem.summary || feedItem.contentSnippet || '').replace(/(\n|\t+|\s+)/g, ' ');
 
       const ogObject = feedItemOgObjectMap.get(feedItem.link);
