@@ -15,7 +15,7 @@ export const renderFeedItem = async (
   const relativeUrl = escapeHtml(rawRelativeUrl);
 
   const ogImage = feedItem.image
-    ? await imageThumbnailShortcode(feedItem.image.url, '記事のアイキャッチ画像', rawRelativeUrl, imageLoading)
+    ? await imageThumbnailShortcode(feedItem.image, '記事のアイキャッチ画像', rawRelativeUrl, imageLoading)
     : `<img src='${relativeUrl}images/alternate-feed-image.png' loading="${escapeHtml(imageLoading)}" alt='記事のアイキャッチ画像' width='256' height='256'>`;
 
   const hatenaCount =

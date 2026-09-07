@@ -40,10 +40,7 @@ export interface FeedJsonItem {
   url: string;
   title?: string;
   summary?: string;
-  image?: {
-    url: string;
-    alt?: string;
-  };
+  image?: string;
   date_modified?: string;
   date_published?: string;
   tags?: string[];
