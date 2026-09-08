@@ -4,7 +4,7 @@ import { to } from 'await-to-js';
 import dayjs from 'dayjs';
 import { create as flatCacheCreate } from 'flat-cache';
 import { default as ogs } from 'open-graph-scraper';
-import type { ImageObject, OgObject, OpenGraphScraperOptions } from 'open-graph-scraper/types/lib/types';
+import type { ImageObject, OgObject, OpenGraphScraperOptions } from 'open-graph-scraper/types';
 import RssParser from 'rss-parser';
 import constants from '../common/constants';
 import type { FeedInfo } from '../resources/feed-info-list';
