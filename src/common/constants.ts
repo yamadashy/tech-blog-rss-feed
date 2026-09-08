@@ -41,6 +41,7 @@ export default {
   // 処理の設定
   feedFetchConcurrency: 50, // フィードを取得する並列数
   feedOgFetchConcurrency: 20, // OG情報を取得する並列数
+  hatenaCountFetchConcurrency: 5, // はてなブックマーク数を取得する並列数（50件ずつのチャンク単位）
   aggregateFeedDurationInHours: 8 * 24, // まとめフィードの対象となる時間の範囲
   maxFeedDescriptionLength: 200, // フィードのdescriptionの最大文字数
   maxFeedContentLength: 500, // フィードのcontentの最大文字数

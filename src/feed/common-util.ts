@@ -78,7 +78,9 @@ export const exponentialBackoff = async <A>(
 
 export const fetchHatenaCountMap = async (urls: string[]): Promise<HatenaCountMap> => {
   const params = urls.map((url) => `url=${url}`).join('&');
-  const response = await axios.get<HatenaCountMap>(`https://bookmark.hatenaapis.com/count/entries?${params}`);
+  const response = await axios.get<HatenaCountMap>(`https://bookmark.hatenaapis.com/count/entries?${params}`, {
+    timeout: 1000 * 10,
+  });
   return response.data;
 };
 

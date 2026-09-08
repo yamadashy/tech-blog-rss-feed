@@ -20,5 +20,10 @@ declare module '@11ty/eleventy-fetch' {
   export function EleventyFetch<T>(url: string, options: EleventyFetchOptions<'json'>): Promise<T>;
   export function EleventyFetch(url: string, options: EleventyFetchOptions<'text'>): Promise<string>;
 
+  export namespace EleventyFetch {
+    // グローバルなフェッチキューの並列数（既定 10）
+    let concurrency: number;
+  }
+
   export default EleventyFetch;
 }
