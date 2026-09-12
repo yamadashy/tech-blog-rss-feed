@@ -1,3 +1,4 @@
+import EleventyFetch from '@11ty/eleventy-fetch';
 import EleventyImage from '@11ty/eleventy-img';
 import constants from './src/common/constants';
 import {
@@ -8,6 +9,8 @@ import {
   relativeUrlFilter,
 } from './src/common/eleventy-utils';
 
+// eleventy-fetch のキューはグローバル設定（既定 10）。呼び出しごとの concurrency オプションでは変わらない
+EleventyFetch.concurrency = constants.eleventyFetchConcurrency;
 EleventyImage.concurrency = constants.eleventyFetchConcurrency;
 
 // biome-ignore lint/suspicious/noExplicitAny: This is intentional

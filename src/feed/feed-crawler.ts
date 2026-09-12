@@ -123,28 +123,31 @@ export class FeedCrawler {
                 ttl: constants.fetchedFeedCacheDurationInHours * 60 * 60 * 1000,
               });
               const cachedData = feedCache.get<string>(feedCacheKey);
-              let feedData: string;
 
               if (cachedData) {
                 logger.trace('[fetch-feed] cache hit', feedInfo.label, feedInfo.url);
-                feedData = cachedData;
-              } else {
-                const response = await fetch(feedInfo.url, {
-                  signal: AbortSignal.timeout(1000 * 10),
-                });
-                if (!response.ok) {
-                  throw new Error(`HTTP Error: ${response.status}`);
-                }
-                feedData = await response.text();
-
-                // バリデーション
-                await this.feedValidator.assertXmlFeed('fetched-feed', feedData);
-
-                feedCache.set(feedCacheKey, feedData);
-                feedCache.save();
+                return this.rssParser.parseString(cachedData) as Promise<CustomRssParserFeed>;
               }
 
-              return this.rssParser.parseString(feedData) as Promise<CustomRssParserFeed>;
+              const response = await fetch(feedInfo.url, {
+                signal: AbortSignal.timeout(1000 * 10),
+              });
+              if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status}`);
+              }
+              const feedData = await response.text();
+
+              // バリデーション。パース結果をそのまま使うことで同じ XML を二度パースしない
+              const parsedFeed = (await this.feedValidator.assertXmlFeed(
+                'fetched-feed',
+                feedData,
+                this.rssParser,
+              )) as CustomRssParserFeed;
+
+              feedCache.set(feedCacheKey, feedData);
+              feedCache.save();
+
+              return parsedFeed;
             },
             1000,
             constants.feedFetchRetryCount,
@@ -498,19 +501,22 @@ export class FeedCrawler {
       feedItemCounter++;
     }
 
-    for (const feedItemUrls of feedItemUrlsChunks) {
-      const [error, hatenaCountMap] = await to(fetchHatenaCountMap(feedItemUrls));
+    // チャンクごとに並列で取得。失敗したチャンクはスキップして他のチャンクは続行する
+    await PromisePool.for(feedItemUrlsChunks)
+      .withConcurrency(constants.hatenaCountFetchConcurrency)
+      .process(async (feedItemUrls) => {
+        const [error, hatenaCountMap] = await to(fetchHatenaCountMap(feedItemUrls));
 
-      if (error) {
-        logger.error('[fetch-feed-item-hatena-count] error');
-        logger.trace(error);
-        continue;
-      }
+        if (error) {
+          logger.error('[fetch-feed-item-hatena-count] error');
+          logger.trace(error);
+          return;
+        }
 
-      for (const feedItemUrl in hatenaCountMap) {
-        feedItemHatenaCountMap.set(feedItemUrl, hatenaCountMap[feedItemUrl]);
-      }
-    }
+        for (const feedItemUrl in hatenaCountMap) {
+          feedItemHatenaCountMap.set(feedItemUrl, hatenaCountMap[feedItemUrl]);
+        }
+      });
 
     logger.info('[fetch-feed-item-hatena-count] fetched', feedItemHatenaCountMap);
 

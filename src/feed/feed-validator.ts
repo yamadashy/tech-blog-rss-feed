@@ -21,11 +21,17 @@ export class FeedValidator {
     }
   }
 
-  public async assertXmlFeed(label: string, feedXml: string): Promise<void> {
-    const rssParser = new RssParser();
-
+  /**
+   * XML フィードを検証し、検証の過程で得た rss-parser のパース結果を返す
+   * （呼び出し側で同じ XML をもう一度パースしなくて済むようにするため）
+   */
+  public async assertXmlFeed(
+    label: string,
+    feedXml: string,
+    rssParser: RssParser = new RssParser(),
+  ): Promise<RssParser.Output<RssParser.Item>> {
     // rss-parser で変換してみてエラーが出ないか確認
-    const [rssParserError] = await to(rssParser.parseString(feedXml));
+    const [rssParserError, parsedFeed] = await to(rssParser.parseString(feedXml));
     if (rssParserError) {
       throw new Error(
         `rss-parserによるフィードのバリデーションエラーです。 label: ${label}, error: ${rssParserError}}`,
@@ -52,5 +58,7 @@ export class FeedValidator {
     if (invalidControlCharsRegex.test(feedXml)) {
       throw new Error(`フィードに不正な制御文字が含まれています。 label: ${label}`);
     }
+
+    return parsedFeed;
   }
 }
