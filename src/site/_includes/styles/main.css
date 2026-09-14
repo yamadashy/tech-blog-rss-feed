@@ -242,7 +242,7 @@ img {
 }
 .ui-section-header__layout .ui-section-header__separator {
   width: 1px;
-  height: 30px;
+  height: 27px;
   /* 右はアイコンリンク内の余白 8px と合わせて左右 20px に揃える */
   margin: 0 12px 0 20px;
   background: var(--base-color-muted);
