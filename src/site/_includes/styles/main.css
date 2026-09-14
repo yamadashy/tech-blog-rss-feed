@@ -88,7 +88,7 @@
     --toggle-icon-sun-display: none;
     --toggle-icon-moon-display: block;
     --header-icon-filter: invert(1);
-    --og-image-filter: brightness(0.92);
+    --og-image-filter: brightness(0.5);
   }
 }
 
@@ -117,7 +117,7 @@
   --toggle-icon-sun-display: none;
   --toggle-icon-moon-display: block;
   --header-icon-filter: invert(1);
-  --og-image-filter: brightness(0.92);
+  --og-image-filter: brightness(0.5);
 }
 
 /*
