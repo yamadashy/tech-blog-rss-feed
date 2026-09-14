@@ -194,6 +194,7 @@ img {
 .ui-section-header__layout .ui-section-header__links {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .ui-section-header__layout .ui-section-header__links a {
   display: flex;
