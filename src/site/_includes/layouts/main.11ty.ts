@@ -109,12 +109,6 @@ export function render(data: MainLayoutData): string {
                     <span class='ui-section-header__title'>${escapeHtml(constants.siteTitle)}</span>
                 </a>
                 <div class="ui-section-header__links">
-                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                        <img src='${relativeUrl}images/icon-github.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
-                    </a>
-                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="X" target="_blank" rel="noopener noreferrer">
-                        <img src='${relativeUrl}images/icon-x.png' alt='Xロゴ' loading="eager" width='96' height='96' />
-                    </a>
                     <button type="button" class="ui-theme-toggle" aria-label="ダークモード切り替え">
                         <span class="ui-theme-toggle__track">
                             <span class="ui-theme-toggle__knob">
@@ -128,6 +122,13 @@ export function render(data: MainLayoutData): string {
                             </span>
                         </span>
                     </button>
+                    <span class="ui-section-header__separator" aria-hidden="true"></span>
+                    <a href="${escapeHtml(constants.gitHubRepositoryUrl)}" role="link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <img src='${relativeUrl}images/icon-github.png' alt='GitHubロゴ' loading="eager" width='96' height='96' />
+                    </a>
+                    <a href="${escapeHtml(constants.xUserUrl)}" role="link" aria-label="X" target="_blank" rel="noopener noreferrer">
+                        <img src='${relativeUrl}images/icon-x.png' alt='Xロゴ' loading="eager" width='96' height='96' />
+                    </a>
                 </div>
             </div>
         </div>

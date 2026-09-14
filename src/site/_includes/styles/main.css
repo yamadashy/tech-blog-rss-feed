@@ -223,7 +223,6 @@ img {
   align-items: center;
   width: auto;
   height: 24px;
-  margin-left: 8px;
   padding: 0;
   border: none;
   background: none;
@@ -239,6 +238,13 @@ img {
   outline: 2px solid var(--base-color);
   outline-offset: 2px;
   opacity: 1;
+}
+.ui-section-header__layout .ui-section-header__separator {
+  width: 1px;
+  height: 20px;
+  margin: 0 12px 0 8px;
+  background: var(--base-color-muted);
+  opacity: 0.5;
 }
 .ui-theme-toggle__track {
   position: relative;
