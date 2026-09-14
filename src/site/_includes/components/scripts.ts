@@ -16,3 +16,22 @@ export const relativeTimeScript = fs.readFileSync(
   fileURLToPath(new URL('../scripts/relative-time.ts', import.meta.url)),
   'utf-8',
 );
+
+/**
+ * Blocking script inlined at the top of <head> that restores the theme saved in
+ * localStorage before the stylesheet is applied, avoiding a flash of the wrong
+ * theme. Included by the shared layout (layouts/main.11ty.ts).
+ */
+export const themeInitScript = fs.readFileSync(
+  fileURLToPath(new URL('../scripts/theme-init.ts', import.meta.url)),
+  'utf-8',
+);
+
+/**
+ * Client script backing the dark mode toggle switch in the header. Included by
+ * the shared layout (layouts/main.11ty.ts) so it applies to every page.
+ */
+export const themeToggleScript = fs.readFileSync(
+  fileURLToPath(new URL('../scripts/theme-toggle.ts', import.meta.url)),
+  'utf-8',
+);
