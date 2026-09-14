@@ -241,9 +241,9 @@ img {
 }
 .ui-section-header__layout .ui-section-header__separator {
   width: 1px;
-  height: 20px;
-  /* 右はアイコンリンク内の余白 8px と合わせて左右 12px に揃える */
-  margin: 0 4px 0 12px;
+  height: 30px;
+  /* 右はアイコンリンク内の余白 8px と合わせて左右 20px に揃える */
+  margin: 0 12px 0 20px;
   background: var(--base-color-muted);
   opacity: 0.5;
 }
