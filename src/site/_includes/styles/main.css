@@ -42,19 +42,19 @@
    * ダークモードのパレット。
    * :root に定義しておき、下の 2 つのセレクタ（OS 設定 / 明示的な指定）から適用する。
    */
-  --theme-dark-base-background: #24262b;
-  --theme-dark-base-color: #e3e5e8;
-  --theme-dark-base-color-lighter: #b5b9c0;
-  --theme-dark-base-color-muted: #8b9099;
-  --theme-dark-yellow-background: #3a362b;
-  --theme-dark-yellow-background-lighter: #2d2c28;
-  --theme-dark-ui-color-brand: #dfe2e6;
-  --theme-dark-ui-color-form-input: #33363c;
-  --theme-dark-ui-color-typography-heading: #dfe2e6;
-  --theme-dark-toggle-track-background: #3e4148;
-  --theme-dark-toggle-track-border-color: #4d5058;
-  --theme-dark-toggle-knob-background: #1f2125;
-  --theme-dark-toggle-knob-color: #e3e5e8;
+  --theme-dark-base-background: #1b1b1f;
+  --theme-dark-base-color: #e4e4e7;
+  --theme-dark-base-color-lighter: #b0b0b6;
+  --theme-dark-base-color-muted: #85858d;
+  --theme-dark-yellow-background: #322e24;
+  --theme-dark-yellow-background-lighter: #232220;
+  --theme-dark-ui-color-brand: #e0e0e4;
+  --theme-dark-ui-color-form-input: #2a2a30;
+  --theme-dark-ui-color-typography-heading: #e0e0e4;
+  --theme-dark-toggle-track-background: #34343a;
+  --theme-dark-toggle-track-border-color: #44444b;
+  --theme-dark-toggle-knob-background: #141417;
+  --theme-dark-toggle-knob-color: #e4e4e7;
 }
 
 /**
