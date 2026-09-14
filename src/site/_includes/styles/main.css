@@ -24,6 +24,100 @@
 
   /* 上書き */
   --ui-gap-content: 2em;
+
+  color-scheme: light;
+
+  /* ライトモードのテーマ切り替えスイッチ・画像フィルタ */
+  --toggle-track-background: #e9e9ec;
+  --toggle-track-border-color: #d0d0d4;
+  --toggle-knob-background: #fff;
+  --toggle-knob-color: #555;
+  --toggle-knob-translate: 0;
+  --toggle-icon-sun-display: block;
+  --toggle-icon-moon-display: none;
+  --header-icon-filter: none;
+  --og-image-filter: none;
+
+  /**
+   * ダークモードのパレット。
+   * :root に定義しておき、下の 2 つのセレクタ（OS 設定 / 明示的な指定）から適用する。
+   */
+  --theme-dark-base-background: #24262b;
+  --theme-dark-base-color: #e3e5e8;
+  --theme-dark-base-color-lighter: #b5b9c0;
+  --theme-dark-base-color-muted: #8b9099;
+  --theme-dark-yellow-background: #3a362b;
+  --theme-dark-yellow-background-lighter: #2d2c28;
+  --theme-dark-ui-color-brand: #dfe2e6;
+  --theme-dark-ui-color-form-input: #33363c;
+  --theme-dark-ui-color-typography-heading: #dfe2e6;
+  --theme-dark-toggle-track-background: #3e4148;
+  --theme-dark-toggle-track-border-color: #4d5058;
+  --theme-dark-toggle-knob-background: #1f2125;
+  --theme-dark-toggle-knob-color: #e3e5e8;
+}
+
+/**
+ * ダークモード。
+ * 保存された設定がなければ OS の設定に従い、data-theme があればそちらを優先する。
+ * JS が動く前でも正しい配色になるよう、判定は CSS 側で完結させている。
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --base-background: var(--theme-dark-base-background);
+    --base-color: var(--theme-dark-base-color);
+    --base-color-lighter: var(--theme-dark-base-color-lighter);
+    --base-color-muted: var(--theme-dark-base-color-muted);
+    --yellow-background: var(--theme-dark-yellow-background);
+    --yellow-background-lighter: var(--theme-dark-yellow-background-lighter);
+
+    --ui-color-brand: var(--theme-dark-ui-color-brand);
+    --ui-color-background-primary: var(--theme-dark-base-background);
+    --ui-color-form-input: var(--theme-dark-ui-color-form-input);
+    --ui-color-typography-heading: var(--theme-dark-ui-color-typography-heading);
+    --ui-color-typography-body: var(--theme-dark-base-color);
+    --ui-color-typography-note: var(--theme-dark-base-color-muted);
+
+    --toggle-track-background: var(--theme-dark-toggle-track-background);
+    --toggle-track-border-color: var(--theme-dark-toggle-track-border-color);
+    --toggle-knob-background: var(--theme-dark-toggle-knob-background);
+    --toggle-knob-color: var(--theme-dark-toggle-knob-color);
+    --toggle-knob-translate: 20px;
+    --toggle-icon-sun-display: none;
+    --toggle-icon-moon-display: block;
+    --header-icon-filter: invert(1);
+    --og-image-filter: brightness(0.88);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --base-background: var(--theme-dark-base-background);
+  --base-color: var(--theme-dark-base-color);
+  --base-color-lighter: var(--theme-dark-base-color-lighter);
+  --base-color-muted: var(--theme-dark-base-color-muted);
+  --yellow-background: var(--theme-dark-yellow-background);
+  --yellow-background-lighter: var(--theme-dark-yellow-background-lighter);
+
+  --ui-color-brand: var(--theme-dark-ui-color-brand);
+  --ui-color-background-primary: var(--theme-dark-base-background);
+  --ui-color-form-input: var(--theme-dark-ui-color-form-input);
+  --ui-color-typography-heading: var(--theme-dark-ui-color-typography-heading);
+  --ui-color-typography-body: var(--theme-dark-base-color);
+  --ui-color-typography-note: var(--theme-dark-base-color-muted);
+
+  --toggle-track-background: var(--theme-dark-toggle-track-background);
+  --toggle-track-border-color: var(--theme-dark-toggle-track-border-color);
+  --toggle-knob-background: var(--theme-dark-toggle-knob-background);
+  --toggle-knob-color: var(--theme-dark-toggle-knob-color);
+  --toggle-knob-translate: 20px;
+  --toggle-icon-sun-display: none;
+  --toggle-icon-moon-display: block;
+  --header-icon-filter: invert(1);
+  --og-image-filter: brightness(0.88);
 }
 
 /*
@@ -116,6 +210,77 @@ img {
 .ui-section-header__layout .ui-section-header__links a img {
   width: 20px;
   height: 20px;
+  /* 黒いアイコンなのでダークモードでは反転させる */
+  filter: var(--header-icon-filter);
+}
+
+/**
+ * ダークモード切り替えスイッチ
+ */
+.ui-section-header__layout .ui-theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 24px;
+  margin-left: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  appearance: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity .5s;
+}
+.ui-section-header__layout .ui-theme-toggle:hover {
+  opacity: 1;
+}
+.ui-section-header__layout .ui-theme-toggle:focus-visible {
+  outline: 2px solid var(--base-color);
+  outline-offset: 2px;
+  opacity: 1;
+}
+.ui-theme-toggle__track {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 46px;
+  height: 26px;
+  border: 1px solid var(--toggle-track-border-color);
+  border-radius: 13px;
+  background: var(--toggle-track-background);
+}
+.ui-theme-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--toggle-knob-background);
+  color: var(--toggle-knob-color);
+  transform: translateX(var(--toggle-knob-translate));
+  transition: transform .25s ease;
+}
+.ui-theme-toggle__knob svg {
+  width: 14px;
+  height: 14px;
+}
+.ui-theme-toggle__knob .ui-theme-toggle__icon-sun {
+  display: var(--toggle-icon-sun-display);
+}
+.ui-theme-toggle__knob .ui-theme-toggle__icon-moon {
+  display: var(--toggle-icon-moon-display);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-section-header__layout .ui-theme-toggle,
+  .ui-theme-toggle__knob {
+    transition: none;
+  }
 }
 
 /*
@@ -220,6 +385,8 @@ img {
 .ui-feed-item .ui-feed-item__og-image {
 }
 .ui-feed-item .ui-feed-item__og-image img {
+  /* ダークモードで明るいサムネイルが眩しくならないよう少し落とす */
+  filter: var(--og-image-filter);
   width: 100%;
   height: auto;
   max-height: 7.0em;
@@ -335,6 +502,8 @@ img {
 .ui-blog .ui-blog__og-image {
 }
 .ui-blog .ui-blog__og-image img {
+  /* ダークモードで明るいサムネイルが眩しくならないよう少し落とす */
+  filter: var(--og-image-filter);
   width: 100%;
   height: auto;
   max-height: 7.0em;
