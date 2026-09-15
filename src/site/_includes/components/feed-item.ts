@@ -30,8 +30,9 @@ export const renderFeedItem = async (
     ? await imageIconShortcode(feedItem._custom.favicon, 'ブログのファビコン', rawRelativeUrl, imageLoading)
     : '';
 
-  const summary = feedItem.content_html
-    ? `<div class='ui-feed-item__summary'>${escapeHtml(truncateNunjucks(feedItem.content_html, 500))}</div>`
+  // content_html は HTML（エスケープ済み）なので、プレーンテキストの summary を使う
+  const summary = feedItem.summary
+    ? `<div class='ui-feed-item__summary'>${escapeHtml(truncateNunjucks(feedItem.summary, 500))}</div>`
     : '';
 
   // data-datetime lets scripts/relative-time.ts recompute the relative date on the client;
